@@ -19,7 +19,7 @@ Nos gusta el diseño en general y algunas funcionalidades como el login.
 De esta página nos gustó muchos detalles, como el cursor cuando lo posicionas en determinada opción se convierte en el logo de la empresa.
 
 * [Delko](https://delkoalimentos.com.ar/home):  
-Nos gustó el video de fondo en el home.
+Elegimos esta por el video de fondo en el home.
 
 * [Wapp](https://www.somoswapp.com.ar/):  
 Nos pareció buena idea el carrusel que tiene con las fotos de los animales en cada categoria.  
