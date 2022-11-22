@@ -12,16 +12,18 @@
 
 ## Sitios que nos inspiraron:
 
-<<1>> [Mi Mascota](https://ar.miscota.com/)  
+* [Mi Mascota](https://ar.miscota.com/)  
+Nos gusta el diseño en general y algunas funcionalidades como el login.
 
-<<2>> [Porotos](https://porotos.com.ar/)  
+* [Porotos](https://porotos.com.ar/)  
+De esta página nos gustó muchos detalles, como el cursor cuando lo posicionas en determinada opción se convierte en el logo de la empresa.
 
-<<3>> [Delko](https://delkoalimentos.com.ar/home):  
-Nos gustó el video en el home
+* [Delko](https://delkoalimentos.com.ar/home):  
+Nos gustó el video de fondo en el home.
 
-<<4>> [Wapp](https://www.somoswapp.com.ar/):  
-Nos pareció buena idea el carrusel que tiene con las fotos de los animales en cada categoria (cachorro y adulto), de perro y gato  
+* [Wapp](https://www.somoswapp.com.ar/):  
+Nos pareció buena idea el carrusel que tiene con las fotos de los animales en cada categoria.  
 
-<<5>> [Mi Mascota](https://ar.miscota.com/)  
-
+* [SPX Pets Store](https://spxpetstore.com/collections/pet-beds-mat)  
+Nos encantó la paleta de colores que se complementan con las imágenes y el dinamismo.
 
