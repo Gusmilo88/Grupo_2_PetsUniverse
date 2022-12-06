@@ -1,6 +1,6 @@
-# Proyecto integrador grupo 2
+# Proyecto integrador grupo 2: Pets Universe
 
-## Página dedicada a la venta de productos alimenticios para animales. Apuntada a personas que tengan perros y gatos.
+## Página dedicada a la venta de productos alimenticios para mascotas ambientado en un escenario del espacio y universo. Orientada a personas que tengan perros y gatos.
 
 ## Miembros:
 
