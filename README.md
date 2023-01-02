@@ -8,7 +8,7 @@
 * **Cristian Amarilla**. Edad: *24 años*. Ciudad: *Temperley*.
 * **Giselle Ojeda**. Edad: *32 años*. Ciudad: *González Catán*.
 * **Maximiliano Cuellar**. Edad: *20 años*. Ciudad: *Lanús Este*.
-* **Gustavo Romero**. Edad: *34 años*. Ciudad: *Merlo*.
+* **Gustavo Romero**. Edad: *34 años*. Ciudad: *Merlo*. Me gusta la música, los animales, el fútbol, y la tecnología. Estudiante actualmente de desarrollador web full stack. 
 
 ## Sitios que nos inspiraron:
 
