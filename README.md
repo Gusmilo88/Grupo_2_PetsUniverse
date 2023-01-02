@@ -4,7 +4,7 @@
 
 ## Miembros:
 
-* **Gabriela Meza**. Edad: *29 años*. Ciudad: *Mataderos*.
+* **Gabriela Meza**. Edad: *29 años*. Ciudad: *Mataderos*. Me gusta:Dibujar, pintar, pasar tiempo con mi hijas, y compartir mucho con amigos. Soy compañera, con buena predisposicón ante nuevos desafios, empática.
 * **Cristian Amarilla**. Edad: *24 años*. Ciudad: *Temperley*.
 * **Giselle Ojeda**. Edad: *32 años*. Ciudad: *González Catán*.
 * **Maximiliano Cuellar**. Edad: *20 años*. Ciudad: *Lanús Este*. Por la parte grupal mucho la competitividad, los grandes desafíos y trabajar en equipo, luego por la parte personal me gusta el deporte, especialmente el futbol y gimnasio, escuchar música y junto con la mayoría de mis compañeros me gustan muchos los animales en especial los perros, mi favorito es el Golden.
