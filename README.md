@@ -1,6 +1,6 @@
 # Proyecto integrador grupo 2: Pets Universe
 
-## Página dedicada a la venta de productos alimenticios para mascotas ambientado en un escenario del espacio y universo. Orientada a personas que tengan perros y gatos.
+## Somos desarrolladores contratados para crear una página de venta de alimentos para mascotas. Con la idea de armar una página innovadora con temática del universo. Publico objetivo: personas que tengan mascotas. 
 
 ## Miembros:
 
