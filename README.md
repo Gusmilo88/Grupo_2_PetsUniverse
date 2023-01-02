@@ -7,7 +7,7 @@
 * **Gabriela Meza**. Edad: *29 años*. Ciudad: *Mataderos*.
 * **Cristian Amarilla**. Edad: *24 años*. Ciudad: *Temperley*.
 * **Giselle Ojeda**. Edad: *32 años*. Ciudad: *González Catán*.
-* **Maximiliano Cuellar**. Edad: *20 años*. Ciudad: *Lanús Este*.
+* **Maximiliano Cuellar**. Edad: *20 años*. Ciudad: *Lanús Este*. Por la parte grupal mucho la competitividad, los grandes desafíos y trabajar en equipo, luego por la parte personal me gusta el deporte, especialmente el futbol y gimnasio, escuchar música y junto con la mayoría de mis compañeros me gustan muchos los animales en especial los perros, mi favorito es el Golden.
 * **Gustavo Romero**. Edad: *34 años*. Ciudad: *Merlo*. Me gusta la música, los animales, el fútbol, y la tecnología. Estudiante actualmente de desarrollador web full stack. 
 
 ## Sitios que nos inspiraron:
