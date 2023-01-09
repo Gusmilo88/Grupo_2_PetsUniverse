@@ -1,0 +1,19 @@
+body{
+    background-image: url("../images/imagen-fondo.jpg");
+    position: relative;
+}
+
+.home__main__section__div{
+    display: flex;
+    flex-wrap: nowrap;
+    color: white;
+}
+
+.home__main__section--ovni{
+    align-self: center;
+    text-align: center;
+}
+
+.home__main__section--h4{
+    align-self: center;
+}
