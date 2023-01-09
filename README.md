@@ -27,3 +27,4 @@ Nos pareció buena idea el carrusel que tiene con las fotos de los animales en c
 * [SPX Pets Store](https://spxpetstore.com/collections/pet-beds-mat)  
 Nos encantó la paleta de colores que se complementan con las imágenes y el dinamismo.
 
+* [Trello] https://trello.com/b/KdUpyaU1/proyecto-integrador-g2
