@@ -5,13 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/0b63215334.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/productDetail.css">
-    <title>Producto del detalle</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Detalle del producto</title>
 </head>
 <body>
     <main class="productDetail">
         <section class="section0">
-            <article class="section3__article__div" id="clon2">                    
+            <article class="section0__article--rep" >
+                    <div class="estrellitas">
+                        <div class="estrellitas1"><small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></small></div>
+                    </div>  
+                    <div class="titulo">
+                        <h1 class="titulos">Alimento Nufood Perro Adulto</h1>
+                        <h2 class="titulos">Mediano y Grande - 15kg</h2>   
+                    </div>                 
             </article>
         </section>
         <div class="productDetail__div"> 
@@ -31,7 +38,47 @@
                                 <img id="div2" src="/images/imgbig.png" alt="Foto de bolsón de alimento">
                             </div>
                         </article>
-                        <article class="section3__article__div" id="otro">
+                        <article id="otro">
+                            <div class="section3__article__div">
+                                <div class="aLaPar">
+                                    <div class="par1">
+                                        <p class="oculto1">Artículo nuevo | 1000 vendidos</p>
+                                        <p class="visto1">$10.000</p>
+                                        <p class="visto2">en 12 x $833.33 sin interés</p>
+                                        <p class="oculto2">¡Pedidos que vuelan!</p>
+                                        <div class="ufo">
+                                            <img class="flyingSaucer" src="/images/flyingSaucer.png">
+                                            <p class="visto3">Envíos gratis</p>
+                                            <p class="compras">para compras mayores a $4000</p>
+                                        </div> 
+                                    </div>                                
+                                    <div class="par2">
+                                        <div class="form__button">
+                                            <button type="submit">Compra ahora</button>
+                                        </div> 
+                                        <div class="form__button">
+                                            <button  type="submit">Agregar al carrito</button>
+                                        </div>
+                                    </div> 
+                                </div>                                                 
+                                <div class="metodo">
+                                    <h1 class="metodo__h1">Métodos de pago</h1> 
+                                    <div class="pay">
+                                        <div class="boxes">
+                                        <img src="/images/credit.png">
+                                        <p>Tarjeta de crédito</p>  
+                                    </div>
+                                    <div class="boxes">
+                                        <img src="/images/cash.png">
+                                        <p>Efectivo</p>
+                                    </div>
+                                    <div class="boxes">
+                                        <img src="/images/virtual.png"> 
+                                        <p>Criptomonedas</p> 
+                                    </div>                  
+                                    </div>   
+                                </div> 
+                            </div>    
                         </article>
                     </section>
                     <section class="section2">
@@ -61,9 +108,9 @@
                 </div>            
                 <section class="section3">
                     <article class="section3__article--original1">
-                        <div class="section3__article__div" id="uno">
+                        <div class="section3__article__div" >
                             <div class="section3__article__div--original2">
-                                <div id="original2">
+                                <div>
                                     <div class="estrellitas">
                                         <div class="estrellitas1"><small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></small></div>
                                     </div>  
@@ -117,29 +164,7 @@
                     </article>
                 </section>
             </div>               
-        </div>
-        <div>
-            <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-            <script type="text/javascript">
-                $(document).ready(function() {
-                    $("#original2").clone().appendTo("#clon2");    
-                });
-            </script>
-            
-            <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-            <script type="text/javascript">        
-                $(document).ready(function() {
-                    $("#uno").clone().appendTo("#otro");                
-                });
-            </script>  
-            <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-            <script type="text/javascript">
-                $(document).ready(function(){
-                    var height = $(".section1__article__div--2-1").height();
-                $('#div2').height("100%");
-                });
-            </script>
-        </div>       
+        </div>    
     </main>
 </body>
 </html>
