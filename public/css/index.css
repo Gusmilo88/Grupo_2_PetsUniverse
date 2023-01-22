@@ -1,19 +1,104 @@
 body{
     background-image: url("../images/imagen-fondo.jpg");
-    position: relative;
+    background-size: cover;
+}
+
+.home__main__section--h2{
+    text-align: center;
+}
+
+.home__main__section--h2 h2{
+    
+}
+
+.home__main__section--stars{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 20px 20px 20px 0;
+}
+
+.home__main__section--stars i{
+    color: gold;
+}
+
+.home__main__section--carruselProductos{
+    padding: 30px;
+}
+
+.home__main__section--carruselProductos a{
+    text-decoration: none;
+}
+
+.home__main__section--carruselProductos i{
+    background-color: rgba(255, 255, 255, 0.375);
+    color: white;
+    border-radius: 10px;
+}
+
+.carousel-products-item{
+    margin: 0 10px;
+    text-align: center;
 }
 
 .home__main__section__div{
     display: flex;
     flex-wrap: nowrap;
     color: white;
+    padding: 15px;
 }
 
-.home__main__section--ovni{
-    align-self: center;
-    text-align: center;
+.home__main__section__div img{
+    width: 40%;
+    position: relative;
+    animation-name: ufo;
+    animation-duration: 2.5s;  
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
 }
 
-.home__main__section--h4{
+@keyframes ufo {
+    0% {top: -40px;}
+    100% {top: 40px;}
+  }
+
+.home__main__section h4{
     align-self: center;
+}
+
+.carousel-products-item{
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.07) 0%, rgba(2, 152, 227, 0.7) 33.33%, rgba(1, 58, 87, 0.7) 66.67%, rgba(0, 0, 0, 0.7) 100%);
+    border-radius: 20px;
+}
+
+.carousel-products-item h5, p{
+    color: white;
+}
+
+.home__main__section__div--detalles{
+    display: none;
+}
+
+/* Media query: */
+/* tablet */
+@media (min-width: 361px){
+
+}
+
+/* desktop */
+@media (min-width: 769px){
+    .home__main__section__div--detalles{
+        display: flex;
+        color: white;
+    }
+    
+    .home__main__section__div--pagos{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .home__main__section__div--seguridad{
+        display: flex;
+        flex-wrap: wrap;
+    }
 }

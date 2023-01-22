@@ -4,7 +4,7 @@
     padding: 0;
 }
 
-h1, h2, h3, p, i{
+h1, h2, h3, h4, i, p{
     color: white;
 }
 
@@ -13,5 +13,9 @@ h1, h2, h3, p, i{
 }
 
 .home__main__section__div--h4{
-    color: rgb(255, 255, 255);
+    color: white;
+}
+
+p{
+    text-decoration: none;
 }
