@@ -62,6 +62,8 @@
 .product_Cart_button_Mas_Menos{
     border:solid 1px white;
     background-color: transparent;
+    width: 35px;
+    height: 35px;
 }
 
 
@@ -73,10 +75,15 @@
 
 .product_Cart_numero_producto{
     color: white;
-    width: 19px;
+    width: 29px;
     border: solid 1px;
     text-align: center;
 }
+
+.product_Cart_numero_producto p{
+    margin-top: 7px;
+}
+
 
 /* .cruz i{
     
@@ -156,16 +163,32 @@
 
 
 
+
+
+
+
+
+
+
  
 
 
 
-@media(min-width:820px){
+@media(min-width:602px){
+
+    .product_Cart_numero_producto p{
+        margin-top: 0px;
+    }
+    
 
     .product_Cart_contenedor {
        
     margin:50px 20px;
     
+    }
+
+    .product_Cart_precio h2 {
+       font-size: 30px;
     }
     
     
@@ -178,14 +201,24 @@
 
 
     .product_Cart_botones_precio{
-       height: 40%;
+       height: 35px;
+       margin-left: 50px;
       
     }
       
       
 
     .product_Cart_numero_precio {
-       margin-left: 250px
+       margin-left: 20px
+
+
+
+
+}
+
+
+.product_Cart_numero_precio h3 {
+   margin-right: 12px;
 
 
 
@@ -309,7 +342,9 @@ display: none;
 
 @media(min-width:1024px){
     
-
+.product_Cart_numero_producto p{
+        margin-top: 0px;
+    }
     
     
     .product_Cart_contenedor {
@@ -350,7 +385,7 @@ display: none;
 
     .product_Cart_precio h3 {
         display: block;
-        font-size: 30px;
+        font-size: 50px;
     margin-bottom: 20px;
     color: white;
     }
