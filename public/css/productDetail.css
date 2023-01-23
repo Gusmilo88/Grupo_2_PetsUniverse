@@ -22,7 +22,7 @@
 /*caja de imagenes*/
 .section1__article{
     width: 100%;
-    background-color: var(--colorGrisClaro);
+    background-color: var(--gradientePrincipal);
     display: flex;
     justify-content: center;
 }
@@ -34,6 +34,7 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 3px;
+    display: none;
 }
 
 /*imagen grande*/
@@ -124,9 +125,13 @@
 }
 
 /*titulo del producto*/
-.titulos{
+.titulos1{
     font-family: var(--tipografiaTitulos);
     font-size: 18px;
+}
+
+.titulos2{
+    display: none;
 }
 
 /*dos columnas que tienen descripción del producto*/
@@ -271,12 +276,12 @@
 
 /*cotenedor violeta*/
 .section4__article__div{
-    background-color: var(--colorVioletaAzulado);
+    background-color: var(--gradientePrincipal);
 }
 
 .section4__article__div__p{
     font-family: var(--tipografiaTitulos);
-    font-size: 4px;
+    font-size: 12px;
 }
 
 /*formulario*/
@@ -353,6 +358,7 @@
 
     .section1__article__div--1{
         width: 20%;
+        display: flex;
         align-items: center;
         justify-content: space-between;
     }
@@ -426,10 +432,16 @@
         padding: 10px;
     }
 
-    .titulos{
-        font-size: 10px;
+    .titulos1{
+        display: none;
     }
 
+    .titulos2{
+        display: block;
+        font-family: var(--tipografiaTitulos);
+        font-size: 10px;
+    }
+    
 /*características de la segunda columna*/
     .section3__article--original1{
         width: 100%;
@@ -606,6 +618,16 @@
     .titulo{
         flex-wrap: wrap;
         padding: 6px;
+    }
+
+    .titulos1{
+        display: none;
+    }
+
+    .titulos2{
+        display: block;
+        font-family: var(--tipografiaTitulos);
+        font-size: 10px;
     }
 
 /*se ocultan las estrellas*/
