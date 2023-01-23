@@ -115,7 +115,7 @@
 
 /*estrellas debajo del header*/
 .estrellitas{
-    background: linear-gradient(90deg, rgba(7, 165, 244, 0.4) 0%,  rgba(65,67,69, 0.4) 66.67%, rgba(0, 0, 0, 0.4) 100%);
+    background: var(--gradientePrincipal);
 }
 
 .estrellitas1{
@@ -408,7 +408,7 @@
 /*características de las estrellas*/
     .estrellitas{
         height: 20%;
-        background: var(--colorGrisClaro); 
+        background: var(--gradientePrincipal); 
     }
 
     .estrellitas1{
@@ -422,7 +422,7 @@
 
     .estrellitas div small i{
         font-size: 80%;
-        color: #000;
+        color: #fff;
     }
 
 /* características del título del producto*/
