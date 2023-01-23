@@ -157,7 +157,7 @@
     font-size: 12px;
     font-weight: 600;
     text-transform: initial;
-    color: #000;
+    color: #fff;
     border: none;
     border-radius: 10px;
     box-shadow: 0px 8px 7px  0px rgba(0, 0, 0, 0.6);
@@ -293,9 +293,10 @@
     height: 20px;
     background: var(--gradienteBotones);
     font-family: var(--tipografiaTitulos);
+    font-size: 12px;
     font-weight: 600;
     text-transform: capitalize;
-    color: #000;
+    color: #fff;
     border: none;
     border-radius: 10px;
     box-shadow: 0px 8px 7px  0px rgba(0, 0, 0, 0.6);
@@ -569,7 +570,7 @@
     /*carrusel*/
 
 .carrusel1{
-    width: 300px;
+    width: 390px;
     height: 50px;
     margin: 0px 0px;
     position: absolute;
@@ -578,7 +579,7 @@
 }
 
 .carrusel__section{
-    width: 390px;
+    width: 100%;
 }
 .carroussel-food-item{
    width: 75px;
@@ -623,7 +624,7 @@
 /*se recupera lo oculto desde mobile*/
     .oculto2{
         font-size: 12px;
-        color: #000;
+        color: #fff;
         font-weight: 800;
         text-transform: uppercase; 
         padding-top: 10px;
@@ -639,7 +640,7 @@
     .form__button button{
         width: 200px;
         height: 20px;
-        font-size: 80%;
+        font-size: 12px;
     }
 
 /*caja ovni*/
