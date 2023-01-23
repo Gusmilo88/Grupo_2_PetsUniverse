@@ -288,7 +288,9 @@
 }
 
 .carrusel__section h5{
-    text-align: center
+    text-align: center;
+    color: #fff;
+    font-size: 10px;
 }
 
 .carrusel__section button{
