@@ -13,6 +13,7 @@
     margin-right: 6px;
     background: transparent;
     border: none;
+    padding: 10px;
   
 }
 
@@ -102,9 +103,9 @@
 
 .product_Cart_button_comprar{
     min-width: 200px;
-    border-radius: 16px;
-    border: solid 1px white;
-    background-color: black;
+    border-radius: 7px;
+    border:none;
+    background: linear-gradient(90deg, rgba(47, 7, 67, 0.6) 0%, rgba(98, 2, 248, 0.6) 50%, rgba(0, 161, 255, 0.6) 100%);
     color: white;
     padding: 5px;
 
@@ -160,6 +161,13 @@
 
 
 @media(min-width:820px){
+
+    .product_Cart_contenedor {
+       
+    margin:50px 20px;
+    
+    }
+    
     
 
 
@@ -234,6 +242,58 @@ display: none;
 }
 
 
+/* medidas para agrandar el contenido */
+
+.product_Cart_numero_precio {
+       
+    font-size: 25px;
+   
+}
+
+.product_Cart_button_Mas_Menos {
+    
+    width: 40px;
+}
+
+.product_Cart_numero_producto {
+    
+    width: 40px;
+}
+
+.product_Cart_numero_producto i {
+    font-size: 20px;
+}
+
+
+.product_Cart_numero_producto p {
+  
+    font-size: 30px;
+}
+
+
+.product_Cart_img {
+    width: 70px;
+}
+
+.product_Cart_button_x {
+   
+    width: 30px;
+    
+    font-size: 25px;
+}
+
+.product_Cart_p {
+   
+    font-size: 17px;
+}
+
+.product_Cart_button_Mas_Menos i {
+   
+    font-size: 20px;
+   
+}
+
+
 
 
 
@@ -274,7 +334,7 @@ display: none;
 
 
     .product_Cart_button_comprar{
-        border:solid 1px white;
+        border:none;
     
     
         width: 90%;
@@ -296,7 +356,53 @@ display: none;
     }
     
 
+    .product_Cart_numero_precio {
+       
+        font-size: 35px;
+       
+    }
+    
+    .product_Cart_button_Mas_Menos {
+        
+        width: 40px;
+    }
+
+    .product_Cart_numero_producto {
+        
+        width: 40px;
+    }
+
+    .product_Cart_numero_producto i {
+        font-size: 20px;
+    }
 
 
+    .product_Cart_numero_producto p {
+      
+        font-size: 30px;
+    }
+
+
+    .product_Cart_img {
+        width: 100px;
+    }
+
+    .product_Cart_button_x {
+       
+        width: 30px;
+        
+        font-size: 35px;
+    }
+
+    .product_Cart_p {
+       
+        font-size: 17px;
+    }
+
+    .product_Cart_button_Mas_Menos i {
+       
+        font-size: 20px;
+       
+    }
 
 }
