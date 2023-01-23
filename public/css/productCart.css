@@ -1,0 +1,302 @@
+.product_Cart_main {
+
+
+    background-image: url(/images/imagen-fondo.jpg);
+    background-size: cover;
+    padding: 10px;
+
+}
+
+.product_Cart_button_x{
+    color: white;
+    width: 20px;
+    margin-right: 6px;
+    background: transparent;
+    border: none;
+  
+}
+
+.product_Cart_img{
+    width: 50px;
+}
+
+.product_Cart_p{
+    color:white;
+    margin: 4px;
+    font-size: 10px;
+}
+
+
+.product_Cart_objeto_compra{
+    display: flex;
+    /* background-color: green; */
+    margin: 5px;
+    justify-content: space-between;
+}
+
+.product_Cart_fotoydescripcion{
+    display: flex;
+}
+
+
+.product_Cart_precioyboton{
+    display:flex;
+   flex-direction: column;
+}
+
+
+
+
+
+
+
+.product_Cart_botones_precio{
+    display: flex;
+  
+}
+
+
+
+
+.product_Cart_button_Mas_Menos{
+    border:solid 1px white;
+    background-color: transparent;
+}
+
+
+.product_Cart_button_Mas_Menos i{
+   color:white;
+   font-size: 10px;
+   padding: 3px;
+}
+
+.product_Cart_numero_producto{
+    color: white;
+    width: 19px;
+    border: solid 1px;
+    text-align: center;
+}
+
+/* .cruz i{
+    
+  margin-top: 24px;
+} */
+
+
+.product_Cart_carrito h1{
+    color: white;
+    text-align: center;
+}
+
+
+.product_Cart_carrito {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 161, 255, 0.5) 100%);
+   padding-bottom: 10px;
+}
+
+
+.product_Cart_hr{
+    margin: 10px 0px;
+}
+
+
+.product_Cart_button_comprar{
+    min-width: 200px;
+    border-radius: 16px;
+    border: solid 1px white;
+    background-color: black;
+    color: white;
+    padding: 5px;
+
+}
+
+.product_Cart_precio h2 {
+    text-align: center;
+    color:white;
+    margin-bottom: 10px;
+}
+
+
+.product_Cart_numero_precio {
+    color: white;
+    margin-bottom: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+
+
+
+.product_Cart_precio h3 {
+    display: none;
+}
+
+
+
+
+
+.product_Cart_precio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.product_Cart_contenedor {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+   /*  height: 100vh; */
+
+
+}
+
+
+
+
+ 
+
+
+
+@media(min-width:820px){
+    
+
+
+    .product_Cart_precioyboton{
+     
+     flex-direction: row-reverse;
+    }
+
+
+    .product_Cart_botones_precio{
+       height: 40%;
+      
+    }
+      
+      
+
+    .product_Cart_numero_precio {
+       margin-left: 250px
+
+
+
+
+}
+
+
+
+
+.product_Cart_hr{
+display: none;
+}
+
+
+
+
+.product_Cart_carrito h1{
+    display: none;
+}
+
+
+
+
+.product_Cart_carrito{
+
+    margin-top: 30px;
+}
+
+
+
+
+.product_Cart_precio{
+
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 161, 255, 0.5) 100%);
+    padding: 15px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+.product_Cart_button_comprar{
+    border:none;
+
+
+    width: 50%;
+   
+}
+
+
+
+
+
+
+
+}
+
+      
+      
+     
+
+
+
+@media(min-width:1024px){
+    
+
+    
+    
+    .product_Cart_contenedor {
+        display:flex;
+        justify-content: center;
+        flex-direction: row;
+
+
+    }
+
+    
+    
+    
+    
+    .product_Cart_precio{
+        margin-left: 20px;
+        min-width: 250px;
+    }
+
+
+
+
+
+    .product_Cart_button_comprar{
+        border:solid 1px white;
+    
+    
+        width: 90%;
+       
+    }
+
+
+    
+    
+    .product_Cart_contenedor{
+        margin-top: 20px;
+    }
+
+    .product_Cart_precio h3 {
+        display: block;
+        font-size: 30px;
+    margin-bottom: 20px;
+    color: white;
+    }
+    
+
+
+
+
+}
