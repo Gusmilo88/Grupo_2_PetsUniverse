@@ -3,3 +3,19 @@
     margin: 0;
     padding: 0;
 }
+
+h1, h2, h3, h4, i, p{
+    color: white;
+}
+
+.home__main__section--h2{
+    color: white;
+}
+
+.home__main__section__div--h4{
+    color: white;
+}
+
+a{
+    text-decoration: none;
+}

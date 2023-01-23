@@ -1,0 +1,151 @@
+.home__footer{
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.07) 0%, rgba(2, 152, 227, 0.7) 33.33%, rgba(1, 58, 87, 0.7) 66.67%, rgba(0, 0, 0, 0.7) 100%);
+    padding: 5px;
+}
+
+.home__footer__div--logo img{
+    display: none;
+}
+
+.home__footer__div--imagen{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.home__footer__div--imagen img{
+    width: 5vw;
+}
+
+.home__footer__div{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.home__footer__div--local{
+
+}
+
+.home__footer__div--redes{
+    
+}
+
+.home__footer__div--redes h4{
+    color: white;
+}
+
+.home__footer__div--facebook img{
+    width: 30%;
+    margin: 5px;
+}
+
+.home__footer__div--instagram img{
+    width: 30%;
+    margin: 5px;
+}
+
+.home__footer__div--home{
+    display: none;
+}
+
+.home__footer__div--whatsapp img{
+    position: fixed;
+    width: 15%;
+    bottom: 90px;
+    right: 20px;
+}
+
+.home__footer__div--copyright{
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+
+/* Media query: */
+/* tablet */
+@media (min-width: 361px){
+    .home__footer__div{
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        margin-top: 30px;
+    }
+
+    .home__footer__div--logo{
+        display: flex;
+        width: 20%;
+    }
+
+    .home__footer__div--logo img{
+        display: flex   ;
+        width: 100%;
+    }
+
+    .home__footer__div--local{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home__footer__div--local i{
+        font-size: 30px;
+    }
+
+    .home__footer__div--redes{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home__footer__div--redes img{
+        width: 5vw;
+        margin: 5px;
+    }
+    
+    .home__footer__div--instagram img{
+        width: 5vw;
+        margin: 5px;
+    }
+
+    .home__footer__div--home{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+    }
+
+    .home__footer__div--home p{
+        margin: 0;
+    }
+
+    .home__footer__div--home img{
+        width: 5vw;
+    }
+
+    .home__footer__div--whatsapp img{
+        position: fixed;
+        width: 7%;
+        bottom: 90px;
+        right: 20px;
+    }
+}
+
+/* desktop */
+@media (min-width: 769px){
+    .home__footer__div--redes img{
+        width: 3vw;
+        margin: 5px;
+    }
+    
+    .home__footer__div--instagram img{
+        width: 3vw;
+        margin: 5px;
+    }
+
+    .home__footer__div--home img{
+        width: 2vw;
+    }
+}
