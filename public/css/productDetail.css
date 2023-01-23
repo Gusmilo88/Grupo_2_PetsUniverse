@@ -1,9 +1,19 @@
 
 /*productDetail-gi-ojeda*/
+/*body*/
+.pd{
+    background-image: url(/images/imagen-fondo.jpg);
+    background-size: cover;
+}
+
+.q{
+    color: #fff;
+}
 /*mobile*/
 /*contenedor general*/
 .productDetail__div{
     width: 100%;
+    position: relative;
 }
 
 /*section1: bloque de imagenes de bolsas de comida para perro*/
@@ -570,12 +580,12 @@
     /*carrusel*/
 
 .carrusel1{
-    width: 390px;
+    width: 380px;
     height: 50px;
     margin: 0px 0px;
     position: absolute;
     top:55%;
-    left: 8%;
+    left: 4%;
 }
 
 .carrusel__section{
