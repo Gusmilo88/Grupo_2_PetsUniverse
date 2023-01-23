@@ -47,7 +47,43 @@
 }
 
 /*section2: productos estelares e imagenes de bolsas de comida para perro*/
+/*carrusel*/
 
+.carrusel1{
+    margin: 0px 40px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.carrusel__section{
+    width:100%;
+    height: 90%; 
+}
+
+.carrusel__section a{
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.carrusel__section h5{
+    text-align: center;
+    color: #fff;
+    font-size: 10px;
+}
+
+.carroussel-food-item{
+    width: 75px;
+    background: var(--gradientePrincipal);
+}
+
+.carrusel__section button{
+    color: #fff;
+}
 /*section3: descripcion del producto*/
 /*esta sección no aparece en mobile, pero con el script se clonan algunas partes*/
 .section3__article--original1{
@@ -264,38 +300,7 @@
     border-radius: 10px;
     box-shadow: 0px 8px 7px  0px rgba(0, 0, 0, 0.6);
 }
-/*carrusel*/
 
-.carrusel1{
-    margin: 0px 40px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.carrusel__section{
-    width:100%;
-    height: 90%;
-    
-}
-
-.carrusel__section a{
-    
-    color: #fff;
-    text-decoration: none;
-
-}
-
-.carrusel__section h5{
-    text-align: center;
-    color: #fff;
-    font-size: 10px;
-}
-
-.carrusel__section button{
-    color: #fff;
-}
 /*tablet*/
 @media(min-width:361px){
 
@@ -367,7 +372,17 @@
     }
 
 /*section2*/
-    
+   
+/*carrusel*/
+
+.carrusel__section{
+    width: 150px;
+}
+
+.carroussel-food-item img{
+   width: 100px;
+}
+ 
 /*section3 (segunda columna)*/
     .section3{
         width: 35%;
@@ -524,16 +539,6 @@
     }
 }
 
-/*carrusel*/
-
-.carrusel__section{
-    width: 150px;
-}
-
-.carroussel-food-item img{
-   width: 100px;
-}
-
 /*escritorio*/
 @media(min-width:769px){
 
@@ -561,6 +566,24 @@
 
 /*section2*/
     
+    /*carrusel*/
+
+.carrusel1{
+    width: 300px;
+    height: 50px;
+    margin: 0px 0px;
+    position: absolute;
+    top:55%;
+    left: 8%;
+}
+
+.carrusel__section{
+    width: 390px;
+}
+.carroussel-food-item{
+   width: 75px;
+}
+
 /*section3 o segunda columna*/  
 /*características de la caja*/
     .section3{
@@ -658,22 +681,4 @@
         padding-top: 10px;
     }
     
-    /*carrusel*/
-
-.carrusel1{
-    width: 300px;
-    height: 50px;
-    margin: 0px 0px;
-    position: absolute;
-    top:55%;
-    left: 8%;
-}
-
-.carrusel__section{
-    width: 390px;
-}
-.carroussel-food-item{
-   width: 75px;
-}
-
 }
