@@ -1,0 +1,150 @@
+.register__body{
+      background-image: url("/images/imagen-fondo.jpg");
+      background-position-x:center;
+      background-position-y:center;
+      background-size: cover;
+      background-attachment: fixed;
+}
+
+.register__main{
+    text-align: center;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.register__main__div{
+    background: linear-gradient(90deg, rgba(16, 16, 118, 0.5) 0%, rgba(114, 198, 239, 0.5) 50%, rgba(47, 7, 67, 0.5) 100%);
+    border-radius: 7px;
+    color: white;
+    width: 500px;
+}
+
+.register__main__div h3{
+    padding: 20px;
+}
+
+
+
+.register__main__div--info input{
+    background: linear-gradient(90deg, rgba(47, 7, 67, 0.6) 0%, rgba(98, 2, 248, 0.6) 50%, rgba(0, 161, 255, 0.6) 100%);
+    border-radius: 7px;
+    margin: 10px;
+    box-shadow: 0px 7.27273px 2.90909px rgba(0, 0, 0, 0.4);
+    border: none;
+    padding: 5px;
+}
+
+.register__main__div--info ::placeholder{
+    color: white;
+}
+
+.register__main__div--info--login a{
+      color: gold;
+}
+
+
+.register__main__div--button  button{
+    background: linear-gradient(90deg, rgba(47, 7, 67, 0.6) 0%, rgba(98, 2, 248, 0.6) 50%, rgba(0, 161, 255, 0.6) 100%);
+    border-radius: 7px;
+    margin: 10px;
+    box-shadow: 0px 7.27273px 2.90909px rgba(0, 0, 0, 0.4);
+    border: none;
+    padding: 5px;
+    color: white;
+    
+}
+
+.register__main__div--button button:hover{
+    -webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+@-webkit-keyframes shake-bottom {
+0%,
+100% {
+-webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+-webkit-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
+}
+10% {
+-webkit-transform: rotate(2deg);
+      transform: rotate(2deg);
+}
+20%,
+40%,
+60% {
+-webkit-transform: rotate(-4deg);
+      transform: rotate(-4deg);
+}
+30%,
+50%,
+70% {
+-webkit-transform: rotate(4deg);
+      transform: rotate(4deg);
+}
+80% {
+-webkit-transform: rotate(-2deg);
+      transform: rotate(-2deg);
+}
+90% {
+-webkit-transform: rotate(2deg);
+      transform: rotate(2deg);
+}
+}
+@keyframes shake-bottom {
+0%,
+100% {
+-webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+-webkit-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
+}
+10% {
+-webkit-transform: rotate(2deg);
+      transform: rotate(2deg);
+}
+20%,
+40%,
+60% {
+-webkit-transform: rotate(-4deg);
+      transform: rotate(-4deg);
+}
+30%,
+50%,
+70% {
+-webkit-transform: rotate(4deg);
+      transform: rotate(4deg);
+}
+80% {
+-webkit-transform: rotate(-2deg);
+      transform: rotate(-2deg);
+}
+90% {
+-webkit-transform: rotate(2deg);
+      transform: rotate(2deg);
+}
+}
+
+
+@media (min-width:361px) {
+      .register__main__div--info input {
+            width: 40%;
+      }
+}
+
+@media (min-width:769px) {
+      .register__main__div--info input {
+            width: 50%;
+      }
+      .register__main__div{
+            width: 500px;
+
+      }
+      .register__main{
+            margin: 20px;
+      }
+}
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/0832cf1168.js" crossorigin="anonymous"></script>
+    <title>formulario de registro</title>
+</head>
+<body class="register__body">
+    <header class="home__header">
+        <nav class="home_header_nav">
+            <div class="home_headernav_div">
+                <div class="home_header_div--imagen">
+                    <a href="/"><img src="images/logo.png" alt="Logo de Pets Universe" width="20%"></a>
+                </div>
+                <div class="home_headernav_div--lupa">
+                  <input type="text" placeholder="Buscar productos, marcas">
+                <button type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                </div>
+                <div class="home_headernav_div--user">
+                    <a href="./login"><i class="fa-solid fa-user"></i></a>
+                </div>
+                <div class="home_headernav_div--carrito">
+                    <a href="./productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
+                <div class="home_headernav_div--burger">
+                    <button>
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="home_headernav_div--categorias">
+                <div class="home_headernav_div--categorias--img">
+                    <a href=""><img src="images/perrito.png" alt=""><p class="perro">Perros</p></a>
+                </div>
+                <div class="home_headernav_div--categorias--img">
+                    <a href=""><img src="images/gatito.png" alt=""><p class="gato">Gatos</p></a>
+                </div>
+                <div class="home_headernav_div--categorias--img">
+                    <a href=""><img src="images/et.png" alt=""><p class="nosotros">Nosotros</p></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="register__main">
+        <div class="register__main__div">
+            <h3>Creá tu cuenta</h3>
+            <form action="/">
+                <div class="register__main__div--info">
+                    <div>
+                        <i class="fa-solid fa-user"></i><input type="text" placeholder="Ingresá tu nombre" minlength="2">
+                    </div>
+                    <div>
+                    <i class="fa-solid fa-user"></i><input type="text" placeholder="Ingresá tu apellido" minlength="2">
+                    </div>
+                    <div>
+                    <i class="fa-regular fa-envelope"></i><input type="email" placeholder="Ingresá tu correo electrónico" minlength="2">
+                    </div>
+                    <div>
+                    <i class="fa-regular fa-envelope"></i><input type="email" placeholder="Confirmá correo electrónico" minlength="2">
+                    </div>
+                    <div>
+                    <i class="fa-solid fa-lock"></i><input type="password" placeholder="Ingresá contraseña" minlength="2">
+                    </div>
+                    <div>
+                    <i class="fa-solid fa-lock"></i><input type="password" placeholder="Confirmar contraseña" minlength="2">
+                    </div>
+
+                </div>
+                <div>
+                    <input type="checkbox" name="aceptoTerminosYCondiciones" id="aceptoTerminosYCondiciones">
+                <label for="aceptoTerminosYCondiciones">Acepto terminos y condiciones</label>
+                </div>
+                <div class="register__main__div--info--login">
+                    <small>
+                        ¿estás registrado? <a href="/login">Ingresá</a>
+                    </small>
+                </div>
+                <div class="register__main__div--button">
+                    <a href="/"><button>Registrarse</button></a>
+                </div>
+
+            </form>
+        </div>
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
