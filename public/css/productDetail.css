@@ -1,0 +1,710 @@
+
+/*productDetail-gi-ojeda*/
+/*body*/
+.bodyProductDetail{
+    background-image: url(/images/imagen-fondo.jpg);
+    background-size: cover;
+}
+
+/*mobile*/
+/*contenedor general*/
+.productDetail__div{
+    width: 100%;
+    position: relative;
+}
+
+/*section1: bloque de imagenes de bolsas de comida para perro*/
+.section1{
+    width: 100%;
+    padding: 1%; 
+}
+
+/*caja de imagenes*/
+.section1__article{
+    width: 100%;
+    background-color: var(--gradientePrincipal);
+    display: flex;
+    justify-content: center;
+}
+
+/*columna con tres imagenes*/
+.section1__article__div--1{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+    display: none;
+}
+
+/*imagen grande*/
+.section1__article__div--1 img{
+    width: 90%;
+}
+
+.section1__article__div--2-1{
+    width: 100%;
+}
+
+.section1__article__div--2-1 img{
+    width: 100%;
+}
+
+.section1__article__div--2-2{
+    display: none;
+}
+
+/*carrusel*/
+
+.carrusel1{
+
+    margin: 0px 40px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.carrusel__section{
+    width:100%;
+    height: 90%; 
+}
+
+.carrusel__section a{
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.carrusel__section h5{
+    text-align: center;
+    color: #fff;
+    font-size: 10px;
+}
+
+.carroussel-food-item{
+    width: 75px;
+    background: var(--gradientePrincipal);
+}
+
+.carrusel__section button{
+    color: #fff;
+}
+/*section3: descripcion del producto*/
+/*esta sección no aparece en mobile, pero con el script se clonan algunas partes*/
+.section3__article--original1{
+   display: none;
+}
+
+/*caracteristicas generales de los hijos*/
+.section3__article__div, .section0__article--rep, .section1__article__div--original1{
+    width: 100%;
+    font-family: var(--tipografiaTitulos);
+    font-size: 18px;
+    color: #fff; 
+}
+
+/*esta sección no aparece en su lugar hasta el escritorio, pero se clonan sus elementos en mobile y tablet*/
+.section3__article__div--original2{
+    display: none;
+}  
+
+/*estrellas debajo del header*/
+.estrellitas{
+    background: var(--gradientePrincipal);
+}
+
+.estrellitas1{
+    text-align: right;
+}
+
+.estrellitas div small i{
+    font-weight: 200;
+}
+
+/*titulo del producto*/
+.titulos1{
+    font-family: var(--tipografiaTitulos);
+    font-size: 18px;
+}
+
+.titulos2{
+    display: none;
+}
+
+/*dos columnas que tienen descripción del producto*/
+.aLaPar{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*descripción*/
+.par1{
+    width: 50%;
+}
+
+/*botones*/
+.par2{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.form__button{   
+    width: 100%;  
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+}
+
+.form__button button{
+    width: 120px;
+    height: 25px;
+    background: var(--gradienteBotones);
+    font-family: var(--tipografiaTitulos);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: initial;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 8px 7px  0px rgba(0, 0, 0, 0.6);
+}
+
+/*línea oculta hasta escritorio*/
+.oculto1{
+    font-size: 11px;
+    display: none;
+}
+
+/*descripcion valor*/
+.visto1{
+    font-size: 28px;
+}
+
+/*descripcion cuotas*/
+.visto2{
+    font-size: 16px;
+    color: var(--colorVerdeBrillante)
+}
+
+/*línea oculta hasta escritorio*/
+.oculto2{
+    font-size: 16px;
+    display: none;
+}
+
+/*envios*/
+.ufo{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+/*ícono ovni*/
+.flyingSaucer{  
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+/*texto del ovni*/
+.ufo p{
+    padding-left: 20%;
+}
+
+.visto3{
+    align-self: flex-end;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.compras{
+    font-size: 12px;
+}
+
+/*caja de metodos de pago*/
+.metodo{
+    width: 100%;
+    font-family: var(--tipografiaTitulos);
+    font-size: 16px;
+    color: #fff; 
+}
+
+.metodo__h1{
+    padding-left: 30%;
+}
+
+.boxes{
+    height: 30px;
+    position: relative;
+}
+/*íconos de métodos de pago*/
+.boxes img{
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0px;
+}
+
+.boxes p{
+    padding-left: 10%;
+}
+
+/*section4: contenedor y formulario oculto hasta escritorio*/
+.section4{
+    width: 100%;
+    height: 25%;
+    padding: 4% 1% 0% 4%;
+    display: none;
+}
+
+.section4__article{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+/*cotenedor violeta*/
+.section4__article__div{
+    background-color: var(--gradientePrincipal);
+}
+
+.section4__article__div__p{
+    font-family: var(--tipografiaTitulos);
+    font-size: 12px;
+}
+
+/*formulario*/
+.form{
+    display: flex;
+    gap: 10px;
+}
+
+.form-textarea{
+    width: 200px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 8px 7px  0px rgba(0, 0, 0, 0.6);
+}
+
+.form__box button{
+    width: 100px;
+    height: 20px;
+    background: var(--gradienteBotones);
+    font-family: var(--tipografiaTitulos);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 8px 7px  0px rgba(0, 0, 0, 0.6);
+}
+
+/*tablet*/
+@media(min-width:361px){
+
+/*clon de estrellas y titulo de section 3*/
+    .section0{
+            width: 100%;
+    }
+/*contenedor general*/
+    .productDetail__div{
+        display: flex;
+    }
+    
+    .white{
+        width:100%;
+        display: flex;
+        }
+
+/*primera columna*/
+    .left{
+        width: 64%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+/*se oculta el clon usado en mobile*/
+
+#otro{
+        display: none;
+    }
+/* section1*/
+
+/*caja de imagenes de bolsas de alimento para perro*/
+    .section1{
+        height: 60%;
+        padding: 0% 1%;
+    }
+
+    .section1__article{
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.0);
+    }
+
+    .section1__article__div--1{
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+/*cambio de imagen en tablet*/
+    .section1__article__div--1 img{
+        width: 60%;
+    }
+
+/*se oculta imagen usada en mobile*/
+    .section1__article__div--2-1{
+        display: none;
+    }
+
+/*se muestra nueva imagen*/
+    .section1__article__div--2-2{
+        display: flex;
+        justify-self: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .section1__article__div--2-2 img{
+        width: 100%;
+    }
+
+/*carrusel*/
+
+.carrusel__section{
+    width: 150px;
+}
+
+.carroussel-food-item img{
+   width: 100px;
+}
+ 
+/*section3 (segunda columna)*/
+    .section3{
+        width: 35%;
+        background-color: rgba(7, 165, 244, 0.2);
+    }
+
+/*características del clon de estrellas y titulo*/
+    #original2{
+        padding: 0;
+    }
+
+/*características de las estrellas*/
+    .estrellitas{
+        height: 20%;
+        background: var(--gradientePrincipal); 
+    }
+
+    .estrellitas1{
+        height: 50%; 
+    }
+
+    .estrellitas div small {
+        height: 80%;
+        padding-right: 2%;
+    }
+
+    .estrellitas div small i{
+        font-size: 80%;
+        color: #fff;
+    }
+
+/* características del título del producto*/
+    .titulo{
+        display: flex;
+        padding: 10px;
+    }
+
+    .titulos1{
+        display: none;
+    }
+
+    .titulos2{
+        display: block;
+        font-family: var(--tipografiaTitulos);
+        font-size: 10px;
+    }
+    
+/*características de la segunda columna*/
+    .section3__article--original1{
+        width: 100%;
+        display: block;
+    }
+
+    .section3__article__div { 
+        width: 100%;
+        position: relative;
+        padding: 4px;
+    }
+
+/*las dos columnas de mobile cambian a una*/
+    .aLaPar{
+        display: block;
+        padding-left: 0%;
+    }
+
+/*parte superior descripción*/
+    .par1{
+        width: 100%;
+    }
+
+/*valor*/
+    .visto1{
+        font-size: 16px;
+    }
+
+/*cuotas*/
+    .visto2{
+        font-size: 8px; 
+    }
+
+/*caja ovni alejado de su ubicación original*/
+    .ufo{
+        position: absolute;
+        top: 42%;
+    }
+
+/*ícono ovni*/
+    .flyingSaucer{  
+        top: -10px;
+        left: -10px;
+    }
+
+/*descripción ovni*/
+    .ufo p{
+        padding-left: 12%;
+    }
+
+/*envíos*/
+    .visto3{
+        font-size: 7px;
+    }
+
+/*compras*/
+    .compras{
+        font-size: 7px;
+    }
+   
+/*parte inferior botones*/
+    .par2{
+        width: 100%;
+        height: 100%;   
+    }
+
+    .form__button{ 
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+        padding: 5px;
+    }
+
+    .form__button button{
+        width: 80px;
+        height: 100%;
+        font-size: 40%;
+    }
+
+/* caja de métodos de pago*/
+    .metodo {
+        font-size: 12px;
+        margin-top: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+    }
+
+/*título*/
+    .metodo__h1{
+        padding-bottom: 16px;
+        padding-left: 0%;
+        font-size: 16px;
+    }
+
+/*formas de pago*/
+    .pay{
+        padding:0%;
+    }
+
+    .boxes p{
+        font-size: 7px;
+        padding-left: 20px;
+    }
+
+/*íconos de formas de pago*/
+    .boxes img{
+        top: -10px;
+        left: -10px;
+    }
+}
+
+/*escritorio*/
+@media(min-width:769px){
+
+/*se oculta el clon de section3*/
+    .section0{
+        display: none;
+    }
+
+/*contenedor*/
+    .productDetail__div{
+        width:90%;
+        margin: 10px 40px;
+    }
+
+/*contenedor blanco*/
+    .white{
+        background: var(--gradientePrincipal);
+        padding: 15px;
+        }
+
+/*caja con imagenes de bolsas de alimento para perro*/     
+    .section1{
+        height: 50%;
+    }
+  
+    /*carrusel*/
+
+.carrusel1{
+    width: 380px;
+    height: 50px;
+    margin: 0px 0px;
+    position: absolute;
+    top:55%;
+    left: 4%;
+}
+
+.carrusel__section{
+    width: 100%;
+}
+.carroussel-food-item{
+   width: 75px;
+}
+
+/*section3 o segunda columna*/  
+/*características de la caja*/
+    .section3{
+        margin: 0px 5px;
+        padding: 2px;
+        background-color: var(--gradientePrincipal);
+        border: 1px solid blue;
+    }
+
+/*se recupera el título de la descripción para este sector*/
+    .section3__article__div--original2{
+        width: 100%;
+        display: block;
+    }
+
+    .titulo{
+        flex-wrap: wrap;
+        padding: 6px;
+    }
+
+    .titulos1{
+        display: none;
+    }
+
+    .titulos2{
+        display: block;
+        font-family: var(--tipografiaTitulos);
+        font-size: 10px;
+    }
+
+/*se ocultan las estrellas*/
+    .estrellitas{
+        display: none; 
+    }    
+
+/*se recupera lo oculto desde mobile*/
+    .oculto1{
+        font-size: 11px;
+        margin-bottom:10px;
+        display: block;
+    }
+/*valor*/
+    .visto1{
+        margin-top: 10px;
+    }
+
+/*se recupera lo oculto desde mobile*/
+    .oculto2{
+        font-size: 12px;
+        color: #fff;
+        font-weight: 800;
+        text-transform: uppercase; 
+        padding-top: 10px;
+        display: block;
+    }    
+
+/*botones*/
+    .form__button{ 
+        justify-content: center;
+        margin: 5px;
+    }
+
+    .form__button button{
+        width: 200px;
+        height: 20px;
+        font-size: 12px;
+    }
+
+/*caja ovni*/
+    .ufo{
+        top: 50%;
+    }
+
+/*envíos*/
+    .visto3{
+        font-size: 12px;
+    }
+
+/*compras*/
+    .compras{
+        font-size: 12px;
+    }
+   
+/*caja de métodos de pago*/    
+    .metodo {
+        font-size: 14px;
+    }
+
+/*formas de pago*/
+    .boxes p{
+        font-size: 12px;
+    }
+
+ /*section4 contenedor violeta y formulario*/
+    .section4{
+        flex-wrap: wrap;
+        display: flex;
+    }   
+
+    .section4__article{
+       padding-top: 75px;
+    }  
+
+    .form{
+        padding-top: 10px;
+    }
+    
+}
