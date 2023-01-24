@@ -7,35 +7,80 @@
     <title>Document</title>
     <script src="https://kit.fontawesome.com/19a5df4eb3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
 </head>
 <body>
-    <header>
-       
+    <header class="home__header">
+        <nav class="home_header_nav">
+            <div class="home_headernav_div">
+                <div class="home_header_div--imagen">
+                    <a href="/"><img src="images/logo.png" alt="Logo de Pets Universe" width="20%"></a>
+                </div>
+                <div class="home_headernav_div--lupa">
+                  <input type="text" placeholder="Buscar productos, marcas">
+                <button type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                </div>
+                <div class="home_headernav_div--user">
+                    <a href="./login"><i class="fa-solid fa-user"></i></a>
+                </div>
+                <div class="home_headernav_div--carrito">
+                    <a href="./productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
+                <div class="home_headernav_div--burger">
+                    <button>
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="home_headernav_div--categorias">
+                <div class="home_headernav_div--categorias--img">
+                    <a href=""><img src="images/perrito.png" alt=""><p class="perro">Perros</p></a>
+                </div>
+                <div class="home_headernav_div--categorias--img">
+                    <a href=""><img src="images/gatito.png" alt=""><p class="gato">Gatos</p></a>
+                </div>
+                <div class="home_headernav_div--categorias--img">
+                    <a href=""><img src="images/et.png" alt=""><p class="nosotros">Nosotros</p></a>
+                </div>
+            </div>
+        </nav>
     </header>
-
 
 
     <main class="main__login">
 
+        <div class="main__login__div">
         <form action="">
-            <div>
-                <input type="text" placeholder="Nombre de usuario" name="nombre" id="nombre" minlength="2">
+
+            <div class="main__login__div--iniciarSesion">
+                <h2>Iniciar sesión</h2>
             </div>
 
-            <div>
-            <input type="password" placeholder="Contraseña" name="contraseña" id="contraseña" minlength="1">
+            <div class="main__login__div--nombreUsuario">
+<!--                 <i class="fa-regular fa-envelope"></i> -->
+                <input type="email"  placeholder="Correo Electronico" name="email" id="email" minlength="1">
             </div>
 
-            <div>
+            <div class="main__login__div--contraseña">
+<!--                 <i class="fa-solid fa-unlock"></i> --><input type="password" placeholder="Contraseña" name="contraseña" id="contraseña" minlength="1"><!-- <i class="fa-solid fa-eye"></i> -->
+            </div>
+
+            <div class="main__login__div--botonEnviar">
                 <a href="/"><input type="button" value="Enviar"></a>
             </div>
 
-            <div>
+            <div class="main__login--olvidarContraseña">
+                <small> ¿Olvidaste tu contraseña? <a href="/register"> Recupera tu contraseña </a></small>
+            </div>
+
+            <div class="main__login--estasRegistrado">
                 <small> ¿No estas registrado? <a href="/register"> Registrate </a></small>
             </div>
-        </form>
+        </form>            
+        </div>
+
 
     </main>
 
@@ -46,3 +91,5 @@
     </footer>
 </body>
 </html>
+
+
