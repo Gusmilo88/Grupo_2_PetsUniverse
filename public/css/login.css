@@ -1,0 +1,193 @@
+body{
+         background-image: url(/images/imagen-fondo.jpg);
+         background-size: cover;
+}
+
+.main__login{
+        display: flex;
+        justify-content: center;
+}
+
+.main__login__div{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background: linear-gradient(90deg, rgba(16, 16, 118, 0.5) 0%, rgba(114, 198, 239, 0.5) 50%, rgba(47, 7, 67, 0.5) 100%);
+        border-radius: 7px;
+        color: white;
+        margin: 40px;
+        padding: 20px;
+        }
+
+.main__login__div--iniciarSesion{
+        display: flex;
+        justify-content: center;
+}
+
+.main__login__div input{
+        background: linear-gradient(90deg, rgba(47, 7, 67, 0.6) 0%, rgba(98, 2, 248, 0.6) 50%, rgba(0, 161, 255, 0.6) 100%);
+        border-radius: 7px;
+        margin: 10px;
+        box-shadow: 0px 7.27273px 2.90909px rgba(0, 0, 0, 0.4);
+        border: none;
+        padding: 5px;
+        color: white;
+}
+
+.main__login__div ::placeholder{
+        color: white;
+}
+
+.main__login__div--botonEnviar {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+}
+
+.main__login__div--botonEnviar a:hover{
+	-webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+.main__login--olvidarContraseña {
+        padding: 5px;
+}
+
+.main__login--olvidarContraseña a{
+        color: gold;
+}
+
+.main__login--estasRegistrado{
+        color: white;
+    }
+
+.main__login--estasRegistrado a{
+        color: gold;
+}
+
+ @-webkit-keyframes shake-bottom {
+    0%,
+    100% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+    10% {
+      -webkit-transform: rotate(2deg);
+              transform: rotate(2deg);
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: rotate(-4deg);
+              transform: rotate(-4deg);
+    }
+    30%,
+    50%,
+    70% {
+      -webkit-transform: rotate(4deg);
+              transform: rotate(4deg);
+    }
+    80% {
+      -webkit-transform: rotate(-2deg);
+              transform: rotate(-2deg);
+    }
+    90% {
+      -webkit-transform: rotate(2deg);
+              transform: rotate(2deg);
+    }
+  }
+  @keyframes shake-bottom {
+    0%,
+    100% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+    10% {
+      -webkit-transform: rotate(2deg);
+              transform: rotate(2deg);
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: rotate(-4deg);
+              transform: rotate(-4deg);
+    }
+    30%,
+    50%,
+    70% {
+      -webkit-transform: rotate(4deg);
+              transform: rotate(4deg);
+    }
+    80% {
+      -webkit-transform: rotate(-2deg);
+              transform: rotate(-2deg);
+    }
+    90% {
+      -webkit-transform: rotate(2deg);
+              transform: rotate(2deg);
+    }
+  }
+  
+
+
+  @media (min-width: 361px){
+        .main__login__div{
+                width: 400px;
+        }
+        .main__login__div--nombreUsuario{
+                display: flex;
+        }
+        .main__login__div--nombreUsuario input{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+        }
+        .main__login__div--contraseña{
+                display: flex;
+        }
+        .main__login__div--contraseña input{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+        }
+        .main__login__div--botonEnviar input{
+                width: 100px;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+            }
+
+  }
+
+
+  @media (min-width: 769px){
+        .main__login__div{
+                width: 500px;
+        }
+        .main__login__div--nombreUsuario{
+                display: flex;
+        }
+        .main__login__div--nombreUsuario input{
+                width: 325px;
+                display: flex;
+                justify-content: center;
+        }
+        .main__login__div--contraseña{
+                display: flex;
+        }
+        .main__login__div--contraseña input{
+                width: 325px;
+                display: flex;
+                justify-content: center;
+        }
+        .main__login__div--botonEnviar input{
+                width: 150px;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+            }
+  }
