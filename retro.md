@@ -1,3 +1,5 @@
+### **Sprint 2:**
+
 1. **Comenzar a hacer:** Comenzar a utilizar Discord reemplazando a Zoom.
 2. **Hacer más:** Darle más importancia a Trello.
 3. **Continuar haciendo:** Las reuniones reiteradas que tenemos, el compañerismo.
