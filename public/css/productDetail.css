@@ -17,47 +17,74 @@
 .section1{
     width: 100%;
     padding: 1%; 
-}
-
-/*caja de imagenes*/
-.section1__article{
-    width: 100%;
     background-color: var(--gradientePrincipal);
-    display: flex;
-    justify-content: center;
-}
-
-/*columna con tres imagenes*/
-.section1__article__div--1{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 3px;
-    display: none;
 }
 
 /*imagen grande*/
-.section1__article__div--1 img{
-    width: 90%;
-}
-
-.section1__article__div--2-1{
+.imagen1{
     width: 100%;
 }
 
-.section1__article__div--2-1 img{
+.imagen2{
     width: 100%;
-}
-
-.section1__article__div--2-2{
     display: none;
+}
+
+/*section2: contenedor y formulario oculto hasta escritorio*/
+.section2{
+    width: 100%;
+    height: 30%;
+    padding: 10% 1% 0% 4%;
+    display: none;
+}
+
+.section2__article{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+/*cotenedor violeta*/
+.section2__article__div{
+    background-color: var(--gradientePrincipal);
+}
+
+.section2__article__div__p{
+    font-family: var(--tipografiaTitulos);
+    font-size: 12px;
+}
+
+/*formulario*/
+.form{
+    height: 20px;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.form-textarea{
+    width: 200px;
+    height: 20px;
+    padding-top: 1px;
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 8px 7px  0px rgba(0, 0, 0, 0.6);
+}
+
+.form__box{
+    padding: 0px;
+}
+
+.form__box button{
+    width: 100px;
+    height: 20px;
 }
 
 /*carrusel*/
 
 .carrusel1{
-
     margin: 0px 40px;
     display: flex;
     flex-direction: column;
@@ -67,7 +94,6 @@
 
 .carrusel__section{
     width:100%;
-    height: 90%; 
 }
 
 .carrusel__section a{
@@ -82,18 +108,31 @@
     text-align: center;
     color: #fff;
     font-size: 10px;
+    text-transform: capitalize; 
 }
 
 .carroussel-food-item{
-    width: 75px;
+    width: 200px;
+    height:300px;
     background: var(--gradientePrincipal);
 }
 
+.carroussel-food-item img{
+    height: 90%; 
+}
+
+.carroussel-food-item h5{
+    height: 10%; 
+}
 .carrusel__section button{
     color: #fff;
 }
 /*section3: descripcion del producto*/
 /*esta sección no aparece en mobile, pero con el script se clonan algunas partes*/
+#otro{
+    padding-left: 5px;
+}
+
 .section3__article--original1{
    display: none;
 }
@@ -143,6 +182,7 @@
 /*descripción*/
 .par1{
     width: 50%;
+    
 }
 
 /*botones*/
@@ -164,6 +204,9 @@
 .form__button button{
     width: 120px;
     height: 25px;
+}
+
+.form__button button, .form__box button{
     background: var(--gradienteBotones);
     font-family: var(--tipografiaTitulos);
     font-size: 12px;
@@ -180,15 +223,27 @@
     font-size: 11px;
     display: none;
 }
-
+/*Tarjeta valor*/
+.valor{
+    height: 40%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 /*descripcion valor*/
 .visto1{
+    margin-bottom: 0rem;
     font-size: 28px;
+}
+
+.visto1:hover{
+    font-size: 34px;
+    color: var(--colorVerdeBrillante)
 }
 
 /*descripcion cuotas*/
 .visto2{
-    font-size: 16px;
+    font-size: 10px;
     color: var(--colorVerdeBrillante)
 }
 
@@ -203,15 +258,16 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    padding-top: 10px;
 }
 
 /*ícono ovni*/
 .flyingSaucer{  
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     object-fit: contain;
     position: absolute;
-    top: 0px;
+    top: 10px;
     left: 0px;
 }
 
@@ -234,12 +290,13 @@
 .metodo{
     width: 100%;
     font-family: var(--tipografiaTitulos);
-    font-size: 16px;
+    font-size: 12px;
     color: #fff; 
 }
 
 .metodo__h1{
-    padding-left: 30%;
+    padding-left: 10%;
+    font-size: 18px;
 }
 
 .boxes{
@@ -248,8 +305,8 @@
 }
 /*íconos de métodos de pago*/
 .boxes img{
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     object-fit: contain;
     position: absolute;
     top: 0;
@@ -258,60 +315,6 @@
 
 .boxes p{
     padding-left: 10%;
-}
-
-/*section4: contenedor y formulario oculto hasta escritorio*/
-.section4{
-    width: 100%;
-    height: 25%;
-    padding: 4% 1% 0% 4%;
-    display: none;
-}
-
-.section4__article{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-}
-
-/*cotenedor violeta*/
-.section4__article__div{
-    background-color: var(--gradientePrincipal);
-}
-
-.section4__article__div__p{
-    font-family: var(--tipografiaTitulos);
-    font-size: 12px;
-}
-
-/*formulario*/
-.form{
-    display: flex;
-    gap: 10px;
-}
-
-.form-textarea{
-    width: 200px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0px 8px 7px  0px rgba(0, 0, 0, 0.6);
-}
-
-.form__box button{
-    width: 100px;
-    height: 20px;
-    background: var(--gradienteBotones);
-    font-family: var(--tipografiaTitulos);
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: capitalize;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0px 8px 7px  0px rgba(0, 0, 0, 0.6);
 }
 
 /*tablet*/
@@ -329,13 +332,16 @@
     .white{
         width:100%;
         display: flex;
+        flex-wrap: wrap;
         }
 
 /*primera columna*/
     .left{
-        width: 64%;
+        width: 60%;
+        height:50%;
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
     }
 
 /*se oculta el clon usado en mobile*/
@@ -347,57 +353,49 @@
 
 /*caja de imagenes de bolsas de alimento para perro*/
     .section1{
-        height: 60%;
-        padding: 0% 1%;
-    }
-
-    .section1__article{
-        height: 100%;
+        width:100%;
+        padding: 0% 1%; 
         background-color: rgba(0, 0, 0, 0.0);
     }
 
-    .section1__article__div--1{
-        width: 20%;
+    .section1__article {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-/*cambio de imagen en tablet*/
-    .section1__article__div--1 img{
-        width: 60%;
+        flex-wrap: wrap;
+        justify-content: center;
+        }
+   
+    .section1__article img{
+        width: 80%;
     }
 
 /*se oculta imagen usada en mobile*/
-    .section1__article__div--2-1{
+    .imagen1{
         display: none;
     }
 
 /*se muestra nueva imagen*/
-    .section1__article__div--2-2{
-        display: flex;
-        justify-self: center;
-        width: 100%;
-        height: 100%;
-    }
-
-    .section1__article__div--2-2 img{
-        width: 100%;
+    .imagen2{
+        display: block;
+        ;
     }
 
 /*carrusel*/
-
-.carrusel__section{
-    width: 150px;
+.carrusel1{
+    width: 80%;
+    margin: 10%;
 }
 
+.carroussel-food-item {
+    height: 100%;
+}
 .carroussel-food-item img{
-   width: 100px;
+   width: 100%;
 }
  
 /*section3 (segunda columna)*/
     .section3{
         width: 35%;
+        height: 50%;
         background-color: rgba(7, 165, 244, 0.2);
     }
 
@@ -439,7 +437,7 @@
     .titulos2{
         display: block;
         font-family: var(--tipografiaTitulos);
-        font-size: 10px;
+        font-size:14px;
     }
     
 /*características de la segunda columna*/
@@ -467,7 +465,12 @@
 
 /*valor*/
     .visto1{
-        font-size: 16px;
+        font-size: 20px;
+    }
+
+    .visto1:hover{
+        font-size: 30px;
+        color: var(--colorVerdeBrillante)
     }
 
 /*cuotas*/
@@ -478,12 +481,12 @@
 /*caja ovni alejado de su ubicación original*/
     .ufo{
         position: absolute;
-        top: 42%;
+        top: 40%;
     }
 
 /*ícono ovni*/
     .flyingSaucer{  
-        top: -10px;
+        top: 5px;
         left: -10px;
     }
 
@@ -493,13 +496,9 @@
     }
 
 /*envíos*/
-    .visto3{
+    .visto3, .compras{
         font-size: 7px;
-    }
-
-/*compras*/
-    .compras{
-        font-size: 7px;
+        line-height: 3px;
     }
    
 /*parte inferior botones*/
@@ -518,15 +517,15 @@
     }
 
     .form__button button{
-        width: 80px;
-        height: 100%;
+        width: 100px;
+        height: 20px;
         font-size: 40%;
     }
 
 /* caja de métodos de pago*/
     .metodo {
         font-size: 12px;
-        margin-top: 60%;
+        margin-top: 40%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -552,7 +551,7 @@
 
 /*íconos de formas de pago*/
     .boxes img{
-        top: -10px;
+        top: -5px;
         left: -10px;
     }
 }
@@ -568,7 +567,7 @@
 /*contenedor*/
     .productDetail__div{
         width:90%;
-        margin: 10px 40px;
+        margin: 3% 5%;
     }
 
 /*contenedor blanco*/
@@ -577,36 +576,44 @@
         padding: 15px;
         }
 
+    .left{
+        height: 70%;
+    }
 /*caja con imagenes de bolsas de alimento para perro*/     
     .section1{
-        height: 50%;
+        height: 70%;
     }
-  
+    .section1__article img{
+        width: 60%;
+        }
+
+    /*section2 contenedor violeta y formulario*/
+   
+    .section2{
+        display:block;
+    } 
+
     /*carrusel*/
 
 .carrusel1{
-    width: 380px;
-    height: 50px;
+    width: 100%;
     margin: 0px 0px;
-    position: absolute;
-    top:55%;
-    left: 4%;
 }
 
 .carrusel__section{
     width: 100%;
 }
-.carroussel-food-item{
-   width: 75px;
-}
 
+.carroussel-food-item {
+    height: 90%;
+}
 /*section3 o segunda columna*/  
 /*características de la caja*/
     .section3{
+        height: 70%;
         margin: 0px 5px;
         padding: 2px;
         background-color: var(--gradientePrincipal);
-        border: 1px solid blue;
     }
 
 /*se recupera el título de la descripción para este sector*/
@@ -643,9 +650,13 @@
     }
 /*valor*/
     .visto1{
+        font-size: 20px;
         margin-top: 10px;
     }
-
+    .visto1:hover{
+        font-size: 30px;
+        color: var(--colorVerdeBrillante)
+    }
 /*se recupera lo oculto desde mobile*/
     .oculto2{
         font-size: 12px;
@@ -664,7 +675,6 @@
 
     .form__button button{
         width: 200px;
-        height: 20px;
         font-size: 12px;
     }
 
@@ -673,6 +683,9 @@
         top: 50%;
     }
 
+    .flyingSaucer{
+        top:5px;
+    }
 /*envíos*/
     .visto3{
         font-size: 12px;
@@ -688,23 +701,14 @@
         font-size: 14px;
     }
 
+    .metodo__h1{
+        padding-left: 20px;
+    }
 /*formas de pago*/
     .boxes p{
+        padding-left: 30px;
         font-size: 12px;
     }
 
- /*section4 contenedor violeta y formulario*/
-    .section4{
-        flex-wrap: wrap;
-        display: flex;
-    }   
-
-    .section4__article{
-       padding-top: 75px;
-    }  
-
-    .form{
-        padding-top: 10px;
-    }
     
 }
