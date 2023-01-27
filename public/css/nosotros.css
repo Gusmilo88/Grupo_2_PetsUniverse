@@ -6,7 +6,7 @@ body{
     background-attachment: fixed;
 }
 
-h2, p {
+.nosotros__main h2, p {
     text-align: center;
 }
 
@@ -110,5 +110,13 @@ h2, p {
 @media (min-width: 769px){
     .nosotros__main{
         margin: 55px 25px;
+    }
+
+    .nosotros__main h2 {
+        font-size: 4vw;
+    }
+
+    .nosotros__main p {
+        font-size: 2.2vw;
     }
 }
