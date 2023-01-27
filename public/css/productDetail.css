@@ -113,8 +113,9 @@
 
 .carroussel-food-item{
     width: 200px;
-    height:300px;
-    background: var(--gradientePrincipal);
+    height: 300px;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.07) 0%, rgba(2, 152, 227, 0.7) 33.33%, rgba(1, 58, 87, 0.7) 66.67%, rgba(0, 0, 0, 0.7) 100%);;
+    border-radius: 10px;
 }
 
 .carroussel-food-item img{
@@ -122,9 +123,15 @@
 }
 
 .carroussel-food-item h5{
-    height: 10%; 
+    height: 10%;
+    line-height: 8px;
 }
+
 .carrusel__section button{
+    width: 50px;
+    height: 50px;
+    background: var(--gradientePrincipal);
+    border-radius: 50px;
     color: #fff;
 }
 /*section3: descripcion del producto*/
@@ -314,7 +321,7 @@
 }
 
 .boxes p{
-    padding-left: 10%;
+    padding: 2% 10%;
 }
 
 /*tablet*/
@@ -534,7 +541,6 @@
 
 /*título*/
     .metodo__h1{
-        padding-bottom: 16px;
         padding-left: 0%;
         font-size: 16px;
     }
@@ -605,7 +611,7 @@
 }
 
 .carroussel-food-item {
-    height: 90%;
+    height: 100%;
 }
 /*section3 o segunda columna*/  
 /*características de la caja*/
