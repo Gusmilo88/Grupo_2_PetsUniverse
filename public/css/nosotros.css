@@ -1,0 +1,114 @@
+body{
+    background-image: url("../images/imagen-fondo.jpg");
+    background-position-x:center;
+    background-position-y:center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h2, p {
+    text-align: center;
+}
+
+.nosotros__main{
+    background: var(--gradientePrincipal);
+    padding: 35px;
+    margin: 12px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nosotros__main h2{
+    color: white;
+}
+
+.nosotros__main__section--Cris{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    background: var(--gradienteBotones);
+    border-radius: 20px;
+    width: 88vw;
+}
+
+.nosotros__main__section--Cris img{
+    width: 35vw;
+}
+
+.nosotros__main__section--Gabi{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    background: var(--gradienteBotones);
+    border-radius: 20px;
+    width: 88vw;
+}
+
+.nosotros__main__section--Gabi img{
+    width: 35vw;
+}
+
+.nosotros__main__section--Gi{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    background: var(--gradienteBotones);
+    border-radius: 20px;
+    width: 88vw;
+}
+
+.nosotros__main__section--Gi img{
+    width: 35vw;
+}
+
+.nosotros__main__section--Gus{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    background: var(--gradienteBotones);
+    border-radius: 20px;
+    width: 88vw;
+}
+
+.nosotros__main__section--Gus img{
+    width: 35vw;
+}
+
+.nosotros__main__section--Maxi{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    background: var(--gradienteBotones);
+    border-radius: 20px;
+    width: 88vw;
+}
+
+.nosotros__main__section--Maxi img{
+    width: 35vw;
+}
+
+/* Media query: */
+/* tablet */
+@media (min-width: 361px){
+
+}
+
+
+/* desktop */
+@media (min-width: 769px){
+    .nosotros__main{
+        margin: 55px 25px;
+    }
+}
