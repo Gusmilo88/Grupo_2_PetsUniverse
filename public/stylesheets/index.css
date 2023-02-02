@@ -90,6 +90,7 @@ body{
 
 .carousel-products-item h5, p{
     color: white;
+    padding: 15px;
 }
 
 .home__main__section__div--detalles{
