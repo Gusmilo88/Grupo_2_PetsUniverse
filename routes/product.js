@@ -9,5 +9,6 @@ router.get('/productDetail',productDetail)
 
 router.get('/productCreate',productCreate) 
 
+router.get('/productEdit',productEdit) 
 
 module.exports = router;
