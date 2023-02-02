@@ -7,6 +7,10 @@ module.exports = {
         return res.render('productDetail')
     },
 
+    productEdit: (req,res)=>{
+        return res.render('productEdit')
+    },
+
     
     
   
