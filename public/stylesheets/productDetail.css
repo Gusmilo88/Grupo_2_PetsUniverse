@@ -116,6 +116,7 @@
     height: 300px;
     background: linear-gradient(270deg, rgba(255, 255, 255, 0.07) 0%, rgba(2, 152, 227, 0.7) 33.33%, rgba(1, 58, 87, 0.7) 66.67%, rgba(0, 0, 0, 0.7) 100%);;
     border-radius: 10px;
+   
 }
 
 .carroussel-food-item img{
@@ -128,11 +129,15 @@
 }
 
 .carrusel__section button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 50px;
     height: 50px;
     background: var(--gradientePrincipal);
     border-radius: 50px;
     color: #fff;
+    top:40%;
 }
 /*section3: descripcion del producto*/
 /*esta sección no aparece en mobile, pero con el script se clonan algunas partes*/
@@ -202,7 +207,6 @@
 
 .form__button{   
     width: 100%;  
-    height: 30%;
     display: flex;
     justify-content: center;
     padding: 5%;
@@ -274,7 +278,7 @@
     height: 20px;
     object-fit: contain;
     position: absolute;
-    top: 10px;
+    top: 25px;
     left: 0px;
 }
 
@@ -322,6 +326,7 @@
 
 .boxes p{
     padding: 2% 10%;
+    text-align: left;
 }
 
 /*tablet*/
@@ -473,6 +478,7 @@
 /*valor*/
     .visto1{
         font-size: 20px;
+        padding: 0px;
     }
 
     .visto1:hover{
@@ -482,7 +488,8 @@
 
 /*cuotas*/
     .visto2{
-        font-size: 8px; 
+        font-size: 8px;  
+        padding: 0px;
     }
 
 /*caja ovni alejado de su ubicación original*/
@@ -506,6 +513,7 @@
     .visto3, .compras{
         font-size: 7px;
         line-height: 3px;
+        padding: 0%;
     }
    
 /*parte inferior botones*/
@@ -611,7 +619,8 @@
 }
 
 .carroussel-food-item {
-    height: 100%;
+    width: 90%;
+    height: 85%;
 }
 /*section3 o segunda columna*/  
 /*características de la caja*/
@@ -686,7 +695,7 @@
 
 /*caja ovni*/
     .ufo{
-        top: 50%;
+        top: 65%;
     }
 
     .flyingSaucer{
