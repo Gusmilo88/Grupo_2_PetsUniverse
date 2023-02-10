@@ -2,12 +2,14 @@
    {
       "id": 1,
       "name": "Alimento Hop",
-      "description": "",
-      "price": null,
+      "description": "Perro adulto mediano y grande, Sabor mix: Pulpa de remolacha, Extracto de yucca, Vitamina E, Cloruro de sodio, Sulfato de hierro, Carbonato de calcio, DL-metionina, Nicotinamida, Pantotenato de calcio, Vitamina B1, Vitamina B2, Vitamina K3, Biotina, Vitamina A, Vitamina D3, Ácido fólico, Vitamina B12, Vitamina B6, Iodato de calcio, Selenito de sodio",
+      "price": 5190,
       "discount": 12,
       "image": "perro1.png",
       "weight": 0,
-      "stock": null
+      "category": "perros",
+      "productTipe": "alimento",
+      "stock" : 27
    },
    {
       "id": 2,
