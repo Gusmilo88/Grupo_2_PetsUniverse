@@ -46,7 +46,7 @@ module.exports = {
         })
 
         fs.writeFileSync(productsFilePath, JSON.stringify(productsModified, null, 3), "utf-8");
-        return res.redirect("/products/detail/" + id)
+        return res.redirect("index")
 
     },
 
