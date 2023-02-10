@@ -11,6 +11,6 @@ router.get('/productDetail',productDetail)
 router.get('/productCreate',productCreate) 
 
 router.get('/productEdit/:id', productEdit) 
-// router.put('/products/:id', productUpdate)
+router.put('/productEdit/:id', productUpdate)
 
 module.exports = router;
