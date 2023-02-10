@@ -21,7 +21,33 @@ module.exports = {
     },
 
     productUpdate: (req, res) => {
-        const {name, discount, price, description, category} = req.body;
+        const {id} = req.params
+        const product = products.find(product => product.id === +id);
+        const {name, description, price, discount, image, weight, category, productTipe, stock} = req.body;
+
+        const productModified = {
+            id : +id,
+			name : name.trim(),
+			description : description.trim(),
+			price : +price,
+			discount : +discount,
+			image : product.image,
+            weight : +weight,
+			category,
+            productTipe,
+            stock : +stock,
+		}
+
+        const productsModified = products.map(product => {
+            if(product.id === +id){
+                return productModified
+            }
+            return product
+        })
+
+        fs.writeFileSync(productsFilePath, JSON.stringify(productsModified, null, 3), "utf-8");
+        return res.redirect("/products/detail/" + id)
+
     },
 
     productCreate: (req,res)=>{
