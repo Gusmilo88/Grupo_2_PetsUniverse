@@ -1,183 +1,222 @@
 [
-    {
-        "id": 1,
-        "name": "Alimento Hop",
-        "description": "Perro adulto mediano y grande, Sabor mix: Pulpa de remolacha, Extracto de yucca, Vitamina E, Cloruro de sodio, Sulfato de hierro, Carbonato de calcio, DL-metionina, Nicotinamida, Pantotenato de calcio, Vitamina B1, Vitamina B2, Vitamina K3, Biotina, Vitamina A, Vitamina D3, Ácido fólico, Vitamina B12, Vitamina B6, Iodato de calcio, Selenito de sodio",
-        "price": 5190,
-        "image": "perro1.png",
-        "weight": 21,
-        "Animal": "perros",
-        "category": "alimento"
-      }, {
-        "id": 2,
-        "name": "Alimento Pacha",
-        "description": "Perros adultos, coktail de sabores: Maiz, harina de carne y huesos bovina, arroz, germen de maiz, afechillo de trigo, expeller de soja, sal, hidrolizado de visceras frescas(pollo y cerdo), aceite de pollo. Colorantes: chocolate, amarillo - anaranjado. Antioxidantes: BHT, BHA, extracto de Romero. Núcleo Vitamínico - Mineral: vitamina A, vitamina D3, vitamina E, vitamina K, pantotenato de calcio, ácido fólico, niacina, vitamina B1, vitamina B2, vitamina B6, vitamina B12, biotina, óxido de manganeso, óxido de zinc, iodato de calcio, sulfato ferroso, sulfato de cobre, cloruro de colina, sorbato de potasio, selenito de sodio.",
-        "price": 4661,
-        "image": "perro2.png",
-        "weight": 22,
-        "Animal": "perros",
-        "category": "alimento"
-      }, {
-        "id": 3,
-        "name": "Alimento Old Prince Premium Cordero",
-        "description": "Perros adultos, Su fórmula contiene un 25% de proteína, 100% natural y no contiene soja, diseñado para fortalecer la estructura corporal y mejorar la salud de la piel y el pelaje, manteniéndolo suave y brillante.",
-        "price": 7700,
-        "image": "perro3.png",
-        "weight": 15,
-        "Animal": "perros",
-        "category": "alimento"
-      }, {
-        "id": 4,
-        "name": "Alimento Sieger Super Premium Criadores",
-        "description": "Perros de todos los tamaños, ingredientes: Harina de subproductos de pollo, maíz integral, arroz, gluten de maíz, aceite de pollo refinado (fuente de omega 6), harina de pescado, saborizante natural (hidrolizado de menudencias porcinas y aviares), aceite de pescado refinado (fuente de omega 3), trigo, pulpa de remolacha, inulina, cloruro de sodio, fructo-oligosacáridos (FOS), colina, L-lisina, DL-metionina, carbonato de calcio, fosfato monodicálcico, extracto de yucca, antioxidantes naturales (extracto de romero/tocoferoles), betaína, manano-oligosacáridos (MOS), condroitín sulfato, glucosamina, vitamina E, antifúngico (ácido propiónico), sulfato de hierro, metionina de zinc, sulfato de zinc, vitamina C, sulfato de cobre, taurina, nicotinamida, pantotenato de calcio, sulfato manganoso, vitamina A, vitamina B2, vitamina B6, vitamina D3, vitamina B1, vitamina K3, biotina, ácido fólico, vitamina B12, iodato de calcio, selenio orgánico, selenito de sodio.",
-        "price": 12500,
-        "image": "perro4.png",
-        "weight": 20,
-        "Animal": "perros",
-        "category": "alimento"
-      }, {
-        "id": 5,
-        "name": "Alimento Agility Active Health",
-        "description": "Perros adultos de raza mediana y grande, sabor mix: Pulpa de remolacha, Extracto de yucca, Vitamina E, Cloruro de sodio, Sulfato de hierro, Carbonato de calcio, DL-metionina, Nicotinamida, Pantotenato de calcio, Vitamina B1, Vitamina B2, Vitamina K3, Biotina, Vitamina A, Vitamina D3, Ácido fólico, Vitamina B12, Vitamina B6, Iodato de calcio, Selenito de sodio",
-        "price": 8100,
-        "image": "perro5.png",
-        "weight": 20,
-        "Animal": "perros",
-        "category": "alimento"
-      }, {
-        "id": 6,
-        "name": "Gigwy Duraspikes Dinosaurio",
-        "description": " Algodón/Tpr Azul",
-        "price": 8588,
-        "image": "juguetePerro1.png",
-        "weight": null,
-        "Animal": "perros",
-        "category": "juguetes"
-      }, {
-        "id": 7,
-        "name": "Juguete Peluche Hulk",
-        "description": "tela suave y resistente. Está fabricado con material 100% poliéster altamente durable a las mordeduras. Además posee sonido en su interior y su cuerpo es angosto permitiento la comodidad en el agarre de la mascota. Medidas: 21 cm x 14 cm x 6 cm.",
-        "price": 4994,
-        "image": "juguetePerro2.png",
-        "weight": null,
-        "Animal": "perros",
-        "category": "juguetes"
-      }, {
-        "id": 8,
-        "name": "Mordedor Star Wars Con Sonido",
-        "description": "ideal para estimular la dentición y ayudar a tu perro a liberar energía. Está hecho de plástico resistente y no tóxico, con hendiduras que estimulan una mejor higiene dental.",
-        "price": 4456,
-        "image": "juguetePerro3.png",
-        "weight": null,
-        "Animal": "perros",
-        "category": "juguetes"
-      }, {
-        "id": 9,
-        "name": "Total Full Suspension",
-        "description": "Antiparasitario interno en suspensión oral. Estuche con frasco con 15 ml y jeringa dosificadora. Antiparasitario interno de amplio espectro. Fenbendazol: Actúa por unión a la tubulina, proteína que compone los microtúbulos del parásito, inhibiendo la captación de glucosa parasitaria lo que genera disminución de energía y muerte. Pirantel: Estimula la liberación de la acetilcolina, inhibiendo la colintesterasa y provocando un bloqueo neuromuscular en los helmintos. En consecuencia,provoca parálisis y desprendimiento de los parásitos.",
-        "price": 1500,
-        "image": "saludPerro1.png",
-        "weight": null,
-        "Animal": "perros",
-        "category": "salud"
-      }, {
-        "id": 10,
-        "name": "Serenex Spray",
-        "description": "Libera desde el sitio del rociado, feromona M2. Estas feromonas, con acción análoga a las secretadas naturalmente durante la maternidad canina, ayuda a controlar conductas inadecuadas en los caninos. Estos comportamientos generalmente son consecuencia del estrés y la ansiedad ante situaciones desafiantes y se manifiestan por ejemplo con aullidos, destrucción de muebles y objetos, eliminación de orina y heces en lugares inapropiados, etc. En comparación con las feromonas naturales, las feromonas M2 tienen mayor estabilidad, nivel de difusión y residualidad en el medio ambiente. Funciona tanto con cachorros, así como con perros adultos. Es una solución libre de fármacos, recomendada por los veterinarios para los problemas de comportamiento. Puede ser usado en conjunto con otras medicaciones u otros tratamientos.",
-        "price": 4900 ,
-        "image": "saludPerro2.png",
-        "weight": null,
-        "Animal": "perros",
-        "category": "salud"
-      }, {
-        "id": 11,
-        "name": "Vitalcan Complete",
-        "description": "Gato senior adultos mayores de 7 años. Sabor: Mix, aporta minerales quelados que favorecen los procesos metabólicos, proteínas de alto valor biológico y vitaminas del complejo B que los gatos mayores necesitan en esta etapa de la vida. Protege su pelo y su sistema urinario, además de controlar el olor de las heces.",
-        "price": 1259,
-        "image": "michi1.png",
-        "weight": 1.5,
-        "Animal": "gatos",
-        "category": "alimento"
-      }, {
-        "id": 12,
-        "name": "Alimento Hop",
-        "description": "Gatos adultos, sabor: Mix, ingrediente pollo, con proteina bruta 29%",
-        "price": 8000,
-        "image": "michi2.png",
-        "weight": 15,
-        "Animal": "gatos",
-        "category": "alimento"
-      }, {
-        "id": 13,
-        "name": "Alimento Infinity Premium Pet Food",
-        "description": "Gatos adultos, sabor: Mix, Aporte de nutrientes: 3% Fibra cruda, 10% minerales, 1.5% Calcio, 1.1% Fósforo",
-        "price": 11390,
-        "image": "michi3.png",
-        "weight": 10,
-        "Animal": "gatos",
-        "category": "alimento"
-      }, {
-        "id": 14,
-        "name": "Alimento Agility Premium Urinary",
-        "description": "Gatos adultos, sabor: Mix, 23% de Proteinas, 14% de Grasa, sin colorantes ni conservantes artificiales",
-        "price": 8600,
-        "image": "michi4.png",
-        "weight": 10,
-        "Animal": "gatos",
-        "category": "alimento"
-      }, {
-        "id": 15,
-        "name": "Alimento Complete",
-        "description": "Gatos adultos, ingredientes: Arroz, harina de vísceras de pollo, harina de carne, maíz, gluten de maíz, harina de soja micronizada, harina de germen de maíz, aceite de pollo, grasa bovina, pulpa de remolacha, hidrolizado de vísceras de pollo, aceite de pescado, levadura de cerveza, trigo, manano-oligosacáridos (MOS), fructooligosacáridos (FOS), taurina, lisina, metionina, sal, zeolita, extracto de Yucca schidigera, celulosa en polvo, cloruro de potasio, bisulfato de sodio, sorbato de potasio, BHA, BHT, lecitina, tocoferoles, extracto de romero. Vitaminas: A, D3, E, colina, C, ácido nicotínico, biotina, ácido pantoténico, B1, B2, B6, K3, ácido fólico, B12. Minerales: zinc, hierro, cobre, manganeso, yodo y selenio",
-        "price": 1500,
-        "image": "michi5.png",
-        "weight": 1.5,
-        "Animal": "gatos",
-        "category": "alimento"
-      }, {
-        "id": 16,
-        "name": "Set X 3 Ratitas",
-        "description": "Ratas De Paño Con Chifle, Ideal para estimular los sentidos de tu gato. Mantenerlo feliz y entretenido. Ningún juguete para perro/gato es indestructible. Se debe prestar atención a la forma de juego de su mascota, ya que si la intención es romperlo es posible que lo haga.",
-        "price": 776,
-        "image": "jugueteGato1.png",
-        "weight": null,
-        "Animal": "gatos",
-        "category": "juguetes"
-      }, {
-        "id": 17,
-        "name": "Vesper Rocket",
-        "description": "Forma de cohete espacial. Incluye almohadon suave y mullido, Las redes aseguran una optima ventilacion, Confeccionado en tela de alta calidad. Los pelos no se adhieren, Base ponderada para mayor estabilidad, Fácil de ensamblar, no requiere herramientas, Incluye bolsa para guardar",
-        "price": 32147,
-        "image": "jugueteGato2.png",
-        "weight": null,
-        "Animal": "gatos",
-        "category": "juguetes"
-      }, {
-        "id": 18,
-        "name": "Rascador Cancat 4 Pisos",
-        "description": "Tipo de rascador: Torre, Material del tapizado: Felpa, Ancho x Altura x Largo: 35 cm x 50 cm x 50 cm",
-        "price": 80990,
-        "image": "jugueteGato3.png",
-        "weight": null,
-        "Animal": "gatos",
-        "category": "juguetes"
-      }, {
-        "id": 19,
-        "name": "Feliway Classic Feromona Spray",
-        "description": "Relajante para gatos, ayuda a reducir el estrés y la ansiedad durante las visitas al veterinario y la hospitalización o el alojamiento de su gato. se puede utilizar para ayudar a controlar problemas de comportamiento como rascarse y rociar orina. También se puede utilizar para ayudar a reducir los niveles de estrés de sus gatos durante los viajes y las visitas al veterinario.",
-        "price": 5695,
-        "image": "saludGato.png",
-        "weight": null,
-        "Animal": "gatos",
-        "category": "salud"
-      }, {
-        "id": 20,
-        "name": "Purina Fortiflora",
-        "description": "Fortiflora es un suplemento probiótico que ha demostrado favorecer la salud intestinal del gato y desarrollar un sistema inmunitario fuerte. ",
-        "price": 5809,
-        "image": "saludGato2.png",
-        "weight": null,
-        "Animal": "gatos",
-        "category": "salud"
-      }
+  {
+    "id": 1,
+    "name": "Alimento Hop",
+    "description": "Perro adulto mediano y grande, Sabor mix: Pulpa de remolacha, Extracto de yucca, Vitamina E, Cloruro de sodio, Sulfato de hierro, Carbonato de calcio, DL-metionina, Nicotinamida, Pantotenato de calcio, Vitamina B1, Vitamina B2, Vitamina K3, Biotina, Vitamina A, Vitamina D3, Ácido fólico, Vitamina B12, Vitamina B6, Iodato de calcio, Selenito de sodio",
+    "price": 5190,
+    "image": "perro1.png",
+    "weight": 21,
+    "category": "perros",
+    "productTipe": "alimento",
+    "stock" : 27
+  }, 
+  {
+    "id": 2,
+    "name": "Alimento Pacha",
+    "description": "Perros adultos, coktail de sabores: Maiz, harina de carne y huesos bovina, arroz, germen de maiz, afechillo de trigo, expeller de soja, sal, hidrolizado de visceras frescas(pollo y cerdo), aceite de pollo. Colorantes: chocolate, amarillo - anaranjado. Antioxidantes: BHT, BHA, extracto de Romero. Núcleo Vitamínico - Mineral: vitamina A, vitamina D3, vitamina E, vitamina K, pantotenato de calcio, ácido fólico, niacina, vitamina B1, vitamina B2, vitamina B6, vitamina B12, biotina, óxido de manganeso, óxido de zinc, iodato de calcio, sulfato ferroso, sulfato de cobre, cloruro de colina, sorbato de potasio, selenito de sodio.",
+    "price": 4661,
+    "image": "perro2.png",
+    "weight": 22,
+    "category": "perros",
+    "productTipe": "alimento",
+    "stock" : 56
+  }, 
+  {
+    "id": 3,
+    "name": "Alimento Old Prince Premium Cordero",
+    "description": "Perros adultos, Su fórmula contiene un 25% de proteína, 100% natural y no contiene soja, diseñado para fortalecer la estructura corporal y mejorar la salud de la piel y el pelaje, manteniéndolo suave y brillante.",
+    "price": 7700,
+    "image": "perro3.png",
+    "weight": 15,
+    "category": "perros",
+    "productTipe": "alimento",
+    "stock" : 88
+  }, 
+  {
+    "id": 4,
+    "name": "Alimento Sieger Super Premium Criadores",
+    "description": "Perros de todos los tamaños, ingredientes: Harina de subproductos de pollo, maíz integral, arroz, gluten de maíz, aceite de pollo refinado (fuente de omega 6), harina de pescado, saborizante natural (hidrolizado de menudencias porcinas y aviares), aceite de pescado refinado (fuente de omega 3), trigo, pulpa de remolacha, inulina, cloruro de sodio, fructo-oligosacáridos (FOS), colina, L-lisina, DL-metionina, carbonato de calcio, fosfato monodicálcico, extracto de yucca, antioxidantes naturales (extracto de romero/tocoferoles), betaína, manano-oligosacáridos (MOS), condroitín sulfato, glucosamina, vitamina E, antifúngico (ácido propiónico), sulfato de hierro, metionina de zinc, sulfato de zinc, vitamina C, sulfato de cobre, taurina, nicotinamida, pantotenato de calcio, sulfato manganoso, vitamina A, vitamina B2, vitamina B6, vitamina D3, vitamina B1, vitamina K3, biotina, ácido fólico, vitamina B12, iodato de calcio, selenio orgánico, selenito de sodio.",
+    "price": 12500,
+    "image": "perro4.png",
+    "weight": 20,
+    "category": "perros",
+    "productTipe": "alimento",
+    "stock" : 10
+  }, 
+  {
+    "id": 5,
+    "name": "Alimento Agility Active Health",
+    "description": "Perros adultos de raza mediana y grande, sabor mix: Pulpa de remolacha, Extracto de yucca, Vitamina E, Cloruro de sodio, Sulfato de hierro, Carbonato de calcio, DL-metionina, Nicotinamida, Pantotenato de calcio, Vitamina B1, Vitamina B2, Vitamina K3, Biotina, Vitamina A, Vitamina D3, Ácido fólico, Vitamina B12, Vitamina B6, Iodato de calcio, Selenito de sodio",
+    "price": 8100,
+    "image": "perro5.png",
+    "weight": 20,
+    "category": "perros",
+    "productTipe": "alimento",
+    "stock" : 31
+  }, 
+  {
+    "id": 6,
+    "name": "Gigwy Duraspikes Dinosaurio",
+    "description": " Algodón/Tpr Azul",
+    "price": 8588,
+    "image": "juguetePerro1.png",
+    "weight": null,
+    "category": "perros",
+    "productTipe": "juguetes",
+    "stock" : 30
+  }, 
+  {
+    "id": 7,
+    "name": "Juguete Peluche Hulk",
+    "description": "tela suave y resistente. Está fabricado con material 100% poliéster altamente durable a las mordeduras. Además posee sonido en su interior y su cuerpo es angosto permitiento la comodidad en el agarre de la mascota. Medidas: 21 cm x 14 cm x 6 cm.",
+    "price": 4994,
+    "image": "juguetePerro2.png",
+    "weight": null,
+    "category": "perros",
+    "productTipe": "juguetes",
+    "stock" : 9
+  }, 
+  {
+    "id": 8,
+    "name": "Mordedor Star Wars Con Sonido",
+    "description": "ideal para estimular la dentición y ayudar a tu perro a liberar energía. Está hecho de plástico resistente y no tóxico, con hendiduras que estimulan una mejor higiene dental.",
+    "price": 4456,
+    "image": "juguetePerro3.png",
+    "weight": null,
+    "category": "perros",
+    "productTipe": "juguetes",
+    "stock" : 5
+  }, 
+  {
+    "id": 9,
+    "name": "Total Full Suspension",
+    "description": "Antiparasitario interno en suspensión oral. Estuche con frasco con 15 ml y jeringa dosificadora. Antiparasitario interno de amplio espectro. Fenbendazol: Actúa por unión a la tubulina, proteína que compone los microtúbulos del parásito, inhibiendo la captación de glucosa parasitaria lo que genera disminución de energía y muerte. Pirantel: Estimula la liberación de la acetilcolina, inhibiendo la colintesterasa y provocando un bloqueo neuromuscular en los helmintos. En consecuencia,provoca parálisis y desprendimiento de los parásitos.",
+    "price": 1500,
+    "image": "saludPerro1.png",
+    "weight": null,
+    "category": "perros",
+    "productTipe": "salud",
+    "stock" : 18
+  }, 
+  {
+    "id": 10,
+    "name": "Serenex Spray",
+    "description": "Libera desde el sitio del rociado, feromona M2. Estas feromonas, con acción análoga a las secretadas naturalmente durante la maternidad canina, ayuda a controlar conductas inadecuadas en los caninos. Estos comportamientos generalmente son consecuencia del estrés y la ansiedad ante situaciones desafiantes y se manifiestan por ejemplo con aullidos, destrucción de muebles y objetos, eliminación de orina y heces en lugares inapropiados, etc. En comparación con las feromonas naturales, las feromonas M2 tienen mayor estabilidad, nivel de difusión y residualidad en el medio ambiente. Funciona tanto con cachorros, así como con perros adultos. Es una solución libre de fármacos, recomendada por los veterinarios para los problemas de comportamiento. Puede ser usado en conjunto con otras medicaciones u otros tratamientos.",
+    "price": 4900 ,
+    "image": "saludPerro2.png",
+    "weight": null,
+    "category": "perros",
+    "productTipe": "salud",
+    "stock" : 23
+  }, 
+  {
+    "id": 11,
+    "name": "Vitalcan Complete",
+    "description": "Gato senior adultos mayores de 7 años. Sabor: Mix, aporta minerales quelados que favorecen los procesos metabólicos, proteínas de alto valor biológico y vitaminas del complejo B que los gatos mayores necesitan en esta etapa de la vida. Protege su pelo y su sistema urinario, además de controlar el olor de las heces.",
+    "price": 1259,
+    "image": "michi1.png",
+    "weight": 1.5,
+    "category": "gatos",
+    "productTipe": "alimento",
+    "stock" : 80
+  }, 
+  {
+    "id": 12,
+    "name": "Alimento Hop",
+    "description": "Gatos adultos, sabor: Mix, ingrediente pollo, con proteina bruta 29%",
+    "price": 8000,
+    "image": "michi2.png",
+    "weight": 15,
+    "category": "gatos",
+    "productTipe": "alimento",
+    "stock" : 16
+  }, 
+  {
+    "id": 13,
+    "name": "Alimento Infinity Premium Pet Food",
+    "description": "Gatos adultos, sabor: Mix, Aporte de nutrientes: 3% Fibra cruda, 10% minerales, 1.5% Calcio, 1.1% Fósforo",
+    "price": 11390,
+    "image": "michi3.png",
+    "weight": 10,
+    "category": "gatos",
+    "productTipe": "alimento",
+    "stock" : 33
+  }, 
+  {
+    "id": 14,
+    "name": "Alimento Agility Premium Urinary",
+    "description": "Gatos adultos, sabor: Mix, 23% de Proteinas, 14% de Grasa, sin colorantes ni conservantes artificiales",
+    "price": 8600,
+    "image": "michi4.png",
+    "weight": 10,
+    "category": "gatos",
+    "productTipe": "alimento",
+    "stock" : 25
+  }, 
+  {
+    "id": 15,
+    "name": "Alimento Complete",
+    "description": "Gatos adultos, ingredientes: Arroz, harina de vísceras de pollo, harina de carne, maíz, gluten de maíz, harina de soja micronizada, harina de germen de maíz, aceite de pollo, grasa bovina, pulpa de remolacha, hidrolizado de vísceras de pollo, aceite de pescado, levadura de cerveza, trigo, manano-oligosacáridos (MOS), fructooligosacáridos (FOS), taurina, lisina, metionina, sal, zeolita, extracto de Yucca schidigera, celulosa en polvo, cloruro de potasio, bisulfato de sodio, sorbato de potasio, BHA, BHT, lecitina, tocoferoles, extracto de romero. Vitaminas: A, D3, E, colina, C, ácido nicotínico, biotina, ácido pantoténico, B1, B2, B6, K3, ácido fólico, B12. Minerales: zinc, hierro, cobre, manganeso, yodo y selenio",
+    "price": 1500,
+    "image": "michi5.png",
+    "weight": 1.5,
+    "category": "gatos",
+    "productTipe": "alimento",
+    "stock" : 34
+  }, 
+  {
+    "id": 16,
+    "name": "Set X 3 Ratitas",
+    "description": "Ratas De Paño Con Chifle, Ideal para estimular los sentidos de tu gato. Mantenerlo feliz y entretenido. Ningún juguete para perro/gato es indestructible. Se debe prestar atención a la forma de juego de su mascota, ya que si la intención es romperlo es posible que lo haga.",
+    "price": 776,
+    "image": "jugueteGato1.png",
+    "weight": null,
+    "category": "gatos",
+    "productTipe": "juguetes",
+    "stock" : 45
+  }, 
+  {
+    "id": 17,
+    "name": "Vesper Rocket",
+    "description": "Forma de cohete espacial. Incluye almohadon suave y mullido, Las redes aseguran una optima ventilacion, Confeccionado en tela de alta calidad. Los pelos no se adhieren, Base ponderada para mayor estabilidad, Fácil de ensamblar, no requiere herramientas, Incluye bolsa para guardar",
+    "price": 32147,
+    "image": "jugueteGato2.png",
+    "weight": null,
+    "category": "gatos",
+    "productTipe": "juguetes",
+    "stock" : 11
+  }, 
+  {
+    "id": 18,
+    "name": "Rascador Cancat 4 Pisos",
+    "description": "Tipo de rascador: Torre, Material del tapizado: Felpa, Ancho x Altura x Largo: 35 cm x 50 cm x 50 cm",
+    "price": 80990,
+    "image": "jugueteGato3.png",
+    "weight": null,
+    "category": "gatos",
+    "productTipe": "juguetes",
+    "stock" : 22
+  }, 
+  {
+    "id": 19,
+    "name": "Feliway Classic Feromona Spray",
+    "description": "Relajante para gatos, ayuda a reducir el estrés y la ansiedad durante las visitas al veterinario y la hospitalización o el alojamiento de su gato. se puede utilizar para ayudar a controlar problemas de comportamiento como rascarse y rociar orina. También se puede utilizar para ayudar a reducir los niveles de estrés de sus gatos durante los viajes y las visitas al veterinario.",
+    "price": 5695,
+    "image": "saludGato.png",
+    "weight": null,
+    "category": "gatos",
+    "productTipe": "salud",
+    "stock" : 25
+  }, 
+  {
+    "id": 20,
+    "name": "Purina Fortiflora",
+    "description": "Fortiflora es un suplemento probiótico que ha demostrado favorecer la salud intestinal del gato y desarrollar un sistema inmunitario fuerte. ",
+    "price": 5809,
+    "image": "saludGato2.png",
+    "weight": null,
+    "category": "gatos",
+    "productTipe": "salud",
+    "stock" : 12
+  }
 ]
