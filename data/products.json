@@ -6,7 +6,7 @@
     "price": 5190,
     "discount": 12,
     "image": "perro1.png",
-    "weight": 21,
+    "weight": 0,
     "category": "perros",
     "productTipe": "alimento",
     "stock" : 27
