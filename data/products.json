@@ -1,12 +1,12 @@
 [
    {
       "id": 1,
-      "name": "Alimento Hopasdasdasdasd",
-      "description": "asd",
+      "name": "Alimento Hop",
+      "description": "",
       "price": null,
       "discount": 12,
       "image": "perro1.png",
-      "weight": 21,
+      "weight": 0,
       "stock": null
    },
    {
