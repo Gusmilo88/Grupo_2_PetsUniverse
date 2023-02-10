@@ -5,8 +5,8 @@
     <%- include('./partials/header')%>
     <main class="edit__main">
         <div class="edit__main__div">
-            <h3>Editar Producto</h3>
-            <form action="/product/productEdit/<%= id %>?_method=PUT" method="">
+            <h3>Editar Producto: <%= name %></h3>
+            <form action="/product/productEdit/<%= id %>?_method=PUT" method="POST">
                 <div class="edit__main__div--info">
                     <div class="edit__div__div--2">
                         <label for="name">Nombre del producto</label>
@@ -40,6 +40,10 @@
                             <label for="price">Precio</label>
                             <input type="number" id="price" name="price" value="<%= price %>">
                         </div>
+                        <div class="edit__div__div--2">
+                            <label for="weight">Descuento</label>
+                            <input type="number" id="weight" name="weight" value="<%= weight %>">
+                        </div> 
                         <div class="edit__div__div--2">
                             <label for="weight">Peso</label>
                             <input type="number" id="weight" name="weight" value="<%= weight %>">
