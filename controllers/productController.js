@@ -27,7 +27,7 @@ module.exports = {
     },
 
     productUpdate: (req, res) => {
-        
+        const {name, discount, price, description, category} = req.body;
     },
 
     productCreate: (req,res)=>{
