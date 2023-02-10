@@ -6,7 +6,7 @@ var router = express.Router();
 const {productDetail,productEdit, productCreate, productUpdate} = require('../controllers/productController')
 
 
-router.get('/productDetail',productDetail) 
+router.get('/productDetail/:id',productDetail) 
 
 router.get('/productCreate',productCreate) 
 

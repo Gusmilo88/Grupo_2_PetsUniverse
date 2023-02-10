@@ -15,10 +15,16 @@
                         <div class="estrellitas1"><small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></small></div>
                     </div>  
                     <div class="titulo">
-                        <h1 class="titulos1">Alimento para gatos whiskas</h1>
-                        <h2 class="titulos1">de 2 a 12 meses - 85g</h2>
-                        <h1 class="titulos2">Alimento Hop Perro Adulto</h1>
-                        <h2 class="titulos2">Mediano y Grande - 21kg</h2>   
+                        <h1 class="titulos1"><%= name %> </h1>
+                        <h1 class="titulos1"><%= weight %> 
+                            <% if (weight!==null) { %>
+                                  kg 
+                                  <%}else{%>  <% } %>
+                        </h1>
+                    </div> 
+                    <div class="titulo">
+                        <h1 class="titulos1">Categoria: <%= category %> </h1>
+                        <h1 class="titulos1">Tipo: <%= productTipe %> </h1>     
                     </div>                 
             </article>
         </section>
@@ -26,60 +32,23 @@
             <div class="white">
                 <div class="left">
                     <section class="section1">   
-                        <img class="imagen1" src="/images/fotok7.png" alt="Foto de bolsón de alimento">
-                        <article class="section1__article">
-                                <img class="imagen2" src="/images/6.png" alt="Foto de bolsón de alimento">
-                        </article>
+                        <img class="imagen1" src="/images/products/<%= image ? image : "ufo.png" %> " alt="Foto de bolsón de alimento">
                         <article id="otro">
-                            <div class="section3__article__div">
-                                <div class="aLaPar">
-                                    <div class="par1">
-                                        <div class="valor">
-                                            <p class="visto1">$10.000</p>
-                                        <p class="visto2">en 12 x $833.33 sin interés</p>
-                                        </div>                                        
-                                        <div class="ufo">
-                                            <img class="flyingSaucer" src="/images/flyingSaucer.png">
-                                            <p class="visto3">Envíos gratis</p>
-                                            <p class="compras">para compras mayores a $4000</p>
-                                        </div> 
-                                    </div>                                
-                                    <div class="par2">
-                                        <div class="form__button">
-                                            <a href="/cart"><button type="submit">Compra ahora</button></a>
-                                        </div> 
-                                        <div class="form__button">
-                                           <a href="/cart"> <button  type="submit">Agregar al carrito</button></a>
-                                        </div>
-                                    </div> 
-                                </div>                                                 
-                                <div class="metodo">
-                                    <h1 class="metodo__h1">Métodos de pago</h1> 
-                                    <div class="pay">
-                                        <div class="boxes">
-                                        <img src="/images/credit.png">
-                                        <p>Tarjeta de crédito</p>  
-                                    </div>
-                                    <div class="boxes">
-                                        <img src="/images/cash.png">
-                                        <p>Efectivo</p>
-                                    </div>
-                                    <div class="boxes">
-                                        <img src="/images/virtual.png"> 
-                                        <p>Criptomonedas</p> 
-                                    </div>                  
-                                    </div>   
-                                </div> 
-                            </div>    
+
+                            <%- include('./partials/section3DetailPartial', {
+                                price,
+                                mil
+                            }) %>
+                           
                         </article>
                     </section>
                     <section class="section2">                                      
                         <article class="section2__article">
                             <div class="section2__article__div">
-                                <p class="section2__article__div__p">Descripción del producto: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores, non!.</p>
+                                <p class="section2__article__div__p"><%= description %> </p>
                             </div>
-                            <form class="form" action="">
-                                <textarea class="form-textarea" name="consulta" id="consulta" min="10" max="150"> </textarea>
+                            <form class="form" action="/" method="post">
+                                <textarea class="form-textarea" name="consulta" id="consulta" min="10" max="150" value="consulta" > </textarea>
                                 <div class="form__box">
                                     <button type="submit" >preguntar</button>
                                 </div>   
@@ -93,51 +62,25 @@
                             <div class="section3__article__div--original2">
                                 <div>  
                                     <div class="titulo">
-                                        <h1 class="titulos2">Alimento Hop Perro Adulto</h1>
-                                        <h2 class="titulos2">Mediano y Grande - 21kg</h2>     
+                                        <h1 class="titulos2"><%= name %> </h1>
+                                        <h2 class="titulos2"><%= weight %> 
+                                            <% if (weight!==null) { %>
+                                                  kg 
+                                                  <%}else{%>  <% } %>
+                                        </h2>     
+                                    </div> 
+                                    <div class="titulo">
+                                        <h1 class="titulos2">Categoria: <%= category %></h1>
+                                        <h2 class="titulos2">Tipo: <%= productTipe %> </h2>     
                                     </div> 
                                 </div>
                             </div>
-                            <div class="section3__article__div">
-                                <div class="aLaPar">
-                                    <div class="par1">
-                                        <p class="oculto1">Artículo nuevo | 1000 vendidos</p>
-                                        <p class="visto1">$10.000</p>
-                                        <p class="visto2">en 12 x $833.33 sin interés</p>
-                                        <p class="oculto2">¡Pedidos que vuelan!</p>
-                                        <div class="ufo">
-                                            <img class="flyingSaucer" src="/images/flyingSaucer.png">
-                                            <p class="visto3">Envíos gratis</p>
-                                            <p class="compras">para compras mayores a $4000</p>
-                                        </div> 
-                                    </div>                                
-                                    <div class="par2">
-                                        <div class="form__button">
-                                            <a href="/cart"><button type="submit">Compra ahora</button></a>
-                                        </div> 
-                                        <div class="form__button">
-                                            <a href="/cart"><button  type="submit">Agregar al carrito</button></a>
-                                        </div>
-                                    </div> 
-                                </div>                                                 
-                                <div class="metodo">
-                                    <h1 class="metodo__h1">Métodos de pago</h1> 
-                                    <div class="pay">
-                                        <div class="boxes">
-                                        <img src="/images/credit.png">
-                                        <p>Tarjeta de crédito</p>  
-                                    </div>
-                                    <div class="boxes">
-                                        <img src="/images/cash.png">
-                                        <p>Efectivo</p>
-                                    </div>
-                                    <div class="boxes">
-                                        <img src="/images/virtual.png"> 
-                                        <p>Criptomonedas</p> 
-                                    </div>                  
-                                    </div>   
-                                </div> 
-                            </div>                   
+
+                            <%- include('./partials/section3DetailPartial', {
+                                price,
+                                mil
+                            }) %>
+                                             
                         </div>
                     </article>
                 </section>
@@ -145,95 +88,25 @@
                     <section class="carrusel__section">
                         <div class="glider-contain">
                             <div class="glider">
-                                <a href="#productDetail">
-                                    <div class="carroussel-food-item">
-                                        <img src="/images/fotok1.png" class="card-img-top" alt="">
-                                        <div class="card-body">
-                                            <h5 class="card-title" >Producto estelar:</h5><h5>hacienda el rodeo</h5>
+                                <% products.forEach(({id,image,name}) => { %>
+                                    <a href="/products/productDetail/<%= id %> ">
+                                        <div class="carroussel-food-item">
+                                            <img src="/images/products/<%= image %> " class="card-img-top" alt="">
+                                            <div class="card-body">
+                                                <h5 class="card-title" >Producto estelar:</h5><h5><%= name %>  </h5>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-                                <a href="#productDetail">
-                                    <div class="carroussel-food-item">
-                                        <img src="/images/fotok2.png" class="card-img-top" alt="">
-                                        <div class="card-body">
-                                            <h5 class="card-title" >Producto estelar:</h5><h5>top choice</h5>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#productDetail">
-                                    <div class="carroussel-food-item">
-                                        <img src="/images/fotok3.png" class="card-img-top" alt="">
-                                        <div class="card-body">
-                                            <h5 class="card-title" >Producto estelar:</h5><h5>maintenance criadores</h5>
-                                        </div>
-                                    </div>
-                                </a>                                
-                                <a href="#productDetail">
-                                    <div class="carroussel-food-item">
-                                        <img src="/images/fotok9.png" class="card-img-top" alt="">
-                                        <div class="card-body">
-                                            <h5 class="card-title" >Producto estelar:</h5><h5>hop!</h5>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#productDetail">
-                                    <div class="carroussel-food-item">
-                                        <img src="/images/fotok5.png" class="card-img-top" alt="">
-                                        <div class="card-body">
-                                            <h5 class="card-title" >Producto estelar:</h5><h5>complete</h5>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#productDetail">
-                                    <div class="carroussel-food-item">
-                                        <img src="/images/fotok6.png" class="card-img-top" alt="">
-                                        <div class="card-body">
-                                            <h5 class="card-title" >Producto estelar:</h5><h5>pachá</h5>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#productDetail">
-                                    <div class="carroussel-food-item">
-                                        <img src="/images/fotok7.png" class="card-img-top" alt="">
-                                        <div class="card-body">
-                                            <h5 class="card-title" >Producto estelar:</h5><h5>whiskas</h5>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#productDetail">
-                                    <div class="carroussel-food-item">
-                                        <img src="/images/6.png" class="card-img-top" alt="">
-                                        <div class="card-body">
-                                            <h5 class="card-title" >Producto estelar:</h5><h5>hop!</h5> 
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#productDetail">
-                                    <div class="carroussel-food-item">
-                                        <img src="/images/fotok8.png" class="card-img-top" alt="">
-                                        <div class="card-body">
-                                            <h5 class="card-title" >Producto estelar:</h5><h5>complete</h5>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#productDetail">
-                                    <div class="carroussel-food-item">
-                                        <img src="/images/fotok4.png" class="card-img-top" alt="">
-                                        <div class="card-body">
-                                            <h5 class="card-title" >Producto estelar:</h5><h5>maintenance criadores</h5>
-                                        </div>
-                                    </div>
-                                </a>
+                                    </a>
+                                <% }) %>
                             </div>
                             <button aria-label="Previous" class="glider-prev "> < </button>
                             <button aria-label="Next" class="glider-next "> > </button>
                         </div>
                     </section>
                 </div> 
-            </div> 
-                         
-        </div>   
+            </div>               
+        </div>             
+        </div> 
     </main>
  
     <%- include('./partials/footer')%>
