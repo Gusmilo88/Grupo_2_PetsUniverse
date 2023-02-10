@@ -27,7 +27,7 @@
 
 .imagen2{
     width: 100%;
-    display: none;
+   
 }
 
 /*section2: contenedor y formulario oculto hasta escritorio*/
@@ -180,9 +180,7 @@
     font-size: 18px;
 }
 
-.titulos2{
-    display: none;
-}
+
 
 /*dos columnas que tienen descripción del producto*/
 .aLaPar{
@@ -328,6 +326,8 @@
     text-align: left;
 }
 
+
+
 /*tablet*/
 @media(min-width:361px){
 
@@ -379,17 +379,6 @@
         width: 80%;
     }
 
-/*se oculta imagen usada en mobile*/
-    .imagen1{
-        display: none;
-    }
-
-/*se muestra nueva imagen*/
-    .imagen2{
-        display: block;
-        ;
-    }
-
 /*carrusel*/
 .carrusel1{
     width: 80%;
@@ -437,16 +426,10 @@
 
 /* características del título del producto*/
     .titulo{
-        display: flex;
         padding: 10px;
     }
 
     .titulos1{
-        display: none;
-    }
-
-    .titulos2{
-        display: block;
         font-family: var(--tipografiaTitulos);
         font-size:14px;
     }
@@ -569,6 +552,9 @@
     }
 }
 
+.lasCategorias{
+    font-size: 20px;
+}
 /*escritorio*/
 @media(min-width:769px){
 
@@ -610,7 +596,7 @@
 
 .carrusel1{
     width: 100%;
-    margin: 0px 0px;
+    margin: 10% 0%;
 }
 
 .carrusel__section{
@@ -621,6 +607,15 @@
     width: 90%;
     height: 85%;
 }
+
+.carroussel-food-item img{
+    height: 85%; 
+}
+
+.carroussel-food-item h5{
+    height: 15%;    
+}
+
 /*section3 o segunda columna*/  
 /*características de la caja*/
     .section3{
@@ -641,11 +636,8 @@
         padding: 6px;
     }
 
-    .titulos1{
-        display: none;
-    }
 
-    .titulos2{
+    .titulos1{
         display: block;
         font-family: var(--tipografiaTitulos);
         font-size: 10px;
