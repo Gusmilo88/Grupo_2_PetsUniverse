@@ -238,7 +238,7 @@
 .form__button--edit button{
     width: 20vh;
     height: 25px;
-    background: orange;
+    background: rgb(4, 150, 116);
     font-family: var(--tipografiaTitulos);
     font-size: 12px;
     font-weight: 600;
