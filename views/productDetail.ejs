@@ -81,7 +81,7 @@
                                 mil
                             }) %>
                             <div class="form__button--edit">
-                                <a href="/cart"><button  type="submit">Editar producto</button></a>
+                                <a href="/products/productEdit/<%= id %>"><button  type="submit">Editar producto</button></a>
                             </div>
                             <div class="form__button--delete">
                                 <a href="/cart"><button  type="submit">Eliminar producto</button></a>
@@ -94,7 +94,7 @@
                         <div class="glider-contain">
                             <div class="glider">
                                 <% products.forEach(({id,image,name}) => { %>
-                                    <a href="/products/productDetail/<%= id %> ">
+                                    <a href="/products/productDetail/<%= id %>">
                                         <div class="carroussel-food-item">
                                             <img src="/images/products/<%= image %> " class="card-img-top" alt="">
                                             <div class="card-body">
