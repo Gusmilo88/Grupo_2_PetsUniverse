@@ -3,9 +3,9 @@ const productController = require('../controllers/productController');
 var router = express.Router();
 
 /* GET home page. */
-const {productDetail,productEdit, productCreate, productUpdate, store} = require('../controllers/productController')
+const {productDetail,productEdit, productCreate, productUpdate, store,productFilter} = require('../controllers/productController')
 
-
+router.get('/',productFilter)
 router.get('/productDetail/:id',productDetail) 
 
 router.get('/productCreate/',productCreate)
