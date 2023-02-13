@@ -48,7 +48,7 @@ module.exports = {
             if(product.id === +id){
                 return productModified
             }
-            return product
+            return product;
         })
 
         fs.writeFileSync(productsFilePath, JSON.stringify(productsModified, null, 3), "utf-8");
