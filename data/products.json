@@ -9,7 +9,7 @@
       "weight": 21,
       "category": "perros",
       "productTipe": "alimento",
-      "stock" : 27
+      "stock": 27
    },
    {
       "id": 2,
@@ -238,5 +238,14 @@
       "category": "gatos",
       "productTipe": "salud",
       "stock": 12
+   },
+   {
+      "id": 21,
+      "name": "pc gamer",
+      "description": "DEEDEEDDEDEED",
+      "price": null,
+      "discount": null,
+      "image": null,
+      "weight": 34
    }
 ]

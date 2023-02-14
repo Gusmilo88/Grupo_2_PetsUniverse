@@ -129,6 +129,17 @@ module.exports = {
             products:allProducts,
             queries: { ...queries, ...req.query }
         })
-    }
+    },
+
+    
+    destroy : (req, res) => {
+		// Do the magic
+		const {id} = req.params;
+		const productsModified = products.filter(product => product.id !== + id)
+		fs.writeFileSync(productsFilePath, JSON.stringify(productsModified, null, 3), "utf-8");
+		return res.redirect("/products")
+	}
 }
+
+
 
