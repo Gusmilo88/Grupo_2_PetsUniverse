@@ -238,14 +238,5 @@
       "category": "gatos",
       "productTipe": "salud",
       "stock": 12
-   },
-   {
-      "id": 21,
-      "name": "pc gamer",
-      "description": "DEEDEEDDEDEED",
-      "price": null,
-      "discount": null,
-      "image": null,
-      "weight": 34
    }
 ]
