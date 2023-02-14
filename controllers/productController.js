@@ -40,10 +40,10 @@ module.exports = {
 			price : +price,
 			discount : +discount,
 			image : product.image,
-            weight : +weight,
-			category,
-            productTipe,
-            stock : +stock,
+      weight : +weight,
+			category : category ? "perros" : "perros" || category ? "gatos" : "gatos",
+      productTipe : productTipe ? "alimento" : "alimento" || productTipe ? "juguetes" : "juguetes" || productTipe ? "salud" : "salud",
+      stock : +stock,
 		}
 
         const productsModified = products.map(product => {
