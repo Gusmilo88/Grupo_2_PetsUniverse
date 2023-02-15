@@ -64,6 +64,7 @@ module.exports = {
     },
 
     store: (req, res) => {
+      const mil = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         const {name, discount, price, description, category, weight, productTipe, stock, image} = req.body;
         const newProduct = {
             id : products[products.length - 1].id + 1,
@@ -75,7 +76,8 @@ module.exports = {
             weight : +weight,
             productTipe : productTipe ? "alimento" : "alimento" || productTipe ? "juguetes" : "juguetes" || productTipe ? "salud" : "salud",
             category : category ? "perros" : "perros" || category ? "gatos" : "gatos",
-            stock : +stock
+            stock : +stock,
+            mil
         }
         products.push(newProduct);
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 3), 'utf-8')
