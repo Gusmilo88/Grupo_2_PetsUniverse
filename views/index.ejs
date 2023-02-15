@@ -45,53 +45,34 @@
             <section class="home__main__section--carruselProductos">
                 <div class="glider-contain">
                     <div class="glider">
-                        <a href="/products/productDetail">
+
+                        
+                        <% products.forEach(({name,image,id}) => { %>
+                        
+                        <a href="/products/productDetail/<%= id %>">
                             <div class="carousel-products-item">
-                                <img src="images/2.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Hop! Gato adulto 15kg</h5>                                </div>
-                            </div>
-                        </a>
-                        <a href="/products/productDetail">
-                            <div class="carousel-products-item">
-                                <img src="images/3.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Vital Can Senior 7,5kg</h5>                                </div>
-                            </div>
-                        </a>
-                        <a href="/products/productDetail">
-                            <div class="carousel-products-item">
-                                <img src="images/4.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Vital Can adulto 1,5kg</h5>                                </div>
-                            </div>
-                        </a>
-                        <a href="/products/productDetail">
-                            <div class="carousel-products-item">
-                                <img src="images/5.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Whiskas gatitos souffle</h5>                                </div>
-                            </div>
-                        </a>
-                        <a href="/products/productDetail">
-                            <div class="carousel-products-item">
-                                <img src="images/6.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Hop! Perro adulto 21kg</h5>                                </div>
-                            </div>
-                        </a>
-                        <a href="/products/productDetail">
-                            <div class="carousel-products-item">
-                                <img src="images/7.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Pachá 22kg Perros Adultos</h5>                                </div>
-                            </div>
-                        </a>
+        
+            <img src="images/products/<%= image %>" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><%= name %></h5>
+
+
+
+
+
+
+                                            </div>
+        </div>
+    </a>
+ 
+<% }) %>
+                      
+                        
                     </div>
                     
                     <button aria-label="Previous" class="glider-prev"><i class="fa-solid fa-arrow-left"></i></button>
                     <button aria-label="Next" class="glider-next"><i class="fa-solid fa-arrow-right"></i></button>
-                    <div role="tablist" class="dots"></div>
+                    <!-- <div role="tablist" class="dots"></div> -->
                 </div>
             </section>
                 <div class="home__main__section__div--ufo">
@@ -111,10 +92,11 @@
                 </div>
         </section>
     </main>
-
+    
     <%- include('./partials/footer')%>
 
-    <%- include('./partials/scripts')%>
     
+
+    <%- include('./partials/scripts')%>
 </body>
 </html>

@@ -6,10 +6,10 @@
       "price": 5190,
       "discount": 12,
       "image": "perro1.png",
-      "weight": 0,
+      "weight": 21,
       "category": "perros",
       "productTipe": "alimento",
-      "stock" : 27
+      "stock": 27
    },
    {
       "id": 2,
@@ -25,7 +25,7 @@
    },
    {
       "id": 3,
-      "name": "Alimento Old Prince Premium Cordero",
+      "name": "Old Prince Premium",
       "description": "Perros adultos, Su fórmula contiene un 25% de proteína, 100% natural y no contiene soja, diseñado para fortalecer la estructura corporal y mejorar la salud de la piel y el pelaje, manteniéndolo suave y brillante.",
       "price": 7700,
       "discount": 25,
@@ -37,7 +37,7 @@
    },
    {
       "id": 4,
-      "name": "Alimento Sieger Super Premium Criadores",
+      "name": "Sieger Super Premium",
       "description": "Perros de todos los tamaños, ingredientes: Harina de subproductos de pollo, maíz integral, arroz, gluten de maíz, aceite de pollo refinado (fuente de omega 6), harina de pescado, saborizante natural (hidrolizado de menudencias porcinas y aviares), aceite de pescado refinado (fuente de omega 3), trigo, pulpa de remolacha, inulina, cloruro de sodio, fructo-oligosacáridos (FOS), colina, L-lisina, DL-metionina, carbonato de calcio, fosfato monodicálcico, extracto de yucca, antioxidantes naturales (extracto de romero/tocoferoles), betaína, manano-oligosacáridos (MOS), condroitín sulfato, glucosamina, vitamina E, antifúngico (ácido propiónico), sulfato de hierro, metionina de zinc, sulfato de zinc, vitamina C, sulfato de cobre, taurina, nicotinamida, pantotenato de calcio, sulfato manganoso, vitamina A, vitamina B2, vitamina B6, vitamina D3, vitamina B1, vitamina K3, biotina, ácido fólico, vitamina B12, iodato de calcio, selenio orgánico, selenito de sodio.",
       "price": 12500,
       "discount": 12,
@@ -49,7 +49,7 @@
    },
    {
       "id": 5,
-      "name": "Alimento Agility Active Health",
+      "name": "Agility Active Health",
       "description": "Perros adultos de raza mediana y grande, sabor mix: Pulpa de remolacha, Extracto de yucca, Vitamina E, Cloruro de sodio, Sulfato de hierro, Carbonato de calcio, DL-metionina, Nicotinamida, Pantotenato de calcio, Vitamina B1, Vitamina B2, Vitamina K3, Biotina, Vitamina A, Vitamina D3, Ácido fólico, Vitamina B12, Vitamina B6, Iodato de calcio, Selenito de sodio",
       "price": 8100,
       "discount": 10,

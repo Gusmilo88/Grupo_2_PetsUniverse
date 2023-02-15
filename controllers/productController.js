@@ -3,6 +3,8 @@ const path = require('path');
 
 const productsFilePath = path.join(__dirname, '../data/products.json')
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+const writeJson = (data = {}) =>fs.writeFileSync(path.join(__dirname, "../data/queries.json"),JSON.stringify(data),"utf-8");
 module.exports = {
 
     productDetail: (req, res) => {
@@ -38,10 +40,10 @@ module.exports = {
 			price : +price,
 			discount : +discount,
 			image : product.image,
-            weight : +weight,
-			category,
-            productTipe,
-            stock : +stock,
+      weight : +weight,
+			category : category ? "perros" : "perros" || category ? "gatos" : "gatos",
+      productTipe : productTipe ? "alimento" : "alimento" || productTipe ? "juguetes" : "juguetes" || productTipe ? "salud" : "salud",
+      stock : +stock,
 		}
 
         const productsModified = products.map(product => {
@@ -52,7 +54,7 @@ module.exports = {
         })
 
         fs.writeFileSync(productsFilePath, JSON.stringify(productsModified, null, 3), "utf-8");
-        return res.redirect("index")
+        return res.redirect("/products/productDetail/" + id)
 
         
     },
@@ -78,6 +80,66 @@ module.exports = {
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 3), 'utf-8')
 
         return res.redirect('/')
-    }
+    },
+
+    productFilter: (req,res)=>{
+
+        if (!req.query.price  && !req.query.category && !req.query.productTipe) {
+			writeJson();
+		  }
+
+          let queries = require("../data/queries.json");
+	  
+		  writeJson({ ...queries, ...req.query });
+	  
+		  const { price, category,productTipe } = { ...queries, ...req.query } 
+	  
+		  let allProducts = products;
+
+           if (category) {
+			allProducts = allProducts.filter((product) => {
+			  return product.category === category;
+			});
+		  }
+
+          if (price) {
+			// ordenar por el precio
+			if (price === "min") {
+			  allProducts = allProducts.sort((before, after) => {
+				return before.price - after.price;
+			  });
+			} else {
+			  allProducts = allProducts.sort((before, after) => {
+				return after.price - before.price;
+			  });
+			}
+		  }
+
+           if (productTipe) {
+			allProducts = allProducts.filter((product) => {
+			  return product.productTipe === productTipe;
+			});
+		  }
+
+
+
+
+
+        return res.render('products',{
+            products:allProducts,
+            queries: { ...queries, ...req.query }
+        })
+    },
+
+    
+    destroy : (req, res) => {
+		// Do the magic
+		const {id} = req.params;
+		const productsModified = products.filter(product => product.id !== + id)
+		fs.writeFileSync(productsFilePath, JSON.stringify(productsModified, null, 3), "utf-8");
+		return res.redirect("/products")
+	}
 }
+
+
 
