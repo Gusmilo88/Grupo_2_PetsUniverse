@@ -37,12 +37,12 @@
    
     <div class="products_main_flexbox">
 
-    <% products.forEach(({name,image}) => { %>
+    <% products.forEach(({name,image,id}) => { %>
 
-      
-    <div class="products_main_producto">
-        
        
+    <div class="products_main_producto">
+        <a href="/products/productDetail/<%= id %>">  
+      
         <div class="products_main_producto--img">
         <img src="/images/products/<%= image %>" class="card-img-top" alt="...">
 
@@ -50,6 +50,7 @@
 
 
     </div>
+</a>
         <div class="products_main_producto--description">
             <h5 ><%= name %></h5>
 
@@ -58,7 +59,8 @@
 
 
 
-                                        </div>
+        </div>
+                                    
     </div>
 
  
