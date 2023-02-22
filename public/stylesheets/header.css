@@ -42,6 +42,10 @@
     
 }
 
+.home__header__nav__div--admin{
+    display: none;
+}
+
 .home__header__nav__div--user{
     display: none;
 }
@@ -137,9 +141,20 @@
         font-size: 30px;
     }
 
+    .home__header__nav__div--admin{
+        display: block;
+        margin-top: 10px;
+        margin-right: 15px;
+    }
+
+    .home__header__nav__div--admin i{
+        font-size: 30px;
+    }
+
     .home__header__nav__div--user{
         display: block;
-        margin-top: 10px
+        margin-top: 10px;
+        margin-right: 15px;
     }
 
     .home__header__nav__div--user i{
@@ -149,7 +164,7 @@
     .home__header__nav__div--carrito{
         display: block;
         margin-top: 10px;
-        margin-left: 10px;
+        margin-right: 15px;
     }
 
     .home__header__nav__div--carrito i{

@@ -18,16 +18,16 @@
                     </div>
                     <div class="edit__div__div">
                         <div class="edit__div__div--2">
-                            <label for="categoria">Categoría:</label>
-                            <select name="categoria" id="categoria" value="<%= category %>">
+                            <label for="category">Categoría:</label>
+                            <select name="category" id="category" value="<%= category %>">
                                 <option value="" select hidden>Seleccione categoría...</option>
                                 <option value="gatos" <%= category === "gatos" && "selected" %>>Gatos</option>
                                 <option value="perros" <%= category === "perros" && "selected" %>>Perros</option>
                             </select>
                         </div>
                         <div class="edit__div__div--2">
-                            <label for="trademark">Tipo de producto:</label>
-                            <select name="trademark" id="trademark">
+                            <label for="productTipe">Tipo de producto:</label>
+                            <select name="productTipe" id="productTipe">
                                 <option value="<%= productTipe %>" select hidden>Seleccione tipo de producto...</option>
                                 <option value="alimento" <%= productTipe === "alimento" && "selected" %>>Alimento</option>
                                 <option value="juguetes" <%= productTipe === "juguetes" && "selected" %>>Juguetes</option>
