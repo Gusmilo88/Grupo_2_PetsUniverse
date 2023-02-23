@@ -3,9 +3,10 @@ const productController = require('../controllers/productController');
 var router = express.Router();
 
 /* GET home page. */
-const {productDetail,productEdit, productCreate, productUpdate, store,productFilter, destroy} = require('../controllers/productController')
+const {productDetail,productEdit, productCreate, productUpdate, store, destroy,productFilterCats,productFilterDogs} = require('../controllers/productController')
 
-router.get('/',productFilter)
+router.get('/gatos',productFilterCats)
+router.get('/perros',productFilterDogs)
 router.get('/productDetail/:id',productDetail) 
 
 router.get('/productCreate/',productCreate)

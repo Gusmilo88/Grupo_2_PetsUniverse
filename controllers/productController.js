@@ -85,9 +85,9 @@ module.exports = {
         return res.redirect('/')
     },
 
-    productFilter: (req,res)=>{
+    productFilterCats: (req,res)=>{
 
-        if (!req.query.price  && !req.query.category && !req.query.productTipe) {
+        if (!req.query.price  && !req.query.productTipe) {
 			writeJson();
 		  }
 
@@ -96,14 +96,14 @@ module.exports = {
 		  writeJson({ ...queries, ...req.query });
 	  
 		  const { price, category,productTipe } = { ...queries, ...req.query } 
-	  
-		  let allProducts = products;
+     
+      ProductsCat = products.filter((product) => {
+			  return product.category === "gatos";
+			})
 
-           if (category) {
-			allProducts = allProducts.filter((product) => {
-			  return product.category === category;
-			});
-		  }
+		  let allProducts = ProductsCat;
+
+      
 
           if (price) {
 			// ordenar por el precio
@@ -128,11 +128,60 @@ module.exports = {
 
 
 
-        return res.render('products',{
+        return res.render('productsCats',{
             products:allProducts,
             queries: { ...queries, ...req.query }
         })
     },
+
+    productFilterDogs: (req,res)=>{
+
+      if (!req.query.price  && !req.query.productTipe) {
+    writeJson();
+    }
+
+        let queries = require("../data/queries.json");
+  
+    writeJson({ ...queries, ...req.query });
+  
+    const { price, category,productTipe } = { ...queries, ...req.query } 
+   
+    ProductsCat = products.filter((product) => {
+      return product.category === "perros";
+    })
+
+    let allProducts = ProductsCat;
+
+    
+
+        if (price) {
+    // ordenar por el precio
+    if (price === "min") {
+      allProducts = allProducts.sort((before, after) => {
+      return before.price - after.price;
+      });
+    } else {
+      allProducts = allProducts.sort((before, after) => {
+      return after.price - before.price;
+      });
+    }
+    }
+
+         if (productTipe) {
+    allProducts = allProducts.filter((product) => {
+      return product.productTipe === productTipe;
+    });
+    }
+
+
+
+
+
+      return res.render('productsDogs',{
+          products:allProducts,
+          queries: { ...queries, ...req.query }
+      })
+  },
 
     
     destroy : (req, res) => {

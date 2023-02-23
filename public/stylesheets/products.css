@@ -145,7 +145,7 @@ text-align: center;
 
      .product_main--filtro-flex{
         flex-direction:row;
-        justify-content: space-evenly;
+        gap: 120px;
      }
 
      .product_main_filtros li {
