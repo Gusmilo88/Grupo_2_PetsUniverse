@@ -1,0 +1,174 @@
+.products_main_producto{
+   background: linear-gradient(270deg, rgba(255, 255, 255, 0.07) 0%, rgba(2, 152, 227, 0.7) 33.33%, rgba(1, 58, 87, 0.7) 66.67%, rgba(0, 0, 0, 0.7) 100%);
+   margin: 9px;
+   display: flex;
+   flex-direction: column;
+   border-radius: 6px;
+   width: 100%;
+   
+}
+
+.products_main_producto img{
+    width: 220px;
+    text-align: center;
+    
+ }
+
+.products_main_producto--img{
+    display: flex;
+    justify-content: center;
+}
+
+
+.products_main_producto--description{
+    display: flex;
+    justify-content: center;
+}
+
+.products_main_producto--description h5{
+    text-align: center;
+}
+
+.product_main--a{
+    text-decoration: none;
+    color: black;
+   
+}
+
+.product_main--ul{
+    list-style: none;
+   padding-left: 0;
+}
+
+.product_main--ul li{
+   
+    
+   
+}
+
+.product_main--ul h2{
+    color: white;
+}
+
+.product_main_filtros li a{
+    background-color: white;
+    color: black;
+    padding: 9px;
+    margin: 4px;
+    border-radius: 3px;
+
+   
+}
+
+.product_main_filtros li {
+    
+    font-size: 25px;
+    margin: 4px;
+}
+
+
+
+
+
+.products_main_producto--description h5{ 
+    color: white;
+}
+
+
+
+
+
+.products_main_flexbox{
+    display: flex;
+    flex-wrap: wrap;
+   justify-content: center;
+ 
+    
+}
+
+
+
+.product_main_filtros h2{
+text-align: center;
+}
+
+.product_main--li{
+    text-align: center;
+  
+    }
+    
+    
+
+
+    .product_main_filtros {
+        gap: 12px;
+        display: flex;
+        flex-direction: column;
+    
+
+       
+    }
+    .product_main--filtro-flex{
+        display: flex;
+        flex-direction: column;
+       justify-content: center;
+       gap:10px
+     }
+
+
+     
+     
+     .product_main--li a{
+        font-size: 25px;
+    color: white;
+  
+     }
+
+      .product_main--li {
+  
+    margin: 10px;
+     }
+
+
+
+
+
+
+
+@media (min-width: 461px){
+
+    .products_main_producto{
+        
+        width: 45%;
+        
+     }
+
+     .product_main--filtro-flex{
+        flex-direction:row;
+        gap: 120px;
+     }
+
+     .product_main_filtros li {
+    
+    font-size: 25px;
+    
+}
+
+
+    
+     
+    }
+    
+
+
+@media (min-width: 765px){
+
+    .products_main_producto{
+        
+        width: 30%;
+        
+     }
+
+}
+
+

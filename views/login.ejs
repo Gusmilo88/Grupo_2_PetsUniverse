@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head')%>
+
+<body>
+    <%- include('./partials/header')%>
+
+
+    <main class="main__login">
+
+        <div class="main__login__div">
+        <form action="">
+
+            <div class="main__login__div--iniciarSesion">
+                <h2>Iniciar sesión</h2>
+            </div>
+
+            <div class="main__login__div--nombreUsuario">
+<!--                 <i class="fa-regular fa-envelope"></i> -->
+                <input type="email"  placeholder="Correo Electronico" name="email" id="email" minlength="1" autofocus>
+            </div>
+
+            <div class="main__login__div--contraseña">
+<!--                 <i class="fa-solid fa-unlock"></i> --><input type="password" placeholder="Contraseña" name="contraseña" id="contraseña" minlength="1"><!-- <i class="fa-solid fa-eye"></i> -->
+            </div>
+
+            <div class="main__login__div--botonEnviar">
+                <a href="/"><input type="button" value="Enviar"></a>
+            </div>
+            <div>
+                <input type="checkbox" name="RecordarContraseña" id="RecordarContraseña">
+            <label for="RecordarContraseña">Recordar contraseña</label>
+            </div>
+        </form> 
+            <div class="main__login--olvidarContraseña">
+                <small> ¿Olvidaste tu contraseña? <a href="/register"> Recupera tu contraseña </a></small>
+            </div>
+
+            <div class="main__login--estasRegistrado">
+                <small> ¿No estas registrado? <a href="/users/register"> Registrate </a></small>
+            </div>
+           
+        </div>
+
+
+    </main>
+
+
+
+    <%- include('./partials/footer')%>
+</body>
+</html>
+
+

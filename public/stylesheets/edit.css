@@ -1,0 +1,154 @@
+.edit__main{
+    text-align: center;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .edit__main__div{
+    background: linear-gradient(90deg, rgba(16, 16, 118, 0.5) 0%, rgba(114, 198, 239, 0.5) 50%, rgba(47, 7, 67, 0.5) 100%);
+    border-radius: 7px;
+    color: white;
+    width: 500px;
+  }
+  
+  .edit__main__div h3{
+    padding: 20px;
+  }
+  
+  .edit__main__div--info{
+      padding-left:10px;
+  }
+
+  .edit__main__div--info input, .edit__main__div--info select, .edit__main__div--info textarea{
+    width: 95%;
+    background: linear-gradient(90deg, rgba(47, 7, 67, 0.6) 0%, rgba(98, 2, 248, 0.6) 50%, rgba(0, 161, 255, 0.6) 100%);
+    border-radius: 7px;
+    box-shadow: 0px 7.27273px 2.90909px rgba(0, 0, 0, 0.4);
+    border: none;
+    padding: 5px;
+    color: white;
+  }
+  
+  .edit__div__div{
+      display: flex;
+      justify-content: space-between;
+      gap: 4px;
+      padding: 5px;
+  }
+
+  .edit__div__div--2{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 5px;
+  }
+
+  .edit__div__div--2 option{
+    color: black;
+}
+  
+  #name{
+      padding:5px;
+  }
+  
+  .edit__div__div--button{
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      padding: 5px;
+  }
+
+  .edit__main__div--button  button{
+    background: linear-gradient(90deg, rgba(47, 7, 67, 0.6) 0%, rgba(98, 2, 248, 0.6) 50%, rgba(0, 161, 255, 0.6) 100%);
+    border-radius: 7px;
+    margin: 10px;
+    box-shadow: 0px 7.27273px 2.90909px rgba(0, 0, 0, 0.4);
+    border: none;
+    padding: 5px;
+    color: white;
+  }
+  
+  .edit__main__div--button button:hover{
+    -webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+  }
+  
+  @-webkit-keyframes shake-bottom {
+  0%,
+  100% {
+  -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+  -webkit-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
+  }
+  10% {
+  -webkit-transform: rotate(2deg);
+      transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+  -webkit-transform: rotate(-4deg);
+      transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+  -webkit-transform: rotate(4deg);
+      transform: rotate(4deg);
+  }
+  80% {
+  -webkit-transform: rotate(-2deg);
+      transform: rotate(-2deg);
+  }
+  90% {
+  -webkit-transform: rotate(2deg);
+      transform: rotate(2deg);
+  }
+  }
+  @keyframes shake-bottom {
+  0%,
+  100% {
+  -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+  -webkit-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
+  }
+  10% {
+  -webkit-transform: rotate(2deg);
+      transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+  -webkit-transform: rotate(-4deg);
+      transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+  -webkit-transform: rotate(4deg);
+      transform: rotate(4deg);
+  }
+  80% {
+  -webkit-transform: rotate(-2deg);
+      transform: rotate(-2deg);
+  }
+  90% {
+  -webkit-transform: rotate(2deg);
+      transform: rotate(2deg);
+  }
+  }
+  
+  @media (min-width:769px) {
+    
+      .edit__main__div{
+            width: 500px;
+      }
+      
+      .edit__main{
+            margin: 10px;
+      }
+  }
+  

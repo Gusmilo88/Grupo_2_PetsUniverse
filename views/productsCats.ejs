@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head')%>
+
+<body>
+    
+    <%- include('./partials/header')%>
+
+<main class="product_main">
+    <li class="product_main--li"><a href="/products/gatos" class="product_main--a">Todos los productos para gatos</a></li>
+    <ul class="product_main--ul">
+        <div class="product_main--filtro-flex">
+      
+        <div class="product_main_filtros">
+        <h2>Precio</h2>
+        <li class="product_main--li"><a href="/products/gatos?price=max" class="product_main--a"  style="color:<%= queries.price === 'max' && " white" %>;background-color:<%= queries.price === 'max' && " black" %>;background-color:<%= queries.price === 'max' && " black" %>;padding:<%= queries.price === 'max' && " 9px" %>">Mayor precio</a></li>
+        <li class="product_main--li"><a href="/products/gatos?price=min" class="product_main--a" style="color:<%= queries.price === 'min' && " white" %>;background-color:<%= queries.price === 'min' && " black" %>;background-color:<%= queries.price === 'min' && " black" %>;padding:<%= queries.price === 'min' && " 9px" %>">menor precio</a></li>
+        </div>
+        
+
+    <div class="product_main_filtros">
+        <h2>Categoria</h2>
+        <li class="product_main--li"><a href="/products/gatos?productTipe=alimento" class="product_main--a" style="color:<%= queries.productTipe === 'alimento' && " white" %>;background-color:<%= queries.productTipe === 'alimento' && " black" %>;background-color:<%= queries.productTipe === 'alimento' && " black" %>;padding:<%= queries.productTipe === 'alimento' && " 9px" %>">Alimento</a></li>
+        <li class="product_main--li"><a href="/products/gatos?productTipe=juguetes" class="product_main--a" style="color:<%= queries.productTipe === 'juguetes' && " white" %>;background-color:<%= queries.productTipe === 'juguetes' && " black" %>;background-color:<%= queries.productTipe === 'juguetes' && " black" %>;padding:<%= queries.productTipe === 'juguetes' && " 9px" %>">Juguetes</a></li>
+        <li class="product_main--li"><a href="/products/gatos?productTipe=salud" class="product_main--a" style="color:<%= queries.productTipe === 'salud' && " white" %>;background-color:<%= queries.productTipe === 'salud' && " black" %>;background-color:<%= queries.productTipe === 'salud' && " black" %>;padding:<%= queries.productTipe === 'salud' && " 9px" %>">Salud</a></li>
+    </div>
+</div>
+
+    </ul>
+<div class="product_master1">
+    <div class="product_master">
+   
+    <div class="products_main_flexbox">
+
+    <% products.forEach(({name,image,id}) => { %>
+
+       
+    <div class="products_main_producto">
+        <a href="/products/productDetail/<%= id %>">  
+      
+        <div class="products_main_producto--img">
+        <img src="/images/products/<%= image %>" class="card-img-top" alt="...">
+
+
+
+
+    </div>
+</a>
+        <div class="products_main_producto--description">
+            <h5 ><%= name %></h5>
+
+
+
+
+
+
+        </div>
+                                    
+    </div>
+
+ 
+<% }) %>
+    
+</div>
+
+</div>
+
+</div>
+
+
+
+</main>
+
+
+<%- include('./partials/footer')%>
+
+
+
+</body>
+</html>

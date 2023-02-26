@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head')%>
+
+   
+<body class="bodyProductDetail">
+
+<%- include('./partials/header')%>
+
+    <main class="productDetail" id="productDetail">
+        <section class="section0">
+            <article class="section0__article--rep" >
+                    <div class="estrellitas">
+                        <div class="estrellitas1"><small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></small></div>
+                    </div>  
+                    <div class="titulo">
+                        <h1 class="titulos1"><%= name %> </h1>
+                        <h1 class="titulos1"><%= weight %> 
+                            <% if (weight!==null) { %>
+                                  kg 
+                                  <%}else{%>  <% } %>
+                        </h1>
+                    </div> 
+                    <div class="titulo">
+                        <h1 class="titulos1">Categoria: <%= category %> </h1>
+                        <h1 class="titulos1">Tipo: <%= productTipe %> </h1>     
+                    </div>                 
+            </article>
+        </section>
+        <div class="productDetail__div"> 
+            <div class="white">
+                <div class="left">
+                    <section class="section1">   
+                        <img class="imagen1" src="/images/products/<%= image ? image : "ufo.png" %> " alt="Foto de bolsón de alimento">
+                        <article id="otro">
+
+                            <%- include('./partials/section3DetailPartial', {
+                                price,
+                                mil
+                            }) %>
+                           
+                        </article>
+                    </section>
+                    <section class="section2">                                      
+                        <article class="section2__article">
+                            <div class="section2__article__div">
+                                <p class="section2__article__div__p"><%= description %> </p>
+                            </div>
+                            <form class="form" action="/" method="post">
+                                <textarea class="form-textarea" name="consulta" id="consulta" min="10" max="150" value="consulta" > </textarea>
+                                <div class="form__box">
+                                    <button type="submit" >preguntar</button>
+                                </div>   
+                            </form>
+                        </article>                    
+                    </section>
+                </div>            
+                <section class="section3">
+                    <article class="section3__article--original1">
+                        <div class="section3__article__div" >
+                            <div class="section3__article__div--original2">
+                                <div>  
+                                    <div class="titulo">
+                                        <h1 class="titulos2"><%= name %> </h1>
+                                        <h2 class="titulos2"><%= weight %> 
+                                            <% if (weight!==null) { %>
+                                                  kg 
+                                                  <%}else{%>  <% } %>
+                                        </h2>     
+                                    </div> 
+                                    <div class="titulo">
+                                        <h1 class="titulos2">Categoria: <%= category %></h1>
+                                        <h2 class="titulos2">Tipo: <%= productTipe %> </h2>     
+                                    </div> 
+                                </div>
+                            </div>
+
+                            <%- include('./partials/section3DetailPartial', {
+                                price,
+                                mil
+                            }) %>
+                            <div class="form__button--edit">
+                                <a href="/products/productEdit/<%= id %>"><button  type="submit">Editar producto</button></a>
+                            </div>
+                            <div class="form__button--delete">
+                                <form action="/products/productDelete/<%= id %>?_method=DELETE" method="POST" >
+                                    <button type="submit" class="action-button delete">Eliminar producto</button>
+                                </form> 
+                            </div> 
+                        </div>
+                    </article>
+                </section>
+                <div class="carrusel1">
+                    <section class="carrusel__section">
+                        <div class="glider-contain">
+                            <div class="glider">
+                                <% products.forEach(({id,image,name}) => { %>
+                                    <a href="/products/productDetail/<%= id %>">
+                                        <div class="carroussel-food-item">
+                                            <img src="/images/products/<%= image %> " class="card-img-top" alt="">
+                                            <div class="card-body">
+                                                <h5 class="card-title" >Producto estelar:</h5><h5><%= name %>  </h5>
+                                            </div>
+                                        </div>
+                                    </a>
+                                <% }) %>
+                            </div>
+                            <button aria-label="Previous" class="glider-prev "> < </button>
+                            <button aria-label="Next" class="glider-next "> > </button>
+                        </div>
+                    </section>
+                </div> 
+            </div>               
+        </div>             
+        </div> 
+    </main>
+ 
+    <%- include('./partials/footer')%>
+
+    <!--bootstrap-->
+    <%- include('./partials/scriptsDetail')%>
+</body>
+
+</html>

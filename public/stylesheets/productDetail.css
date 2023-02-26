@@ -1,0 +1,766 @@
+
+/*productDetail-gi-ojeda*/
+/*body*/
+.bodyProductDetail{
+    background-image: url(/images/imagen-fondo.jpg);
+    background-size: cover;
+}
+
+/*mobile*/
+/*contenedor general*/
+.productDetail__div{
+    width: 100%;
+    position: relative;
+}
+
+/*section1: bloque de imagenes de bolsas de comida para perro*/
+.section1{
+    width: 100%;
+    padding: 1%; 
+    background-color: var(--gradientePrincipal);
+}
+
+/*imagen grande*/
+.imagen1{
+    width: 100%;
+}
+
+.imagen2{
+    width: 100%;
+   
+}
+
+/*section2: contenedor y formulario oculto hasta escritorio*/
+.section2{
+    width: 100%;
+    height: 30%;
+    padding: 10% 1% 0% 4%;
+    display: none;
+}
+
+.section2__article{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+/*cotenedor violeta*/
+.section2__article__div{
+    background-color: var(--gradientePrincipal);
+}
+
+.section2__article__div__p{
+    font-family: var(--tipografiaTitulos);
+    font-size: 12px;
+}
+
+/*formulario*/
+.form{
+    height: 20px;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.form-textarea{
+    width: 200px;
+    height: 20px;
+    padding-top: 1px;
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 8px 7px  0px rgba(0, 0, 0, 0.6);
+}
+
+.form__box{
+    padding: 0px;
+}
+
+.form__box button{
+    width: 100px;
+    height: 20px;
+}
+
+/*carrusel*/
+
+.carrusel1{
+    margin: 0px 40px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.carrusel__section{
+    width:100%;
+}
+
+.carrusel__section a{
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.carrusel__section h5{
+    text-align: center;
+    color: #fff;
+    font-size: 10px;
+    text-transform: capitalize; 
+}
+
+.carroussel-food-item{
+    width: 200px;
+    height: 300px;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.07) 0%, rgba(2, 152, 227, 0.7) 33.33%, rgba(1, 58, 87, 0.7) 66.67%, rgba(0, 0, 0, 0.7) 100%);;
+    border-radius: 10px;
+}
+
+.carroussel-food-item img{
+    height: 90%; 
+}
+
+.carroussel-food-item h5{
+    height: 10%;
+    line-height: 8px;
+}
+
+.carrusel__section button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: var(--gradientePrincipal);
+    border-radius: 50px;
+    color: #fff;
+    top:40%;
+}
+/*section3: descripcion del producto*/
+/*esta sección no aparece en mobile, pero con el script se clonan algunas partes*/
+#otro{
+    padding-left: 5px;
+}
+
+.section3__article--original1{
+   display: none;
+}
+
+/*caracteristicas generales de los hijos*/
+.section3__article__div, .section0__article--rep, .section1__article__div--original1{
+    width: 100%;
+    font-family: var(--tipografiaTitulos);
+    font-size: 18px;
+    color: #fff; 
+}
+
+/*esta sección no aparece en su lugar hasta el escritorio, pero se clonan sus elementos en mobile y tablet*/
+.section3__article__div--original2{
+    display: none;
+}  
+
+/*estrellas debajo del header*/
+.estrellitas{
+    background: var(--gradientePrincipal);
+}
+
+.estrellitas1{
+    text-align: right;
+}
+
+.estrellitas div small i{
+    font-weight: 200;
+}
+
+/*titulo del producto*/
+.titulos1{
+    font-family: var(--tipografiaTitulos);
+    font-size: 18px;
+}
+
+
+
+/*dos columnas que tienen descripción del producto*/
+.aLaPar{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*descripción*/
+.par1{
+    width: 50%;
+    
+}
+
+/*botones*/
+.par2{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.form__button{   
+    width: 100%;  
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+}
+
+.form__button button{
+    width: 120px;
+    height: 25px;
+}
+
+.form__button button, .form__box button{
+    background: var(--gradienteBotones);
+    font-family: var(--tipografiaTitulos);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: initial;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 8px 7px  0px rgba(0, 0, 0, 0.6);
+}
+
+/* Boton edit */
+
+.form__button--edit{
+    width: 100%;  
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+}
+
+.form__button--edit button{
+    width: 20vh;
+    height: 25px;
+    background: rgb(4, 150, 116);
+    font-family: var(--tipografiaTitulos);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: initial;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 8px 7px  0px rgba(0, 0, 0, 0.6);
+}
+
+/* Boton delete */
+
+.form__button--delete{
+    width: 100%;  
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+}
+
+.form__button--delete button{
+    width: 20vh;
+    height: 25px;
+    background: red;
+    font-family: var(--tipografiaTitulos);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: initial;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 8px 7px  0px rgba(0, 0, 0, 0.6);
+}
+
+
+/*línea oculta hasta escritorio*/
+.oculto1{
+    font-size: 11px;
+    display: none;
+}
+/*Tarjeta valor*/
+.valor{
+    height: 40%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+/*descripcion valor*/
+.visto1{
+    margin-bottom: 0rem;
+    font-size: 28px;
+}
+
+.visto1:hover{
+    font-size: 34px;
+    color: var(--colorVerdeBrillante)
+}
+
+/*descripcion cuotas*/
+.visto2{
+    font-size: 10px;
+    color: var(--colorVerdeBrillante)
+}
+
+/*línea oculta hasta escritorio*/
+.oculto2{
+    font-size: 16px;
+    display: none;
+}
+
+/*envios*/
+.ufo{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    padding-top: 10px;
+}
+
+/*ícono ovni*/
+.flyingSaucer{  
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    position: absolute;
+    top: 25px;
+    left: 0px;
+}
+
+/*texto del ovni*/
+.ufo p{
+    padding-left: 20%;
+}
+
+.visto3{
+    align-self: flex-end;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.compras{
+    font-size: 12px;
+}
+
+/*caja de metodos de pago*/
+.metodo{
+    width: 100%;
+    font-family: var(--tipografiaTitulos);
+    font-size: 12px;
+    color: #fff; 
+}
+
+.metodo__h1{
+    padding-left: 10%;
+    font-size: 18px;
+}
+
+.boxes{
+    height: 30px;
+    position: relative;
+}
+/*íconos de métodos de pago*/
+.boxes img{
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0px;
+}
+
+.boxes p{
+    padding: 2% 10%;
+    text-align: left;
+}
+
+
+
+/*tablet*/
+@media(min-width:361px){
+
+/*clon de estrellas y titulo de section 3*/
+    .section0{
+            width: 100%;
+    }
+/*contenedor general*/
+    .productDetail__div{
+        display: flex;
+    }
+    
+    .white{
+        width:100%;
+        display: flex;
+        flex-wrap: wrap;
+        }
+
+/*primera columna*/
+    .left{
+        width: 60%;
+        height:50%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+/*se oculta el clon usado en mobile*/
+
+#otro{
+        display: none;
+    }
+/* section1*/
+
+/*caja de imagenes de bolsas de alimento para perro*/
+    .section1{
+        width:100%;
+        padding: 0% 1%; 
+        background-color: rgba(0, 0, 0, 0.0);
+    }
+
+    .section1__article {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        }
+   
+    .section1__article img{
+        width: 80%;
+    }
+
+/*carrusel*/
+.carrusel1{
+    width: 80%;
+    margin: 10%;
+}
+
+.carroussel-food-item {
+    height: 100%;
+}
+.carroussel-food-item img{
+   width: 100%;
+}
+ 
+/*section3 (segunda columna)*/
+    .section3{
+        width: 35%;
+        height: 50%;
+        background-color: rgba(7, 165, 244, 0.2);
+    }
+
+/*características del clon de estrellas y titulo*/
+    #original2{
+        padding: 0;
+    }
+
+/*características de las estrellas*/
+    .estrellitas{
+        height: 20%;
+        background: var(--gradientePrincipal); 
+    }
+
+    .estrellitas1{
+        height: 50%; 
+    }
+
+    .estrellitas div small {
+        height: 80%;
+        padding-right: 2%;
+    }
+
+    .estrellitas div small i{
+        font-size: 80%;
+        color: #fff;
+    }
+
+/* características del título del producto*/
+    .titulo{
+        padding: 10px;
+    }
+
+    .titulos1{
+        font-family: var(--tipografiaTitulos);
+        font-size:14px;
+    }
+    
+/*características de la segunda columna*/
+    .section3__article--original1{
+        width: 100%;
+        display: block;
+    }
+
+    .section3__article__div { 
+        width: 100%;
+        position: relative;
+        padding: 4px;
+    }
+
+/*las dos columnas de mobile cambian a una*/
+    .aLaPar{
+        display: block;
+        padding-left: 0%;
+    }
+
+/*parte superior descripción*/
+    .par1{
+        width: 100%;
+    }
+
+/*valor*/
+    .visto1{
+        font-size: 20px;
+        padding: 0px;
+    }
+
+    .visto1:hover{
+        font-size: 30px;
+        color: var(--colorVerdeBrillante)
+    }
+
+/*cuotas*/
+    .visto2{
+        font-size: 8px;  
+        padding: 0px;
+    }
+
+/*caja ovni alejado de su ubicación original*/
+    .ufo{
+        position: absolute;
+        top: 40%;
+    }
+
+/*ícono ovni*/
+    .flyingSaucer{  
+        top: 5px;
+        left: -10px;
+    }
+
+/*descripción ovni*/
+    .ufo p{
+        padding-left: 12%;
+    }
+
+/*envíos*/
+    .visto3, .compras{
+        font-size: 7px;
+        line-height: 3px;
+        padding: 0%;
+    }
+   
+/*parte inferior botones*/
+    .par2{
+        width: 100%;
+        height: 100%;   
+    }
+
+    .form__button{ 
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+        padding: 5px;
+    }
+
+    .form__button button{
+        width: 100px;
+        height: 20px;
+        font-size: 40%;
+    }
+
+/* caja de métodos de pago*/
+    .metodo {
+        font-size: 12px;
+        margin-top: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+    }
+
+/*título*/
+    .metodo__h1{
+        padding-left: 0%;
+        font-size: 16px;
+    }
+
+/*formas de pago*/
+    .pay{
+        padding:0%;
+    }
+
+    .boxes p{
+        font-size: 7px;
+        padding-left: 20px;
+    }
+
+/*íconos de formas de pago*/
+    .boxes img{
+        top: -5px;
+        left: -10px;
+    }
+}
+
+.lasCategorias{
+    font-size: 20px;
+}
+/*escritorio*/
+@media(min-width:769px){
+
+/*se oculta el clon de section3*/
+    .section0{
+        display: none;
+    }
+
+/*contenedor*/
+    .productDetail__div{
+        width:90%;
+        margin: 3% 5%;
+    }
+
+/*contenedor blanco*/
+    .white{
+        background: var(--gradientePrincipal);
+        padding: 15px;
+        }
+
+    .left{
+        height: 70%;
+    }
+/*caja con imagenes de bolsas de alimento para perro*/     
+    .section1{
+        height: 70%;
+    }
+    .section1__article img{
+        width: 60%;
+        }
+
+    /*section2 contenedor violeta y formulario*/
+   
+    .section2{
+        display:block;
+    } 
+
+    /*carrusel*/
+
+.carrusel1{
+    width: 100%;
+    margin: 10% 0%;
+}
+
+.carrusel__section{
+    width: 100%;
+}
+
+.carroussel-food-item {
+    width: 90%;
+    height: 85%;
+}
+
+.carroussel-food-item img{
+    height: 85%; 
+}
+
+.carroussel-food-item h5{
+    height: 15%;    
+}
+
+/*section3 o segunda columna*/  
+/*características de la caja*/
+    .section3{
+        height: 70%;
+        margin: 0px 5px;
+        padding: 2px;
+        background-color: var(--gradientePrincipal);
+    }
+
+/*se recupera el título de la descripción para este sector*/
+    .section3__article__div--original2{
+        width: 100%;
+        display: block;
+    }
+
+    .titulo{
+        flex-wrap: wrap;
+        padding: 6px;
+    }
+
+
+    .titulos1{
+        display: block;
+        font-family: var(--tipografiaTitulos);
+        font-size: 10px;
+    }
+
+/*se ocultan las estrellas*/
+    .estrellitas{
+        display: none; 
+    }    
+
+/*se recupera lo oculto desde mobile*/
+    .oculto1{
+        font-size: 11px;
+        margin-bottom:10px;
+        display: block;
+    }
+/*valor*/
+    .visto1{
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    .visto1:hover{
+        font-size: 30px;
+        color: var(--colorVerdeBrillante)
+    }
+/*se recupera lo oculto desde mobile*/
+    .oculto2{
+        font-size: 12px;
+        color: #fff;
+        font-weight: 800;
+        text-transform: uppercase; 
+        padding-top: 10px;
+        display: block;
+    }    
+
+/*botones*/
+    .form__button{ 
+        justify-content: center;
+        margin: 5px;
+    }
+
+    .form__button button{
+        width: 200px;
+        font-size: 12px;
+    }
+
+/*caja ovni*/
+    .ufo{
+        top: 65%;
+    }
+
+    .flyingSaucer{
+        top:5px;
+    }
+/*envíos*/
+    .visto3{
+        font-size: 12px;
+    }
+
+/*compras*/
+    .compras{
+        font-size: 12px;
+    }
+   
+/*caja de métodos de pago*/    
+    .metodo {
+        font-size: 14px;
+    }
+
+    .metodo__h1{
+        padding-left: 20px;
+    }
+/*formas de pago*/
+    .boxes p{
+        padding-left: 30px;
+        font-size: 12px;
+    }
+  
+}

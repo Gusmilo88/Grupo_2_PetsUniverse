@@ -1,0 +1,10 @@
+:root{
+    --tipografiaTitulos: 'Inter' 'Sans serif' ;
+    --gradientePrincipal: linear-gradient(270deg, rgba(255, 255, 255, 0.07) 0%, rgba(2, 152, 227, 0.7) 33.33%, rgba(1, 58, 87, 0.7) 66.67%, rgba(0, 0, 0, 0.7) 100%);
+    --gradienteSecundario: linear-gradient(90deg, rgba(16, 16, 118, 0.5) 0%, rgba(114, 198, 239, 0.5) 50%, rgba(47, 7, 67, 0.5) 100%);
+    --gradienteBotones:   linear-gradient(90deg, rgba(47, 7, 67, 0.6) 0%, rgba(98, 2, 248, 0.6) 50%, rgba(0, 161, 255, 0.6) 100%);
+    --colorVerdeBrillante: #0DF641;
+    --colorAmarilloBrillante: #FFF509;
+    --colorGrisClaro: #D9D9D9;
+    --colorVioletaAzulado: #0D08F3;
+}
