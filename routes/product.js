@@ -15,8 +15,6 @@ router.post('/productCreate', store)
 router.get('/productEdit/:id', productEdit) 
 router.put('/productEdit/:id', productUpdate)
 
-router.delete('/productDelete/:id', destroy), function (req, res){
-    res.send("hola")
-}; 
+router.delete('/productDelete/:id', destroy),
 
 module.exports = router;

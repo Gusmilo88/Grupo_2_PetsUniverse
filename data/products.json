@@ -238,5 +238,17 @@
       "category": "gatos",
       "productTipe": "salud",
       "stock": 12
+   },
+   {
+      "id": 21,
+      "name": "pc gamer",
+      "description": "ffffff",
+      "price": null,
+      "discount": 3,
+      "image": null,
+      "weight": 4,
+      "productTipe": "juguetes",
+      "category": "gatos",
+      "stock": null
    }
 ]

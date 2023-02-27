@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head')%>
+
+<body>
+    
+    <%- include('./partials/header')%>
+
+<main class="results__products--buscador">
+
+		<div>
+			<div >
+				<h2 class="products-title" style="color: white">Resultados de la búsqueda: <%= keywords %></h2>
+			</div>
+<div class="product_serch--flex">
+			<% if (productsFiltered.length) { %>
+			<% productsFiltered.forEach(({id, image, price, discount, name}) => { %>
+				<%- include("./partials/product",{
+					id, image, price, discount, name					
+				}) %>
+			   <% }) %>			 
+			<% }else{ %>
+			<div >
+				<h2 class="products-title" style="color: tomato;">No hay productos que coincidan con esa búsqueda</h2>
+			</div>				
+			<% } %>
+
+		</div>    
+</div>
+
+
+</main>
+
+<%- include('./partials/footer')%>
+
+</body>
+</html>
