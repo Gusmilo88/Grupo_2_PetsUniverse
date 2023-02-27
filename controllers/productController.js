@@ -70,7 +70,7 @@ module.exports = {
             id : products[products.length - 1].id + 1,
             name : name.trim(),
             description : description.trim(),
-            price : +price,
+            price : +price ? null : 1,
             discount : +discount,
             image : null,
             weight : +weight,
