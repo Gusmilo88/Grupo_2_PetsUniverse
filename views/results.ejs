@@ -13,7 +13,7 @@
 			<div >
 				<h2 class="products-title" style="color: white">Resultados de la búsqueda: <%= keywords %></h2>
 			</div>
-<div class="product_serch--flex">
+            <div class="product_serch--flex">
 			<% if (productsFiltered.length) { %>
 			<% productsFiltered.forEach(({id, image, price, discount, name}) => { %>
 				<%- include("./partials/product",{
