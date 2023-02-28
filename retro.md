@@ -13,3 +13,19 @@
 3. **Continuar haciendo:** Las reuniones reiteradas que tenemos, el compañerismo.
 4. **Hacer menos:** Hablar menos de temas no relacionados a la cursada en las reuniones. 
 5. **Dejar de hacer:** ...
+
+### **Sprint 4:**
+
+1. **Comenzar a hacer:** Aprovechar más el tiempo en las reuniones.
+2. **Hacer más:** Seguir dándole más importancia a Trello.
+3. **Continuar haciendo:** Las reuniones reiteradas que tenemos, el compañerismo.
+4. **Hacer menos:** Hablar menos de temas no relacionados a la cursada en las reuniones. 
+5. **Dejar de hacer:** ...
+
+### **Sprint 5:**
+
+1. **Comenzar a hacer:** Aprovechar más el tiempo en las reuniones.
+2. **Hacer más:** Seguir dándole más importancia a Trello.
+3. **Continuar haciendo:** Las reuniones reiteradas que tenemos, el compañerismo.
+4. **Hacer menos:** Hablar menos de temas no relacionados a la cursada en las reuniones. 
+5. **Dejar de hacer:** ...
