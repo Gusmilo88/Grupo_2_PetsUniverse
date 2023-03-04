@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head')%>
+
+<body class="home">
+
+    <%- include('./partials/header')%>
+    
+    <main class="home__main">
+        <div class="home__header__nav__div--lupa">
+            <form action="/search--dashboard" method="GET" class="home__header__nav__div--lupa">
+              <input type="text" name="keywords2" placeholder="Buscar productos, marcas">
+            <button type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            </form>
+            </div>
+
+        <div class="home_main--container-dashboard">
+         
+      
+
+
+
+            
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Category</th>
+                <th scope="col">Product Type</th>
+                <th scope="col">Edicion</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+                <% products.forEach(({name,id,price,category,productTipe}) => { %>
+                <tr>
+                        
+                        <th scope="row"><%= id %></th>
+                        <td><%= name %></td>
+                        <td><%= price %></td>
+                        <td><%= category %></td>
+                        <td><%= productTipe %></td>
+                        <td>
+
+                            <div class="d-flex gap--dashboard">
+                              <a class="btn btn-sm btn-primary" href="/products/productDetail/<%= id %>"><i class="far fa-eye"></i></a>
+                              <a class="btn btn-sm btn-success" href="/products/productEdit/<%= id %>"><i class="far fa-edit"></i></a>
+                              <form action="/products/productDelete/<%= id %>?_method=DELETE" method="POST" >
+                                <button type="submit" class="btn btn-danger" ><i class="fa-solid fa-trash"></i></button>
+                            </form> 
+            
+                            </div>
+                            </td>
+                      
+                    </tr>
+                 
+                <% }) %>
+              
+
+            
+            </tbody>
+          </table>
+
+        
+        </div>
+    </main>
+    
+
+
+    
+
+    <%- include('./partials/scripts')%>
+</body>
+</html>

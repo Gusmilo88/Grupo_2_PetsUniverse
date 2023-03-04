@@ -41,6 +41,13 @@ module.exports = {
                 productsFiltered,keywords,  
             })
         },
+        dashboard: (req, res) => {
+        
+            return res.render('dashboard',{
+                
+                products  
+            })
+        },
 
 
 }

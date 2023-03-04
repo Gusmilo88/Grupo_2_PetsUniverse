@@ -12,9 +12,13 @@
             </button>
             </form>
             </div>
-            <div class="home__header__nav__div--admin">
-                <a href="/products/productCreate"><i class="fa-solid fa-wand-magic-sparkles"></i></a>
-            </div>
+            <% if (locals.userLogin && userLogin.category === "Admin") { %>
+                <div class="home__header__nav__div--admin">
+                    <a href="/admin"><i class="fa-solid fa-wand-magic-sparkles"></i></a>
+                </div>
+             
+            <% } %>
+            
             <div class="home__header__nav__div--user">
                 <a href="/users/login"><i class="fa-solid fa-user"></i></a>
             </div>

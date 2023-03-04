@@ -187,3 +187,24 @@ text-align: center;
 }
 
 
+td{
+    color:white
+}
+
+
+th{
+    color:white
+}
+
+
+.home_main--container-dashboard{
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.07) 0%, rgba(2, 152, 227, 0.7) 33.33%, rgba(1, 58, 87, 0.7) 66.67%, rgba(0, 0, 0, 0.7) 100%);
+    margin: 40px;
+    padding: 20px 40px;
+}
+
+
+.gap--dashboard{
+    gap:10px
+}
+
