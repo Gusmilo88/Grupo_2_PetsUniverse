@@ -42,10 +42,25 @@ module.exports = {
             })
         },
         dashboard: (req, res) => {
-        
+          let ProductsDashboar 
+          const {Buscar} = req.query;
+
+         
+          
+          if(Buscar){
+             ProductsDashboar = products.filter(product => product.name.toLowerCase().includes(Buscar.toLowerCase()) || product.description.toLowerCase().includes(Buscar)||product.category.toLowerCase().includes(Buscar.toLowerCase()))
+         
+        }else{
+            ProductsDashboar = products
+        }
+
+
+
             return res.render('dashboard',{
-                
-                products  
+               
+              products:ProductsDashboar,Buscar
+           
+              
             })
         },
 
