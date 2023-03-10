@@ -132,13 +132,13 @@
 
 @media (min-width:361px) {
       .register__main__div--info input {
-            width: 40%;
+            width: 70%;
       }
 }
 
 @media (min-width:769px) {
       .register__main__div--info input {
-            width: 50%;
+            width: 70%;
       }
       .register__main__div{
             width: 500px;

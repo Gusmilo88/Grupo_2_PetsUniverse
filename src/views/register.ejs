@@ -10,7 +10,7 @@
     <main class="register__main">
         <div class="register__main__div">
             <h3>Creá tu cuenta</h3>
-            <form action="/">
+            <form action="" method="POST" enctype="multipart/form-data">
                 <div class="register__main__div--info">
                     <div>
                         <i class="fa-solid fa-user"></i><input type="text" placeholder="Ingresá tu nombre" name="name" id="name" minlength="2" autofocus>
@@ -30,6 +30,9 @@
                     <div>
                     <i class="fa-solid fa-lock"></i><input type="password" placeholder="Confirmar contraseña" minlength="2">
                     </div>
+                    <div>
+                        <input type="file" name="fotoPerfil" id="fotoPerfil">
+                    </div>
 
                 </div>
                 <div>
@@ -42,7 +45,7 @@
                     </small>
                 </div>
                 <div class="register__main__div--button">
-                    <a href="/"><button>Registrarse</button></a>
+                    <button type="submit">Registrarse</button>
                 </div>
 
             </form>
