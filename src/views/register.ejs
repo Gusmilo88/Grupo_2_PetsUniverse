@@ -10,25 +10,41 @@
     <main class="register__main">
         <div class="register__main__div">
             <h3>Creá tu cuenta</h3>
-            <form action="/">
+            <form action="/users/register" method="POST" enctype="multipart/form-data">
                 <div class="register__main__div--info">
                     <div>
-                        <i class="fa-solid fa-user"></i><input type="text" placeholder="Ingresá tu nombre" name="name" id="name" minlength="2" autofocus>
+                        <label for="firstName" class="form-label"></label>
+                        <i class="fa-solid fa-user"></i><input type="text" placeholder="Ingresá tu nombre" name="firstName" id="firstName"autofocus>
+                        <small class="validator"><%= locals.errors && errors.firstName ? errors.firstName.msg : null %></small>
                     </div>
                     <div>
-                    <i class="fa-solid fa-user"></i><input type="text" placeholder="Ingresá tu apellido" name="name" id="name" minlength="2">
+                        <label for="lastName" class="form-label"></label>
+                        <i class="fa-solid fa-user"></i><input type="text" placeholder="Ingresá tu apellido" name="lastName" id="lastName">
+                        <small class="validator"><%= locals.errors && errors.lastName ? errors.lastName.msg : null %></small>
                     </div>
                     <div>
-                    <i class="fa-regular fa-envelope"></i><input type="email" placeholder="Ingresá tu correo electrónico" name="email" id="email" minlength="2">
+                        <label for="email" class="form-label"></label>
+                        <i class="fa-regular fa-envelope"></i><input type="email" placeholder="Ingresá tu correo electrónico" name="email" id="email">
+                        <small class="validator"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
                     </div>
                     <div>
-                    <i class="fa-regular fa-envelope"></i><input type="email" placeholder="Confirmá correo electrónico" name="email" id="email" minlength="2">
+                        <label for="email2" class="form-label"></label>
+                        <i class="fa-regular fa-envelope"></i><input type="email" placeholder="Confirmá correo electrónico" name="email2" id="email2">
+                        <small class="validator"><%= locals.errors && errors.email2 ? errors.email2.msg : null %></small>
                     </div>
                     <div>
-                    <i class="fa-solid fa-lock"></i><input type="password" placeholder="Ingresá contraseña" minlength="2">
+                        <label for="password" class="form-label"></label>
+                        <i class="fa-solid fa-lock"></i><input type="password" placeholder="Ingresá contraseña" name="password" id="password">
+                        <small class="validator"><%= locals.errors && errors.password ? errors.password.msg : null %></small>
                     </div>
                     <div>
-                    <i class="fa-solid fa-lock"></i><input type="password" placeholder="Confirmar contraseña" minlength="2">
+                        <label for="password2" class="form-label"></label>
+                        <i class="fa-solid fa-lock"></i><input type="password" placeholder="Confirmar contraseña" name="password2" id="password2">
+                        <small class="validator"><%= locals.errors && errors.password2 ? errors.password2.msg : null %></small>
+                    </div>
+                    <div>
+                        <label for="avatar" class="form-label"></label>
+                        <input type="file" name="avatar" id="avatar">
                     </div>
 
                 </div>
@@ -37,12 +53,12 @@
                 <label for="aceptoTerminosYCondiciones">Acepto terminos y condiciones</label>
                 </div>
                 <div class="register__main__div--info--login">
-                    <small>
+                    <small class="register__main__small--check">
                         ¿Estás registrado? <a href="/users/login">Ingresá</a>
                     </small>
                 </div>
                 <div class="register__main__div--button">
-                    <a href="/"><button>Registrarse</button></a>
+                    <button type="submit">Registrarse</button>
                 </div>
 
             </form>

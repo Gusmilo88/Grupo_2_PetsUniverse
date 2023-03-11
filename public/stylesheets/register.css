@@ -25,8 +25,6 @@
     padding: 20px;
 }
 
-
-
 .register__main__div--info input{
     background: linear-gradient(90deg, rgba(47, 7, 67, 0.6) 0%, rgba(98, 2, 248, 0.6) 50%, rgba(0, 161, 255, 0.6) 100%);
     border-radius: 7px;
@@ -41,10 +39,14 @@
     color: white;
 }
 
+.validator{
+      color: rgb(247, 144, 144);
+      text-shadow: -1px -1px 0 red, 1px -1px 0 red, -1px 1px 0 red, 1px 1px 0 red;
+}
+
 .register__main__div--info--login a{
       color: gold;
 }
-
 
 .register__main__div--button  button{
     background: linear-gradient(90deg, rgba(47, 7, 67, 0.6) 0%, rgba(98, 2, 248, 0.6) 50%, rgba(0, 161, 255, 0.6) 100%);
@@ -132,13 +134,13 @@
 
 @media (min-width:361px) {
       .register__main__div--info input {
-            width: 40%;
+            width: 70%;
       }
 }
 
 @media (min-width:769px) {
       .register__main__div--info input {
-            width: 50%;
+            width: 70%;
       }
       .register__main__div{
             width: 500px;
