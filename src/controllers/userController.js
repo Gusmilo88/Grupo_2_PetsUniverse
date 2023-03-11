@@ -39,7 +39,11 @@ module.exports = {
             return res.redirect("/users/login");
 
         }else{
-            return res.send(errors.mapped())
+            return res.render('register',{
+                title : "Registro de usuario",
+                errors : errors.mapped(),
+                old : req.body
+            })
         }
 
         
