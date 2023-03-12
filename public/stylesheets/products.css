@@ -51,8 +51,8 @@
 }
 
 .product_main_filtros li a{
-    background-color: white;
-    color: black;
+    background: linear-gradient(90deg, rgba(47, 7, 67, 0.6) 0%, rgba(98, 2, 248, 0.6) 50%, rgba(0, 161, 255, 0.6) 100%);
+    color: white;
     padding: 9px;
     margin: 4px;
     border-radius: 3px;
