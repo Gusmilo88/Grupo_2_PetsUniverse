@@ -1,161 +1,182 @@
-[{
-    "id": 1,
-    "firstName": "vestibulum",
-    "lastName": "etiam justo",
-    "email": "rinkpin0@dailymotion.com",
-    "password": "bHKC6n0",
-    "category": "Admin",
-    "avatar": "null"
-  }, {
-    "id": 2,
-    "firstName": "lectus aliquam",
-    "lastName": "aliquet",
-    "email": "bhoggan1@wiley.com",
-    "password": "Mj8sP3FXVHg",
-    "category": "Customer",
-    "avatar": "null"
-  }, {
-    "id": 3,
-    "firstName": "pede",
-    "lastName": "cum",
-    "email": "ageram2@yale.edu",
-    "password": "4iiYnNor1T",
-    "category": "Customer",
-    "avatar": "null"
-  }, {
-    "id": 4,
-    "firstName": "suspendisse",
-    "lastName": "dolor quis",
-    "email": "kkibby3@foxnews.com",
-    "password": "Md7SEyFT6",
-    "category": "Admin",
-    "avatar": "null"
-  }, {
-    "id": 5,
-    "firstName": "ipsum praesent",
-    "lastName": "auctor gravida",
-    "email": "osaice4@wp.com",
-    "password": "ev1JsHnzPcAH",
-    "category": "Admin",
-    "avatar": "null"
-  }, {
-    "id": 6,
-    "firstName": "a",
-    "lastName": "in hac",
-    "email": "mstevings5@g.co",
-    "password": "f3a1xY",
-    "category": "Admin",
-    "avatar": "null"
-  }, {
-    "id": 7,
-    "firstName": "rhoncus sed",
-    "lastName": "semper",
-    "email": "ascotchford6@nasa.gov",
-    "password": "msJ0fs2jx",
-    "category": "Customer",
-    "avatar": "null"
-  }, {
-    "id": 8,
-    "firstName": "sapien",
-    "lastName": "luctus tincidunt",
-    "email": "tviggers7@nifty.com",
-    "password": "3fhVls87",
-    "category": "Admin",
-    "avatar": "null"
-  }, {
-    "id": 9,
-    "firstName": "eget",
-    "lastName": "mauris enim",
-    "email": "rboerder8@seesaa.net",
-    "password": "sfpAWgPErt",
-    "category": "Customer",
-    "avatar": "null"
-  }, {
-    "id": 10,
-    "firstName": "eu",
-    "lastName": "congue",
-    "email": "messi-te-amo@campeonDelMundo.Argentina",
-    "password": "Ueb0eW9M",
-    "category": "Admin",
-    "avatar": "null"
-  }, {
-    "id": 11,
-    "firstName": "orci",
-    "lastName": "blandit lacinia",
-    "email": "gdriolia@go.com",
-    "password": "q77fEw3TW",
-    "category": "Customer",
-    "avatar": "null"
-  }, {
-    "id": 12,
-    "firstName": "ultrices",
-    "lastName": "orci pede",
-    "email": "vphearb@github.io",
-    "password": "yxHrtvzfZ",
-    "category": "Customer",
-    "avatar": "null"
-  }, {
-    "id": 13,
-    "firstName": "ut",
-    "lastName": "nisl aenean",
-    "email": "scrosettic@nydailynews.com",
-    "password": "4lVWDqSstz",
-    "category": "Customer",
-    "avatar": "null"
-  }, {
-    "id": 14,
-    "firstName": "nisi",
-    "lastName": "ultrices",
-    "email": "kfitchd@i2i.jp",
-    "password": "8o7pRv",
-    "category": "Admin",
-    "avatar": "null"
-  }, {
-    "id": 15,
-    "firstName": "potenti cras",
-    "lastName": "et commodo",
-    "email": "skippinge@vk.com",
-    "password": "Qc15f5m4",
-    "category": "Customer",
-    "avatar": "null"
-  }, {
-    "id": 16,
-    "firstName": "in",
-    "lastName": "sapien",
-    "email": "tferrisf@usgs.gov",
-    "password": "OaT63Kl",
-    "category": "Admin",
-    "avatar": "null"
-  }, {
-    "id": 17,
-    "firstName": "duis",
-    "lastName": "semper est",
-    "email": "kfautleyg@xinhuanet.com",
-    "password": "PnsB6AlobK",
-    "category": "Admin",
-    "avatar": "null"
-  }, {
-    "id": 18,
-    "firstName": "nulla quisque",
-    "lastName": "accumsan",
-    "email": "abraybrookesh@i2i.jp",
-    "password": "QbXEqcT",
-    "category": "Admin",
-    "avatar": "null"
-  }, {
-    "id": 19,
-    "firstName": "quam",
-    "lastName": "morbi ut",
-    "email": "ebarradelli@msu.edu",
-    "password": "hyr7XyNl",
-    "category": "Customer",
-    "avatar": "null"
-  }, {
-    "id": 20,
-    "firstName": "vestibulum",
-    "lastName": "proin at",
-    "email": "adarnellj@nyu.edu",
-    "password": "ADf8rf9gu",
-    "category": "Admin",
-    "avatar": "null"
-  }]
+[
+   {
+      "id": 1,
+      "firstName": "vestibulum",
+      "lastName": "etiam justo",
+      "email": "rinkpin0@dailymotion.com",
+      "password": "bHKC6n0",
+      "category": "admin",
+      "avatar": null
+   },
+   {
+      "id": 2,
+      "firstName": "lectus aliquam",
+      "lastName": "aliquet",
+      "email": "bhoggan1@wiley.com",
+      "password": "Mj8sP3FXVHg",
+      "category": "customer",
+      "avatar": null
+   },
+   {
+      "id": 3,
+      "firstName": "pede",
+      "lastName": "cum",
+      "email": "ageram2@yale.edu",
+      "password": "4iiYnNor1T",
+      "category": "customer",
+      "avatar": null
+   },
+   {
+      "id": 4,
+      "firstName": "suspendisse",
+      "lastName": "dolor quis",
+      "email": "kkibby3@foxnews.com",
+      "password": "Md7SEyFT6",
+      "category": "admin",
+      "avatar": null
+   },
+   {
+      "id": 5,
+      "firstName": "ipsum praesent",
+      "lastName": "auctor gravida",
+      "email": "osaice4@wp.com",
+      "password": "ev1JsHnzPcAH",
+      "category": "admin",
+      "avatar": null
+   },
+   {
+      "id": 6,
+      "firstName": "a",
+      "lastName": "in hac",
+      "email": "mstevings5@g.co",
+      "password": "f3a1xY",
+      "category": "admin",
+      "avatar": null
+   },
+   {
+      "id": 7,
+      "firstName": "rhoncus sed",
+      "lastName": "semper",
+      "email": "ascotchford6@nasa.gov",
+      "password": "msJ0fs2jx",
+      "category": "customer",
+      "avatar": null
+   },
+   {
+      "id": 8,
+      "firstName": "sapien",
+      "lastName": "luctus tincidunt",
+      "email": "tviggers7@nifty.com",
+      "password": "3fhVls87",
+      "category": "admin",
+      "avatar": null
+   },
+   {
+      "id": 9,
+      "firstName": "eget",
+      "lastName": "mauris enim",
+      "email": "rboerder8@seesaa.net",
+      "password": "sfpAWgPErt",
+      "category": "customer",
+      "avatar": null
+   },
+   {
+      "id": 10,
+      "firstName": "eu",
+      "lastName": "congue",
+      "email": "messi-te-amo@campeonDelMundo.Argentina",
+      "password": "Ueb0eW9M",
+      "category": "admin",
+      "avatar": null
+   },
+   {
+      "id": 11,
+      "firstName": "orci",
+      "lastName": "blandit lacinia",
+      "email": "gdriolia@go.com",
+      "password": "q77fEw3TW",
+      "category": "customer",
+      "avatar": null
+   },
+   {
+      "id": 12,
+      "firstName": "ultrices",
+      "lastName": "orci pede",
+      "email": "vphearb@github.io",
+      "password": "yxHrtvzfZ",
+      "category": "customer",
+      "avatar": null
+   },
+   {
+      "id": 13,
+      "firstName": "ut",
+      "lastName": "nisl aenean",
+      "email": "scrosettic@nydailynews.com",
+      "password": "4lVWDqSstz",
+      "category": "customer",
+      "avatar": null
+   },
+   {
+      "id": 14,
+      "firstName": "nisi",
+      "lastName": "ultrices",
+      "email": "kfitchd@i2i.jp",
+      "password": "8o7pRv",
+      "category": "admin",
+      "avatar": null
+   },
+   {
+      "id": 15,
+      "firstName": "potenti cras",
+      "lastName": "et commodo",
+      "email": "skippinge@vk.com",
+      "password": "Qc15f5m4",
+      "category": "customer",
+      "avatar": null
+   },
+   {
+      "id": 16,
+      "firstName": "in",
+      "lastName": "sapien",
+      "email": "tferrisf@usgs.gov",
+      "password": "OaT63Kl",
+      "category": "admin",
+      "avatar": null
+   },
+   {
+      "id": 17,
+      "firstName": "duis",
+      "lastName": "semper est",
+      "email": "kfautleyg@xinhuanet.com",
+      "password": "PnsB6AlobK",
+      "category": "admin",
+      "avatar": null
+   },
+   {
+      "id": 18,
+      "firstName": "nulla quisque",
+      "lastName": "accumsan",
+      "email": "abraybrookesh@i2i.jp",
+      "password": "QbXEqcT",
+      "category": "admin",
+      "avatar": null
+   },
+   {
+      "id": 19,
+      "firstName": "quam",
+      "lastName": "morbi ut",
+      "email": "ebarradelli@msu.edu",
+      "password": "hyr7XyNl",
+      "category": "customer",
+      "avatar": null
+   },
+   {
+      "id": 20,
+      "firstName": "vestibulum",
+      "lastName": "proin at",
+      "email": "adarnellj@nyu.edu",
+      "password": "ADf8rf9gu",
+      "category": "admin",
+      "avatar": null
+   }
+]
