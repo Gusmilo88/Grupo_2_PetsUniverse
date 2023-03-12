@@ -178,14 +178,5 @@
       "password": "ADf8rf9gu",
       "category": "admin",
       "avatar": null
-   },
-   {
-      "id": 21,
-      "firstName": "Gustavo",
-      "lastName": "Romero",
-      "email": "gus_eze1988@hotmail.com",
-      "password": "$2a$10$CA3Fuz9h4CkXXCt6KmsN1O0rHEfTiR5V6EVRDFABpltPBRXQdNgi.",
-      "category": "customer",
-      "avatar": "defaultAvatar.png"
    }
 ]
