@@ -22,7 +22,7 @@ module.exports = {
         if(errors.isEmpty()){
             const users = readJSON("users.json");
 
-            const {firstName, lastName, email, password, avatar} = req.body;
+            const {firstName, lastName, email, password, category, avatar} = req.body;
 
             const newUser = {
                 id : users.length ? users[users.length - 1].id + 1 : 1,
@@ -30,7 +30,8 @@ module.exports = {
                 lastName : lastName.trim(),
                 email : email.trim(),
                 password : hashSync(password, 10),
-                
+                category : category ? "admin" : "admin"  || category ? "customer" : "customer",
+                avatar : avatar ? null : "defaultAvatar.png",
             }
 
             users.push(newUser)

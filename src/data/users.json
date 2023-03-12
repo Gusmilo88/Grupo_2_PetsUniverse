@@ -5,8 +5,8 @@
       "lastName": "etiam justo",
       "email": "rinkpin0@dailymotion.com",
       "password": "bHKC6n0",
-      "category": "Admin",
-      "avatar": "null"
+      "category": "admin",
+      "avatar": null
    },
    {
       "id": 2,
@@ -14,8 +14,8 @@
       "lastName": "aliquet",
       "email": "bhoggan1@wiley.com",
       "password": "Mj8sP3FXVHg",
-      "category": "Customer",
-      "avatar": "null"
+      "category": "customer",
+      "avatar": null
    },
    {
       "id": 3,
@@ -23,8 +23,8 @@
       "lastName": "cum",
       "email": "ageram2@yale.edu",
       "password": "4iiYnNor1T",
-      "category": "Customer",
-      "avatar": "null"
+      "category": "customer",
+      "avatar": null
    },
    {
       "id": 4,
@@ -32,8 +32,8 @@
       "lastName": "dolor quis",
       "email": "kkibby3@foxnews.com",
       "password": "Md7SEyFT6",
-      "category": "Admin",
-      "avatar": "null"
+      "category": "admin",
+      "avatar": null
    },
    {
       "id": 5,
@@ -41,8 +41,8 @@
       "lastName": "auctor gravida",
       "email": "osaice4@wp.com",
       "password": "ev1JsHnzPcAH",
-      "category": "Admin",
-      "avatar": "null"
+      "category": "admin",
+      "avatar": null
    },
    {
       "id": 6,
@@ -50,8 +50,8 @@
       "lastName": "in hac",
       "email": "mstevings5@g.co",
       "password": "f3a1xY",
-      "category": "Admin",
-      "avatar": "null"
+      "category": "admin",
+      "avatar": null
    },
    {
       "id": 7,
@@ -59,8 +59,8 @@
       "lastName": "semper",
       "email": "ascotchford6@nasa.gov",
       "password": "msJ0fs2jx",
-      "category": "Customer",
-      "avatar": "null"
+      "category": "customer",
+      "avatar": null
    },
    {
       "id": 8,
@@ -68,8 +68,8 @@
       "lastName": "luctus tincidunt",
       "email": "tviggers7@nifty.com",
       "password": "3fhVls87",
-      "category": "Admin",
-      "avatar": "null"
+      "category": "admin",
+      "avatar": null
    },
    {
       "id": 9,
@@ -77,8 +77,8 @@
       "lastName": "mauris enim",
       "email": "rboerder8@seesaa.net",
       "password": "sfpAWgPErt",
-      "category": "Customer",
-      "avatar": "null"
+      "category": "customer",
+      "avatar": null
    },
    {
       "id": 10,
@@ -86,8 +86,8 @@
       "lastName": "congue",
       "email": "messi-te-amo@campeonDelMundo.Argentina",
       "password": "Ueb0eW9M",
-      "category": "Admin",
-      "avatar": "null"
+      "category": "admin",
+      "avatar": null
    },
    {
       "id": 11,
@@ -95,8 +95,8 @@
       "lastName": "blandit lacinia",
       "email": "gdriolia@go.com",
       "password": "q77fEw3TW",
-      "category": "Customer",
-      "avatar": "null"
+      "category": "customer",
+      "avatar": null
    },
    {
       "id": 12,
@@ -104,8 +104,8 @@
       "lastName": "orci pede",
       "email": "vphearb@github.io",
       "password": "yxHrtvzfZ",
-      "category": "Customer",
-      "avatar": "null"
+      "category": "customer",
+      "avatar": null
    },
    {
       "id": 13,
@@ -113,8 +113,8 @@
       "lastName": "nisl aenean",
       "email": "scrosettic@nydailynews.com",
       "password": "4lVWDqSstz",
-      "category": "Customer",
-      "avatar": "null"
+      "category": "customer",
+      "avatar": null
    },
    {
       "id": 14,
@@ -122,8 +122,8 @@
       "lastName": "ultrices",
       "email": "kfitchd@i2i.jp",
       "password": "8o7pRv",
-      "category": "Admin",
-      "avatar": "null"
+      "category": "admin",
+      "avatar": null
    },
    {
       "id": 15,
@@ -131,8 +131,8 @@
       "lastName": "et commodo",
       "email": "skippinge@vk.com",
       "password": "Qc15f5m4",
-      "category": "Customer",
-      "avatar": "null"
+      "category": "customer",
+      "avatar": null
    },
    {
       "id": 16,
@@ -140,8 +140,8 @@
       "lastName": "sapien",
       "email": "tferrisf@usgs.gov",
       "password": "OaT63Kl",
-      "category": "Admin",
-      "avatar": "null"
+      "category": "admin",
+      "avatar": null
    },
    {
       "id": 17,
@@ -149,8 +149,8 @@
       "lastName": "semper est",
       "email": "kfautleyg@xinhuanet.com",
       "password": "PnsB6AlobK",
-      "category": "Admin",
-      "avatar": "null"
+      "category": "admin",
+      "avatar": null
    },
    {
       "id": 18,
@@ -158,8 +158,8 @@
       "lastName": "accumsan",
       "email": "abraybrookesh@i2i.jp",
       "password": "QbXEqcT",
-      "category": "Admin",
-      "avatar": "null"
+      "category": "admin",
+      "avatar": null
    },
    {
       "id": 19,
@@ -167,8 +167,8 @@
       "lastName": "morbi ut",
       "email": "ebarradelli@msu.edu",
       "password": "hyr7XyNl",
-      "category": "Customer",
-      "avatar": "null"
+      "category": "customer",
+      "avatar": null
    },
    {
       "id": 20,
@@ -176,7 +176,16 @@
       "lastName": "proin at",
       "email": "adarnellj@nyu.edu",
       "password": "ADf8rf9gu",
-      "category": "Admin",
-      "avatar": "null"
+      "category": "admin",
+      "avatar": null
+   },
+   {
+      "id": 21,
+      "firstName": "Gustavo",
+      "lastName": "Romero",
+      "email": "gus_eze1988@hotmail.com",
+      "password": "$2a$10$CA3Fuz9h4CkXXCt6KmsN1O0rHEfTiR5V6EVRDFABpltPBRXQdNgi.",
+      "category": "customer",
+      "avatar": "defaultAvatar.png"
    }
 ]
