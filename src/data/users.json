@@ -205,5 +205,23 @@
       "password": "$2a$10$PXz.HnXMUPy5sGAbZpAau.myHXIAqrdlw6gDnF4A6AVKHCGEPw7ZO",
       "rol": "admin",
       "avatar": "defaultAvatar.png"
+   },
+   {
+      "id": 24,
+      "firstName": "cristian",
+      "lastName": "yelmo",
+      "email": "cristianama2019@gmail.com",
+      "password": "$2a$10$V4kFnchkJXJ.6uTgLnTQI.KYTrP/ORvNFxriQuyL6AXbI3WFz8r7W",
+      "rol": "admin",
+      "avatar": "defaultAvatar.png"
+   },
+   {
+      "id": 25,
+      "firstName": "elba",
+      "lastName": "gallo",
+      "email": "holaxd@gmail.com",
+      "password": "$2a$10$Bto8I.6.L2l.N73nzEtXS.rvVgAGEzLre5Mdsl.8I6d8oC.lkiLEK",
+      "rol": "customer",
+      "avatar": "defaultAvatar.png"
    }
 ]

@@ -9,7 +9,7 @@ router.get('/',index)
 router.get('/nosotros',nosotros)
 router.get('/cart',cart) 
 router.get('/search', indexController.search); 
-router.get('/admin',dashboard)
+router.get('/admin',checkUserAdmin,dashboard)
 
 
 

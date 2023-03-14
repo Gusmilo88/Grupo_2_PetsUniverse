@@ -14,17 +14,49 @@
             </div>
             <% if (locals.userLogin && userLogin.rol === "admin") { %>
                 <div class="home__header__nav__div--admin">
+                    <a href="/users/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
+                <div class="home__header__nav__div--admin">
                     <a href="/admin"><i class="fa-solid fa-wand-magic-sparkles"></i></a>
                 </div>
+
+                
              
             <% } %>
+
+            <% if (locals.userLogin && userLogin.rol === "customer") { %>
+                <div class="home__header__nav__div--admin">
+                    <a href="/users/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
+                <div class="home__header__nav__div--admin">
+                    <a href="/"><img src="/images/sfdsf.png" alt="" class="header_marciano">
+
+                    </a>
+                </div>
+
+                <div class="home__header__nav__div--carrito">
+                    <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
+
+                
+             
+            <% } %>
+            <% if (!locals.userLogin) { %>
+                <div class="home__header__nav__div--user">
+                    <a href="/users/login"><i class="fa-solid fa-user"></i></a>
+                </div>
+
+                <div class="home__header__nav__div--carrito">
+                    <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
+
+            <% } %>
             
-            <div class="home__header__nav__div--user">
-                <a href="/users/login"><i class="fa-solid fa-user"></i></a>
-            </div>
-            <div class="home__header__nav__div--carrito">
-                <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
-            </div>
+            
+
+
+
+            
             <div class="home__header__nav__div--burger">
                 <button>
                     <i class="fa-solid fa-bars"></i>
