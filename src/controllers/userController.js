@@ -8,6 +8,27 @@ module.exports = {
     login: (req,res)=>{
         return res.render('login')
     },
+    processLogin : (req,res) => {
+        const errors = validationResult(req);
+
+        if(errors.isEmpty()){
+
+            const {id, name, rol} = readJSON('users.json').find(user => user.email === req.body.email)
+
+            req.session.userLogin = {
+                id,
+                name,
+                rol
+            }
+
+        return res.redirect('/')
+    }else{
+        return res.render('login', {
+            title : "Iniciar sesión",
+            errors : errors.mapped()
+        })
+    }
+    },
 
     
     register:(req,res) =>{
@@ -22,7 +43,7 @@ module.exports = {
         if(errors.isEmpty()){
             const users = readJSON("users.json");
 
-            const {firstName, lastName, email, password, category, avatar} = req.body;
+            const {firstName, lastName, email, password, rol, avatar} = req.body;
 
             const newUser = {
                 id : users.length ? users[users.length - 1].id + 1 : 1,
@@ -30,7 +51,7 @@ module.exports = {
                 lastName : lastName.trim(),
                 email : email.trim(),
                 password : hashSync(password, 10),
-                category : category ? "admin" : "admin"  || category ? "customer" : "customer",
+                rol : rol ? "admin" : "admin"  || rol ? "customer" : "customer",
                 avatar : avatar ? null : "defaultAvatar.png",
             }
 
@@ -50,7 +71,7 @@ module.exports = {
         
     }
 
-}
+} //
 
 if(req.body.recordarUsuario){
     res.cookie("userPetsUniverse", req.ssession.usersLogin,(maxAge : 1000 * 60))

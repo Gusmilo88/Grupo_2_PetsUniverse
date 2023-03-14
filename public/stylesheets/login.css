@@ -38,6 +38,22 @@ body{
         color: white;
 }
 
+.validator{
+        color: rgb(247, 144, 144);
+        text-shadow: -1px -1px 0 red, 1px -1px 0 red, -1px 1px 0 red, 1px 1px 0 red;
+  }
+  
+  .errorInput{
+        background: linear-gradient(to right, #ff7f50, #ff0000);
+        border-radius: 7px;
+        margin: 10px;
+        box-shadow: 0px 7.27273px 2.90909px rgba(0, 0, 0, 0.4);
+        border: none;
+        padding: 5px;
+        color: white;
+  }
+  
+
 .main__login__div--botonEnviar {
         cursor: pointer;
         display: flex;
@@ -64,6 +80,7 @@ body{
 .main__login--estasRegistrado a{
         color: gold;
 }
+
 
  @-webkit-keyframes shake-bottom {
     0%,
