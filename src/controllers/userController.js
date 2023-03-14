@@ -20,8 +20,10 @@ module.exports = {
                 name,
                 rol
             }
-
-        return res.redirect('/')
+            if(req.body.recordarUsuario){
+                res.cookie('userPetsUniverse', req.session.userLogin,{maxAge : 1000 * 30})
+            }
+        return res.redirect('/')  
     }else{
         return res.render('login', {
             title : "Iniciar sesión",
@@ -73,6 +75,3 @@ module.exports = {
 
 } //
 
-if(req.body.recordarUsuario){
-    res.cookie("userPetsUniverse", req.ssession.usersLogin,(maxAge : 1000 * 60))
-}

@@ -196,5 +196,14 @@
       "password": "$2a$10$5vG2hdU5Fc4Xh.58QNCqQu3gKoaMhiZ5kef4CFSNmlqYyVNTf43fu",
       "rol": "customer",
       "avatar": "defaultAvatar.png"
+   },
+   {
+      "id": 23,
+      "firstName": "Maximiliano Ezequiel",
+      "lastName": "Cuellar",
+      "email": "masi12boca@gmail.com",
+      "password": "$2a$10$PXz.HnXMUPy5sGAbZpAau.myHXIAqrdlw6gDnF4A6AVKHCGEPw7ZO",
+      "rol": "admin",
+      "avatar": "defaultAvatar.png"
    }
 ]

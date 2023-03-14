@@ -27,12 +27,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "..", 'public')));
 app.use(methodOverride("_method"));// Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 app.use(session({
-  secret : "PetsUniverse",
+  secret : "userPetsUniverse",
   resave : false,
   saveUninitialized : true
 }))
 app.use(cookieCheck)/* aca cargo en session lo que esta en la cookie */
-app.use(localUsersCheck)/* aca cargo en locals lo que hay en sessions */
+app.use(localsUsercheck)/* aca cargo en locals lo que hay en sessions */
 
 
 app.use('/', indexRouter);
