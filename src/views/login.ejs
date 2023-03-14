@@ -8,26 +8,38 @@
 
 
     <main class="main__login">
-
-        <div class="main__login__div">
-        <form action="">
+        <div>
+            <div class="row mb-5">
+            <div class="col-12 col-md-8 mx-auto">
+                <div class="card-shadow">
+                    <div class="card-header">
+            <div class="main__login__div">
+        <form action="" method="POST">
 
             <div class="main__login__div--iniciarSesion">
                 <h2>Iniciar sesión</h2>
             </div>
-
+            <div class="card-body">
+                <form action="" method="POST">
+                    <div>
             <div class="main__login__div--nombreUsuario">
 <!--                 <i class="fa-regular fa-envelope"></i> -->
-                <input type="email"  placeholder="Correo Electronico" name="email" id="email" minlength="1" autofocus>
+                <label for="email"></label>
+                <input type="email" class="register__main__div--info <%= (locals.errors && errors.email) && 'errorInput'%>" placeholder="<%= locals.errors && errors.email ? errors.email.msg : "Ingresá contraseña" %>"  name="email" id="email" autofocus>
+                
             </div>
-
+            <div>
             <div class="main__login__div--contraseña">
-<!--                 <i class="fa-solid fa-unlock"></i> --><input type="password" placeholder="Contraseña" name="contraseña" id="contraseña" minlength="1"><!-- <i class="fa-solid fa-eye"></i> -->
+<!--                 <i class="fa-solid fa-unlock"></i> -->
+                <label for="password"></label>
+                <input type="password" class="register__main__div--info <%= (locals.errors && errors.password) && 'errorInput'%>" placeholder="<%= locals.errors && errors.password ? errors.password.msg : "Ingresá contraseña" %>" name="password" id="password"><!-- <i class="fa-solid fa-eye"></i> -->
+            
             </div>
 
             <div class="main__login__div--botonEnviar">
-                <a href="/"><input type="button" value="Enviar"></a>
+                <button type="submit">Ingresá</button>
             </div>
+        </div>
             <div>
                 <input type="checkbox" name="RecordarContraseña" id="RecordarContraseña">
             <label for="RecordarContraseña">Recordar contraseña</label>
@@ -40,10 +52,15 @@
             <div class="main__login--estasRegistrado">
                 <small> ¿No estas registrado? <a href="/users/register"> Registrate </a></small>
             </div>
-           
         </div>
-
-
+    </div>
+    </form>
+</div>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
     </main>
 
 

@@ -3,13 +3,15 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const methodOverride =  require("method-override"); // Para poder usar los métodos PUT y DELETE
+const methodOverride =  require("method-override");
+const session = require('express-session'); // Para poder usar los métodos PUT y DELETE
 
 
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const ProductRouter = require('./routes/product');
+const localsUsercheck = require('./middlewares/localsUsercheck');
 
 const app = express();
 
@@ -22,8 +24,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "..", 'public')));
-app.use(methodOverride("_method")); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
-
+app.use(methodOverride("_method"));// Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
+app.use(session({
+  secret : "PetsUniverse",
+  resave : false,
+  saveUninitialized : true
+}))
+app.use(localsUsercheck)
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
