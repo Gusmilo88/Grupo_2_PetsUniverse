@@ -51,3 +51,7 @@ module.exports = {
     }
 
 }
+
+if(req.body.recordarUsuario){
+    res.cookie("userPetsUniverse", req.ssession.usersLogin,(maxAge : 1000 * 60))
+}
