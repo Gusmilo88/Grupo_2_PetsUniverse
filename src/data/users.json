@@ -223,5 +223,14 @@
       "password": "$2a$10$Bto8I.6.L2l.N73nzEtXS.rvVgAGEzLre5Mdsl.8I6d8oC.lkiLEK",
       "rol": "customer",
       "avatar": "defaultAvatar.png"
+   },
+   {
+      "id": 26,
+      "firstName": "Gustavo",
+      "lastName": "Romero",
+      "email": "gus_eze1988@hotmail.com",
+      "password": "$2a$10$PwuW/Xxqs6pdjIeWVJVcvuokELHJ9l.xpW/TcMhKAimq2AQLYUR56",
+      "rol": "admin",
+      "avatar": "defaultAvatar.png"
    }
 ]
