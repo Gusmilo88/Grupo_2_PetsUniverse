@@ -54,7 +54,7 @@ module.exports = {
                 email : email.trim(),
                 password : hashSync(password, 10),
                 rol : rol ? "admin" : "admin"  || rol ? "customer" : "customer",
-                avatar : avatar ? null : "defaultAvatar.png",
+                avatar : "defaultAvatar.png",
             }
 
             users.push(newUser)
