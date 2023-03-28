@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET users listing. */
 const {login,register, processRegister, processLogin,logout} = require('../controllers/userController');
-const { uploadUserImage } = require('../middlewares/upload');
+const { uploadUserImage } = require('../middlewares/upLoad');
 const {loginUserValidator} = require('../validations');
 const registerUserValidator = require('../validations/registerUserValidator');
 const checkUser = require('../middlewares/checkUser')
