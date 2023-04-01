@@ -31,7 +31,7 @@ module.exports = {
     productUpdate: (req, res) => {
         const {id} = req.params
         const product = products.find(product => product.id === +id);
-        const {name, description, price, discount, image, weight, category, productTipe, stock} = req.body;
+        const {name, description, price, discount, image, weight, category, productType, stock} = req.body;
 
         const productModified = {
             id : +id,
@@ -42,7 +42,7 @@ module.exports = {
 			image : product.image,
       weight : +weight,
 			category : category ? "perros" : "perros" || category ? "gatos" : "gatos",
-      productTipe : productTipe ? "alimento" : "alimento" || productTipe ? "juguetes" : "juguetes" || productTipe ? "salud" : "salud",
+      productType : productType ? "alimento" : "alimento" || productType ? "juguetes" : "juguetes" || productType ? "salud" : "salud",
       stock : +stock,
 		}
 
@@ -65,7 +65,7 @@ module.exports = {
 
     store: (req, res) => {
       const mil = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        const {name, discount, price, description, category, weight, productTipe, stock, image} = req.body;
+        const {name, discount, price, description, category, weight, productType, stock, image} = req.body;
 
         const newProduct = {
             id : products[products.length - 1].id + 1,
@@ -75,7 +75,7 @@ module.exports = {
             discount : +discount,
             image : null,
             weight : +weight,
-            productTipe : productTipe ? "alimento" : "alimento" || productTipe ? "juguetes" : "juguetes" || productTipe ? "salud" : "salud",
+            productType : productType ? "alimento" : "alimento" || productType ? "juguetes" : "juguetes" || productType ? "salud" : "salud",
             category : category ? "perros" : "perros" || category ? "gatos" : "gatos",
             stock : +stock,
             mil
@@ -89,7 +89,7 @@ module.exports = {
 
     productFilterCats: (req,res)=>{
 
-        if (!req.query.price  && !req.query.productTipe) {
+        if (!req.query.price  && !req.query.productType) {
 			writeJson();
 		  }
 
@@ -97,7 +97,7 @@ module.exports = {
 	  
 		  writeJson({ ...queries, ...req.query });
 	  
-		  const { price, category,productTipe } = { ...queries, ...req.query } 
+		  const { price, category,productType } = { ...queries, ...req.query } 
      
       ProductsCat = products.filter((product) => {
 			  return product.category === "gatos";
@@ -120,9 +120,9 @@ module.exports = {
 			}
 		  }
 
-           if (productTipe) {
+           if (productType) {
 			allProducts = allProducts.filter((product) => {
-			  return product.productTipe === productTipe;
+			  return product.productType === productType;
 			});
 		  }
 
@@ -138,7 +138,7 @@ module.exports = {
 
     productFilterDogs: (req,res)=>{
 
-      if (!req.query.price  && !req.query.productTipe) {
+      if (!req.query.price  && !req.query.productType) {
     writeJson();
     }
 
@@ -146,7 +146,7 @@ module.exports = {
   
     writeJson({ ...queries, ...req.query });
   
-    const { price, category,productTipe } = { ...queries, ...req.query } 
+    const { price, category,productType } = { ...queries, ...req.query } 
    
     ProductsCat = products.filter((product) => {
       return product.category === "perros";
@@ -169,9 +169,9 @@ module.exports = {
     }
     }
 
-         if (productTipe) {
+         if (productType) {
     allProducts = allProducts.filter((product) => {
-      return product.productTipe === productTipe;
+      return product.productType === productType;
     });
     }
 
