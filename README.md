@@ -6,7 +6,6 @@
 
 * **Gabriela Meza**. Edad: *29 años*. Ciudad: *Mataderos*. Me gusta:Dibujar, pintar, pasar tiempo con mi hijas, y compartir mucho con amigos. Soy compañera, con buena predisposicón ante nuevos desafios, empática.
 * **Cristian Amarilla**. Edad: *24 años*. Ciudad: *Temperley*. Me gusta la animacion,el 3d,la musica,la programacion y las milanesa de pollo con papas.Tengos 2 michis.
-* **Giselle Ojeda**. Edad: *32 años*. Localidad: *González Catán*. Soy madre de dos niños y tambien me dedico a la administración, en especial en coordinar entrega de datos de personas con mi equipo de trabajo. Me gusta investigar y aprender nuevos temas referido a la tecnología y ciencias.
 * **Maximiliano Cuellar**. Edad: *20 años*. Ciudad: *Lanús Este*. Por la parte grupal mucho la competitividad, los grandes desafíos y trabajar en equipo, luego por la parte personal me gusta el deporte, especialmente el futbol y gimnasio, escuchar música y junto con la mayoría de mis compañeros me gustan muchos los animales en especial los perros, mi favorito es el Golden y por ultimo soy el fanático número uno de MESSI es el amor de mi vida, mi sueño es conocerlo y sacarme una foto con él.  
 * **Gustavo Romero**. Edad: *34 años*. Ciudad: *Merlo*. Me gusta la música, los animales, el fútbol, y la tecnología. Estudiante actualmente de desarrollador web full stack.  
 
