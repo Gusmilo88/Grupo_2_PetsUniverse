@@ -32,6 +32,7 @@ module.exports = {
       },
       categoryId: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references : {
           model : {
             tableName : "Categories"
@@ -41,6 +42,7 @@ module.exports = {
       },
       productTypeId: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references : {
           model : {
             tableName : "ProductTypes"

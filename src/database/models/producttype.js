@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      ProductType.belongsTo(models.Product, {
+        as: "products",
+        onDelete : "cascade"
+      })
     }
   }
   ProductType.init({

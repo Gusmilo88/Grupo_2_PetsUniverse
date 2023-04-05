@@ -14,6 +14,7 @@ module.exports = {
       },
       productId: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references : {
           model : {
             tableName : "Products"
@@ -23,6 +24,7 @@ module.exports = {
       },
       orderId: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references : {
           model : {
             tableName : "Orders"
