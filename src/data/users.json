@@ -6,8 +6,9 @@
       "lastName": "Meza",
       "email": "gabrielameza1993@gmail.com",
       "password": "$2a$10$jC83hKqaoRLwwghSKgBLFeCxxxZEFc95bjN5rP5e05ZR3i3q0xp0m",
-      "rol": "admin",
-      "avatar": "defaultAvatar.png"
+      "roleId": 1,
+      "avatar": "defaultAvatar.png",
+      "addressId": 1
    },
    {
       "id": 2,
@@ -15,8 +16,9 @@
       "lastName": "Cuellar",
       "email": "messiteamo@gmail.com",
       "password": "$2a$10$5vG2hdU5Fc4Xh.58QNCqQu3gKoaMhiZ5kef4CFSNmlqYyVNTf43fu",
-      "rol": "customer",
-      "avatar": "defaultAvatar.png"
+      "roleId": 2,
+      "avatar": "defaultAvatar.png",
+      "addressId": 2
    },
    {
       "id": 3,
@@ -24,8 +26,9 @@
       "lastName": "Cuellar",
       "email": "masi12boca@gmail.com",
       "password": "$2a$10$PXz.HnXMUPy5sGAbZpAau.myHXIAqrdlw6gDnF4A6AVKHCGEPw7ZO",
-      "rol": "admin",
-      "avatar": "defaultAvatar.png"
+      "roleId": 1,
+      "avatar": "defaultAvatar.png",
+      "addressId": 3
    },
    {
       "id": 4,
@@ -33,8 +36,9 @@
       "lastName": "yelmo",
       "email": "cristianama2019@gmail.com",
       "password": "$2a$10$V4kFnchkJXJ.6uTgLnTQI.KYTrP/ORvNFxriQuyL6AXbI3WFz8r7W",
-      "rol": "admin",
-      "avatar": "defaultAvatar.png"
+      "roleId": 1,
+      "avatar": "defaultAvatar.png",
+      "addressId": 4
    },
    {
       "id": 5,
@@ -42,8 +46,9 @@
       "lastName": "gallo",
       "email": "holaxd@gmail.com",
       "password": "$2a$10$Bto8I.6.L2l.N73nzEtXS.rvVgAGEzLre5Mdsl.8I6d8oC.lkiLEK",
-      "rol": "customer",
-      "avatar": "defaultAvatar.png"
+      "roleId": 2,
+      "avatar": "defaultAvatar.png",
+      "addressId": 5
    },
    {
       "id": 6,
@@ -51,7 +56,8 @@
       "lastName": "Romero",
       "email": "gus_eze1988@hotmail.com",
       "password": "$2a$10$PwuW/Xxqs6pdjIeWVJVcvuokELHJ9l.xpW/TcMhKAimq2AQLYUR56",
-      "rol": "admin",
-      "avatar": "defaultAvatar.png"
+      "roleId": 1,
+      "avatar": "defaultAvatar.png",
+      "addressId": 6
    }
 ]
