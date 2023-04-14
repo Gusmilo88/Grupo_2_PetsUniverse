@@ -5,21 +5,21 @@
     <%- include('./partials/header')%>
     <main class="edit__main">
         <div class="edit__main__div">
-            <h3>Editar Producto: <%= name %></h3>
+            <h3>Editar Producto: <%= Product.name %></h3>
             <form action="/products/productEdit/<%= id %>?_method=PUT" method="POST">
                 <div class="edit__main__div--info">
                     <div class="edit__div__div--2">
                         <label for="name">Nombre del producto:</label>
-                        <input type="text" id="name" name="name" value="<%= name %>" autofocus>
+                        <input type="text" id="name" name="name" value="<%= Product.name %>" autofocus>
                     </div>
                     <div class="edit__div__div--2">
                         <label for="description">Descripción:</label>
-                        <textarea id="description" name="description" value="<%= description %>"  min="10" max="100"><%= description %></textarea>
+                        <textarea id="description" name="description" value="<%= Product.description %>"  min="10" max="100"><%= description %></textarea>
                     </div>
                     <div class="edit__div__div">
                         <div class="edit__div__div--2">
                             <label for="category">Categoría:</label>
-                            <select name="category" id="category" value="<%= category %>">
+                            <select name="category" id="category" value="<%= Product.category %>">
                                 <option value="" select hidden>Seleccione categoría...</option>
                                 <option value="gatos" <%= category === "gatos" && "selected" %>>Gatos</option>
                                 <option value="perros" <%= category === "perros" && "selected" %>>Perros</option>
@@ -28,7 +28,7 @@
                         <div class="edit__div__div--2">
                             <label for="productType">Tipo de producto:</label>
                             <select name="productType" id="productType">
-                                <option value="<%= productType %>" select hidden>Seleccione tipo de producto...</option>
+                                <option value="<%= Product.productType %>" select hidden>Seleccione tipo de producto...</option>
                                 <option value="alimento" <%= productType === "alimento" && "selected" %>>Alimento</option>
                                 <option value="juguetes" <%= productType === "juguetes" && "selected" %>>Juguetes</option>
                                 <option value="salud" <%= productType === "salud" && "selected" %>>Salud</option>
@@ -38,25 +38,25 @@
                     <div class="edit__div__div">
                        <div class="edit__div__div--2">
                             <label for="price">Precio:</label>
-                            <input type="number" id="price" name="price" value="<%= price %>">
+                            <input type="number" id="price" name="price" value="<%= Product.price %>">
                         </div>
                         <div class="edit__div__div--2">
                             <label for="weight">Descuento:</label>
-                            <input type="number" id="discount" name="discount" value="<%= discount %>">
+                            <input type="number" id="discount" name="discount" value="<%= Product.discount %>">
                         </div> 
                         <div class="edit__div__div--2">
                             <label for="weight">Peso:</label>
-                            <input type="number" id="weight" name="weight" value="<%= weight %>">
+                            <input type="number" id="weight" name="weight" value="<%= Product.weight %>">
                         </div> 
                         <div class="edit__div__div--2">
                             <label for="stock">Stock:</label>
-                            <input type="number" id="stock" name="stock" value="<%= stock %>">
+                            <input type="number" id="stock" name="stock" value="<%= Product.stock %>">
                         </div> 
                     </div>
                     <div class="edit__div__div">
                        <div class="edit__div__div--2">
                             <label for="image">Imagen:</label>
-                            <input type="file" class="form-image" id="image" name="image" value="<%= image %>">
+                            <input type="file" class="form-image" id="image" name="image" value="<%= Product.image %>">
                         </div>
                     </div>
                 <div class="edit__div__div--button">
