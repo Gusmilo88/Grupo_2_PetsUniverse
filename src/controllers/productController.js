@@ -6,10 +6,10 @@ const { redirect } = require('express/lib/response');
 const { title } = require('process');
 
 
-const productsFilePath = path.join(__dirname, '../data/products.json')
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+/* const productsFilePath = path.join(__dirname, '../data/products.json')
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); */
 
-const writeJson = (data = {}) =>fs.writeFileSync(path.join(__dirname, "../data/queries.json"),JSON.stringify(data),"utf-8");
+/* const writeJson = (data = {}) =>fs.writeFileSync(path.join(__dirname, "../data/queries.json"),JSON.stringify(data),"utf-8"); */
 module.exports = {
 
     productFilterCats: (req,res)=>{
@@ -244,7 +244,7 @@ destroy : (req, res) => {
 
 /* ------------------------------ */
 
-productDetail: (req, res) => {
+/* productDetail: (req, res) => {
 		
   const {id}= req.params; 
 const product = products.find(product => product.id === +id);
@@ -254,13 +254,13 @@ const product = products.find(product => product.id === +id);
       products,        
       mil		
 })
-};
+}; */
 
 
 productDetail: (req, res) => {
   const { id } = req.params;
   
-  db.petsuniverse.findByPk(id,{
+  db.Product.findByPk(id,{
     include : [
       {
         association : 'images',
@@ -268,10 +268,10 @@ productDetail: (req, res) => {
       }
     ]
   })
-    .then(course => {
+    .then(product => {
       return res.render("productDetail", {
         title: "Detalle del producto",
-        ...products.dataValues,
+        ...product.dataValues,
       });
     })
     .catch(error => console.log(error))
@@ -280,10 +280,6 @@ productDetail: (req, res) => {
 
 
 /* ------------------------------ */
-
-
-
-
 
 
 list: (req, res) => {
@@ -301,7 +297,5 @@ list: (req, res) => {
       });
     })
     .catch(error => console.log(error))
-
- 
 }
 
