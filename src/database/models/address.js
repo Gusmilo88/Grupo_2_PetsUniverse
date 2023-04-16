@@ -11,10 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Address.belongsTo(models.User, {
-        as: "users",
-        onDelete : "cascade"
-      })
+      // Address.belongsTo(models.User, {
+      //   as: "users",
+      //   onDelete : "cascade"
+      // })
     }
   }
   Address.init({

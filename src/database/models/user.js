@@ -11,22 +11,22 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      User.hasMany(models.Role, {
-        as: "roles",
-        foreignKey : "roleId",
-        onDelete : "cascade"
-      });
+      // User.hasMany(models.Role, {
+      //   as: "roles",
+      //   foreignKey : "roleId",
+      //   onDelete : "cascade"
+      // });
 
-      User.hasMany(models.Address, {
-        as: "Addresses",
-        foreignKey : "AddressId",
-        onDelete : "cascade"
-      })
+      // User.hasMany(models.Address, {
+      //   as: "Addresses",
+      //   foreignKey : "AddressId",
+      //   onDelete : "cascade"
+      // })
 
-      User.belongsTo(models.UserProduct, {
-        as: "usersProducts",
-        onDelete : "cascade"
-      })
+      // User.belongsTo(models.UserProduct, {
+      //   as: "usersProducts",
+      //   onDelete : "cascade"
+      // })
     }
   }
   User.init({

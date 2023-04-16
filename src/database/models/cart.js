@@ -11,16 +11,16 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Cart.hasMany(models.Product, {
-        as: "products",
-        foreignKey : "productId",
-        onDelete : "cascade"
-      });
+      // Cart.hasMany(models.Product, {
+      //   as: "products",
+      //   foreignKey : "productId",
+      //   onDelete : "cascade"
+      // });
 
-      Cart.hasMany(models.Order, {
-        as: "orders",
-        onDelete : "cascade"
-      })
+      // Cart.hasMany(models.Order, {
+      //   as: "orders",
+      //   onDelete : "cascade"
+      // })
     }
   }
   Cart.init({

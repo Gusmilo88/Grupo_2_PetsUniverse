@@ -11,10 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Order.belongsTo(models.Cart, {
-        as: "carts",
-        onDelete : "cascade"
-      })
+      // Order.belongsTo(models.Cart, {
+      //   as: "carts",
+      //   onDelete : "cascade"
+      // })
     }
   }
   Order.init({

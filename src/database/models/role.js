@@ -11,10 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Role.belongsTo(models.User, {
-        as: "users",
-        onDelete : "cascade"
-      })
+      // Role.belongsTo(models.User, {
+      //   as: "users",
+      //   onDelete : "cascade"
+      // })
     }
   }
   Role.init({
