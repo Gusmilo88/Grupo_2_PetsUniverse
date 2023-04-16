@@ -11,10 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      // Address.belongsTo(models.User, {
-      //   as: "users",
-      //   onDelete : "cascade"
-      // })
+
+      Address.hasMany(models.User, {
+        as: "addresses",
+        foreignKey: "roleId",
+        onDelete : "cascade"
+      });
+      
     }
   }
   Address.init({

@@ -15,13 +15,13 @@ module.exports = (sequelize, DataTypes) => {
         as: "categories",
         foreignKey : "categoryId",
         onDelete : "cascade"
-      })
+      });
 
       Product.belongsTo(models.ProductType, {
         as: "productTypes",
         foreignKey : "productTypeId",
         onDelete : "cascade"
-      })
+      });
 
       Product.hasMany(models.Cart, {
         as: "carts",
@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
         as: "usersProducts",
         foreignKey : "productId",
         onDelete : "cascade"
-      })
+      });
     }
   }
   Product.init({
