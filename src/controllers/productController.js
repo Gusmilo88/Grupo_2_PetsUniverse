@@ -227,8 +227,8 @@ destroy : (req, res) => {
   const productsModified = products.filter(product => product.id !== + id)
   fs.writeFileSync(productsFilePath, JSON.stringify(productsModified, null, 3), "utf-8");
   return res.redirect("/")
-}
-};
+},
+
 
 destroy : (req, res) => {
   db.petsuniverse.destroy(
@@ -239,7 +239,7 @@ destroy : (req, res) => {
     }
   ).then(() => res.redirect("/products"))
    .catch(error => console.log(error))
-}
+},
   
 
 /* ------------------------------ */
@@ -261,21 +261,21 @@ productDetail: (req, res) => {
   const { id } = req.params;
   
   db.Product.findByPk(id,{
-    include : [
+/*     include : [
       {
-        association : 'images',
+        association : 'image',
         attributes : ['name']
       }
-    ]
+    ] */
   })
-    .then(product => {
-      return res.render("productDetail", {
+    .then(Product => {
+      return res.render('productDetail', {
         title: "Detalle del producto",
-        ...product.dataValues,
+        ...Product.dataValues,
       });
     })
     .catch(error => console.log(error))
-}
+},
 
 
 
@@ -298,4 +298,12 @@ list: (req, res) => {
     })
     .catch(error => console.log(error))
 }
+
+
+
+
+
+
+};
+
 

@@ -61,6 +61,18 @@ module.exports = {
       deletedAt: {
         allowNull: true,
         type: Sequelize.DATE
+      },
+      productId: {
+        allowNull: true,
+        type: Sequelize.DATE
+      },
+      cartsId: {
+        allowNull: true,
+        type: Sequelize.DATE
+      },
+      usersProductsId: {
+        allowNull: true,
+        type: Sequelize.DATE
       }
     });
   },
