@@ -13,8 +13,10 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       ProductType.belongsTo(models.Product, {
         as: "products",
+        foreignKey : "productId",
         onDelete : "cascade"
-      })
+      });
+
     }
   }
   ProductType.init({
