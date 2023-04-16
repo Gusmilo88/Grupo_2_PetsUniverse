@@ -10,8 +10,8 @@ const checkUserAdmin = require('../middlewares/checkUserAdmin');
 /* router.get('/perros',productFilterDogs) */
 router.get('/productDetail/:id',productDetail) 
 
-/* router.get('/productCreate/',checkUserAdmin,productCreate) */
-/* router.post('/productCreate', store)  */
+router.get('/productCreate/',/* checkUserAdmin */productCreate)
+/* router.post('/productCreate', store)   */
 
 /* router.get('/productEdit/:id',checkUserAdmin, productEdit)  */
 /* router.put('/productEdit/:id', productUpdate) */

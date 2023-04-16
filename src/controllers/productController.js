@@ -17,8 +17,7 @@ module.exports = {
         if (!req.query.price  && !req.query.productType) {
 			writeJson();
 		  }
-
-          let queries = require("../data/queries.json");
+        let queries = require("../data/queries.json");
 	  
 		  writeJson({ ...queries, ...req.query });
 	  
@@ -29,8 +28,6 @@ module.exports = {
 			})
 
 		  let allProducts = ProductsCat;
-
-      
 
           if (price) {
 			// ordenar por el precio
@@ -51,10 +48,10 @@ module.exports = {
 			});
 		  }
 
-        return res.render('productsCats',{
-            products:allProducts,
-            queries: { ...queries, ...req.query }
-        })
+      return res.render('productsCats',{
+        products:allProducts,
+        queries: { ...queries, ...req.query }
+      })
     },
 
     productFilterDogs: (req,res)=>{
@@ -63,7 +60,7 @@ module.exports = {
     writeJson();
     }
 
-        let queries = require("../data/queries.json");
+    let queries = require("../data/queries.json");
   
     writeJson({ ...queries, ...req.query });
   
@@ -74,8 +71,6 @@ module.exports = {
     })
 
     let allProducts = ProductsCat;
-
-    
 
         if (price) {
     // ordenar por el precio
@@ -95,11 +90,6 @@ module.exports = {
       return product.productType === productType;
     });
     }
-
-
-
-
-
       return res.render('productsDogs',{
           products:allProducts,
           queries: { ...queries, ...req.query }
@@ -108,7 +98,7 @@ module.exports = {
 
 /* ------------------------------ */
 
-  productCreate: (req,res)=>{
+/*   productCreate: (req,res)=>{
     return res.render('productCreate')
 },
 
@@ -134,11 +124,11 @@ store: (req, res) => {
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 3), 'utf-8')
 
     return res.redirect('/')
-},
+}, */
 
 
 productCreate: (req,res)=>{
-    const {name, description, categoryId, productTypeId, price, discount, weight, stock, image} = req.body
+
 
     db.Product.create({
         ...req.body,
@@ -150,6 +140,31 @@ productCreate: (req,res)=>{
       })
       .catch(error => console.log(error))
 },
+
+add: (req, res) => {
+  const chefs = db.Chef.findAll({
+    order: [["name"]],
+    attributes: ["name", "id"],
+  });
+
+  const categories = db.Category.findAll({
+    order: [["name"]],
+    attributes: ["name", "id"],
+  });
+
+  Promise.all([chefs, categories])
+    .then(([chefs, categories]) => {
+      return res.render("courses/formAdd", {
+        chefs,
+        categories,
+      });
+    })
+    .catch((error) => console.log(error));
+},
+
+
+
+
 /* ------------------------------ */
 
 /* productEdit: (req,res) => {
@@ -221,13 +236,13 @@ productUpdate: (req, res) => {
 
 /* ------------------------------ */
 
-destroy : (req, res) => {
+/* destroy : (req, res) => {
   // Do the magic
   const {id} = req.params;
   const productsModified = products.filter(product => product.id !== + id)
   fs.writeFileSync(productsFilePath, JSON.stringify(productsModified, null, 3), "utf-8");
   return res.redirect("/")
-},
+}, */
 
 
 destroy : (req, res) => {
@@ -259,28 +274,32 @@ const product = products.find(product => product.id === +id);
 
 productDetail: (req, res) => {
   const { id } = req.params;
-  
-  db.Product.findByPk(id,{
-/*     include : [
+  const mil = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  const productsId = db.Product.findByPk(id,{
+    include : [
       {
-        association : 'image',
+        association : 'categories',
         attributes : ['name']
-      }
-    ] */
+      },
+      {
+        association : 'productTypes',
+        attributes : ['name']
+      },]
   })
-    .then(Product => {
+  const products = db.Product.findAll()
+  Promise.all(([productsId, products]))
+    .then(([productsId, products]) => {
       return res.render('productDetail', {
         title: "Detalle del producto",
-        ...Product.dataValues,
+        ...productsId.dataValues,
+        products,
+        mil,
       });
     })
     .catch(error => console.log(error))
 },
 
-
-
 /* ------------------------------ */
-
 
 list: (req, res) => {
 
@@ -297,12 +316,15 @@ list: (req, res) => {
       });
     })
     .catch(error => console.log(error))
+},
+
+/* ------------------------------ */
+
+search : (req,res) => {
+  return res.render('courses/results',{
+    courses : []
+  })
 }
-
-
-
-
-
 
 };
 
