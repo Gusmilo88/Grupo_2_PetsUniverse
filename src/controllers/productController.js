@@ -1,101 +1,137 @@
 const fs = require('fs');
 const path = require('path');
-const db = require("../database/models")
+const db = require("../database/models");
+const { promise } = require('bcrypt/promises');
+const { redirect } = require('express/lib/response');
+const { title } = require('process');
 
 
-const productsFilePath = path.join(__dirname, '../data/products.json')
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+/* const productsFilePath = path.join(__dirname, '../data/products.json')
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); */
 
-const writeJson = (data = {}) =>fs.writeFileSync(path.join(__dirname, "../data/queries.json"),JSON.stringify(data),"utf-8");
+/* const writeJson = (data = {}) =>fs.writeFileSync(path.join(__dirname, "../data/queries.json"),JSON.stringify(data),"utf-8"); */
 module.exports = {
+  productFilterCats: (req, res) => {
+    db.Product.findAll({
+      where: {
+        visible: true,
+      },
+      include: ["images"],
+    })
+      .then((products) => {
+        return res.render("/gatos", {
+          title: "Lista de productos",
+          products,
+        });
+      })
+      .catch((error) => console.log(error));
+  },
 
-    productDetail: (req, res) => {
-		
-        const {id}= req.params; 
-		const product = products.find(product => product.id === +id);
-        const mil = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");	
-        return res.render('productDetail',{
-            ...product,
-            products,        
-            mil		
-		})
-	},
+  productFilterDogs: (req, res) => {
+    db.Product.findAll({
+      where: {
+        visible: true,
+      },
+      include: ["images"],
+    })
+      .then((products) => {
+        return res.render("/perros", {
+          title: "Lista de productos",
+          products,
+        });
+      })
+      .catch((error) => console.log(error));
+  },
 
-    productEdit: (req,res) => {
-        const {id} = req.params;
-        const product = products.find(product => product.id === +id);
+  productDetail: (req, res) => {
+    const { id } = req.params;
+    const mil = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    const productsId = db.Product.findByPk(id,{
+      include : [
+        {
+          association : 'categories',
+          attributes : ['name']
+        },
+        {
+          association : 'productTypes',
+          attributes : ['name']
+        },]
+    })
+    const products = db.Product.findAll()
+    Promise.all(([productsId, products]))
+      .then(([productsId, products]) => {
+        return res.render('productDetail', {
+          title: "Detalle del producto",
+          ...productsId.dataValues,
+          products,
+          mil,
+        });
+      })
+      .catch(error => console.log(error))
+  },
 
-        return res.render("productEdit", {
-            ...product,
-        })
-    },
+productCreate: (req,res)=>{
+    db.Product.create({
+        ...req.body,
+        title : title.trim
+    })
+      .then(newProduct =>{
+        console.log(newProduct)
+        return res.redirect('/' + newProduct.id)
+      })
+      .catch(error => console.log(error))
+},
 
-    productUpdate: (req, res) => {
-        const {id} = req.params
-        const product = products.find(product => product.id === +id);
-        const {name, description, price, discount, image, weight, category, productType, stock} = req.body;
+productEdit: function(req,res) {
+  const product = db.petsuniverse.finByPk(req.params.id)
 
-        const productModified = {
-            id : +id,
-			name : name.trim(),
-			description : description.trim(),
-			price : +price,
-			discount : +discount,
-			image : product.image,
-      weight : +weight,
-			category : category ? "perros" : "perros" || category ? "gatos" : "gatos",
-      productType : productType ? "alimento" : "alimento" || productType ? "juguetes" : "juguetes" || productType ? "salud" : "salud",
-      stock : +stock,
-		}
+  Promise.all([product])
+  .then(([product])=>{
+    return res.send("productEdit"),{
+      Product : product
+    }
+  }).catch(error => console.log(error))
+},
 
-        const productsModified = products.map(product => {
-            if(product.id === +id){
-                return productModified
-            }
-            return product;
-        })
-
-        fs.writeFileSync(productsFilePath, JSON.stringify(productsModified, null, 3), "utf-8");
-        return res.redirect("/products/productDetail/" + id)
-
-        
-    },
-
-    productCreate: (req,res)=>{
-        return res.render('productCreate')
-    },
-
-    store: (req, res) => {
-      const mil = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        const {name, discount, price, description, category, weight, productType, stock, image} = req.body;
-
-        const newProduct = {
-            id : products[products.length - 1].id + 1,
-            name : name.trim(),
-            description : description.trim(),
-            price : +price,
-            discount : +discount,
-            image : null,
-            weight : +weight,
-            productType : productType ? "alimento" : "alimento" || productType ? "juguetes" : "juguetes" || productType ? "salud" : "salud",
-            category : category ? "perros" : "perros" || category ? "gatos" : "gatos",
-            stock : +stock,
-            mil
-            
+productUpdate: (req, res) => {
+    db.petsuniverse.update(
+      {
+        ...req.body
+      },
+      {
+        where : {
+          id : req.params.id
         }
-        products.push(newProduct);
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 3), 'utf-8')
+      }
+    ).then(() => res.redirect("/products/productDetail/" + req.params.id))
+     .catch(error => console.log(error))
+},
 
-        return res.redirect('/')
-    },
+destroy : (req, res) => {
+  db.petsuniverse.destroy(
+    {
+      where : {
+        id : req.params.id
+      }
+    }
+  ).then(() => res.redirect("/products"))
+   .catch(error => console.log(error))
+},
+  
+search : (req,res) => {
+  return res.render('courses/results',{
+    courses : []
+  })
+}
 
-    productFilterCats: (req,res)=>{
+};
+
+/*     productFilterCats: (req,res)=>{
 
         if (!req.query.price  && !req.query.productType) {
 			writeJson();
 		  }
-
-          let queries = require("../data/queries.json");
+        let queries = require("../data/queries.json");
 	  
 		  writeJson({ ...queries, ...req.query });
 	  
@@ -106,8 +142,6 @@ module.exports = {
 			})
 
 		  let allProducts = ProductsCat;
-
-      
 
           if (price) {
 			// ordenar por el precio
@@ -128,23 +162,19 @@ module.exports = {
 			});
 		  }
 
+      return res.render('productsCats',{
+        products:allProducts,
+        queries: { ...queries, ...req.query }
+      })
+    }, */
 
-
-
-
-        return res.render('productsCats',{
-            products:allProducts,
-            queries: { ...queries, ...req.query }
-        })
-    },
-
-    productFilterDogs: (req,res)=>{
+/*     productFilterDogs: (req,res)=>{
 
       if (!req.query.price  && !req.query.productType) {
     writeJson();
     }
 
-        let queries = require("../data/queries.json");
+    let queries = require("../data/queries.json");
   
     writeJson({ ...queries, ...req.query });
   
@@ -155,8 +185,6 @@ module.exports = {
     })
 
     let allProducts = ProductsCat;
-
-    
 
         if (price) {
     // ordenar por el precio
@@ -176,26 +204,94 @@ module.exports = {
       return product.productType === productType;
     });
     }
-
-
-
-
-
       return res.render('productsDogs',{
           products:allProducts,
           queries: { ...queries, ...req.query }
       })
-  },
+  }, */
 
-    
-    destroy : (req, res) => {
-		// Do the magic
-		const {id} = req.params;
-		const productsModified = products.filter(product => product.id !== + id)
-		fs.writeFileSync(productsFilePath, JSON.stringify(productsModified, null, 3), "utf-8");
-		return res.redirect("/")
-	}
+  /*   productCreate: (req,res)=>{
+    return res.render('productCreate')
+},
+
+store: (req, res) => {
+  const mil = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    const {name, discount, price, description, category, weight, productType, stock, image} = req.body;
+
+    const newProduct = {
+        id : products[products.length - 1].id + 1,
+        name : name.trim(),
+        description : description.trim(),
+        price : +price,
+        discount : +discount,
+        image : null,
+        weight : +weight,
+        productType : productType ? "alimento" : "alimento" || productType ? "juguetes" : "juguetes" || productType ? "salud" : "salud",
+        category : category ? "perros" : "perros" || category ? "gatos" : "gatos",
+        stock : +stock,
+        mil
+        
+    }
+    products.push(newProduct);
+    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 3), 'utf-8')
+
+    return res.redirect('/')
+}, */
+
+/* productEdit: (req,res) => {
+  const {id} = req.params;
+  const product = products.find(product => product.id === +id);
+
+  return res.render("productEdit", {
+      ...product,
+  })
+}, */
+
+/* productUpdate: (req, res) => {
+  const {id} = req.params
+  const product = products.find(product => product.id === +id);
+  const {name, description, price, discount, image, weight, category, productType, stock} = req.body;
+
+  const productModified = {
+      id : +id,
+name : name.trim(),
+description : description.trim(),
+price : +price,
+discount : +discount,
+image : product.image,
+weight : +weight,
+category : category ? "perros" : "perros" || category ? "gatos" : "gatos",
+productType : productType ? "alimento" : "alimento" || productType ? "juguetes" : "juguetes" || productType ? "salud" : "salud",
+stock : +stock,
 }
 
+  const productsModified = products.map(product => {
+      if(product.id === +id){
+          return productModified
+      }
+      return product;
+  })
 
+  fs.writeFileSync(productsFilePath, JSON.stringify(productsModified, null, 3), "utf-8");
+  return res.redirect("/products/productDetail/" + id)
+}, */
 
+/* destroy : (req, res) => {
+  // Do the magic
+  const {id} = req.params;
+  const productsModified = products.filter(product => product.id !== + id)
+  fs.writeFileSync(productsFilePath, JSON.stringify(productsModified, null, 3), "utf-8");
+  return res.redirect("/")
+}, */
+
+/* productDetail: (req, res) => {
+		
+  const {id}= req.params; 
+const product = products.find(product => product.id === +id);
+  const mil = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");	
+  return res.render('productDetail',{
+      ...product,
+      products,        
+      mil		
+})
+}; */

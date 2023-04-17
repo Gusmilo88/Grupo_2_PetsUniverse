@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./src/bin/www",
-    "db:create": "sequelize db:drop & sequelize db:create & sequelize db:migrate",
-    "db:reset": "sequelize db:migrate:undo:all & sequelize db:migrate & sequelize db:seed:all"
+    "db:create": "sequelize db:drop & sequelize db:create & npm run db:reset",
+    "db:reset": "sequelize db:migrate & sequelize db:seed:all"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
@@ -21,7 +21,7 @@
     "method-override": "^3.0.0",
     "morgan": "~1.9.1",
     "multer": "^1.4.5-lts.1",
-    "mysql2": "^3.2.0",
+    "mysql2": "^3.2.1",
     "sequelize": "^6.31.0"
   }
 }
