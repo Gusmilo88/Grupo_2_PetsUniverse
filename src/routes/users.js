@@ -8,6 +8,8 @@ const {loginUserValidator} = require('../validations');
 const registerUserValidator = require('../validations/registerUserValidator');
 const checkUser = require('../middlewares/checkUser')
 const checkLogin = require('../middlewares/checkLogin')
+
+/* /users */
 router.get('/login',checkUser, login)
 router.post('/login',loginUserValidator,processLogin)
 router.get('/register',checkUser, register) 

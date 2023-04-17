@@ -24,10 +24,6 @@
                         <label for="email" class="form-label"></label>
                         <i class="fa-regular fa-envelope"></i><input type="email" class="register__main__div--info <%= (locals.errors && errors.email) && 'errorInput'%>" placeholder="<%= locals.errors && errors.email ? errors.email.msg : "Ingresá tu correo electrónico" %>" name="email" id="email" value="<%= locals.old && old.email ? old.email : null%>">
                     </div>
-                    <!-- <div>
-                        <label for="email2" class="form-label"></label>
-                        <i class="fa-regular fa-envelope"></i><input type="email" class="register__main__div--info <%= (locals.errors && errors.email2) && 'errorInput'%>" placeholder="<%= locals.errors && errors.email2 ? errors.email2.msg : "Confirmá correo electrónico" %>" name="email2" id="email2" value="<%= locals.old && old.email2 ? old.email2 : null%>">
-                    </div> -->
                     <div>
                         <label for="password" class="form-label"></label>
                         <i class="fa-solid fa-lock"></i><input type="password" class="register__main__div--info <%= (locals.errors && errors.password) && 'errorInput'%>" placeholder="<%= locals.errors && errors.password ? errors.password.msg : "Ingresá contraseña" %>" name="password" id="password">
