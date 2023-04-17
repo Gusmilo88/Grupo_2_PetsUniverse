@@ -7,63 +7,39 @@
     <%- include('./partials/header')%>
 
 
-    <main class="main__login">
-        <div>
-            <!-- <div class="row mb-5">
-            <div class="col-12 col-md-8 mx-auto">
-                <div class="card-shadow"> -->
-                    <div class="card-header">
-            <div class="main__login__div">
-        <form action="" method="POST">
-
+    <main class="register__main">
+        <div class="register__main__div">
             <div class="main__login__div--iniciarSesion">
                 <h2>Iniciar sesión</h2>
             </div>
-            <div class="card-body">
                 <form action="" method="POST">
-                    <div>
-            <div class="main__login__div--nombreUsuario">
-<!--                 <i class="fa-regular fa-envelope"></i> -->
-                <label for="email"></label>
-                <input type="email" class="register__main__div--info <%= (locals.errors && errors.email) && 'errorInput'%>" placeholder="<%= locals.errors && errors.email ? errors.email.msg : "Ingresá email" %>"  name="email" id="email" autofocus>
-                
-            </div>
-            <div>
-            <div class="main__login__div--contraseña">
-<!--                 <i class="fa-solid fa-unlock"></i> -->
-                <label for="password"></label>
-                <input type="password" class="register__main__div--info <%= (locals.errors && errors.password) && 'errorInput'%>" placeholder="<%= locals.errors && errors.password ? errors.password.msg : "Ingresá contraseña" %>" name="password" id="password"><!-- <i class="fa-solid fa-eye"></i> -->
-            
-            </div>
+                    <div class="register__main__div--info">
+                        <div>
+                            <label for="email" class="form-label"></label>
+                            <i class="fa-regular fa-envelope"></i><input type="email" class="register__main__div--info <%= (locals.errors && errors.email) && 'errorInput'%>" placeholder="<%= locals.errors && errors.email ? errors.email.msg : "Ingresá tu correo electrónico" %>" name="email" id="email" value="<%= locals.old && old.email ? old.email : null%>">
+                        </div>
+                        <div>
+                            <label for="password" class="form-label"></label>
+                            <i class="fa-solid fa-lock"></i><input type="password" class="register__main__div--info <%= (locals.errors && errors.password) && 'errorInput'%>" placeholder="<%= locals.errors && errors.password ? errors.password.msg : "Ingresá contraseña" %>" name="password" id="password">
+                        </div>
+                    </div>
+                    <div class="register__main__div--button">
+                        <button type="submit">Ingresá</button>
+                    </div>
 
-            <div class="main__login__div--botonEnviar">
-                <button type="submit">Ingresá</button>
-            </div>
-        </div>
             <div>
                 <input type="checkbox" name="recordarUsuario" id="recordarUsuario">
-            <label for="recordarUsuario">Recordar usuario</label>
+                <label for="recordarUsuario">Recordar usuario</label>
             </div>
-        </form> 
             <div class="main__login--olvidarContraseña">
-                <small> ¿Olvidaste tu contraseña? <a href="/register"> Recupera tu contraseña </a></small>
+                <small> ¿Olvidaste tu contraseña? <a href="/register"> Recuperá tu contraseña</a></small>
             </div>
-
             <div class="main__login--estasRegistrado">
                 <small> ¿No estas registrado? <a href="/users/register"> Registrate </a></small>
             </div>
+        </form>
         </div>
-    </div>
-    </form>
-</div>
-        </div>
-    </div>
-    </div>
-</div>
-</div>
     </main>
-
-
 
     <%- include('./partials/footer')%>
 </body>
