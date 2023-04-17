@@ -6,7 +6,7 @@ const logger = require('morgan');
 const methodOverride =  require("method-override");
 const session = require('express-session'); // Para poder usar los métodos PUT y DELETE
 
-
+require("dotenv").config()
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');

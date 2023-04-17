@@ -1,0 +1,47 @@
+[
+
+   {
+      "id": 1,
+      "address": "Calle Falsa 123",
+      "city": "Mataderos",
+      "province": "Buenos Aires",
+      "zipcode": "1350"
+    
+   },
+   {
+    "id": 2,
+    "address": "Siempre Vivas 342",
+    "city": "Lanus",
+    "province": "Buenos Aires",
+    "zipcode": "1320"
+   },
+   {
+    "id": 3,
+    "address": "Siempre Vivas 567",
+    "city": "Lanus",
+    "province": "Buenos Aires",
+    "zipcode": "1380"
+   },
+   {
+    "id": 4,
+    "address": "Springfield 145",
+    "city": "Temperley",
+    "province": "Buenos Aires",
+    "zipcode": "1320"
+   },
+   {
+    "id": 5,
+    "address": "Springfield 245",
+    "city": "Temperley",
+    "province": "Buenos Aires",
+    "zipcode": "1320"
+   },
+   {
+      "id": 6,
+      
+      "address": "Calle Falsa 697",
+      "city": "Merlo",
+      "province": "Buenos Aires",
+      "zipcode": "5678"
+   }
+]

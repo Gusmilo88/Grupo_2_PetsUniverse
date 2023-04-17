@@ -11,10 +11,13 @@
       <div class="home_main--dashboard-buscador-plus">
         <% if (Buscar) { %>
           <div>
+            <% if (locals.userLogin) { %>
+              <% if (userLogin.rol === 1) { %>
             <a href="/admin" class="dashboard--Allproducts"> Volver a todos los productos</a>
           </div>
         <% } %>
-      
+        <% } %>
+      <% } %>
         <div class="home__header__nav__div--lupa--dashboard">
             <form action="/admin" method="GET" class="home__header__nav__div--lupa--dash">
               <input type="text" name="Buscar" placeholder="Buscar productos, marcas">
@@ -23,7 +26,7 @@
             </button>
             </form>
             </div>
-           
+          
             
             <div>
               <a class="btn btn-sm btn-primary" href="/products/productCreate/"><i class="fa-solid fa-plus"></i></a>

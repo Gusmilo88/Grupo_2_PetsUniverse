@@ -1,6 +1,6 @@
 const {validationResult} = require("express-validator");
-const {readJSON, writeJSON} = require("../data");
 const {hashSync} = require("bcryptjs");
+const db = require('../database/models')
 
 
 
@@ -11,19 +11,31 @@ module.exports = {
     processLogin : (req,res) => {
         const errors = validationResult(req);
 
+        
+
         if(errors.isEmpty()){
 
-            const {id, name, rol} = readJSON('users.json').find(user => user.email === req.body.email)
+            
+            db.User.findOne({
+                where : {
+                    email : req.body.email
+                }
 
-            req.session.userLogin = {
-                id,
-                name,
-                rol
-            }
+            }).then( (id, name, rolId) =>{
+
+                
+                req.session.userLogin = {
+                    id,
+                    name,
+                    rol : rolId
+                }
             if(req.body.recordarUsuario){
                 res.cookie('userPetsUniverse', req.session.userLogin,{maxAge : 1000 * 30})
             }
-        return res.redirect('/')  
+        return res.redirect('/') 
+    })
+    .catch(error => console.log(error))
+    
     }else{
         return res.render('login', {
             title : "Iniciar sesión",
@@ -43,24 +55,34 @@ module.exports = {
         const errors = validationResult(req);
 
         if(errors.isEmpty()){
-            const users = readJSON("users.json");
+            
 
-            const {firstName, lastName, email, password, rol, avatar} = req.body;
+            const {firstName, lastName, email, password} = req.body;
 
-            const newUser = {
-                id : users.length ? users[users.length - 1].id + 1 : 1,
-                firstName : firstName.trim(),
-                lastName : lastName.trim(),
-                email : email.trim(),
-                password : hashSync(password, 10),
-                rol : rol ? "admin" : "admin"  || rol ? "customer" : "customer",
-                avatar : "defaultAvatar.png",
-            }
+            db.Adress.create()
+            .then( address =>{
+                db.User.create({
+                    firstName : firstName.trim(),
+                    lastName : lastName.trim(),
+                    email : email.trim(),
+                    password : hashSync(password, 10),
+                    roleId : 2,
+                    addressId : address.id
 
-            users.push(newUser)
+                }).then(({id, name, roleId}) => {
+                    req.session.userLogin = {
+                        id,
+                        name,
+                        rol : roleId
+                    }
+                    return res.redirect('/')
+                })
 
-            writeJSON("users.json", users);
-            return res.redirect("/users/login");
+                })
+            
+            .catch(error => console.log(error))
+
+            
 
         }else{
             return res.render('register',{
