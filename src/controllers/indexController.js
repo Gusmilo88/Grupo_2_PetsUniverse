@@ -2,24 +2,19 @@ const fs = require('fs');
 const path = require('path')
 
 const productsFilePath= path.join(__dirname,'../data/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath,'utf-8'))
+const products = JSON.parse(fs.readFileSync(productsFilePath,'utf-8'));
+const db = require("../database/models")
 
 
-module.exports = {
-
-    
-    
-    
-    
+module.exports = {    
     index:(req,res) => {
         
-        
-        
-        return res.render('index',{
-            products})
-
-
-
+        db.Product.findAll()
+        .then((products) => {
+            return res.render('index',{
+                products})
+        })
+        .catch(error => console.log(error))
     },
 
     cart:(req,res) => {
