@@ -11,8 +11,122 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); */
 
 /* const writeJson = (data = {}) =>fs.writeFileSync(path.join(__dirname, "../data/queries.json"),JSON.stringify(data),"utf-8"); */
 module.exports = {
+  productFilterCats: (req, res) => {
+    db.Product.findAll({
+      where: {
+        visible: true,
+      },
+      include: ["images"],
+    })
+      .then((products) => {
+        return res.render("/gatos", {
+          title: "Lista de productos",
+          products,
+        });
+      })
+      .catch((error) => console.log(error));
+  },
 
-    productFilterCats: (req,res)=>{
+  productFilterDogs: (req, res) => {
+    db.Product.findAll({
+      where: {
+        visible: true,
+      },
+      include: ["images"],
+    })
+      .then((products) => {
+        return res.render("/perros", {
+          title: "Lista de productos",
+          products,
+        });
+      })
+      .catch((error) => console.log(error));
+  },
+
+  productDetail: (req, res) => {
+    const { id } = req.params;
+    const mil = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    const productsId = db.Product.findByPk(id,{
+      include : [
+        {
+          association : 'categories',
+          attributes : ['name']
+        },
+        {
+          association : 'productTypes',
+          attributes : ['name']
+        },]
+    })
+    const products = db.Product.findAll()
+    Promise.all(([productsId, products]))
+      .then(([productsId, products]) => {
+        return res.render('productDetail', {
+          title: "Detalle del producto",
+          ...productsId.dataValues,
+          products,
+          mil,
+        });
+      })
+      .catch(error => console.log(error))
+  },
+
+productCreate: (req,res)=>{
+    db.Product.create({
+        ...req.body,
+        title : title.trim
+    })
+      .then(newProduct =>{
+        console.log(newProduct)
+        return res.redirect('/' + newProduct.id)
+      })
+      .catch(error => console.log(error))
+},
+
+productEdit: function(req,res) {
+  const product = db.petsuniverse.finByPk(req.params.id)
+
+  Promise.all([product])
+  .then(([product])=>{
+    return res.send("productEdit"),{
+      Product : product
+    }
+  }).catch(error => console.log(error))
+},
+
+productUpdate: (req, res) => {
+    db.petsuniverse.update(
+      {
+        ...req.body
+      },
+      {
+        where : {
+          id : req.params.id
+        }
+      }
+    ).then(() => res.redirect("/products/productDetail/" + req.params.id))
+     .catch(error => console.log(error))
+},
+
+destroy : (req, res) => {
+  db.petsuniverse.destroy(
+    {
+      where : {
+        id : req.params.id
+      }
+    }
+  ).then(() => res.redirect("/products"))
+   .catch(error => console.log(error))
+},
+  
+search : (req,res) => {
+  return res.render('courses/results',{
+    courses : []
+  })
+}
+
+};
+
+/*     productFilterCats: (req,res)=>{
 
         if (!req.query.price  && !req.query.productType) {
 			writeJson();
@@ -52,9 +166,9 @@ module.exports = {
         products:allProducts,
         queries: { ...queries, ...req.query }
       })
-    },
+    }, */
 
-    productFilterDogs: (req,res)=>{
+/*     productFilterDogs: (req,res)=>{
 
       if (!req.query.price  && !req.query.productType) {
     writeJson();
@@ -94,11 +208,9 @@ module.exports = {
           products:allProducts,
           queries: { ...queries, ...req.query }
       })
-  },
+  }, */
 
-/* ------------------------------ */
-
-/*   productCreate: (req,res)=>{
+  /*   productCreate: (req,res)=>{
     return res.render('productCreate')
 },
 
@@ -126,47 +238,6 @@ store: (req, res) => {
     return res.redirect('/')
 }, */
 
-
-productCreate: (req,res)=>{
-
-
-    db.Product.create({
-        ...req.body,
-        title : title.trim
-    })
-      .then(newProduct =>{
-        console.log(newProduct)
-        return res.redirect('/' + newProduct.id)
-      })
-      .catch(error => console.log(error))
-},
-
-add: (req, res) => {
-  const chefs = db.Chef.findAll({
-    order: [["name"]],
-    attributes: ["name", "id"],
-  });
-
-  const categories = db.Category.findAll({
-    order: [["name"]],
-    attributes: ["name", "id"],
-  });
-
-  Promise.all([chefs, categories])
-    .then(([chefs, categories]) => {
-      return res.render("courses/formAdd", {
-        chefs,
-        categories,
-      });
-    })
-    .catch((error) => console.log(error));
-},
-
-
-
-
-/* ------------------------------ */
-
 /* productEdit: (req,res) => {
   const {id} = req.params;
   const product = products.find(product => product.id === +id);
@@ -175,20 +246,6 @@ add: (req, res) => {
       ...product,
   })
 }, */
-
-
-productEdit: function(req,res) {
-  const product = db.petsuniverse.finByPk(req.params.id)
-
-  Promise.all([product])
-  .then(([product])=>{
-    return res.send("productEdit"),{
-      Product : product
-    }
-  }).catch(error => console.log(error))
-},
-
-/* ------------------------------ */
 
 /* productUpdate: (req, res) => {
   const {id} = req.params
@@ -219,23 +276,6 @@ stock : +stock,
   return res.redirect("/products/productDetail/" + id)
 }, */
 
-
-productUpdate: (req, res) => {
-    db.petsuniverse.update(
-      {
-        ...req.body
-      },
-      {
-        where : {
-          id : req.params.id
-        }
-      }
-    ).then(() => res.redirect("/products/productDetail/" + req.params.id))
-     .catch(error => console.log(error))
-},
-
-/* ------------------------------ */
-
 /* destroy : (req, res) => {
   // Do the magic
   const {id} = req.params;
@@ -243,21 +283,6 @@ productUpdate: (req, res) => {
   fs.writeFileSync(productsFilePath, JSON.stringify(productsModified, null, 3), "utf-8");
   return res.redirect("/")
 }, */
-
-
-destroy : (req, res) => {
-  db.petsuniverse.destroy(
-    {
-      where : {
-        id : req.params.id
-      }
-    }
-  ).then(() => res.redirect("/products"))
-   .catch(error => console.log(error))
-},
-  
-
-/* ------------------------------ */
 
 /* productDetail: (req, res) => {
 		
@@ -270,62 +295,3 @@ const product = products.find(product => product.id === +id);
       mil		
 })
 }; */
-
-
-productDetail: (req, res) => {
-  const { id } = req.params;
-  const mil = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  const productsId = db.Product.findByPk(id,{
-    include : [
-      {
-        association : 'categories',
-        attributes : ['name']
-      },
-      {
-        association : 'productTypes',
-        attributes : ['name']
-      },]
-  })
-  const products = db.Product.findAll()
-  Promise.all(([productsId, products]))
-    .then(([productsId, products]) => {
-      return res.render('productDetail', {
-        title: "Detalle del producto",
-        ...productsId.dataValues,
-        products,
-        mil,
-      });
-    })
-    .catch(error => console.log(error))
-},
-
-/* ------------------------------ */
-
-list: (req, res) => {
-
-  db.Course.findAll({
-    where : {
-      visible : true
-    },
-    include : ['images']
-  })
-    .then(courses => {
-      return res.render("courses/list", {
-        title: "Lista de cursos",
-        courses
-      });
-    })
-    .catch(error => console.log(error))
-},
-
-/* ------------------------------ */
-
-search : (req,res) => {
-  return res.render('courses/results',{
-    courses : []
-  })
-}
-
-};
-
-
