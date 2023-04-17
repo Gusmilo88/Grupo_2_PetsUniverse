@@ -2,44 +2,41 @@
 
 /** @type {import('sequelize-cli').Migration} */
 
-const usuarioJson = require('../../data/users.json')
 
 
-
-
-
-
-
-const usuarios = usuarioJson.map(({firstName,lastName,email,password,avatar,roleId,addressId})=>{
-  return{
-  firstName,
-  lastName,
-email,
-password,
-avatar,
-roleId,
-addressId,
-
-createdAt: new Date(),
-updatedAt: new Date(),
-
-}
-
-})
-
-
-
-
-
-
+const bcryptjs = require('bcryptjs')
 
 
 module.exports = {
   async up (queryInterface, Sequelize) {
    
-      await queryInterface.bulkInsert('Users', usuarios, {});
-    
-  },
+      await queryInterface.bulkInsert('Users', usuarios, {},[
+{
+  firstName : "Admin",
+  lastName : "Test",
+email : "admin@test.com",
+password : bcryptjs.hashSync('123123',10),
+avatar : null,
+roleId : 1,
+addressId : 1,
+createdAt: new Date(),
+updatedAt: new Date(),
+
+},
+
+      ],
+      {}
+      )
+    },
+
+
+
+
+
+
+
+
+
 
   async down (queryInterface, Sequelize) {
    
