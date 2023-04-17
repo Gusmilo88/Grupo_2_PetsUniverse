@@ -25,7 +25,5 @@ module.exports = [
         }).catch(error => Promise.reject('Credenciales invalidas'))
         
     })
-
-    
 ]
 
