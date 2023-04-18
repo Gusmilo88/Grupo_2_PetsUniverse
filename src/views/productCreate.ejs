@@ -22,21 +22,20 @@
                         <div class="edit__div__div--2">
                             <label for="category">Categoría:</label>
                             <select name="category" id="category" value="">
-                                <option value="category" select hidden>Seleccione categoría...</option>
-                                <!--hago esta option con elementos estáticos, ya que los json serán usados en el siguiente sprint-->
-                                <option value="">Gatos</option>
-                                <option value="">Perros</option>
+                                <option value="" selected hidden>Seleccione...</option>
+                                <% categories.forEach(({name, id}) => { %>
+                                 <option value="<%= id %>" <%= locals.old && old.category && old.category === name ? 'selected' : null %>><%= name %></option>
+                                <% }) %>
                                 
                             </select>
                         </div>
                         <div class="edit__div__div--2">
                             <label for="productType">Tipo de producto:</label>
                             <select name="productType" id="productType">
-                                <option value="" select hidden>Seleccione marca...</option>
-                                <!--hago esta option con elementos estáticos, ya que los json serán usados en el siguiente sprint-->
-                                <option value="">Alimento</option>
-                                <option value="">Juguetes</option>
-                                <option value="">Salud</option>
+                                <option value="" selected hidden>Seleccione...</option>
+                                <% productoTipo.forEach(({name, id}) => { %>
+                                 <option value="<%= id %>" <%= locals.old && old.productType && old.productType === name ? 'selected' : null %>><%= name %></option>
+                                <% }) %>
                                 
                             </select>
                         </div> 
