@@ -20,18 +20,20 @@
                         <div class="edit__div__div--2">
                             <label for="category">Categoría:</label>
                             <select name="category" id="category" value="<%= categories.name %>">
-                                <option value="" select hidden>Seleccione categoría...</option>
-                                <option value="gatos" <%= categories.name === "gatos" && "selected" %>>Gatos</option>
-                                <option value="perros" <%= categories.name === "perros" && "selected" %>>Perros</option>
+                                <option value="" selected hidden>Seleccione...</option>
+                                <% categories.forEach(({name, id}) => { %>
+                                  <option value="<%= id %>" <%= id === categoryId && 'selected' %> ><%= name %></option>
+                                 <% }) %>
                             </select>
                         </div>
                         <div class="edit__div__div--2">
                             <label for="productType">Tipo de producto:</label>
                             <select name="productType" id="productType">
-                                <option value="<%= productTypes.name %>" select hidden>Seleccione tipo de producto...</option>
-                                <option value="alimento" <%= productTypes.name === "alimento" && "selected" %>>Alimento</option>
-                                <option value="juguetes" <%= productTypes.name === "juguetes" && "selected" %>>Juguetes</option>
-                                <option value="salud" <%= productTypes.name === "salud" && "selected" %>>Salud</option>
+                                <option value="" selected hidden>Seleccione...</option>
+                                <% productoTypes.forEach(({name, id}) => { %>
+                                  <option value="<%= id %>" <%= id === productTypeId && 'selected' %> ><%= name %></option>
+                                 <% }) %>
+                            
                             </select>
                         </div> 
                     </div>

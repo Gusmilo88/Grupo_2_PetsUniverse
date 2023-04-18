@@ -3,7 +3,7 @@ const productController = require('../controllers/productController');
 var router = express.Router();
 
 /* GET home page. */
-const {productDetail,productEdit, productCreate, productUpdate, store, destroy,productFilterCats,productFilterDogs, search} = require('../controllers/productController');
+const {productDetail,productEdit, productCreate, update, store, destroy,productFilterCats,productFilterDogs, search} = require('../controllers/productController');
 const checkUserAdmin = require('../middlewares/checkUserAdmin');
 
 const { uploadCoursesImages } = require('../middlewares/upLoad');
@@ -17,7 +17,7 @@ router.get('/productCreate/'/* ,checkUserAdmin */,productCreate)
  router.post('/productCreate',uploadCoursesImages,createValidator, store)   
 
 router.get('/productEdit/:id'/* ,checkUserAdmin */,productEdit) 
-/* router.put('/productEdit/:id', productUpdate) */
+ router.put('/productEdit/:id',uploadCoursesImages,createValidator, update) 
 
 router.delete('/productDelete/:id', destroy), 
 router.get('/search',search)

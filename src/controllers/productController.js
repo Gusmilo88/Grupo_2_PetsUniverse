@@ -113,12 +113,24 @@ productEdit: function(req,res) {
     
     
     )
+
+      const productoTypes = db.ProductType.findAll({
+   
+    attributes: ["name", "id"],
+  }); 
+ 
+  const categories = db.Category.findAll({
+   
+    attributes: ["name", "id"],
+  });
   
-  Promise.all(([ producto]))
+  Promise.all(([ producto,categories, productoTypes]))
   
-  .then(([ producto])=>{
+  .then(([ producto,categories, productoTypes])=>{
     return res.render("productEdit",{
-      ...producto.dataValues
+      ...producto.dataValues,
+      categories,
+      productoTypes
     })
   }).catch(error => console.log(error))
 },
@@ -397,24 +409,18 @@ update: (req, res) => {
   const errors = validationResult(req);
 
  
-
-  if (!req.files.length && !req.fileValidationError) {
-    errors.errors.push({
-      value: "",
-      msg: "El producto debe tener por lo menos una imagen",
-      param: "image",
-      location: "file",
-    });
-  }
+  
 
   if (req.fileValidationError) {
     errors.errors.push({
       value: "",
       msg: req.fileValidationError,
-      param: "image",
+      param: "images",
       location: "file",
     });
   }
+
+
  
   if (errors.isEmpty()) {
     const{
@@ -427,20 +433,28 @@ update: (req, res) => {
       stock,
       productType,
     } = req.body;
-
-    db.Product.create({
+    const id = +req.params.id;
+    db.Product.update({
      
         name : name.trim(),
         description : description.trim(),
         price,
         discount,
-        image:req.files.filename,
+        image:req.file ? req.file.filename:db.Product.image,
         weight,
-        productTypeId : productType,
-        categoryId : category,
+        productTypeId:productType,
+        categoryId:category,
         stock,
        
-    })
+        
+      },{
+
+        where:{id}
+      }
+    
+    
+    
+    )
       .then(() => {
       
 
@@ -448,6 +462,24 @@ update: (req, res) => {
       })
       .catch((error) => console.log(error));
   } else {
+    const { id } = req.params;
+    const producto = db.Product.findByPk(id,
+
+      {
+        include : [
+          {
+            association : 'categories',
+            attributes : ['name']
+          },
+          {
+            association : 'productTypes',
+            attributes : ['name']
+          },]
+      }
+      
+      
+      )
+
     const productoTipo = db.ProductType.findAll({
    
       attributes: ["name", "id"],
@@ -460,19 +492,20 @@ update: (req, res) => {
   
    
 
-    if (req.files.length) {
-      req.files.forEach((file) => {
-        fs.existsSync(`./public/images/products/${file.filename}`) &&
+    if (req.file) {
+      
+        fs.existsSync(`./public/images/products/${file.filename}`) 
           fs.unlinkSync(`./public/images/products/${file.filename}`);
-      });
+    
     }
 
-    Promise.all([ productoTipo, categories])
-      .then(([productoTipo, categories]) => {
+    Promise.all([ productoTipo, categories,producot])
+      .then(([productoTipo, categories,producto]) => {
 
-        return res.render("productCreate", {
+        return res.render("productEdit", {
           productoTipo,
           categories,
+          producto,
           errors: errors.mapped(),
           old: req.body,
         });
@@ -480,6 +513,8 @@ update: (req, res) => {
       .catch((error) => console.log(error));
   }
 },
+
+
 
 };
 
