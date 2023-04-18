@@ -6,9 +6,9 @@ var router = express.Router();
 const {productDetail,productEdit, productCreate, productUpdate, store, destroy,productFilterCats,productFilterDogs, search} = require('../controllers/productController');
 const checkUserAdmin = require('../middlewares/checkUserAdmin');
 
-/* router.get('/gatos',productFilterCats)
-router.get('/perros',productFilterDogs) */
-router.get('/productDetail/:id',productDetail) 
+ router.get('/gatos',productFilterCats)
+router.get('/perros',productFilterDogs) 
+ router.get('/productDetail/:id',productDetail)
 
 router.get('/productCreate/'/* ,checkUserAdmin */,productCreate)
 /* router.post('/productCreate', store)   */
