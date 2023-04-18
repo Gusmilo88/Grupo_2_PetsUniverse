@@ -8,7 +8,7 @@
     <main class="edit__main">
         <div class="edit__main__div">
             <h3>Agregar Producto:</h3>
-            <form method="POST">
+            <form method="POST"  enctype="multipart/form-data">
                 <div class="edit__main__div--info">
                     <div class="edit__div__div--2">
                         <label for="name">Nombre del producto:</label>
@@ -60,8 +60,8 @@
                     </div>
                     <div class="edit__div__div">
                        <div class="edit__div__div--2">
-                            <label for="image">Imagen:</label>
-                            <input type="file" class="form-image" id="image" name="image" value="">
+                            <label for="images">Imagen:</label>
+                            <input type="file" class="form-image" id="images" name="images" multiple value="">
                         </div>
                     </div>
                 <div class="edit__div__div--button">

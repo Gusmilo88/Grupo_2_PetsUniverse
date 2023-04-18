@@ -4,6 +4,7 @@ const db = require("../database/models");
 const { promise } = require('bcrypt/promises');
 const { redirect } = require('express/lib/response');
 const { title } = require('process');
+const {validationResult} = require("express-validator");
 
 
 /* const productsFilePath = path.join(__dirname, '../data/products.json')
@@ -29,7 +30,7 @@ module.exports = {
       .catch((error) => console.log(error));
   }, */
 
-  productFilterDogs: (req, res) => {
+  /* productFilterDogs: (req, res) => {
     db.Product.findAll({
       where: {
         visible: true,
@@ -43,7 +44,7 @@ module.exports = {
         });
       })
       .catch((error) => console.log(error));
-  },
+  }, */
 
   productDetail: (req, res) => {
     const { id } = req.params;
@@ -301,7 +302,184 @@ return res.render('productsCats',{
   products:allProducts,
   queries: { ...queries, ...req.query }
 }) */
-}
+},
+
+store: (req, res) => {
+  const errors = validationResult(req);
+
+ 
+  if (!req.file && !req.fileValidationError) {
+    errors.errors.push({
+      value: "",
+      msg: "El producto debe tener por lo menos una imagen",
+      param: "images",
+      location: "file",
+    });
+  }
+
+  if (req.fileValidationError) {
+    errors.errors.push({
+      value: "",
+      msg: req.fileValidationError,
+      param: "images",
+      location: "file",
+    });
+  }
+
+
+ 
+  if (errors.isEmpty()) {
+    const{
+      name,
+      description,
+      price,
+      discount,
+      weight,
+      category,
+      stock,
+      productType,
+    } = req.body;
+
+    db.Product.create({
+     
+        name : name.trim(),
+        description : description.trim(),
+        price,
+        discount,
+        image:req.file.filename,
+        weight,
+        productTypeId : productType,
+        categoryId : category,
+        stock,
+       
+    })
+      .then(() => {
+      
+
+        return res.redirect("/");
+      })
+      .catch((error) => console.log(error));
+  } else {
+    const productoTipo = db.ProductType.findAll({
+   
+      attributes: ["name", "id"],
+    }); 
+   
+    const categories = db.Category.findAll({
+     
+      attributes: ["name", "id"],
+    });
+  
+   
+
+    if (req.file) {
+      
+        fs.existsSync(`./public/images/products/${file.filename}`) 
+          fs.unlinkSync(`./public/images/products/${file.filename}`);
+    
+    }
+
+    Promise.all([ productoTipo, categories])
+      .then(([productoTipo, categories]) => {
+
+        return res.render("productCreate", {
+          productoTipo,
+          categories,
+          errors: errors.mapped(),
+          old: req.body,
+        });
+      })
+      .catch((error) => console.log(error));
+  }
+},
+
+update: (req, res) => {
+  const errors = validationResult(req);
+
+ 
+
+  if (!req.files.length && !req.fileValidationError) {
+    errors.errors.push({
+      value: "",
+      msg: "El producto debe tener por lo menos una imagen",
+      param: "image",
+      location: "file",
+    });
+  }
+
+  if (req.fileValidationError) {
+    errors.errors.push({
+      value: "",
+      msg: req.fileValidationError,
+      param: "image",
+      location: "file",
+    });
+  }
+ 
+  if (errors.isEmpty()) {
+    const{
+      name,
+      description,
+      price,
+      discount,
+      weight,
+      category,
+      stock,
+      productType,
+    } = req.body;
+
+    db.Product.create({
+     
+        name : name.trim(),
+        description : description.trim(),
+        price,
+        discount,
+        image:req.files.filename,
+        weight,
+        productTypeId : productType,
+        categoryId : category,
+        stock,
+       
+    })
+      .then(() => {
+      
+
+        return res.redirect("/");
+      })
+      .catch((error) => console.log(error));
+  } else {
+    const productoTipo = db.ProductType.findAll({
+   
+      attributes: ["name", "id"],
+    }); 
+   
+    const categories = db.Category.findAll({
+     
+      attributes: ["name", "id"],
+    });
+  
+   
+
+    if (req.files.length) {
+      req.files.forEach((file) => {
+        fs.existsSync(`./public/images/products/${file.filename}`) &&
+          fs.unlinkSync(`./public/images/products/${file.filename}`);
+      });
+    }
+
+    Promise.all([ productoTipo, categories])
+      .then(([productoTipo, categories]) => {
+
+        return res.render("productCreate", {
+          productoTipo,
+          categories,
+          errors: errors.mapped(),
+          old: req.body,
+        });
+      })
+      .catch((error) => console.log(error));
+  }
+},
 
 };
 
