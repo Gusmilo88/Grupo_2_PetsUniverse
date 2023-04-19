@@ -99,7 +99,41 @@ module.exports = {
 logout:(req,res)=>{
 req.session.destroy()
 res.redirect('/')
-}
+},
+
+profile : (req,res) => {
+    db.User.findByPk(req.session.userLogin.id,{
+        attributes : ['name','surname','email','avatar'],
+        include : [
+            {
+                association : 'addresses',
+                attributes : ['address','city','province','zipCode']
+            }
+        ],
+
+    })
+        .then(user => {
+            return res.render('profile',{
+                title : "Perfil de usuario",
+                user
+            })
+        })
+        .catch(error => console.log(error))
+
+  
+},
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

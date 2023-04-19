@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head') %>
+
+  <body class="register">
+    <!-- encabezado -->
+    <%- include('../partials/header') %>
+
+      <!-- principal -->
+      <main class="register__main">
+        <div class="row mb-5">
+            <div class="col-12 col-md-10 col-lg-8 mx-auto">
+                <div class="card shadow">
+                    <div class="card-header">
+                        <h5 class="card-title">Perfil de Usuario</h5>
+                    </div>
+                    <div class="card-body">
+                        <%- include('../partials/message',{message: locals.message}) %>
+                        <ul class="nav  nav-tabs mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Datos personales</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Domicilio</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Mis cursos</button>
+                            </li>
+                          
+                          </ul>
+                          <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+
+                              <form action="/users/update?_method=PUT" method="POST" class="row" enctype="multipart/form-data">
+                                <div class="col-12 col-md-4">
+                                        <img class="img-fluid" src="/images/users/<%= user.avatar ? user.avatar :  'default.png'%>" alt="">
+                                        <div class="mt-3 text-center">
+                                            <label for="formFile" class="btn btn-secondary">Cambiar imagen</label>
+                                            <input class="form-control" name="image" type="file" id="formFile" hidden>
+                                          </div>
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <div>
+                                            <label for="name" class="form-label">Nombre</label>
+                                            <input type="text" class="form-control  <%= (locals.errors && errors.name) && 'is-invalid'%>" id="name" name="name" value="<%= user.name %>">
+                                            <small class="text-danger ms-2"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
+            
+                                          </div>
+                                          <div>
+                                            <label for="surname" class="form-label">Apellido</label>
+                                            <input type="text" class="form-control  <%= (locals.errors && errors.surname) && 'is-invalid'%>" id="surname" name="surname" value="<%= user.surname %>">
+                                            <small class="text-danger ms-2"><%= locals.errors && errors.surname ? errors.surname.msg : null %></small>
+            
+                                          </div>
+                                          <div>
+                                            <label for="email" class="form-label">Correo electrónico</label>
+                                            <input type="email" class="form-control  <%= (locals.errors && errors.email) && 'is-invalid'%>" id="email" name="email" value="<%= user.email %>" disabled>
+                                            <small class="text-danger ms-2"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
+            
+                                          </div>
+                                    </div>  
+                                      <div class="d-flex justify-content-end">
+                                        <button type="submit" class="buttons buttons__primary">Guardar cambios</button>
+                                      </div>
+                                      
+
+                            </div>
+                            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                              <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        <label for="address" class="form-label">Domicilio</label>
+                                        <input type="text" class="form-control  <%= (locals.errors && errors.address) && 'is-invalid'%>" id="address" name="address" value="<%= user.address.address%>">
+                                        <small class="text-danger ms-2"><%= locals.errors && errors.address ? errors.address.msg : null %></small>
+        
+                                      </div>
+                                      <div class="col-12 col-md-6">
+                                        <label for="address" class="form-label">Ciudad</label>
+                                        <input type="text" class="form-control  <%= (locals.errors && errors.city) && 'is-invalid'%>" id="city" name="city" value="<%= user.address.city%>">
+                                        <small class="text-danger ms-2"><%= locals.errors && errors.city ? errors.city.msg : null %></small>
+        
+                                      </div>
+                                      <div class="col-12 col-md-6">
+                                        <label for="address" class="form-label">Provincia</label>
+                                        <input type="text" class="form-control  <%= (locals.errors && errors.province) && 'is-invalid'%>" id="province" name="province" value="<%= user.address.province%>">
+                                        <small class="text-danger ms-2"><%= locals.errors && errors.province ? errors.province.msg : null %></small>
+        
+                                      </div>
+                                      <div class="col-12 col-md-6">
+                                        <label for="address" class="form-label">Código Postal</label>
+                                        <input type="number" class="form-control  <%= (locals.errors && errors.zipCode) && 'is-invalid'%>" id="zipCode" name="zipCode" value="<%= user.address.zipCode%>">
+                                        <small class="text-danger ms-2"><%= locals.errors && errors.zipCode ? errors.zipCode.msg : null %></small>
+        
+                                      </div>
+                                      <div class="d-flex justify-content-end">
+                                        <button type="submit" class="buttons buttons__primary">Actualizar domicilio</button>
+                                      </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                                <ul class="list-group">
+                                    <li class="list-group-item active" aria-current="true">An active item</li>
+                                    <li class="list-group-item">A second item</li>
+                                    <li class="list-group-item">A third item</li>
+                                    <li class="list-group-item">A fourth item</li>
+                                    <li class="list-group-item">And a fifth one</li>
+                                  </ul>
+                            </div>
+                          </div>
+                     
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+      </main>
+
+
+      <%- include('../partials/footer') %>
+
+
+        <%- include('../partials/scripts') %>
+
+          <script src="/javascripts/home.js"></script>
+
+  </body>
+
+</html>
