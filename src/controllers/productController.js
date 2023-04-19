@@ -176,9 +176,9 @@ writeJson();
 
 writeJson({ ...queries, ...req.query });
 
-const { price, category,productType } = { ...queries, ...req.query }  
+const { price,productType } = { ...queries, ...req.query }  
 
-ProductsCat  = db.Product.findAll({
+let allProducts =ProductsCat  = db.Product.findAll({
   where:{
 
       categoryId:2
@@ -187,12 +187,64 @@ ProductsCat  = db.Product.findAll({
   }
 })
 
-Promise.all([ ProductsCat])
 
 
-.then(([ ProductsCat]) => {
+allProducts =ProductsCat
+ 
+
+
+  // ordenar por el precio
+  if (price === "min") {
+    allProducts = db.Product.findAll({
+      where:{
+
+        categoryId:2
+        
+        
+    },
+      order: [
+        ['price','asc'],
+       
+      ],
+    })
+  }
+
+
+  if (price === "max") {
+    allProducts = db.Product.findAll({
+      where:{
+
+        categoryId:2
+        
+        
+    },
+      order: [
+        ['price','desc'],
+       
+      ],
+    })
+  } 
+
+
+  
+  
+       if (productType) {
+  allProducts = db.Product.findAll({
+    where:{
+      categoryId:2,
+        productTypeId:productType
+        
+        
+    }
+  })
+  }
+
+Promise.all([ allProducts])
+
+
+.then(([ allProducts]) => {
   return res.render("productsCats",{
-    products:ProductsCat,
+    products:allProducts,
     queries: { ...queries, ...req.query }
   });
 })
@@ -201,78 +253,102 @@ Promise.all([ ProductsCat])
 
 
 
-/* et allProducts = ProductsCat;
 
-     if (price) {
-// ordenar por el precio
-if (price === "min") {
-  allProducts = db.Product.findAll({
-    order: [
-      ["population", "DESC"],
-     
-    ],
-  })
-} 
 
-if (price === "max") {
-  allProducts = db.Product.findAll({
-    order: [
-      ["price", "ASC"],
-     
-    ],
-  })
-} 
-} 
 
-     if (productType) {
-allProducts = db.Product.findAll({
-  where:{
 
-      productTypeId:productType
-      
-      
-  }
-})
-}
 
-return res.render('productsCats',{
-  products:allProducts,
-  queries: { ...queries, ...req.query }
-}) */
 },
 
 
 productFilterDogs: (req,res)=>{
 
   if (!req.query.price  && !req.query.productType) {
-writeJson();
-}
-  let queries = require("../data/queries.json");
-
-writeJson({ ...queries, ...req.query });
-
-const { price, category,productType } = { ...queries, ...req.query }  
-
-ProductsDog  = db.Product.findAll({
-  where:{
-
-      categoryId:1
+    writeJson();
+    }
+      let queries = require("../data/queries.json");
+    
+    writeJson({ ...queries, ...req.query });
+    
+    const { price,productType } = { ...queries, ...req.query }  
+    
+    ProductsDog  = db.Product.findAll({
+      where:{
+    
+          categoryId:1
+          
+          
+      }
+    })
+    
+    
+    
+    let allProducts =ProductsDog
+     
+    
+    if(price){
+      // ordenar por el precio
+      if (price === "min") {
+        allProducts = db.Product.findAll({
+          where:{
+    
+            categoryId:1
+            
+            
+        },
+          order: [
+            ['price', 'asc'],
+           
+          ],
+        })
+      } else
+      
+      {
+        allProducts = db.Product.findAll({
+          where:{
+    
+            categoryId:1
+            
+            
+        },
+          
+          order: [
+            ['price', 'desc'],
+           
+          ],
+        })
+      } 
+    
+    }
       
       
-  }
-})
-
-Promise.all([ ProductsDog])
-
-
-.then(([ ProductsDog]) => {
-  return res.render("productsDogs",{
-    products:ProductsDog,
-    queries: { ...queries, ...req.query }
-  });
-})
-.catch((error) => console.log(error));
-
+           if (productType) {
+      allProducts = db.Product.findAll({
+        where:{
+          categoryId:1,
+            productTypeId:productType
+            
+            
+        }
+      })
+      }
+    
+    Promise.all([ allProducts])
+    
+    
+    .then(([ allProducts]) => {
+      return res.render("productsDogs",{
+        products:allProducts,
+        queries: { ...queries, ...req.query }
+      });
+    })
+    .catch((error) => console.log(error));
+    
+    
+    
+    
+    
+    
 
 
 
