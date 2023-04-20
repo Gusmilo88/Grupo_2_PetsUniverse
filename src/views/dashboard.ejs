@@ -69,8 +69,8 @@
                     <div class="d-flex gap--dashboard">
                       <a class="btn btn-sm btn-primary" href="/products/productDetail/<%= id %>"><i class="far fa-eye"></i></a>
                       <a class="btn btn-sm btn-success" href="/products/productEdit/<%= id %>"><i class="far fa-edit"></i></a>
-                      <form action="/products/productDelete/<%= id %>?_method=DELETE" method="POST" >
-                        <button type="submit" class="btn btn-danger" ><i class="fa-solid fa-trash"></i></button>
+                      <form action="/products/productDelete/<%= id %>?_method=DELETE" method="POST" id="deleteForm">
+                        <button type="submit" class="btn btn-danger" id="deleteButton"><i class="fa-solid fa-trash"></i></button>
                     </form> 
     
                     </div>
@@ -105,5 +105,8 @@
     
 
     <%- include('./partials/scripts')%>
+    <!-- SweetAlert2-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/javascripts/sweetAlert.js"></script>
 </body>
 </html>
