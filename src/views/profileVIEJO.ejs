@@ -13,13 +13,16 @@
             <div class="col-12 col-md-10 col-lg-8 mx-auto">
                 <div class="profile__main--div">
                     <div class="card-header">
-                        <h5 class="card-title">Perfil de: <%= user.firstName %></h5>
+                        <h3 class="card-title">Perfil de: <%= user.firstName %></h3>
                     </div>
                     <div class="card-body">
                         <%- include('./partials/message',{message: locals.message}) %>
-                        <ul class="nav  nav-tabs mb-3" id="pills-tab" role="tablist">
+                        <ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">
                             <li class="nav-item" role="presentation">
                               <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Datos personales</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Domicilio</button>
                             </li>
                             
                           
@@ -28,14 +31,8 @@
                             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
 
                               <form action="/users/update?_method=PUT" method="POST" class="row" enctype="multipart/form-data">
-                                <div class="col-12 col-md-8">
-                                        <img class="img-fluid" src="/images/users/<%= user.avatar ? user.avatar : 'default.png'%>" alt="">
-                                        <div class="mt-3 text-center">
-                                            <label for="formFile" class="btn btn-secondary">Cambiar imagen</label>
-                                            <input class="form-control" name="image" type="file" id="formFile" hidden>
-                                          </div>
-                                    </div>
-                                    <div class="col-12 col-md-8">
+                                
+                                    <div class="col-12 col-md-12">
                                         <div>
                                             <label for="firstName" class="form-label">Nombre</label>
                                             <input type="text" class="form-control  <%= (locals.errors && errors.firstName) && 'is-invalid'%>" id="firstName" name="firstName" value="<%= user.firstName %>">
@@ -52,38 +49,53 @@
                                             <label for="email" class="form-label">Correo electrónico</label>
                                             <input type="email" class="form-control  <%= (locals.errors && errors.email) && 'is-invalid'%>" id="email" name="email" value="<%= user.email %>" disabled>
                                             <small class="text-danger ms-2"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
-            
                                           </div>
                                           <div>
-                                            <label for="address" class="form-label">Domicilio</label>
-                                            <input type="text" class="form-control  <%= (locals.errors && errors.address) && 'is-invalid'%>" id="address" name="address" value="<%= user.address ? user.address.address : ''%>">
-                                            <small class="text-danger ms-2"><%= locals.errors && errors.address ? errors.address.msg : null %></small>
+                                            <img class="img-fluid" src="/images/users/<%= user.avatar ? user.avatar :  'default.png'%>" alt="">
+                                        <div class="mt-3 text-center">
+                                            <label for="formFile" class="boton-guardarCambios">Cambiar imagen</label>
+                                            <input class="form-control" name="avatar" type="file" id="formFile" hidden>
+                                        </div>
                                           </div>
-                                          <div>
-                                            <label for="address" class="form-label">Ciudad</label>
-                                            <input type="text" class="form-control  <%= (locals.errors && errors.city) && 'is-invalid'%>" id="city" name="city" value="<%= user.address ? user.address.city : ''%>">
-                                            <small class="text-danger ms-2"><%= locals.errors && errors.city ? errors.city.msg : null %></small>
-                                          </div>
-                                          <div>
-                                            <label for="address" class="form-label">Provincia</label>
-                                            <input type="text" class="form-control  <%= (locals.errors && errors.province) && 'is-invalid'%>" id="province" name="province" value="<%= user.address ? user.address.province : ''%>">
-                                            <small class="text-danger ms-2"><%= locals.errors && errors.province ? errors.province.msg : null %></small>
-                                          </div>
-                                          <div>
-                                            <label for="address" class="form-label">Código Postal</label>
-                                            <input type="number" class="form-control  <%= (locals.errors && errors.zipCode) && 'is-invalid'%>" id="zipCode" name="zipCode" value="<%= user.address ? user.address.zipCode : ''%>">
-                                            <small class="text-danger ms-2"><%= locals.errors && errors.zipCode ? errors.zipCode.msg : null %></small>
-        
-                                          </div>
-                                          
                                     </div>  
-                                      <div class="d-flex justify-content-end">
+                                      <div class="d-flex justify-content-center">
                                         <button type="submit" class="boton-guardarCambios">Guardar cambios</button>
                                       </div>
+
                             </div>
+                            <div class="tab-pane" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        <label for="address" class="form-label">Domicilio</label>
+                                        <input type="text" class="form-control  <%= (locals.errors && errors.address) && 'is-invalid'%>" id="address" name="address" value="<%= user.address ? user.address.address : '' %>">
+                                        <small class="text-danger ms-2"><%= locals.errors && errors.address ? errors.address.msg : null %></small>
+        
+                                      </div>
+                                      <div class="col-12 col-md-6">
+                                        <label for="address" class="form-label">Ciudad</label>
+                                        <input type="text" class="form-control  <%= (locals.errors && errors.city) && 'is-invalid'%>" id="city" name="city" value="<%= user.address ? user.address.city : ''%>">
+                                        <small class="text-danger ms-2"><%= locals.errors && errors.city ? errors.city.msg : null %></small>
+        
+                                      </div>
+                                      <div class="col-12 col-md-6">
+                                        <label for="address" class="form-label">Provincia</label>
+                                        <input type="text" class="form-control  <%= (locals.errors && errors.province) && 'is-invalid'%>" id="province" name="province" value="<%= user.address ? user.address.province : ''%>">
+                                        <small class="text-danger ms-2"><%= locals.errors && errors.province ? errors.province.msg : null %></small>
+        
+                                      </div>
+                                      <div class="col-12 col-md-6">
+                                        <label for="address" class="form-label">Código Postal</label>
+                                        <input type="number" class="form-control  <%= (locals.errors && errors.zipCode) && 'is-invalid'%>" id="zipCode" name="zipCode" value="<%= user.address ? user.address.zipCode : ''%>">
+                                        <small class="text-danger ms-2"><%= locals.errors && errors.zipCode ? errors.zipCode.msg : null %></small>
+        
+                                      </div>
+                                      <div class="d-flex justify-content-end">
+                                        <button type="submit" class="buttons buttons__primary">Actualizar domicilio</button>
+                                      </div>
+                                    </div>
                                 </form>
                             </div>
-                          </div>
+                          </div>  
                     </div>
                 </div>
             </div>
@@ -95,8 +107,6 @@
 
 
         <%- include('./partials/scripts') %>
-
-          <script src="/javascripts/home.js"></script>
 
   </body>
 
