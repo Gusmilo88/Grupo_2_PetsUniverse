@@ -1,129 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/head') %>
+<%- include('./partials/head')%>
 
-  <body class="register">
-    <!-- encabezado -->
-    <%- include('../partials/header') %>
+<body class="register__body">
 
-      <!-- principal -->
-      <main class="register__main">
-        <div class="row mb-5">
-            <div class="col-12 col-md-10 col-lg-8 mx-auto">
-                <div class="card shadow">
-                    <div class="card-header">
-                        <h5 class="card-title">Perfil de Usuario</h5>
+    <%- include('./partials/header')%>
+
+    <main class="register__main">
+        <div class="register__main__div">
+            <h3 class="card-title">¡Hola <%= user.firstName %>!</h3>
+
+            <div class="avatar-profile">
+                <img src="/images/users/<%= user.avatar ? user.avatar : "defaultAvatar.png" %>" class="imgAvatar" alt="imagen de usuario">
+            </div>
+
+            <form action="/users/profile" method="POST" enctype="multipart/form-data"> <!--Fijarse el action, por si sale error, no estoy seguro de que esté bien-->
+                <div class="register__main__div--info">
+                    <div>
+                        <i class="fa-solid fa-user"></i> <label for="firstName"></label>
+                        <input type="text" class="register__main__div--info <%= (locals.errors && errors.firstName) && 'is-invalid'%>" id="firstName" placeholder="<%= locals.errors && errors.firstName ? errors.firstName.msg : "Ingresá tu nombre" %>" name="firstName" value="<%= user.firstName %>">
                     </div>
-                    <div class="card-body">
-                        <%- include('../partials/message',{message: locals.message}) %>
-                        <ul class="nav  nav-tabs mb-3" id="pills-tab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                              <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Datos personales</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                              <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Domicilio</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                              <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Mis cursos</button>
-                            </li>
-                          
-                          </ul>
-                          <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
-
-                              <form action="/users/update?_method=PUT" method="POST" class="row" enctype="multipart/form-data">
-                                <div class="col-12 col-md-4">
-                                        <img class="img-fluid" src="/images/users/<%= user.avatar ? user.avatar :  'default.png'%>" alt="">
-                                        <div class="mt-3 text-center">
-                                            <label for="formFile" class="btn btn-secondary">Cambiar imagen</label>
-                                            <input class="form-control" name="image" type="file" id="formFile" hidden>
-                                          </div>
-                                    </div>
-                                    <div class="col-12 col-md-8">
-                                        <div>
-                                            <label for="name" class="form-label">Nombre</label>
-                                            <input type="text" class="form-control  <%= (locals.errors && errors.name) && 'is-invalid'%>" id="name" name="name" value="<%= user.name %>">
-                                            <small class="text-danger ms-2"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
-            
-                                          </div>
-                                          <div>
-                                            <label for="surname" class="form-label">Apellido</label>
-                                            <input type="text" class="form-control  <%= (locals.errors && errors.surname) && 'is-invalid'%>" id="surname" name="surname" value="<%= user.surname %>">
-                                            <small class="text-danger ms-2"><%= locals.errors && errors.surname ? errors.surname.msg : null %></small>
-            
-                                          </div>
-                                          <div>
-                                            <label for="email" class="form-label">Correo electrónico</label>
-                                            <input type="email" class="form-control  <%= (locals.errors && errors.email) && 'is-invalid'%>" id="email" name="email" value="<%= user.email %>" disabled>
-                                            <small class="text-danger ms-2"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
-            
-                                          </div>
-                                    </div>  
-                                      <div class="d-flex justify-content-end">
-                                        <button type="submit" class="buttons buttons__primary">Guardar cambios</button>
-                                      </div>
-                                      
-
-                            </div>
-                            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-                              <div class="row">
-                                    <div class="col-12 col-md-6">
-                                        <label for="address" class="form-label">Domicilio</label>
-                                        <input type="text" class="form-control  <%= (locals.errors && errors.address) && 'is-invalid'%>" id="address" name="address" value="<%= user.address.address%>">
-                                        <small class="text-danger ms-2"><%= locals.errors && errors.address ? errors.address.msg : null %></small>
-        
-                                      </div>
-                                      <div class="col-12 col-md-6">
-                                        <label for="address" class="form-label">Ciudad</label>
-                                        <input type="text" class="form-control  <%= (locals.errors && errors.city) && 'is-invalid'%>" id="city" name="city" value="<%= user.address.city%>">
-                                        <small class="text-danger ms-2"><%= locals.errors && errors.city ? errors.city.msg : null %></small>
-        
-                                      </div>
-                                      <div class="col-12 col-md-6">
-                                        <label for="address" class="form-label">Provincia</label>
-                                        <input type="text" class="form-control  <%= (locals.errors && errors.province) && 'is-invalid'%>" id="province" name="province" value="<%= user.address.province%>">
-                                        <small class="text-danger ms-2"><%= locals.errors && errors.province ? errors.province.msg : null %></small>
-        
-                                      </div>
-                                      <div class="col-12 col-md-6">
-                                        <label for="address" class="form-label">Código Postal</label>
-                                        <input type="number" class="form-control  <%= (locals.errors && errors.zipCode) && 'is-invalid'%>" id="zipCode" name="zipCode" value="<%= user.address.zipCode%>">
-                                        <small class="text-danger ms-2"><%= locals.errors && errors.zipCode ? errors.zipCode.msg : null %></small>
-        
-                                      </div>
-                                      <div class="d-flex justify-content-end">
-                                        <button type="submit" class="buttons buttons__primary">Actualizar domicilio</button>
-                                      </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
-                                <ul class="list-group">
-                                    <li class="list-group-item active" aria-current="true">An active item</li>
-                                    <li class="list-group-item">A second item</li>
-                                    <li class="list-group-item">A third item</li>
-                                    <li class="list-group-item">A fourth item</li>
-                                    <li class="list-group-item">And a fifth one</li>
-                                  </ul>
-                            </div>
-                          </div>
-                     
-                      
+                    <div>
+                        <i class="fa-solid fa-user"></i> <label for="lastName" class="form-label"></label>
+                        <input type="text" class="register__main__div--info <%= (locals.errors && errors.lastName) && 'is-invalid'%>" id="lastName" placeholder="<%= locals.errors && errors.lastName ? errors.lastName.msg : "Ingresá tu apellido" %>" name="lastName" value="<%= user.lastName %>">
+                    </div>
+                    <div>
+                        <i class="fa-regular fa-envelope"> </i><label for="email" class="form-label"></label>
+                        </i><input type="email" class="register__main__div--info <%= (locals.errors && errors.email) && 'is-invalid'%>" id="email" placeholder="<%= locals.errors && errors.email ? errors.email.msg : "Ingresá tu email" %>" name="email" value="<%= user.email %>" disabled>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-house"></i> <label for="address" class="form-label"></label>
+                        <input type="text" class="register__main__div--info <%= (locals.errors && errors.address) && 'is-invalid'%>" id="address" placeholder="<%= locals.errors && errors.address ? errors.address.msg : "Ingresá tu dirección" %>" name="address" value="<%= user.address %>">
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-tree-city"></i> <label for="city" class="form-label"></label>
+                        <input type="text" class="register__main__div--info <%= (locals.errors && errors.city) && 'is-invalid'%>" id="city" placeholder="<%= locals.errors && errors.city ? errors.city.msg : "Ingresá tu ciudad" %>" name="city" value="<%= user.city %>">
+                    </div>
+                    <div>
+                        <i class="fa-sharp fa-solid fa-location-dot"></i><label for="province" class="form-label"></label>
+                        </i><input type="text" class="register__main__div--info <%= (locals.errors && errors.province) && 'is-invalid'%>" id="province" placeholder="<%= locals.errors && errors.province ? errors.province.msg : "Ingresá tu provincia" %>" name="province" value="<%= user.province %>">
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-envelope"></i><label for="zipCode" class="form-label"></label>
+                        <input type="number" class="register__main__div--info <%= (locals.errors && errors.zipCode) && 'is-invalid'%>" id="zipCode" placeholder="<%= locals.errors && errors.zipCode ? errors.zipCode.msg : "Ingresá tu código postal" %>" name="zipCode" value="<%= user.zipCode %>">
+                    </div>
+                    <div>
+                    <div class="mt-3 text-center">
+                        <label for="formFile" class="boton-guardarCambios">Cambiar imagen</label>
+                        <input class="form-control" name="avatar" type="file" id="formFile" hidden>
                     </div>
                 </div>
-            </div>
+                <div class="register__main__div--button">
+                    <button type="submit">Guardar cambios</button>
+                </div>
+
+            </form>
         </div>
-      </main>
 
-
-      <%- include('../partials/footer') %>
-
-
-        <%- include('../partials/scripts') %>
-
-          <script src="/javascripts/home.js"></script>
-
-  </body>
-
+    </main>
+    
+    <%- include('./partials/footer')%>
+    <%- include('./partials/scripts')%>
+</body>
 </html>

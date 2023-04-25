@@ -103,7 +103,7 @@ res.redirect('/')
 
 profile : (req,res) => {
     db.User.findByPk(req.session.userLogin.id,{
-        attributes : ['name','surname','email','avatar'],
+        attributes : ['firstName','lastName','email','avatar'],
         include : [
             {
                 association : 'addresses',

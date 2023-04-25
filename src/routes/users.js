@@ -16,6 +16,7 @@ router.get('/register',checkUser, register)
 router.post('/register', uploadUserImage.single("avatar"), registerUserValidator,processRegister)
 router.get('/logout',checkLogin,logout);
 router.get('/profile'/* ,checkLogin */,profile);
+router.post('/profile'/* ,checkLogin */,profile);
 
 
 

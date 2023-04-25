@@ -19,6 +19,7 @@
     border-radius: 7px;
     color: white;
     width: 500px;
+    margin: 70px;
 }
 
 .register__main__div h3{
@@ -66,7 +67,6 @@
     border: none;
     padding: 5px;
     color: white;
-    
 }
 
 .register__main__div--button button:hover{
@@ -154,6 +154,7 @@
       }
       .register__main__div{
             width: 500px;
+            padding: 40px;
 
       }
       .register__main{
