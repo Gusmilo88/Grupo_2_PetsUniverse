@@ -38,7 +38,10 @@ app.use(localsUsercheck)/* aca cargo en locals lo que hay en sessions */
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', ProductRouter);
-app.use('/api/products',require('./routes/api/productsApi'))
+
+/* Apis */
+app.use('/api/products',require('./routes/api/productsApi'));
+app.use("/api/users", require("./routes/api/usersApi"));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
