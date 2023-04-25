@@ -10,6 +10,11 @@
     <main class="register__main">
         <div class="register__main__div">
             <h3 class="card-title">¡Hola <%= user.firstName %>!</h3>
+
+            <div class="avatar-profile">
+                <img src="/images/users/<%= user.avatar ? user.avatar : "defaultAvatar.png" %>" class="imgAvatar" alt="imagen de usuario">
+            </div>
+
             <form action="/users/profile" method="POST" enctype="multipart/form-data"> <!--Fijarse el action, por si sale error, no estoy seguro de que esté bien-->
                 <div class="register__main__div--info">
                     <div>
@@ -41,12 +46,10 @@
                         <input type="number" class="register__main__div--info <%= (locals.errors && errors.zipCode) && 'is-invalid'%>" id="zipCode" placeholder="<%= locals.errors && errors.zipCode ? errors.zipCode.msg : "Ingresá tu código postal" %>" name="zipCode" value="<%= user.zipCode %>">
                     </div>
                     <div>
-                        <img class="img-fluid" src="/images/users/<%= user.avatar ? user.avatar :  'default.png'%>" alt="">
                     <div class="mt-3 text-center">
                         <label for="formFile" class="boton-guardarCambios">Cambiar imagen</label>
                         <input class="form-control" name="avatar" type="file" id="formFile" hidden>
                     </div>
-
                 </div>
                 <div class="register__main__div--button">
                     <button type="submit">Guardar cambios</button>

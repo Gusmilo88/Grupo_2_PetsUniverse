@@ -5,6 +5,15 @@
     padding: 25px
 };
 
+.avatar-profile{
+    width: 50%;
+}
+
+.avatar-profile img{
+    width: 56%;
+}
+
+
 .card-title{
     color: white !important;
     margin-bottom: 150px;
