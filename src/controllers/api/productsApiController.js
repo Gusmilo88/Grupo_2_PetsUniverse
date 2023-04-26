@@ -76,7 +76,7 @@ store:async(req,res)=>{
   
     
     
-        const newGenre = await createProducts(
+        const newProducts = await createProducts(
              req.body)
        
     
@@ -87,8 +87,8 @@ store:async(req,res)=>{
                 status:200,
                 
                 total:1},
-            data:newGenre,
-            url:`/api/genres/${newGenre.id}`
+            data:newProducts,
+            url:`/api/genres/${newProducts.id}`
             
                 })
         
