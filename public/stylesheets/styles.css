@@ -5,10 +5,12 @@
 @import "./index.css";
 @import "./login.css";
 @import "./nosotros.css";
+@import "./preLoader.css";
 @import "./productCart.css";
 @import "./productDetail.css";
-@import "./register.css";
-@import "./variables.css";
 @import "./products.css";
+@import "./register.css";
+@import "./userProfile.css";
+@import "./variables.css";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
 

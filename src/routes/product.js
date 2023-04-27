@@ -3,19 +3,23 @@ const productController = require('../controllers/productController');
 var router = express.Router();
 
 /* GET home page. */
-const {productDetail,productEdit, productCreate, productUpdate, store, destroy,productFilterCats,productFilterDogs} = require('../controllers/productController');
+const {productDetail,productEdit, productCreate, update, store, remove,productFilterCats,productFilterDogs, search} = require('../controllers/productController');
 const checkUserAdmin = require('../middlewares/checkUserAdmin');
 
-router.get('/gatos',productFilterCats)
-router.get('/perros',productFilterDogs)
-router.get('/productDetail/:id',productDetail) 
+const { uploadCoursesImages } = require('../middlewares/upLoad');
+const createValidator = require('../validations/createValidator');
 
-router.get('/productCreate/',checkUserAdmin,productCreate)
-router.post('/productCreate', store) 
+ router.get('/gatos',productFilterCats)
+router.get('/perros',productFilterDogs) 
+ router.get('/productDetail/:id',productDetail)
 
-router.get('/productEdit/:id',checkUserAdmin, productEdit) 
-router.put('/productEdit/:id', productUpdate)
+router.get('/productCreate/'/* ,checkUserAdmin */,productCreate)
+ router.post('/productCreate',uploadCoursesImages,createValidator, store)   
 
-router.delete('/productDelete/:id', destroy),
+router.get('/productEdit/:id'/* ,checkUserAdmin */,productEdit) 
+ router.put('/productEdit/:id',uploadCoursesImages,createValidator, update) 
+
+router.delete('/productDelete/:id', remove), 
+router.get('/search',search)
 
 module.exports = router;

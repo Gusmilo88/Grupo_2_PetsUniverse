@@ -16,7 +16,7 @@
                     <div class="register__main__div--info">
                         <div>
                             <label for="email" class="form-label"></label>
-                            <i class="fa-regular fa-envelope"></i><input type="email" class="register__main__div--info <%= (locals.errors && errors.email) && 'errorInput'%>" placeholder="<%= locals.errors && errors.email ? errors.email.msg : "Ingresá tu correo electrónico" %>" name="email" id="email" value="<%= locals.old && old.email ? old.email : null%>">
+                            <i class="fa-regular fa-envelope"></i><input type="email" class="register__main__div--info <%= (locals.errors && errors.email) && 'errorInput'%>" placeholder="<%= locals.errors && errors.email ? errors.email.msg : "Ingresá tu correo electrónico" %>" name="email" id="email">
                         </div>
                         <div>
                             <label for="password" class="form-label"></label>
@@ -42,6 +42,7 @@
     </main>
 
     <%- include('./partials/footer')%>
+    <%- include('./partials/scripts')%>
 </body>
 </html>
 

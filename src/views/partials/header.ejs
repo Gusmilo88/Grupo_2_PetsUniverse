@@ -12,7 +12,7 @@
             </button>
             </form>
             </div>
-            <% if (locals.userLogin && userLogin.rol === "admin") { %>
+            <% if (locals.userLogin && userLogin.role === 1) { %>
                 <div class="home__header__nav__div--admin">
                     <a href="/users/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
                 </div>
@@ -24,12 +24,12 @@
              
             <% } %>
 
-            <% if (locals.userLogin && userLogin.rol === "customer") { %>
+            <% if (locals.userLogin && userLogin.role === 2) { %>
                 <div class="home__header__nav__div--admin">
                     <a href="/users/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
                 </div>
                 <div class="home__header__nav__div--admin">
-                    <a href="/"><img src="/images/sfdsf.png" alt="" class="header_marciano">
+                    <a href="/users/profile"><img src="/images/sfdsf.png" alt="" class="header_marciano">
 
                     </a>
                 </div>

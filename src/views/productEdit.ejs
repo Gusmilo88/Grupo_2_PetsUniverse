@@ -19,19 +19,21 @@
                     <div class="edit__div__div">
                         <div class="edit__div__div--2">
                             <label for="category">Categoría:</label>
-                            <select name="category" id="category" value="<%= category %>">
-                                <option value="" select hidden>Seleccione categoría...</option>
-                                <option value="gatos" <%= category === "gatos" && "selected" %>>Gatos</option>
-                                <option value="perros" <%= category === "perros" && "selected" %>>Perros</option>
+                            <select name="category" id="category" value="<%= categories.name %>">
+                                <option value="" selected hidden>Seleccione...</option>
+                                <% categories.forEach(({name, id}) => { %>
+                                  <option value="<%= id %>" <%= id === categoryId && 'selected' %> ><%= name %></option>
+                                 <% }) %>
                             </select>
                         </div>
                         <div class="edit__div__div--2">
                             <label for="productType">Tipo de producto:</label>
                             <select name="productType" id="productType">
-                                <option value="<%= productType %>" select hidden>Seleccione tipo de producto...</option>
-                                <option value="alimento" <%= productType === "alimento" && "selected" %>>Alimento</option>
-                                <option value="juguetes" <%= productType === "juguetes" && "selected" %>>Juguetes</option>
-                                <option value="salud" <%= productType === "salud" && "selected" %>>Salud</option>
+                                <option value="" selected hidden>Seleccione...</option>
+                                <% productoTypes.forEach(({name, id}) => { %>
+                                  <option value="<%= id %>" <%= id === productTypeId && 'selected' %> ><%= name %></option>
+                                 <% }) %>
+                            
                             </select>
                         </div> 
                     </div>

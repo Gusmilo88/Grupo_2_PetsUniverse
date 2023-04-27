@@ -11,23 +11,17 @@ module.exports = {
     processLogin : (req,res) => {
         const errors = validationResult(req);
 
-        
-
         if(errors.isEmpty()){
-
-            
             db.User.findOne({
                 where : {
                     email : req.body.email
                 }
 
-            }).then( (id, name, rolId) =>{
-
-                
+            }).then( ({id, firstName, roleId}) =>{  
                 req.session.userLogin = {
                     id,
-                    name,
-                    rol : rolId
+                    firstName,
+                    role : roleId
                 }
             if(req.body.recordarUsuario){
                 res.cookie('userPetsUniverse', req.session.userLogin,{maxAge : 1000 * 30})
@@ -54,12 +48,13 @@ module.exports = {
     processRegister : (req, res) => {
         const errors = validationResult(req);
 
+        // return res.send(req.body)
         if(errors.isEmpty()){
             
 
             const {firstName, lastName, email, password} = req.body;
 
-            db.Adress.create()
+            db.Address.create()
             .then( address =>{
                 db.User.create({
                     firstName : firstName.trim(),
@@ -69,11 +64,11 @@ module.exports = {
                     roleId : 2,
                     addressId : address.id
 
-                }).then(({id, name, roleId}) => {
+                }).then(({id, firstName, roleId}) => {
                     req.session.userLogin = {
                         id,
-                        name,
-                        rol : roleId
+                        firstName,
+                        role : roleId
                     }
                     return res.redirect('/')
                 })
@@ -104,7 +99,41 @@ module.exports = {
 logout:(req,res)=>{
 req.session.destroy()
 res.redirect('/')
-}
+},
+
+profile : (req,res) => {
+    db.User.findByPk(req.session.userLogin.id,{
+        attributes : ['firstName','lastName','email','avatar'],
+        include : [
+            {
+                association : 'addresses',
+                attributes : ['address','city','province','zipCode']
+            }
+        ],
+
+    })
+        .then(user => {
+            return res.render('profile',{
+                title : "Perfil de usuario",
+                user
+            })
+        })
+        .catch(error => console.log(error))
+
+  
+},
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -112,3 +141,4 @@ res.redirect('/')
 
 } //
 
+//..//

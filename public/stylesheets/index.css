@@ -93,6 +93,14 @@ body{
     padding: 20px;
 }
 
+/* Animación carrusel del home */
+.carousel-products-item:hover {
+    transform: scale(1.1);  /*Escala la imagen al pasar el cursor*/
+    transition: all 0.3s ease-in-out; /*El tiempo que tarda en hacer la animación*/
+    box-shadow: 30px rgba(186, 85, 211);
+    filter: drop-shadow(0 10px 10px rgba(186, 85, 211));
+}
+
 .home__main__section__div--detalles{
     display: none;
 }
