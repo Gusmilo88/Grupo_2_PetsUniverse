@@ -43,6 +43,7 @@
 .product_Cart_precioyboton{
     display:flex;
    flex-direction: column;
+   align-items: center;
 }
 
 
