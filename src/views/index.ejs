@@ -4,6 +4,11 @@
 <%- include('./partials/head')%>
 
 <body class="home">
+    <div class="loader">
+        <div class="loading-animation">
+            <img src="images/preload.png" alt="Cargando..." />
+        </div>
+    </div>
 
     <%- include('./partials/header')%>
     
@@ -98,5 +103,6 @@
     
 
     <%- include('./partials/scripts')%>
+    <script src="/javascripts/preLoader.js"></script>
 </body>
 </html>
