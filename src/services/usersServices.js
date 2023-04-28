@@ -7,7 +7,7 @@ module.exports = {
 
         try {
             const users = await db.User.findAll({
-                include : {all : true}
+                attributes: { exclude: ["password", "roleId", "createdAt", "updatedAt","id", "addressId"] }
             })
             return users
             
@@ -25,7 +25,7 @@ module.exports = {
 
         try {
             const user = await db.User.findByPk(id, {
-                include : {all : true}
+                attributes: { exclude: ["password", "roleId", "createdAt", "updatedAt","id", "addressId"] }
             })
             return user
             
