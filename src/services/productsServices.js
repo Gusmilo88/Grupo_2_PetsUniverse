@@ -142,10 +142,5 @@ return newproducts
 
 
 
-
-
-
-
-
-
+                    
 }
