@@ -3,11 +3,16 @@ const {literalQueryUrl,literalQueryUrlImage} = require('../helpers')
 
 module.exports = {
 
-    getAllUsers : async () => {
+    getAllUsers : async (req) => {
 
         try {
             const users = await db.User.findAll({
-                attributes: { exclude: ["password", "roleId", "createdAt", "updatedAt","id", "addressId"] }
+                attributes: { exclude: ["password", "roleId", "createdAt", "updatedAt","id", "addressId"],
+                include:[ 
+                    literalQueryUrl(req,'users','User.id'),
+                    literalQueryUrlImage(req,"users",'avatar','image')
+                    ]
+            }
             })
             return users
             
@@ -21,11 +26,16 @@ module.exports = {
 
     },
 
-    getUserById : async (id) => {
+    getUserById : async (id,req) => {
 
         try {
             const user = await db.User.findByPk(id, {
-                attributes: { exclude: ["password", "roleId", "createdAt", "updatedAt","id", "addressId"] }
+                attributes: { exclude: ["password", "roleId", "createdAt", "updatedAt","id", "addressId"],
+                include:[ 
+                    literalQueryUrl(req,'users','User.id'),
+                    literalQueryUrlImage(req,"users",'avatar','image')
+                    ]
+            }
             })
             return user
             
@@ -40,32 +50,7 @@ module.exports = {
     },
 
 
-    usersImageAll: async(req)=>{
 
-        try {
-        
-            const {count,rows:users} =await db.User.findAndCountAll({
-        
-                
-        attributes:{
-            exclude:["password","roleId"],
-            include:[ 
-            literalQueryUrl(req,'users','User.id'),
-            literalQueryUrlImage(req,"users",'image','image')
-            ]}
-        ,      
-            })
-        return {count,users}
-        
-        } catch (error) {
-               console.log(error)
-        throw{
-        status:500,
-        message: error.message
-        
-        }            
-}
-}
 
 
 
