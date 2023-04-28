@@ -66,7 +66,13 @@
     margin: 4px;
 }
 
-
+/* Animación en los productos */
+.products_main_producto:hover {
+    transform: scale(1.1);  /*Escala la imagen al pasar el cursor*/
+    transition: all 0.3s ease-in-out; /*El tiempo que tarda en hacer la animación*/
+    box-shadow: 30px rgba(186, 85, 211);
+    filter: drop-shadow(0 10px 10px rgba(186, 85, 211));
+}
 
 
 
@@ -75,18 +81,12 @@
 }
 
 
-
-
-
 .products_main_flexbox{
     display: flex;
     flex-wrap: wrap;
-   justify-content: center;
- 
+    justify-content: center;
     
 }
-
-
 
 .product_main_filtros h2{
 text-align: center;
