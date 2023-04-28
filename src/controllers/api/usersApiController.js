@@ -4,10 +4,10 @@ module.exports = {
     index : async(req, res) => {
         try {
             
-            const users = await getAllUsers();
+            const users = await getAllUsers(req);
             return res.status(200).json({
                 ok : true,
-                count : users.length,
+                count :  users.length,
                 users
             })
 
@@ -26,7 +26,7 @@ module.exports = {
     detail : async (req, res) => {
         try {
             
-            const users = await getUserById(req.params.id);
+            const users = await getUserById(req.params.id, req);
             return res.status(200).json({
                 ok : true,
                 count : users.length,

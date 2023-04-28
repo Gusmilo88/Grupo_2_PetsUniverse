@@ -1,12 +1,18 @@
 const db = require("../database/models");
+const {literalQueryUrl,literalQueryUrlImage} = require('../helpers')
 
 module.exports = {
 
-    getAllUsers : async () => {
+    getAllUsers : async (req) => {
 
         try {
             const users = await db.User.findAll({
-                include : {all : true}
+                attributes: { exclude: ["password", "roleId", "createdAt", "updatedAt","id", "addressId"],
+                include:[ 
+                    literalQueryUrl(req,'users','User.id'),
+                    literalQueryUrlImage(req,"users",'avatar','image')
+                    ]
+            }
             })
             return users
             
@@ -20,11 +26,16 @@ module.exports = {
 
     },
 
-    getUserById : async (id) => {
+    getUserById : async (id,req) => {
 
         try {
             const user = await db.User.findByPk(id, {
-                include : {all : true}
+                attributes: { exclude: ["password", "roleId", "createdAt", "updatedAt","id", "addressId"],
+                include:[ 
+                    literalQueryUrl(req,'users','User.id'),
+                    literalQueryUrlImage(req,"users",'avatar','image')
+                    ]
+            }
             })
             return user
             
@@ -36,6 +47,12 @@ module.exports = {
             };
         }
 
-    }
+    },
+
+
+
+
+
+
 
 }
