@@ -40,6 +40,30 @@ message: error.message
 
 
     },
+    getProductById : async (id,req) => {
+
+        try {
+            const product = await db.Product.findByPk(id, {
+                attributes: { exclude: ["createdAt", "updatedAt","id"],
+                include:[ 
+                    literalQueryUrl(req,'products','Product.id'),
+                    literalQueryUrlImage(req,"products",'image','image')
+                    ]
+            }
+            })
+            return product
+            
+        } catch (error) {
+            console.log(error)
+            throw {
+                status: 500,
+                message: error.message
+            };
+        }
+
+    },
+    
+
     createProducts:async({name,description,price,discount,weight,productType,category,stock})=>{
 
         try {
@@ -86,7 +110,7 @@ return newproducts
                 
                     
             
-                    const productsdestroy = await   db.Product.destroy({
+                    const productsdestroy = await db.Product.destroy({
                         where:{
                             id
                         }
@@ -142,5 +166,5 @@ return newproducts
 
 
 
-                    
+                  
 }

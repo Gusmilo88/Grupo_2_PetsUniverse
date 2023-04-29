@@ -1,4 +1,4 @@
-const {productsAll,createProducts,productsDelete,ProductsUpdate} = require('../../services/productsServices')
+const {productsAll,createProducts,productsDelete,ProductsUpdate,getProductById} = require('../../services/productsServices')
 const createResponseError = require('../../helpers/createResponseError');
 const{validationResult} = require('express-validator')
 module.exports = {
@@ -166,7 +166,33 @@ update:async(req,res)=>{
                         
                     }
                 },
-    
+                detail : async (req, res) => {
+                    try {
+                        
+                        const product = await getProductById(req.params.id, req);
+                        if(!product){
+                            throw {
+                                status : 404,
+                                message : "Curso no encontrado"
+                            }
+                        }
+                        return res.status(200).json({
+                            ok : true,
+                            product
+                        })
+            
+                    } catch (error) {
+                        console.log(error);
+                        return res.status(error.status || 500).json({
+                            ok : false,
+                            error : {
+                                status : error.status || 500,
+                                message : error.message || "Upss hubo un error",
+                            }
+                        })
+                    }
+                } 
+            }
 
 
 
@@ -175,4 +201,3 @@ update:async(req,res)=>{
 
 
 
-}
