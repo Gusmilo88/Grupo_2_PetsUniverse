@@ -556,7 +556,7 @@ update: (req, res) => {
       
       )
 
-    const productoTipo = db.ProductType.findAll({
+    const productoTypes = db.ProductType.findAll({
    
       attributes: ["name", "id"],
     }); 
@@ -575,13 +575,14 @@ update: (req, res) => {
     
     }
 
-    Promise.all([ productoTipo, categories,producot])
-      .then(([productoTipo, categories,producto]) => {
+    Promise.all([ productoTypes, categories,producto])
+      .then(([productoTypes, categories,producto]) => {
 
         return res.render("productEdit", {
-          productoTipo,
+          ...producto.dataValues,
+          productoTypes,
           categories,
-          producto,
+          
           errors: errors.mapped(),
           old: req.body,
         });
