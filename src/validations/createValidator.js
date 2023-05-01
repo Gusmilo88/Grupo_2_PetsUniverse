@@ -26,6 +26,6 @@ module.exports = [
 
     check('description')
         .notEmpty().withMessage('La descripción del curso es requerida').bail()
-        .isLength({min:2,max:50}).withMessage('La descripción debe tener entre 20 y 500 caracteres'),
+        .isLength({min:2,max:500}).withMessage('La descripción debe tener entre 20 y 500 caracteres'),
     
 ]
