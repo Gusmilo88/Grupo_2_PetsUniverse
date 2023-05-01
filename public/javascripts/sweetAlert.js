@@ -31,7 +31,7 @@ document.querySelectorAll('#deleteForm').forEach(form => {
               color: "white",
               background: "linear-gradient(90deg, rgba(47, 7, 67, 0.7) 0%, rgba(98, 2, 248, 0.7) 50%, rgba(0, 161, 255, 0.7) 100%)",
               showConfirmButton: false,
-              timer: 3000 // Cambia el tiempo en milisegundos aquí
+              timer: 1000 // Cambia el tiempo en milisegundos aquí
             }).then(() => {
               // Si se confirmó la eliminación, envía el formulario para eliminar el producto
               event.target.submit();
@@ -40,24 +40,5 @@ document.querySelectorAll('#deleteForm').forEach(form => {
       });
     });
   });
-  
-  
-
-
-
-// Swal.fire({
-//     title : "¿Estás seguro?",
-//     text : "Una vez que elimines este producto, no podrás recuperarlo",
-//     color: "white",
-//     icon: "warning",
-//     background: "linear-gradient(90deg, rgba(47, 7, 67, 0.7) 0%, rgba(98, 2, 248, 0.7) 50%, rgba(0, 161, 255, 0.7) 100%)",
-//     showConfirmButton: true,
-//     confirmButtonColor: "#D11709",
-//     confirmButtonText: "Eliminar",
-//     showCancelButton: true,
-//     cancelButtonText: "Cancelar",
-//     cancelButtonColor: "#4CDC51",
-//     showCloseButton: true,
-// })
 
 

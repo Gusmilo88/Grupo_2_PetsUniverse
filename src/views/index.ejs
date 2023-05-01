@@ -52,21 +52,16 @@
                     <div class="glider">
 
                         
-                        <% products.forEach(({name,image,id}) => { %>
+                        <% products.forEach(({name,image,id, price}) => { %>
                         
                         <a href="/products/productDetail/<%= id %>">
                             <div class="carousel-products-item">
         
             <img src="images/products/<%= image %>" class="card-img-top" alt="...">
             <div class="card-body">
+                <span class="price-home">$ <%= price %></span>
                 <h5 class="card-title"><%= name %></h5>
-
-
-
-
-
-
-                                            </div>
+            </div>
         </div>
     </a>
  
