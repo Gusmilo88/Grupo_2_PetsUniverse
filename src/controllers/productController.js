@@ -5,6 +5,7 @@ const { promise } = require('bcrypt/promises');
 const { redirect } = require('express/lib/response');
 const { title } = require('process');
 const {validationResult} = require("express-validator");
+const { error } = require('console');
 
 
 /* const productsFilePath = path.join(__dirname, '../data/products.json')
