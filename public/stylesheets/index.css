@@ -161,6 +161,12 @@ body{
     }
 }
 
+.testimonials {
+    background: var(--gradientePrincipal);
+    margin: 20px;
+    padding: 10px;
+}
+
 /* desktop */
 @media (min-width: 769px){
     .home__main__section__div{

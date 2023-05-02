@@ -1,6 +1,7 @@
 .loader {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 100%;
     width: 100%;
@@ -11,6 +12,7 @@
     background-repeat: no-repeat; 
     background-size: cover; 
     z-index: 999999999;
+    background-color: white;
 }
 
 .loading-animation {
@@ -39,3 +41,4 @@
 .hidden {
     display: none;
 }
+

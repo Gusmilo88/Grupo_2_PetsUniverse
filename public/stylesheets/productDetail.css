@@ -104,6 +104,10 @@
     justify-content: center;
 }
 
+.price-detail {
+    text-align: center;
+}
+
 .carrusel__section h5{
     text-align: center;
     color: #fff;
@@ -225,53 +229,6 @@
     border-radius: 10px;
     box-shadow: 0px 8px 7px  0px rgba(0, 0, 0, 0.6);
 }
-
-/* Boton edit */
-
-.form__button--edit{
-    width: 100%;  
-    display: flex;
-    justify-content: center;
-    padding: 5%;
-}
-
-.form__button--edit button{
-    width: 20vh;
-    height: 25px;
-    background: rgb(4, 150, 116);
-    font-family: var(--tipografiaTitulos);
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: initial;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0px 8px 7px  0px rgba(0, 0, 0, 0.6);
-}
-
-/* Boton delete */
-
-.form__button--delete{
-    width: 100%;  
-    display: flex;
-    justify-content: center;
-    padding: 5%;
-}
-
-.form__button--delete button{
-    width: 20vh;
-    height: 25px;
-    background: red;
-    font-family: var(--tipografiaTitulos);
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: initial;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0px 8px 7px  0px rgba(0, 0, 0, 0.6);
-}
-
 
 /*línea oculta hasta escritorio*/
 .oculto1{

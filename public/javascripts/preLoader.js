@@ -2,5 +2,5 @@ window.addEventListener("load", function(){
     const loader = document.querySelector(".loader");
     setTimeout(function() {
         loader.classList.add("hidden"); //La clase a la que cambia (para desaparecer)
-    }, 4000); // el tiempo que se mostrará.
+    }, 3000); // el tiempo que se mostrará.
 });
