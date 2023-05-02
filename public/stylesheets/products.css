@@ -25,6 +25,18 @@
     justify-content: center;
 }
 
+.products_main_producto--description span{
+    text-align: center;
+    color: #03b103;
+    font-size: 4vh;
+}
+
+.price-products-dog-cat {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
 .products_main_producto--description h5{
     text-align: center;
 }

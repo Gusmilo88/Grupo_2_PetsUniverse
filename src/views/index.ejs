@@ -8,13 +8,21 @@
         <div class="loading-animation">
             <img src="images/preload.png" alt="Cargando..." />
         </div>
+        <div class="spinner-border text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
     </div>
 
     <%- include('./partials/header')%>
     
     <main class="home__main">
         <section class="home__main__section--carrusel">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="4000">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  </ol>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                     <img class="d-block w-100" src="/images/carrusel1.jpg" alt="First slide">
@@ -52,27 +60,20 @@
                     <div class="glider">
 
                         
-                        <% products.forEach(({name,image,id}) => { %>
+                        <% products.forEach(({name,image,id, price}) => { %>
                         
                         <a href="/products/productDetail/<%= id %>">
                             <div class="carousel-products-item">
         
             <img src="images/products/<%= image %>" class="card-img-top" alt="...">
             <div class="card-body">
+                <span class="price-home">$ <%= price %></span>
                 <h5 class="card-title"><%= name %></h5>
-
-
-
-
-
-
-                                            </div>
+            </div>
         </div>
     </a>
  
 <% }) %>
-                      
-                        
                     </div>
                     
                     <button aria-label="Previous" class="glider-prev"><i class="fa-solid fa-arrow-left"></i></button>
@@ -96,6 +97,103 @@
                     </div>
                 </div>
         </section>
+
+        <!-- Testimonios de clientes, con Bootstrap. -->
+        <section class="testimonials">
+            <div class="row d-flex justify-content-center">
+              <div class="col-md-10 col-xl-8 text-center">
+                <h3 class="mb-4 text-white">Opiniones de clientes</h3>
+                <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+                    Nuestros clientes hablan por nosotros. Mirá lo que dicen sobre su experiencia de compra en nuestro sitio web:
+                </p>
+              </div>
+            </div>
+          
+            <div class="row text-center">
+              <div class="col-md-4 mb-5 mb-md-0">
+                <div class="d-flex justify-content-center mb-4">
+                  <img src="/images/testimonios1.jpeg"
+                    class="rounded-circle shadow-1-strong" width="150" height="150" />
+                </div>
+                <h5 class="mb-3 text-white">Dogtor Ladrido</h5>
+                <h6 class="text-white mb-3">Ciudad Canina, Argentina</h6>
+                <p class="px-xl-3">
+                  <i class="fas fa-quote-left pe-2"></i>¡El alimento Hop! es tan delicioso que me hace querer lamer mi plato todo el día! ¡Es el mejor regalo que me pueden dar!
+                </p>
+                <ul class="list-unstyled d-flex justify-content-center mb-0">
+                  <li>
+                    <i class="fas fa-star fa-sm text-warning"></i>
+                  </li>
+                  <li>
+                    <i class="fas fa-star fa-sm text-warning"></i>
+                  </li>
+                  <li>
+                    <i class="fas fa-star fa-sm text-warning"></i>
+                  </li>
+                  <li>
+                    <i class="fas fa-star fa-sm text-warning"></i>
+                  </li>
+                  <li>
+                    <i class="fas fa-star-half-alt fa-sm text-warning"></i>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-4 mb-5 mb-md-0">
+                <div class="d-flex justify-content-center mb-4">
+                  <img src="/images/testimonios3.jpg"
+                    class="rounded-circle shadow-1-strong" width="150" height="150" />
+                </div>
+                <h5 class="mb-3 text-white">Mosha</h5>
+                <h6 class="text-white mb-3">Villa Guau Guau, Argentina</h6>
+                <p class="px-xl-3">
+                  <i class="fas fa-quote-left pe-2"></i>El peluche de Hulk con sonido es mi favorito. ¡Me encanta morderlo y escucharlo chillar! ¡Es tan divertido! ¡Es como tener a Hulk de amigo!</p>
+                <ul class="list-unstyled d-flex justify-content-center mb-0">
+                  <li>
+                    <i class="fas fa-star fa-sm text-warning"></i>
+                  </li>
+                  <li>
+                    <i class="fas fa-star fa-sm text-warning"></i>
+                  </li>
+                  <li>
+                    <i class="fas fa-star fa-sm text-warning"></i>
+                  </li>
+                  <li>
+                    <i class="fas fa-star fa-sm text-warning"></i>
+                  </li>
+                  <li>
+                    <i class="fas fa-star fa-sm text-warning"></i>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-4 mb-0">
+                <div class="d-flex justify-content-center mb-4">
+                  <img src="/images/testimonios2.jpg"
+                    class="rounded-circle shadow-1-strong" width="150" height="150" />
+                </div>
+                <h5 class="mb-3 text-white">Lady Miau Miau</h5>
+                <h6 class="text-white mb-3">Ronroneopólis, Argentina</h6>
+                <p class="px-xl-3">
+                  <i class="fas fa-quote-left pe-2"></i>Este casita "cohete" es mi lugar favorito para jugar. ¡Puedo esconderme y acechar a mis humanos! ¡Es mi fortaleza de gatos!</p>
+                <ul class="list-unstyled d-flex justify-content-center mb-0">
+                  <li>
+                    <i class="fas fa-star fa-sm text-warning"></i>
+                  </li>
+                  <li>
+                    <i class="fas fa-star fa-sm text-warning"></i>
+                  </li>
+                  <li>
+                    <i class="fas fa-star fa-sm text-warning"></i>
+                  </li>
+                  <li>
+                    <i class="fas fa-star fa-sm text-warning"></i>
+                  </li>
+                  <li>
+                    <i class="far fa-star fa-sm text-warning"></i>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
     </main>
     
     <%- include('./partials/footer')%>
