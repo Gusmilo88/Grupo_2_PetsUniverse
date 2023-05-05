@@ -19,7 +19,11 @@
                                     <div class="estrellitas1"><small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></small></div>
                                 </div>             
                         </article>
-                            <h1 class="titulos1"><%= name %> <%= weight %>Kg</h1>
+                            <h1 class="titulos1"><%= name %> <%= weight %>
+                                <% if (weight!==null) { %>
+                                    kg 
+                                    <%}else{%>  <% } %>
+                            </h1>
                             <!-- <h1 class="titulos1"><%= weight %> 
                                 <% if (weight!==null) { %>
                                       kg 
@@ -69,29 +73,20 @@
                         </div>
                     </article>
                 </section>
-                <!-- <div class="carrusel1">
-                    <section class="carrusel__section">
-                        <div class="glider-contain">
-                            <div class="glider">
-                                <% products.forEach(({id,image,name}) => { %>
-                                    <a href="/products/productDetail/<%= id %>">
-                                        <div class="carroussel-food-item">
-                                            <img src="/images/products/<%= image %> " class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title" ><h5><%= name %>  </h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                <% }) %>
-                            </div>
-                            <button aria-label="Previous" class="glider-prev "> < </button>
-                            <button aria-label="Next" class="glider-next "> > </button>
-                        </div>
-                    </section>
-                </div>  -->
             </div>               
         </div>             
         </div>
+        <section class="home__main__section">
+            <div class="home__main__section__div">
+                <div class="home__main__section--h2">
+                    <h2>Productos estelares</h2>
+                </div>
+                <div class="home__main__section--stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
         <section class="home__main__section--carruselProductos">
             <div class="glider-contain">
                 <div class="glider">
