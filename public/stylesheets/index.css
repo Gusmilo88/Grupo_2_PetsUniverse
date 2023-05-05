@@ -170,13 +170,13 @@ body{
         justify-content: center;
         font-size: 50px;
     }
-}
 
-.testimonials {
-    display: block;
-    background: var(--gradientePrincipal);
-    margin: 20px;
-    padding: 10px;
+    .testimonials {
+        display: block;
+        background: var(--gradientePrincipal);
+        margin: 20px;
+        padding: 10px;
+    }
 }
 
 /* desktop */
