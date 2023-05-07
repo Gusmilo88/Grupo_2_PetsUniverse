@@ -145,7 +145,10 @@ let error =false
 
 if(!await  verifyEmail( $('emailLogin').value.trim(),$('passwordLogin').value.trim()) ){
  
-    
+   
+
+
+
     let audio = new Audio
     audio.src = `/sound/efecto-de-sonido-error_fvkccFUU.mp3`
 
@@ -166,7 +169,8 @@ Swal.fire({
 
       error = true
 
-
+ $('passwordLogin').classList.add('errorInput'),$('passwordLogin').placeholder = "Credenciales Invalidas",
+  $('emailLogin').classList.add('errorInput'),$('emailLogin').placeholder = "Credenciales Invalidas"
 }else{
     let audio = new Audio
     audio.src = `/sound/MagicCartoon CTE01_93.3_preview.mp3`
