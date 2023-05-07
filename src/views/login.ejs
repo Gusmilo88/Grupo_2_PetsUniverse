@@ -31,6 +31,8 @@
                 <input type="checkbox" name="recordarUsuario" id="recordarUsuario">
                 <label for="recordarUsuario">Recordar usuario</label>
             </div>
+
+           
             <div class="main__login--olvidarContraseña">
                 <small> ¿Olvidaste tu contraseña? <a href="/register"> Recuperá tu contraseña</a></small>
             </div>
@@ -152,13 +154,13 @@ if(!await  verifyEmail( $('emailLogin').value.trim(),$('passwordLogin').value.tr
 
 Swal.fire({
         position: 'middle',
-        imageUrl: 'https://i.pinimg.com/originals/a3/f6/b6/a3f6b6cce681137729e24bdeeed68b77.gif',
+        imageUrl: '/images/pets2.gif',
       imageHeight: 300,
       imageWidth: 300,
         title: `Incorrecto`,
         showConfirmButton: false,
       timer: 3500 ,
-      background: 'red',
+      background: 'rgba(255, 0, 0, 0.6)',
       color:'white'
       })
 
@@ -173,7 +175,7 @@ audio.play()
     
     Swal.fire({
         position: 'middle',
-        imageUrl: 'https://media.tenor.com/ZRmKGlWN4XEAAAAC/sakuragi-hanamichi.gif',
+        imageUrl: '/images/pets.gif',
       imageHeight: 300,
       imageWidth: 300,
         title: `Bienvenido`,
