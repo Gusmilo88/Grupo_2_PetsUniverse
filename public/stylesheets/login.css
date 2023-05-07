@@ -82,6 +82,10 @@ body{
 }
 
 
+.input-rojo{
+        background-color: red;
+}
+
  @-webkit-keyframes shake-bottom {
     0%,
     100% {

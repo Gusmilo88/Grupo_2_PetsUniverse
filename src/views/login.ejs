@@ -12,15 +12,15 @@
             <div class="main__login__div--iniciarSesion">
                 <h2>Iniciar sesión</h2>
             </div>
-                <form action="" method="POST">
+                <form action="" method="POST" id="formRegister" >
                     <div class="register__main__div--info">
                         <div>
                             <label for="email" class="form-label"></label>
-                            <i class="fa-regular fa-envelope"></i><input type="email" class="register__main__div--info <%= (locals.errors && errors.email) && 'errorInput'%>" placeholder="<%= locals.errors && errors.email ? errors.email.msg : "Ingresá tu correo electrónico" %>" name="email" id="email">
+                            <i class="fa-regular fa-envelope"></i><input type="email" class="register__main__div--info <%= (locals.errors && errors.email) && 'errorInput'%>" placeholder="<%= locals.errors && errors.email ? errors.email.msg : "Ingresá tu correo electrónico" %>" name="email" id="emailLogin">
                         </div>
                         <div>
                             <label for="password" class="form-label"></label>
-                            <i class="fa-solid fa-lock"></i><input type="password" class="register__main__div--info <%= (locals.errors && errors.password) && 'errorInput'%>" placeholder="<%= locals.errors && errors.password ? errors.password.msg : "Ingresá contraseña" %>" name="password" id="password">
+                            <i class="fa-solid fa-lock"></i><input type="password" class="register__main__div--info <%= (locals.errors && errors.password) && 'errorInput'%>" placeholder="<%= locals.errors && errors.password ? errors.password.msg : "Ingresá contraseña" %>" name="password" id="passwordLogin">
                         </div>
                     </div>
                     <div class="register__main__div--button">
@@ -43,6 +43,192 @@
 
     <%- include('./partials/footer')%>
     <%- include('./partials/scripts')%>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+
+     <script>
+     
+
+     
+
+        const $ = (id)=>document.getElementById(id)
+
+
+
+
+        const verifyEmail = async(email,password)=>{
+
+try {
+  let response = await fetch("/api/users/verify-user",{
+    method:'POST',
+    body:JSON.stringify({email:email,password:password
+    }),
+    headers:{'Content-Type': "application/json"}
+  });
+  let result = await response.json();
+
+  return result.data.existUser
+
+  console.log(result)
+  
+} catch (error) {
+  
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+        $('emailLogin').addEventListener('blur', async function(e){
+    
+    switch (true) {
+      case !this.value.trim():
+      this.placeholder = "El correo es obligatorio"
+      this.classList.add('errorInput')
+  
+        break;
+      default:
+      this.placeholder = ""
+      this.classList.remove('errorInput')
+
+        
+        break;
+    }
+  })
+  $('emailLogin').addEventListener('focus',function(e){
+    this.placeholder = ""
+      this.classList.remove('errorInput')
+  })
+
+
+    $('passwordLogin').addEventListener('blur',  function(e){
+
+
+        $('passwordLogin').addEventListener('focus',function(e){
+    this.placeholder = ""
+      this.classList.remove('errorInput')
+  })
+    
+    switch (true) {
+      case !this.value.trim():
+      this.placeholder = "La constraseña es obligatoria"
+      this.classList.add('errorInput')
+  
+        break;
+      default:
+      this.placeholder = ""
+      this.classList.remove('errorInput')
+
+        
+        break;
+    }
+  })
+
+        $('formRegister').addEventListener('submit',async function  (e){
+    e.preventDefault();
+let error =false
+
+
+if(!await  verifyEmail( $('emailLogin').value.trim(),$('passwordLogin').value.trim()) ){
+ 
+    
+    let audio = new Audio
+    audio.src = `/sound/efecto-de-sonido-error_fvkccFUU.mp3`
+
+        audio.play()
+    
+
+Swal.fire({
+        position: 'middle',
+        imageUrl: 'https://i.pinimg.com/originals/a3/f6/b6/a3f6b6cce681137729e24bdeeed68b77.gif',
+      imageHeight: 300,
+      imageWidth: 300,
+        title: `Incorrecto`,
+        showConfirmButton: false,
+      timer: 3500 ,
+      background: 'red',
+      color:'white'
+      })
+
+      error = true
+
+
+}else{
+    let audio = new Audio
+    audio.src = `/sound/MagicCartoon CTE01_93.3_preview.mp3`
+
+audio.play()
+    
+    Swal.fire({
+        position: 'middle',
+        imageUrl: 'https://media.tenor.com/ZRmKGlWN4XEAAAAC/sakuragi-hanamichi.gif',
+      imageHeight: 300,
+      imageWidth: 300,
+        title: `Bienvenido`,
+        showConfirmButton: false,
+      timer: 5500 ,
+      background: 'linear-gradient(270deg, rgba(255, 255, 255, 0.07) 0%, rgba(2, 152, 227, 0.7) 33.33%, rgba(1, 58, 87, 0.7) 66.67%, rgba(0, 0, 0, 0.7) 100%)',
+      color:'white'
+      })
+
+
+
+
+
+
+      setTimeout(function(){
+        error = false
+        $('formRegister').submit()
+
+       
+}, 3000);
+
+
+
+
+        
+
+}
+
+  
+
+
+/* for (let i = 0; i < this.elements.length -2; i++) {
+  if(!this.elements[i].value.trim()|| this.elements[i].classList.contains('is-invalid') ){
+    error = true;
+    this.elements[i].classList.add('is-invalid')
+    $('error-form').innerHTML = "todos los cambios son obligatorios"
+  }
+  
+}
+ */
+
+  
+
+ /* !error && this.submit()  */
+
+
+
+
+  })
+
+
+
+
+
+    </script> 
 </body>
 </html>
 

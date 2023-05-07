@@ -1,8 +1,8 @@
 const db = require("../database/models");
 const {literalQueryUrl,literalQueryUrlImage} = require('../helpers')
-
+const { compare} = require('bcryptjs');
 module.exports = {
-
+    
     getAllUsers : async (req) => {
 
         try {
@@ -48,6 +48,36 @@ module.exports = {
         }
 
     },
+
+    verifyuser : async(email,password) =>{
+try {
+    const { compare} = require('bcryptjs');
+    
+    const user = await db.User.findOne({ where : {email : email }});
+
+       const password_valid = await compare(password,user.password);
+   
+        
+     
+        
+        return user && password_valid  ?  true :false
+
+ 
+    
+ 
+
+    
+} catch (error) {
+    throw{
+       status:500,
+       message:error.message 
+    }
+    
+}
+
+
+
+    }
 
 
 
