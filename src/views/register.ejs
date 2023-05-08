@@ -10,7 +10,7 @@
     <main class="register__main">
         <div class="register__main__div">
             <h3>Creá tu cuenta</h3>
-            <form action="/users/register" method="POST" enctype="multipart/form-data">
+            <form action="/users/register" method="POST" enctype="multipart/form-data" id="formRegister">
                 <div class="register__main__div--info">
                     <div>
                         <label for="firstName" class="form-label"></label>
@@ -38,16 +38,13 @@
                     </div>
 
                 </div>
-                <div>
-                    <input type="checkbox" name="aceptoTerminosYCondiciones" id="aceptoTerminosYCondiciones">
-                <label for="aceptoTerminosYCondiciones">Acepto términos y condiciones</label>
-                </div>
                 <div class="register__main__div--info--login">
                     <small class="register__main__small--check">
                         ¿Estás registrado? <a href="/users/login">Ingresá</a>
                     </small>
                 </div>
                 <div class="register__main__div--button">
+                    <p class="text-danger small" id="error-form"></p>
                     <button type="submit">Registrarse</button>
                 </div>
 
@@ -58,5 +55,6 @@
     
     <%- include('./partials/footer')%>
     <%- include('./partials/scripts')%>
+    <script src="/javascripts/formRegister.js"></script>
 </body>
 </html>
