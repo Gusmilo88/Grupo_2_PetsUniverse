@@ -1,9 +1,7 @@
 const $ = (id) => document.getElementById(id); //El signo de pesos "$" se usa como convención de nomenclatura para indicar que la variable almacena un objeto de tipo "Element" o "HTMLElement" 
 
-// const msgError = (element, message, { target }) => {
-//     $(element).innerHTML = message;
-//     target.classList.add("errorInput");
-// };
+const inputAvatar = $("avatar"); 
+
 
 const cleanError = (element, { target }) => {
     target.classList.remove("errorInput");
@@ -14,13 +12,34 @@ const cleanError = (element, { target }) => {
 const checkedFields = () => {
     const elements = $("formRegister").elements;
     $("error-form").innerHTML = null;
-  
+
     for (let i = 0; i < elements.length - 2; i++) {
-      if (elements[i].classList.contains("errorInput")) {
+        if (elements[i].classList.contains("errorInput")) {
         $("error-form").innerHTML = "¡Hay campos con errores o están vacíos!";
-      }
     }
-  };
+    }
+};
+
+const verifyEmail = async (email) => {
+    try {
+        let response = await fetch("/api/users/verify-email",{
+            method: "POST",
+            body : JSON.stringify({
+                email   :   email
+            }),
+            headers : {
+                "Content-Type" : "application/json"
+            }
+        });
+
+        let result = await response.json();
+
+        return result.data.existUser
+        
+    } catch (error) {
+        console.error
+    }
+}
 
 let regExLetter = /^[A-Z]+$/i; // verifica si una cadena de texto está compuesta únicamente por letras mayúsculas o minúsculas
 let regExEmail = /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/; //verifica si una cadena de texto corresponde a una dirección de correo electrónico válida
@@ -88,7 +107,8 @@ $("lastName").addEventListener("focus", function(e) {
 })
 
 // Input del email
-$("email").addEventListener("blur", function(e) {
+$("email").addEventListener("blur", async function(e) {
+
     switch (true) {
         case !this.value.trim():
             this.placeholder = "El email es obligatorio"
@@ -100,6 +120,11 @@ $("email").addEventListener("blur", function(e) {
             this.classList.add("errorInput")
             break; 
     
+        case await verifyEmail(this.value.trim()) :
+            this.placeholder = "El email ya está registrado"
+            this.classList.add("errorInput")
+            break;
+
         default:
             this.classList.add("successInput");
             checkedFields();
@@ -164,3 +189,35 @@ $("password2").addEventListener("focus", function(e) {
     cleanError("password2", e)
 })
 
+// Input de la imagen (avatar)
+const regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
+
+
+inputAvatar.addEventListener("change", function(e){
+    switch (true) {
+        case !regExExt.exec(this.value):
+            $("avatarError").innerHTML = "Solo se admiten imágenes jpg, jpeg, png, gif, webp"
+            break;
+    
+        default:
+            cleanError("avatarError", e)
+            $("avatarPreview").classList.remove('avatarError')
+            if(this.files){
+            [].forEach.call(this.files,readAndPreview);
+        }
+        
+        function readAndPreview(file) {
+            let reader = new FileReader()
+            $('boxImagesPreview').innerHTML = null;
+            reader.addEventListener('load', function(){
+            let image = new Image();
+            image.height = 100;
+            image.title = file.name;
+            image.src = this.result;
+            $('boxImagesPreview').appendChild(image)
+            })
+            reader.readAsDataURL(file)
+          }
+            break;
+    }
+})
