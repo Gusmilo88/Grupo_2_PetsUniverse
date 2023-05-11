@@ -52,7 +52,7 @@ module.exports = [
         .isLength({
             min : 6,
             max : 12
-        }).withMessage("La contraseña debe tener entre 6 y 12 caracteres").bail(),
+        }).withMessage("Debe tener entre 6 y 12 caracteres").bail(),
 
     body("password2")
         .notEmpty().withMessage("La contraseña es obligatoria").bail()

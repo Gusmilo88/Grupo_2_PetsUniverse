@@ -9,29 +9,27 @@
 <%- include('./partials/header')%>
 
     <main class="productDetail" id="productDetail">
-        <section class="section0">
-            <article class="section0__article--rep" >
-                    <div class="estrellitas">
-                        <div class="estrellitas1"><small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></small></div>
-                    </div>  
-                    <div class="titulo">
-                        <h1 class="titulos1"><%= name %> </h1>
-                        <h1 class="titulos1"><%= weight %> 
-                            <% if (weight!==null) { %>
-                                  kg 
-                                  <%}else{%>  <% } %>
-                        </h1>
-                    </div> 
-                    <div class="titulo">
-                        <h1 class="titulos1">Categoria: <%= categories.name %> </h1>
-                        <h1 class="titulos1">Tipo: <%= productTypes.name %> </h1>     
-                    </div>                 
-            </article>
-        </section>
         <div class="productDetail__div"> 
             <div class="white">
                 <div class="left">
-                    <section class="section1">   
+                    <section class="section1">
+                        <div class="titulo">
+                            <article class="section0__article--rep" >
+                                <div class="estrellitas">
+                                    <div class="estrellitas1"><small><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></small></div>
+                                </div>             
+                        </article>
+                            <h1 class="titulos1"><%= name %> <%= weight %>
+                                <% if (weight!==null) { %>
+                                    kg 
+                                    <%}else{%>  <% } %>
+                            </h1>
+                            <!-- <h1 class="titulos1"><%= weight %> 
+                                <% if (weight!==null) { %>
+                                      kg 
+                                      <%}else{%>  <% } %>
+                            </h1> -->
+                        </div>     
                         <img class="imagen1" src="/images/products/<%= image ? image : "ufo.png" %> " alt="Foto de bolsón de alimento">
                         <article id="otro">
 
@@ -48,12 +46,6 @@
                             <div class="section2__article__div">
                                 <p class="section2__article__div__p"><%= description %> </p>
                             </div>
-                            <form class="form" action="/" method="post">
-                                <textarea class="form-textarea" name="consulta" id="consulta" min="10" max="150" value="consulta" > </textarea>
-                                <div class="form__box">
-                                    <button type="submit" >preguntar</button>
-                                </div>   
-                            </form>
                         </article>                    
                     </section>
                 </div>            
@@ -70,10 +62,6 @@
                                                   <%}else{%>  <% } %>
                                         </h2>     
                                     </div> 
-                                    <div class="titulo">
-                                        <h1 class="titulos2">Categoria: <%= categories.name  %></h1>
-                                        <h2 class="titulos2">Tipo: <%= productTypes.name %> </h2>     
-                                    </div> 
                                 </div>
                             </div>
 
@@ -85,29 +73,46 @@
                         </div>
                     </article>
                 </section>
-                <div class="carrusel1">
-                    <section class="carrusel__section">
-                        <div class="glider-contain">
-                            <div class="glider">
-                                <% products.forEach(({id,image,name}) => { %>
-                                    <a href="/products/productDetail/<%= id %>">
-                                        <div class="carroussel-food-item">
-                                            <img src="/images/products/<%= image %> " class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title" >Producto estelar:</h5><h5><%= name %>  </h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                <% }) %>
-                            </div>
-                            <button aria-label="Previous" class="glider-prev "> < </button>
-                            <button aria-label="Next" class="glider-next "> > </button>
-                        </div>
-                    </section>
-                </div> 
             </div>               
         </div>             
-        </div> 
+        </div>
+        <section class="home__main__section">
+            <div class="home__main__section__div">
+                <div class="home__main__section--h2">
+                    <h2>Productos estelares</h2>
+                </div>
+                <div class="home__main__section--stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+        <section class="home__main__section--carruselProductos">
+            <div class="glider-contain">
+                <div class="glider">
+
+                    
+                    <% products.forEach(({name,image,id, price}) => { %>
+                    
+                    <a href="/products/productDetail/<%= id %>">
+                        <div class="carousel-products-item">
+    
+        <img src="/images/products/<%= image %>" class="card-img-top" alt="...">
+        <div class="card-body">
+            <span class="price-home">$ <%= price %></span>
+            <h5 class="card-title"><%= name %></h5>
+        </div>
+    </div>
+</a>
+
+<% }) %>
+                </div>
+                
+                <button aria-label="Previous" class="glider-prev"><i class="fa-solid fa-arrow-left"></i></button>
+                <button aria-label="Next" class="glider-next"><i class="fa-solid fa-arrow-right"></i></button>
+                <!-- <div role="tablist" class="dots"></div> -->
+            </div>
+        </section> 
     </main>
  
     <%- include('./partials/footer')%>

@@ -12,15 +12,15 @@
             <div class="main__login__div--iniciarSesion">
                 <h2>Iniciar sesión</h2>
             </div>
-                <form action="" method="POST">
+                <form action="" method="POST" id="formRegister" >
                     <div class="register__main__div--info">
                         <div>
                             <label for="email" class="form-label"></label>
-                            <i class="fa-regular fa-envelope"></i><input type="email" class="register__main__div--info <%= (locals.errors && errors.email) && 'errorInput'%>" placeholder="<%= locals.errors && errors.email ? errors.email.msg : "Ingresá tu correo electrónico" %>" name="email" id="email">
+                            <i class="fa-regular fa-envelope"></i><input type="email" class="register__main__div--info <%= (locals.errors && errors.email) && 'errorInput'%>" placeholder="<%= locals.errors && errors.email ? errors.email.msg : "Ingresá tu correo electrónico" %>" name="email" id="emailLogin">
                         </div>
                         <div>
                             <label for="password" class="form-label"></label>
-                            <i class="fa-solid fa-lock"></i><input type="password" class="register__main__div--info <%= (locals.errors && errors.password) && 'errorInput'%>" placeholder="<%= locals.errors && errors.password ? errors.password.msg : "Ingresá contraseña" %>" name="password" id="password">
+                            <i class="fa-solid fa-lock"></i><input type="password" class="register__main__div--info <%= (locals.errors && errors.password) && 'errorInput'%>" placeholder="<%= locals.errors && errors.password ? errors.password.msg : "Ingresá contraseña" %>" name="password" id="passwordLogin">
                         </div>
                     </div>
                     <div class="register__main__div--button">
@@ -31,6 +31,8 @@
                 <input type="checkbox" name="recordarUsuario" id="recordarUsuario">
                 <label for="recordarUsuario">Recordar usuario</label>
             </div>
+
+           
             <div class="main__login--olvidarContraseña">
                 <small> ¿Olvidaste tu contraseña? <a href="/register"> Recuperá tu contraseña</a></small>
             </div>
@@ -43,6 +45,10 @@
 
     <%- include('./partials/footer')%>
     <%- include('./partials/scripts')%>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+<script src="/javascripts/formLogin.js"></script>
+     
 </body>
 </html>
 
