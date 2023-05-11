@@ -94,7 +94,7 @@ let error =false
 
 if(!await  verifyEmail( $('emailLogin').value.trim(),$('passwordLogin').value.trim()) ){
  
-   
+      
 
 
 
