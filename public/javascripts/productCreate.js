@@ -1,0 +1,1 @@
+console.log('productCreate.js success!!')
