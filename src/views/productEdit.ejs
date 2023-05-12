@@ -4,7 +4,7 @@
 <body class="edit__body">
     <%- include('./partials/header')%>
     <main class="edit__main">
-        <div class="edit__main__div">
+        <div class="header edit__main__div">
             <h3>Editar Producto: <%= name %></h3>
             <form action="/products/productEdit/<%= id %>?_method=PUT" method="POST">
                 <div class="edit__main__div--info">
@@ -78,5 +78,6 @@
     
 
     <%- include('./partials/scripts')%>
+    <script src="/javascripts/modoOscuro.js"></script>
 </body>
 </html>

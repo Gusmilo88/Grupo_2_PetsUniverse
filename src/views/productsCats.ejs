@@ -3,7 +3,7 @@
 
     <%- include('./partials/head')%>
 
-<body>
+<body class="boee">
     
     <%- include('./partials/header')%>
 
@@ -36,7 +36,7 @@
     <% products.forEach(({name,image,id, price}) => { %>
 
        
-    <div class="products_main_producto">
+    <div class="header products_main_producto">
         <a href="/products/productDetail/<%= id %>">  
       
         <div class="products_main_producto--img">
@@ -76,6 +76,6 @@
 <%- include('./partials/footer')%>
 
 <%- include('./partials/scripts')%>
-
+<script src="/javascripts/modoOscuro.js"></script>
 </body>
 </html>

@@ -12,7 +12,7 @@
         <div class="productDetail__div"> 
             <div class="white">
                 <div class="left">
-                    <section class="section1">
+                    <section class="header section1">
                         <div class="titulo">
                             <article class="section0__article--rep" >
                                 <div class="estrellitas">
@@ -41,17 +41,17 @@
                            
                         </article>
                     </section>
-                    <section class="section2">                                      
+                    <section class="header section2">                                      
                         <article class="section2__article">
-                            <div class="section2__article__div">
+                            <div class="header section2__article__div">
                                 <p class="section2__article__div__p"><%= description %> </p>
                             </div>
                         </article>                    
                     </section>
                 </div>            
-                <section class="section3">
-                    <article class="section3__article--original1">
-                        <div class="section3__article__div" >
+                <section class=" section3">
+                    <article class="header section3__article--original1">
+                        <div class=" section3__article__div" >
                             <div class="section3__article__div--original2">
                                 <div>  
                                     <div class="titulo">
@@ -77,7 +77,7 @@
         </div>             
         </div>
         <section class="home__main__section">
-            <div class="home__main__section__div">
+            <div class="header home__main__section__div">
                 <div class="home__main__section--h2">
                     <h2>Productos estelares</h2>
                 </div>
@@ -95,7 +95,7 @@
                     <% products.forEach(({name,image,id, price}) => { %>
                     
                     <a href="/products/productDetail/<%= id %>">
-                        <div class="carousel-products-item">
+                        <div class="header carousel-products-item">
     
         <img src="/images/products/<%= image %>" class="card-img-top" alt="...">
         <div class="card-body">
@@ -119,6 +119,7 @@
     <%- include('./partials/scripts')%>
     <!--bootstrap-->
     <%- include('./partials/scriptsDetail')%>
+    <script src="/javascripts/modoOscuro.js"></script>
 </body>
 
 </html>

@@ -3,7 +3,7 @@
 
 <%- include('./partials/head')%>
 
-<body class="home">
+<body class="boee" >
     <div class="loader">
         <div class="loading-animation">
             <img src="images/preload.png" alt="Cargando..." />
@@ -45,7 +45,7 @@
               </div>
         </section>
         <section class="home__main__section">
-            <div class="home__main__section__div">
+            <div class="header home__main__section__div">
                 <div class="home__main__section--h2">
                     <h2>Productos estelares</h2>
                 </div>
@@ -63,7 +63,7 @@
                         <% products.forEach(({name,image,id, price}) => { %>
                         
                         <a href="/products/productDetail/<%= id %>">
-                            <div class="carousel-products-item">
+                            <div class="header carousel-products-item " >
         
             <img src="images/products/<%= image %>" class="card-img-top" alt="...">
             <div class="card-body">
@@ -81,17 +81,17 @@
                     <!-- <div role="tablist" class="dots"></div> -->
                 </div>
             </section>
-                <div class="home__main__section__div--ufo">
+                <div class="header home__main__section__div--ufo">
                     <img src="images/ufo.png" alt="imagen ufo cat">
                     <h4>Envíos gratis para compras mayores a $5000</h4>
                 </div>
                 <div class="home__main__section__div--detalles">
-                    <div class="home__main__section__div--pagos">
+                    <div class="header home__main__section__div--pagos">
                         <i class="fa-brands fa-cc-visa"></i>
                         <h4>Aboná como quieras</h4>
                         <p>Aceptamos tarjeta de crédito y débito</p>
                     </div>
-                    <div class="home__main__section__div--seguridad">
+                    <div class="header home__main__section__div--seguridad">
                         <i class="fa-solid fa-lock"></i><h4>Comprá con seguridad</h4>
                         <p>Tus datos siempre protegidos</p>
                     </div>
@@ -99,7 +99,7 @@
         </section>
 
         <!-- Testimonios de clientes, con Bootstrap. -->
-        <section class="testimonials">
+        <section class="header testimonials">
             <div class="row d-flex justify-content-center">
               <div class="col-md-10 col-xl-8 text-center">
                 <h3 class="mb-4 text-white">Opiniones de clientes</h3>
@@ -202,6 +202,7 @@
 
     <%- include('./partials/scripts')%>
     <script src="/javascripts/preLoader.js"></script>
+    <script src="/javascripts/modoOscuro.js"></script>
 
 
     

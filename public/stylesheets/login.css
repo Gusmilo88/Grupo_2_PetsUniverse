@@ -1,7 +1,27 @@
-body{
-         background-image: url(/images/imagen-fondo.jpg);
-         background-size: cover;
-}
+.home {
+        background-image: url("../images/imagen-fondo.jpg");
+        background-position-x:center;
+        background-position-y:center;
+        background-size: cover;
+        background-attachment: fixed;
+        
+      }
+      
+      
+.body_oscuro{
+        background-image: url("../images/Materia-oscura.jpg");
+        background-position-x:center;
+        background-position-y:center;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+
+
+
+
+
+
+
 
 .main__login{
         display: flex;

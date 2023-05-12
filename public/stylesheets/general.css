@@ -1,4 +1,7 @@
 *{
+
+
+    
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -19,3 +22,30 @@ h1, h2, h3, h4, i, p{
 a{
     text-decoration: none;
 }
+
+.boee {
+  background-image: url("../images/imagen-fondo.jpg");
+  background-position-x:center;
+  background-position-y:center;
+  background-size: cover;
+  background-attachment: fixed;
+  
+}
+
+
+.body_oscuro{
+  background-image: url("../images/Materia-oscura.jpg");
+  background-position-x:center;
+  background-position-y:center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.body{padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;}
+
+
+    .negruuu{
+        background: #44444447;
+        transition:  2s;
+    }

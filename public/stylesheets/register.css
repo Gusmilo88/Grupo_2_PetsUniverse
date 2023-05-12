@@ -1,10 +1,4 @@
-.register__body{
-      background-image: url("/images/imagen-fondo.jpg");
-      background-position-x:center;
-      background-position-y:center;
-      background-size: cover;
-      background-attachment: fixed;
-}
+
 
 .register__main{
     text-align: center;

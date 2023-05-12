@@ -1,10 +1,10 @@
-body{
-    background-image: url("../images/imagen-fondo.jpg");
-    background-position-x:center;
-    background-position-y:center;
-    background-size: cover;
-    background-attachment: fixed;
+
+.negruuu{
+    background: #44444447;
+    transition:  2s;
 }
+
+
 
 .home__main__section__div{
     display: flex;
@@ -71,7 +71,7 @@ body{
     flex-wrap: nowrap;
     color: white;
     padding: 15px;
-    background: var(--gradientePrincipal);
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.07) 0%, rgba(2, 152, 227, 0.7) 33.33%, rgba(1, 58, 87, 0.7) 66.67%, rgba(0, 0, 0, 0.7) 100%);;
     border-radius: 20px;
     padding: 20px;
     margin: 15px;
@@ -97,6 +97,13 @@ body{
 
 .carousel-products-item{
     background: linear-gradient(270deg, rgba(255, 255, 255, 0.07) 0%, rgba(2, 152, 227, 0.7) 33.33%, rgba(1, 58, 87, 0.7) 66.67%, rgba(0, 0, 0, 0.7) 100%);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+
+.carousel-products-itemxd{
+    background: #ffffff26;
     border-radius: 20px;
     padding: 20px;
 }
@@ -128,7 +135,7 @@ body{
         display: flex;
         padding: 15px;
         justify-content: center;
-        background: var(--gradientePrincipal);
+        background: linear-gradient(270deg, rgba(255, 255, 255, 0.07) 0%, rgba(2, 152, 227, 0.7) 33.33%, rgba(1, 58, 87, 0.7) 66.67%, rgba(0, 0, 0, 0.7) 100%);;
         margin: 33px 0px 33px 0px;
     }
 
@@ -190,7 +197,7 @@ body{
     }
 
     .home__main__section__div--ufo{
-        background: var(--gradientePrincipal);
+        background: linear-gradient(270deg, rgba(255, 255, 255, 0.07) 0%, rgba(2, 152, 227, 0.7) 33.33%, rgba(1, 58, 87, 0.7) 66.67%, rgba(0, 0, 0, 0.7) 100%);;
         border-radius: 20px;
         padding: 20px;
         margin: 15px;
