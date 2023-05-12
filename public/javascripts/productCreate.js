@@ -1,5 +1,3 @@
-
-        
 /* capturar elementos del formulario */
 const $ = id => document.getElementById(id)
 const productCreate = $('form-product-create')
@@ -9,7 +7,6 @@ const selectCategory = $('category');
 const inputproductType = $('productType');
 const inputPrice = $('price');
 const inputDiscount = $('discount') ;
-const inputweight = $('weight') ;
 const inputStock = $('stock');
 const inputImages = $('images');
 
@@ -133,22 +130,22 @@ inputDiscount.addEventListener('blur', function(){
 })
 
 
-
-inputweight.addEventListener('blur', function(){
-    switch (true) {
-        case !this.value.trim():
-            $('weightError').innerHTML = "El peso del producto es obligatorio"
-            this.classList.add('wightError')
-            break;
+// El peso no es obligatorio
+// inputweight.addEventListener('blur', function(){
+//     switch (true) {
+//         case !this.value.trim():
+//             $('weightError').innerHTML = "El peso del producto es obligatorio"
+//             this.classList.add('wightError')
+//             break;
     
-        default:
-            break;
-    }
-})
-inputweight.addEventListener('focus', function(){
-    this.classList.remove('weightError')
-    $('weightError').innerHTML = null
-})
+//         default:
+//             break;
+//     }
+// })
+// inputweight.addEventListener('focus', function(){
+//     this.classList.remove('weightError')
+//     $('weightError').innerHTML = null
+// })
 
 
 inputStock.addEventListener('blur', function(){
