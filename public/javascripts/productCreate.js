@@ -9,7 +9,7 @@ const selectCategory = $('category');
 const inputproductType = $('productType');
 const inputPrice = $('price');
 const inputDiscount = $('discount') ;
-const inputweight = $('weight');
+const inputweight = $('weight') ;
 const inputStock = $('stock');
 const inputImages = $('images');
 
