@@ -5,7 +5,7 @@ let footer
  check.addEventListener('click',function (){
 
     if(this.checked){
-
+        localStorage.setItem('lpm',true)
         footer = document.querySelector('footer')
             const oscuro = document.querySelectorAll('.header')
             for (let i = 0; i < oscuro.length; i++) {
@@ -32,11 +32,11 @@ let footer
 
               
  
-localStorage.setItem('lpm',true)
+
   
    
 }else{
-   
+    localStorage.removeItem('lpm');
    /*  xdxd =  */
     header = document.querySelector('header')
     footer = document.querySelector('footer')
@@ -72,7 +72,7 @@ oscuro[i].style.background = ""
 
 
              
-localStorage.removeItem('lpm');
+
    
 }
 

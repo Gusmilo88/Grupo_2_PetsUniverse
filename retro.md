@@ -37,3 +37,11 @@
 3. **Continuar haciendo:** Las reuniones reiteradas que tenemos, el compañerismo.
 4. **Hacer menos:** Hablar menos de temas no relacionados a la cursada en las reuniones. 
 5. **Dejar de hacer:** ...
+
+### **Sprint 7:**
+
+1. **Comenzar a hacer:** Aprovechar más el tiempo en las reuniones.
+2. **Hacer más:** Reunirnos más seguido como antes.
+3. **Continuar haciendo:** El compañerismo.
+4. **Hacer menos:** Hablar menos de temas no relacionados a la cursada en las reuniones. 
+5. **Dejar de hacer:** Dejar algunas cosas para ultimo momento.

@@ -1,4 +1,4 @@
-const {getAllUsers, getUserById,verifyuser} = require("../../services/usersServices")
+const {getAllUsers, getUserById,verifyuser, verifyUserByEmail} = require("../../services/usersServices")
 const { compareSync} = require('bcryptjs');
 const db = require("../../database/models");
 module.exports = {
@@ -73,5 +73,30 @@ module.exports = {
         }
         
         
+            },
+
+
+            verifyEmail : async (req,res) => {
+                try {
+        
+                    let existUser = await verifyUserByEmail(req.body.email);
+        
+                    return res.status(200).json({
+                        ok : true,
+                        data : {
+                            existUser
+                        }
+                    })
+        
+                } catch (error) {
+                    console.log(error)
+                    return res.status(error.status || 500).json({
+                        ok : false,
+                        error : {
+                            status : error.status || 500,
+                            message : error.message || "Upss, hubo un error"
+                        }
+                    })
+                }
             }
 }
