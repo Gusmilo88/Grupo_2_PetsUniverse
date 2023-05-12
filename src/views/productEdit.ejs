@@ -11,12 +11,12 @@
                     <div class="edit__div__div--2">
                         <label for="name">Nombre del producto:</label>
                         <input type="text" id="name" name="name" value="<%= name %>" autofocus>
-                        <p class="text-danger small ms-2" id="nameError"></p>
+                        <p class="errorInput " id="nameError"></p>
                     </div>
                     <div class="edit__div__div--2">
                         <label for="description">Descripción:</label>
                         <textarea id="description" name="description" value="<%= description %>"  min="10" max="100"><%= description %></textarea>
-                        <p class="text-danger small ms-2" id="descriptionError"></p>
+                        <p class="errorInput " id="descriptionError"></p>
                     </div>
                     <div class="edit__div__div">
                         <div class="edit__div__div--2">
@@ -61,6 +61,7 @@
                        <div class="edit__div__div--2">
                             <label for="image">Imagen:</label>
                             <input type="file" class="form-image" id="image" name="image" value="<%= image %>">
+                            <p class="errorInput " id="imageError"></p>
                         </div>
                     </div>
                 <div class="edit__div__div--button">
@@ -84,8 +85,7 @@
 
     <%- include('./partials/scripts')%>
 
-    <script src="/javascripts/productEdit.js"></script>
-<!-- <script>
+<script>
         const $ = id => document.getElementById(id)
         const productEdit = $('form-product-edit')
         const inputName = $('name');
@@ -96,13 +96,14 @@
         const inputDiscount = $('discount');
         const inputweight = $('weight');
         const inputStock = $('stock');
-        const inputImages = $('images');
+        const inputImages = $('image');
 
 
         inputName.addEventListener('blur', function(){
             switch (true) {
                 case !this.value.trim():
                     $('nameError').innerHTML = "El nombre del producto es obligatorio"
+                    this.classList.add('nameError')
                     break;
                     case this.value.trim().length < 5:
                     $('nameError').innerHTML = "El nombre debe tener mínimo 5 carácteres"          
@@ -113,14 +114,18 @@
                     break;
             }
         })
-
+        inputName.addEventListener('focus', function(){
+            this.classList.remove('nameError')
+            $('nameError').innerHTML = null
+        })
         textAreaDescription.addEventListener('blur', function(){
             switch (true) {
                 case !this.value.trim():
-                    $('descriptionError').innerHTML = "El nombre del producto es obligatorio"
-                    break;
-                    case this.value.trim().length < 5:
-                    $('descriptionError').innerHTML = "El nombre debe tener mínimo 5 carácteres"          
+                    $('descriptionError').innerHTML = "La descripción del producto es obligatorio"  
+                    this.classList.add('descriptionError')
+                break;
+                    case this.value.trim().length < 20:
+                    $('descriptionError').innerHTML = "La descripción debe tener mínimo 20 carácteres"          
             break;
             
                 default:
@@ -128,9 +133,32 @@
                     break;
             }
         })
+        textAreaDescription.addEventListener('focus', function(){
+            this.classList.remove('descriptionError')
+            $('descriptionError').innerHTML = null
+        })
+        const regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
+        inputImages.addEventListener('blur', function(){
+            switch (true) {
+                case !this.value.trim():
+                    $('imageError').innerHTML = "La imagen del producto es obligatoria"
+                    this.classList.add('imageError')
+                    break;
+                    case !regExExt.exec(this.value):
+            $("imageError").innerHTML = "Solo se admiten imágenes jpg, jpeg, png, gif, webp"
+            break;
+            
+                default:
 
+                    break;
+            }
+        })
+        inputImages.addEventListener('focus', function(){
+            this.classList.remove('imageError')
+            $('imageError').innerHTML = null
+        })
         console.log(productEdit)
-</script> -->
+</script>
 
 
 </body>
