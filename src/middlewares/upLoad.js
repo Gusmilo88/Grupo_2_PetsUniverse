@@ -40,7 +40,7 @@ const configUploadCoursesImages = multer({
     },
     fileFilter: (req, file, cb) => {
         if (!file.originalname.match(/\.(jpg|jpeg|png|gif|webp|JPG)$/)) {
-            req.fileValidationError = "Solo se permite imágenes";
+            req.fileValidationError = "Solo se admiten imágenes jpg, jpeg, png, gif, webp";
             return cb(null, false, req.fileValidationError);
         }
 
@@ -73,7 +73,7 @@ const uploadUserImage = multer({
     
     fileFilter: (req, file, cb) => {
         if (!file.originalname.match(/\.(jpg|jpeg|png|gif|webp)$/)) {
-            req.fileValidationError = "Solo se permite imágenes";
+            req.fileValidationError = "Solo se permite imágenes ";
             return cb(null, false, req.fileValidationError);
         }
 
