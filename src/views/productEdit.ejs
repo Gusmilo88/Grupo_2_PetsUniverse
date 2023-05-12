@@ -11,12 +11,12 @@
                     <div class="edit__div__div--2">
                         <label for="name">Nombre del producto:</label>
                         <input type="text" id="name" name="name" value="<%= name %>" autofocus>
-                        <p class="errorInput" id="nameError"></p>
+                        <p class="errorInput" id="nameError"><%= locals.errors && errors.name ? errors.name.msg : null %></p>
                     </div>
                     <div class="edit__div__div--2">
                         <label for="description">Descripción:</label>
                         <textarea id="description" name="description" value="<%= description %>"  min="10" max="100"><%= description %></textarea>
-                        <p class="errorInput " id="descriptionError"></p>
+                        <p class="errorInput " id="descriptionError"><%= locals.errors && errors.description ? errors.description.msg : null %></p>
                     </div>
                     <div class="edit__div__div">
                         <div class="edit__div__div--2">
@@ -43,28 +43,29 @@
                        <div class="edit__div__div--2">
                             <label for="price">Precio:</label>
                             <input type="number" id="price" name="price" value="<%= price %>">
-                            <p class="errorInput" id="priceError"></p>
+                            <p class="errorInput" id="priceError"><%= locals.errors && errors.price ? errors.price.msg : null %></p>
                         </div>
                         <div class="edit__div__div--2">
                             <label for="weight">Descuento:</label>
                             <input type="number" id="discount" name="discount" value="<%= discount %>">
-                            <p class="errorInput" id="discountError"></p>
+                            <p class="errorInput" id="discountError"><%= locals.errors && errors.discount ? errors.discount.msg : null %></p>
                         </div> 
                         <div class="edit__div__div--2">
                             <label for="weight">Peso:</label>
                             <input type="number" id="weight" name="weight" value="<%= weight %>">
+                            <!-- El peso no lo hacemos obligatorio -->
                         </div> 
                         <div class="edit__div__div--2">
                             <label for="stock">Stock:</label>
                             <input type="number" id="stock" name="stock" value="<%= stock %>">
-                            <p class="errorInput" id="stockError"></p>
+                            <p class="errorInput" id="stockError"><%= locals.errors && errors.stock ? errors.stock.msg : null %></p>
                         </div> 
                     </div>
                     <div class="edit__div__div">
                        <div class="edit__div__div--2">
                             <label for="image">Imagen:</label>
                             <input type="file" class="form-image" id="image" name="image" value="<%= image %>">
-                            <p class="errorInput " id="imageError"></p>
+                            <p class="errorInput " id="imageError"><%= locals.errors && errors.images ? errors.images.msg : null %></p>
                         </div>
                     </div>
                 <div class="edit__div__div--button">

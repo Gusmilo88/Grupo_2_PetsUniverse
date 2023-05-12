@@ -1,15 +1,14 @@
-
-        const $ = id => document.getElementById(id)
-        const productEdit = $('form-product-edit')
-        const inputName = $('name');
-        const textAreaDescription = $('description');
-        const selectCategory = $('category');
-        const inputproductType = $('productType');
-        const inputPrice = $('price');
-        const inputDiscount = $('discount');
-        const inputweight = $('weight');
-        const inputStock = $('stock');
-        const inputImages = $('image');
+const $ = id => document.getElementById(id)
+const productEdit = $('form-product-edit')
+const inputName = $('name');
+const textAreaDescription = $('description');
+const selectCategory = $('category');
+const inputproductType = $('productType');
+const inputPrice = $('price');
+const inputDiscount = $('discount');
+const inputweight = $('weight');
+const inputStock = $('stock');
+const inputImages = $('image');
 
 
         inputName.addEventListener('blur', function(){
