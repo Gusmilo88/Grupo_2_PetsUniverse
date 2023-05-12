@@ -65,12 +65,12 @@
                        <div class="edit__div__div--2">
                             <label for="image">Imagen:</label>
                             <input type="file" class="form-image" id="image" name="image" value="<%= image %>">
-                            <p class="errorInput " id="imageError"><%= locals.errors && errors.images ? errors.images.msg : null %></p>
+                            <p class="errorInput " id="imageError"><%= locals.errors && errors.image ? errors.image.msg : null %></p>
                         </div>
                     </div>
                 <div class="edit__div__div--button">
                     <div class="edit__main__div--button">
-                        <button onclick="window.location.href='/'">Cancelar cambios</button>
+                        <button onclick="window.location.href='/productEdit'">Cancelar cambios</button>
                     </div>
                     <div class="edit__main__div--button">
                         <button type="submit">Guardar cambios</button>
@@ -89,7 +89,7 @@
 
     <%- include('./partials/scripts')%>
 
- <!--    <script src="/javascripts/productEdit.js"></script> -->
+    <script src="/javascripts/productEdit.js"></script>
 
 
 </body>
