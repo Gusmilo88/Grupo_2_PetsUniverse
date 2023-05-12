@@ -11,7 +11,7 @@
                     <div class="edit__div__div--2">
                         <label for="name">Nombre del producto:</label>
                         <input type="text" id="name" name="name" value="<%= name %>" autofocus>
-                        <p class="errorInput " id="nameError"></p>
+                        <p class="errorInput" id="nameError"></p>
                     </div>
                     <div class="edit__div__div--2">
                         <label for="description">Descripción:</label>
@@ -43,10 +43,12 @@
                        <div class="edit__div__div--2">
                             <label for="price">Precio:</label>
                             <input type="number" id="price" name="price" value="<%= price %>">
+                            <p class="errorInput" id="priceError"></p>
                         </div>
                         <div class="edit__div__div--2">
                             <label for="weight">Descuento:</label>
                             <input type="number" id="discount" name="discount" value="<%= discount %>">
+                            <p class="errorInput" id="discountError"></p>
                         </div> 
                         <div class="edit__div__div--2">
                             <label for="weight">Peso:</label>
@@ -55,6 +57,7 @@
                         <div class="edit__div__div--2">
                             <label for="stock">Stock:</label>
                             <input type="number" id="stock" name="stock" value="<%= stock %>">
+                            <p class="errorInput" id="stockError"></p>
                         </div> 
                     </div>
                     <div class="edit__div__div">
@@ -85,80 +88,7 @@
 
     <%- include('./partials/scripts')%>
 
-<script>
-        const $ = id => document.getElementById(id)
-        const productEdit = $('form-product-edit')
-        const inputName = $('name');
-        const textAreaDescription = $('description');
-        const selectCategory = $('category');
-        const inputproductType = $('productType');
-        const inputPrice = $('price');
-        const inputDiscount = $('discount');
-        const inputweight = $('weight');
-        const inputStock = $('stock');
-        const inputImages = $('image');
-
-
-        inputName.addEventListener('blur', function(){
-            switch (true) {
-                case !this.value.trim():
-                    $('nameError').innerHTML = "El nombre del producto es obligatorio"
-                    this.classList.add('nameError')
-                    break;
-                    case this.value.trim().length < 5:
-                    $('nameError').innerHTML = "El nombre debe tener mínimo 5 carácteres"          
-            break;
-            
-                default:
-
-                    break;
-            }
-        })
-        inputName.addEventListener('focus', function(){
-            this.classList.remove('nameError')
-            $('nameError').innerHTML = null
-        })
-        textAreaDescription.addEventListener('blur', function(){
-            switch (true) {
-                case !this.value.trim():
-                    $('descriptionError').innerHTML = "La descripción del producto es obligatorio"  
-                    this.classList.add('descriptionError')
-                break;
-                    case this.value.trim().length < 20:
-                    $('descriptionError').innerHTML = "La descripción debe tener mínimo 20 carácteres"          
-            break;
-            
-                default:
-
-                    break;
-            }
-        })
-        textAreaDescription.addEventListener('focus', function(){
-            this.classList.remove('descriptionError')
-            $('descriptionError').innerHTML = null
-        })
-        const regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
-        inputImages.addEventListener('blur', function(){
-            switch (true) {
-                case !this.value.trim():
-                    $('imageError').innerHTML = "La imagen del producto es obligatoria"
-                    this.classList.add('imageError')
-                    break;
-                    case !regExExt.exec(this.value):
-            $("imageError").innerHTML = "Solo se admiten imágenes jpg, jpeg, png, gif, webp"
-            break;
-            
-                default:
-
-                    break;
-            }
-        })
-        inputImages.addEventListener('focus', function(){
-            this.classList.remove('imageError')
-            $('imageError').innerHTML = null
-        })
-        console.log(productEdit)
-</script>
+ <!--    <script src="/javascripts/productEdit.js"></script> -->
 
 
 </body>
