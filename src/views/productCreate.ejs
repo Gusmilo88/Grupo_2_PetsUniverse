@@ -13,12 +13,12 @@
                     <div class="edit__div__div--2">
                         <label for="name">Nombre del producto:</label>
                         <input type="text" id="name" name="name" value="" autofocus>
-                        <p class="text-danger small ms-2" id="nameError"></p>
+                        <p class="errorInput" id="nameError"></p>
                     </div>
                     <div class="edit__div__div--2">
                         <label for="description">Descripción:</label>
                         <textarea id="description" name="description" value=""  min="10" max="100" required> </textarea>
-                        <p class="text-danger small ms-2" id="descriptionError"></p>
+                        <p class="errorInput" id="descriptionError"></p>
                     </div>
                     <div class="edit__div__div">
                         <div class="edit__div__div--2">
@@ -30,7 +30,7 @@
                                 <% }) %>
                                 
                             </select>
-                            <p class="text-danger small ms-2" id="categoryError"></p>
+                            <p class="errorInput" id="categoryError"></p>
                         </div>
                         <div class="edit__div__div--2">
                             <label for="productType">Tipo de producto:</label>
@@ -41,38 +41,38 @@
                                 <% }) %>
                                 
                             </select>
-                            <p class="text-danger small ms-2" id="productTypeError"></p>
+                            <p class="errorInput" id="productTypeError"></p>
                         </div> 
                     </div>
                     <div class="edit__div__div">
                        <div class="edit__div__div--2">
                             <label for="price">Precio:</label>
                             <input type="number" id="price" name="price" value="">
-                            <p class="text-danger small ms-12" id="priceError"></p>
-                            <p class="text-danger small ms-2" id="priceError"></p>
+                            <p class="errorInput" id="priceError"></p>
+                            
                         </div>
                         
                         <div class="edit__div__div--2">
                             <label for="weight">Descuento:</label>
                             <input type="number" id="discount" name="discount" value="">
-                            <p class="text-danger small ms-2" id="discountError"></p>
+                            <p class="errorInput" id="discountError"></p>
                         </div> 
                         <div class="edit__div__div--2">
                             <label for="weight">Peso:</label>
                             <input type="number" id="weight" name="weight" value="">
-                            <p class="text-danger small ms-2" id="weightError"></p>
+                            <p class="errorInput" id="weightError"></p>
                         </div> 
                         <div class="edit__div__div--2">
                             <label for="stock">Stock:</label>
                             <input type="number" id="stock" name="stock" value="">
-                            <p class="text-danger small ms-2" id="stockError"></p>
+                            <p class="errorInput" id="stockError"></p>
                         </div> 
                     </div>
                     <div class="edit__div__div">
                        <div class="edit__div__div--2">
                             <label for="images">Imagen:</label>
                             <input type="file" class="form-image" id="images" name="images" multiple value="">
-                            <p class="text-danger small ms-2" id="imagesError"></p>
+                            <p class="errorInput" id="imagesError"></p>
                         </div>
                     </div>
                 <div class="edit__div__div--button">
@@ -118,6 +118,7 @@
             switch (true) {
                 case !this.value.trim():
                     $('nameError').innerHTML = "El nombre del producto es obligatorio"
+                    this.classList.add('nameError')
                     break;
                     case this.value.trim().length < 5:
                     $('nameError').innerHTML = "El nombre debe tener mínimo 5 carácteres"          
@@ -129,21 +130,32 @@
             }
         })
 
+        inputName.addEventListener('focus', function(){
+            this.classList.remove('nameError')
+            $('nameError').innerHTML = null
+        })
+
         inputPrice.addEventListener('blur', function(){
             switch (true) {
                 case !this.value.trim():
                     $('priceError').innerHTML = "El precio del producto es obligatorio"
+                    this.classList.add('priceError')
                     break;
             
                 default:
                     break;
             }
         })
+        inputPrice.addEventListener('focus', function(){
+            this.classList.remove('priceError')
+            $('priceError').innerHTML = null
+        })
 
         textAreaDescription.addEventListener('blur', function(){
             switch (true) {
                 case !this.value.trim():
                     $('descriptionError').innerHTML = "La descripción del producto es obligatoria"
+                    this.classList.add('descriptionError')
                     break;
                     case this.value.trim().length < 20:
                     $('descriptionError').innerHTML = "El nombre debe tener mínimo 20 carácteres"
@@ -152,27 +164,41 @@
                     break;
             }
         })
+        textAreaDescription.addEventListener('focus', function(){
+            this.classList.remove('descriptionError')
+            $('descriptionError').innerHTML = null
+        })
 
         selectCategory.addEventListener('blur', function(){
             switch (true) {
                 case !this.value.trim():
                     $('categoryError').innerHTML = "La categoria del producto es obligatoria"
+                    this.classList.add('categoryError')
                     break;
             
                 default:
                     break;
             }
         })
+        selectCategory.addEventListener('focus', function(){
+            this.classList.remove('categoryError')
+            $('categoryError').innerHTML = null
+        })
 
         inputproductType.addEventListener('blur', function(){
             switch (true) {
                 case !this.value.trim():
                     $('productTypeError').innerHTML = "el tipo del producto es obligatoria"
+                    this.classList.add('productTypeError')
                     break;
             
                 default:
                     break;
             }
+        })
+        inputproductType.addEventListener('focus', function(){
+            this.classList.remove('productTypeError')
+            $('productTypeError').innerHTML = null
         })
 
         
@@ -180,11 +206,16 @@
             switch (true) {
                 case !this.value.trim():
                     $('discountError').innerHTML = "El descuento del producto es obligatorio"
+                    this.classList.add('discountError')
                     break;
             
                 default:
                     break;
             }
+        })
+        inputDiscount.addEventListener('focus', function(){
+            this.classList.remove('discountError')
+            $('discountError').innerHTML = null
         })
 
         
@@ -205,11 +236,16 @@
             switch (true) {
                 case !this.value.trim():
                     $('weightError').innerHTML = "El peso del producto es obligatorio"
+                    this.classList.add('wightError')
                     break;
             
                 default:
                     break;
             }
+        })
+        inputweight.addEventListener('focus', function(){
+            this.classList.remove('weightError')
+            $('weightError').innerHTML = null
         })
 
         
@@ -217,17 +253,24 @@
             switch (true) {
                 case !this.value.trim():
                     $('stockError').innerHTML = "El stock del producto es obligatorio"
+                    this.classList.add('stockError')
                     break;
             
                 default:
                     break;
             }
         })
+        inputStock.addEventListener('focus', function(){
+            this.classList.remove('stockError')
+            $('stockError').innerHTML = null
+        })
+
         const regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
         inputImages.addEventListener('blur', function(){
             switch (true) {
                 case !this.value.trim():
                     $('imagesError').innerHTML = "La imagen del producto es obligatoria"
+                    this.classList.add('imagesError')
                     break;
                     case !regExExt.exec(this.value):
             $("imagesError").innerHTML = "Solo se admiten imágenes jpg, jpeg, png, gif, webp"
@@ -237,6 +280,10 @@
                     break;
 
             }
+        })
+        inputImages.addEventListener('focus', function(){
+            this.classList.remove('imagesError')
+            $('imagesError').innerHTML = null
         })
 
         
