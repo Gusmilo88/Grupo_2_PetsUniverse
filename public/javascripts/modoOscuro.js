@@ -1,4 +1,3 @@
-   
 const check = document.getElementById('flexSwitchCheckDefault')
 
 let footer
@@ -13,7 +12,6 @@ let footer
             oscuro[i].style.background = "#ffffff26"
                 
                 }
-       
         document.getElementById('perros').src = '/images/perritoNegro.png',
         document.getElementById('gatos').src = '/images/gatitoNegro.png',
         document.getElementById('alienxd').src = '/images/marcianoNegro.png',
@@ -25,16 +23,6 @@ let footer
         const register = document.querySelector('.register__main__div--info')
         register.style.background = "#0000008f"
         
-
- 
- 
-          
-
-              
- 
-
-  
-   
 }else{
     localStorage.removeItem('lpm');
    /*  xdxd =  */
@@ -115,3 +103,21 @@ if (localxd) {
   // Código para restaurar el estado de la página según el valor de miEstadoDePagina
  
 
+// Código para la animación del botón:
+const switchElement = document.getElementById("flexSwitchCheckDefault");
+const iconElement = document.getElementById("icon");
+const labelElement = document.querySelector(".form-check-label");
+
+    switchElement.addEventListener("change", function() {
+        if (this.checked) {
+            // Cambia al ícono de la luna
+            iconElement.className = "fa-regular fa-moon";
+            iconElement.style.color = "#7300ff";
+            iconElement.textContent = "Dark mode";
+        } else {
+            // Cambia al sol
+            iconElement.className = "fa-regular fa-sun";
+            iconElement.style.color = "#ffe100";
+            iconElement.textContent = "Light mode";
+        }
+});

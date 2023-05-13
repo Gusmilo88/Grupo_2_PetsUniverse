@@ -12,6 +12,13 @@
             </button>
             </form>
             </div>
+            <div>
+                <i id="icon" class="fa-regular fa-sun" style="color: #ffe100;">Light mode</i>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+            </div>
             <% if (locals.userLogin && userLogin.role === 1) { %>
                 <div class="home__header__nav__div--admin">
                     <a href="/users/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
@@ -20,8 +27,7 @@
                     <a href="/admin"><i class="fa-solid fa-wand-magic-sparkles"></i></a>
                 </div>
 
-                
-             
+
             <% } %>
 
             <% if (locals.userLogin && userLogin.role === 2) { %>
@@ -38,8 +44,6 @@
                     <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
                 </div>
 
-                
-             
             <% } %>
             <% if (!locals.userLogin) { %>
                 <div class="home__header__nav__div--user">
@@ -51,12 +55,7 @@
                 </div>
 
             <% } %>
-            
-            
 
-
-
-            
             <div class="home__header__nav__div--burger">
                 <button>
                     <i class="fa-solid fa-bars"></i>
@@ -74,12 +73,6 @@
                 <a href="/nosotros"><img src="/images/et.png" alt="" id="alienxd"><p class="nosotros">Nosotros</p></a>
             </div>
         </div>
-
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-            <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
-          </div>
     </nav>
-
 
 </header>
