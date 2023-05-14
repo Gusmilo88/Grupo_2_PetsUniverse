@@ -22,12 +22,20 @@ let footer
         footer.classList.add('home__footer_black')
         const register = document.querySelector('.register__main__div--info')
         register.style.background = "#0000008f"
-        
+        const iconElement = document.getElementById("icon");
+        iconElement.className = "fa-regular fa-moon";
+        iconElement.style.color = "#7300ff";
+        iconElement.textContent = "Dark mode";
 }else{
     localStorage.removeItem('lpm');
    /*  xdxd =  */
     header = document.querySelector('header')
     footer = document.querySelector('footer')
+
+    const iconElement = document.getElementById("icon");
+                iconElement.className = "fa-regular fa-sun";
+                iconElement.style.color = "#ffe100";
+                iconElement.textContent = "Light mode";
     
     header.classList.add('home__header');
     header.classList.remove('negruuu')
@@ -57,8 +65,7 @@ oscuro[i].style.background = ""
             registerxd[i].style.background = ""
                 
                 } */
-
-
+                
              
 
    
@@ -83,6 +90,10 @@ if (localxd) {
             oscuro[i].style.background = "#ffffff26"
                 
                 }
+                const iconElement = document.getElementById("icon");
+        iconElement.className = "fa-regular fa-moon";
+        iconElement.style.color = "#7300ff";
+        iconElement.textContent = "Dark mode";
        
         document.getElementById('perros').src = '/images/perritoNegro.png',
         document.getElementById('gatos').src = '/images/gatitoNegro.png',
@@ -95,7 +106,7 @@ if (localxd) {
         const register = document.querySelector('.register__main__div--info')
         register.style.background = "#0000008f"
         
-
+        
        
    
 }
