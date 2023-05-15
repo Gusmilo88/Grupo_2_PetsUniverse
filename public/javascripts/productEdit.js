@@ -118,4 +118,32 @@ const inputImages = $('image');
             this.classList.remove('imageError')
             $('imageError').innerHTML = null
         })
-        console.log(productEdit)
+/*         console.log(productEdit) */
+
+productEdit.addEventListener("submit", function (event) {
+    event.preventDefault();
+    let error = false;
+    for (let i = 0; i < this.elements.length - 3; i++) {
+
+      if (!this.elements[i].value || this.elements[i].classList.contains("nameError", "priceError", "descriptionError","categoryError", "discountError", "stockError")) {
+        error = true
+      }
+
+    }
+
+    if (!error) {
+      this.submit()
+    } else {
+      for (let i = 0; i < this.elements.length - 3; i++) {
+
+        !this.elements[i].value && this.elements[i].classList.add("imageError")
+
+        if(this.elements[i].id === "image" && this.elements[i].files.length === 0 ){
+          
+          $("imageError").classList.add("imageError")
+        } 
+
+      }
+      $("error-form").innerHTML = "Los campos señalados son obligatorios."
+    }
+})

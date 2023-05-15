@@ -197,7 +197,7 @@ productCreate.addEventListener("submit", function (event) {
     let error = false;
     for (let i = 0; i < this.elements.length - 3; i++) {
 
-      if (!this.elements[i].value || this.elements[i].classList.contains("nameError", "priceError", "descriptionError","categoryError", "productTypeError", "discountError")) {
+      if (!this.elements[i].value || this.elements[i].classList.contains("nameError", "priceError", "descriptionError","categoryError", "productTypeError", "discountError", "stockError")) {
         error = true
       }
 
