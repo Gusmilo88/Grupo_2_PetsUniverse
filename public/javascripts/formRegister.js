@@ -1,6 +1,7 @@
 const $ = (id) => document.getElementById(id); //El signo de pesos "$" se usa como convención de nomenclatura para indicar que la variable almacena un objeto de tipo "Element" o "HTMLElement" 
 
-const inputAvatar = $("avatar"); 
+const inputAvatar = $("avatar");
+const formAddRegister = $("formRegister")
 
 
 const cleanError = (element, { target }) => {
@@ -219,5 +220,33 @@ inputAvatar.addEventListener("change", function(e){
             reader.readAsDataURL(file)
           }
             break;
+    }
+})
+
+formAddRegister.addEventListener("submit", function (event) {
+    event.preventDefault();
+    let error = false;
+    for (let i = 0; i < this.elements.length - 3; i++) {
+
+      if (!this.elements[i].value || this.elements[i].classList.contains("errorInput")) {
+        error = true
+      }
+
+    }
+
+    if (!error) {
+      this.submit()
+    } else {
+      for (let i = 0; i < this.elements.length - 3; i++) {
+
+        !this.elements[i].value && this.elements[i].classList.add("errorInput")
+
+        if(this.elements[i].id === "avatar" && this.elements[i].files.length === 0 ){
+          
+          $("avatarError").classList.add("avatarError")
+        } 
+
+      }
+      $("error-form").innerHTML = "Los campos señalados son obligatorios."
     }
 })
