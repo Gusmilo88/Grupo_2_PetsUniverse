@@ -1,7 +1,7 @@
 const $ = (id) => document.getElementById(id); //El signo de pesos "$" se usa como convención de nomenclatura para indicar que la variable almacena un objeto de tipo "Element" o "HTMLElement" 
 
 const inputAvatar = $("avatar");
-const formAddProduct = $("formRegister")
+const formAddRegister = $("formRegister")
 
 
 const cleanError = (element, { target }) => {
@@ -223,7 +223,7 @@ inputAvatar.addEventListener("change", function(e){
     }
 })
 
-formAddProduct.addEventListener("submit", function (event) {
+formAddRegister.addEventListener("submit", function (event) {
     event.preventDefault();
     let error = false;
     for (let i = 0; i < this.elements.length - 3; i++) {

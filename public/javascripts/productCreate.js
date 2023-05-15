@@ -189,6 +189,35 @@ inputImages.addEventListener('focus', function(){
 
 
 
-console.log(productCreate);
+//console.log(productCreate);//
+
+
+productCreate.addEventListener("submit", function (event) {
+    event.preventDefault();
+    let error = false;
+    for (let i = 0; i < this.elements.length - 3; i++) {
+
+      if (!this.elements[i].value || this.elements[i].classList.contains("nameError", "priceError", "descriptionError","categoryError", "productTypeError", "discountError")) {
+        error = true
+      }
+
+    }
+
+    if (!error) {
+      this.submit()
+    } else {
+      for (let i = 0; i < this.elements.length - 3; i++) {
+
+        !this.elements[i].value && this.elements[i].classList.add("imagesError")
+
+        if(this.elements[i].id === "images" && this.elements[i].files.length === 0 ){
+          
+          $("imagesError").classList.add("imagesError")
+        } 
+
+      }
+      $("error-form").innerHTML = "Los campos señalados son obligatorios."
+    }
+})
 
 
