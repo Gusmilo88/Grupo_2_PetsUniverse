@@ -44,8 +44,9 @@ let footer
     document.getElementById('alienxd').src = '/images/et.png'
     document.body.classList.add('boee')
     document.body.classList.remove('body_oscuro')
-
-   
+    
+    footer.classList.remove('home__footer_black'),
+    footer.classList.add('home__footer')
 
 
 const oscuro = document.querySelectorAll('.header')
