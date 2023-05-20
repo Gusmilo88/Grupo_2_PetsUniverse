@@ -1,29 +1,110 @@
 const { name } = require('ejs')
 const db = require('../database/models')
 const {literalQueryUrl,literalQueryUrlImage} = require('../helpers')
-
+/* const fs = require('fs');
+const path = require('path'); */
 module.exports = {
 
 
-    productsAll: async(req)=>{
-
-try {
-
-    const {count,rows:products} =await db.Product.findAndCountAll({
-
+    productsAll: async(req,{page=1,limit=6,productType=0,price="false"}={})=>{
         
+try {
+  
+   
+        if (productType === "0" && price === "false") {
+
+            const {docs,pages,total} =  await db.Product.paginate({
+                where:{
+                    categoryId:1,
+                      
+                      
+                      
+                  },
+
+       
+
+              
+                attributes:{include:[
+                    literalQueryUrl(req,'products','Product.id'),
+                    literalQueryUrlImage(req,'products','image','image')
+                ]}
+                ,
+                page,
+                paginate:limit
+                      
+                
+                
+                        
+                        
+                    })
+                    return {products:docs,pages,count:total}
+        }else{
+
+            let precio
+            let productsxd
+
+            if(price !== "false"){
+         precio = [['price',price ]]
+
+    }else{
+         precio = null
+    } 
+
+    if(productType !== "0"){
+        productsxd= {
+            categoryId:1,
+            productTypeId:productType
+              
+              
+          }
+
+   }else{
+        productsxd = null
+   } 
+
+
+                     const {docs,pages,total} =  await db.Product.paginate({
+
+        where:productsxd,
+          order:precio,
+
+              
 attributes:{include:[
     literalQueryUrl(req,'products','Product.id'),
     literalQueryUrlImage(req,'products','image','image')
 ]}
 ,
+page,
+paginate:limit
       
 
 
         
         
     })
-return {count,products}
+
+    return {products:docs,pages,count:total}
+        }
+
+
+
+           
+
+    
+            
+
+
+
+
+
+   
+
+
+
+
+
+
+
 
 } catch (error) {
        console.log(error)

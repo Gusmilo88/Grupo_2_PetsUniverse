@@ -6,13 +6,37 @@ module.exports = {
 index:async(req,res)=>{
 
 try {
+const{page=1,limit=6,productType=0,price="false"}=req.query
+    const{products,count,pages}= await productsAll(req,{page,limit,productType,price});
 
-    const{products,count}= await productsAll(req);
+let data 
+
+
+ if(productType === "0"  && price === "false"  ){
+        
+        data ={
+            count,
+            products,
+            pages,
+            currentPage: +page,
+            numero:+productType,
+            precios:price
+        }
+    }else{
+        data ={
+            count,
+            products,
+            pages,
+            currentPage: +page,
+            numero:+productType,
+            precios:price
+        }
+
+    }
 
     return res.status(200).json({
         ok:true,
-        count,
-       products
+        data
     })
     
 } catch (error) {
