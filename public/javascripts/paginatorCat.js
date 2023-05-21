@@ -112,8 +112,8 @@ const paintItemsfilter =({filtro,precio,numberPages,itemActive} )=>{
     productosTipo.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(3,'${precio}',1)">Salud</a></li>`
      todoProducto.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(0,'${precio}',1)">Todos los productos</a></li>`
     productosOrden.innerHTML = ''
-    productosOrden.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(${filtro},'asc',1)">asc</a></li>`
-    productosOrden.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(${filtro},'desc',1)">desc</a></li>`
+    productosOrden.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(${filtro},'asc',1)">Menor Precio</a></li>`
+    productosOrden.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(${filtro},'desc',1)">Mayor Precio</a></li>`
     
 }
 
