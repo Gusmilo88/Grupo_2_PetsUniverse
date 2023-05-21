@@ -59,7 +59,12 @@ try {
           }
 
    }else{
-        productsxd = null
+        productsxd = {
+            categoryId:1,
+         
+              
+              
+          }
    } 
 
 
