@@ -8,8 +8,9 @@ const containerItemsPage = $('#container-items-page')
 const containerCard = $('#container-products-card')
 const productosTipo =$("#productos_tipo")
 const productosOrden =$("#producto_orden")
+const todoProducto = $("#todo-producto")
 
-const apiGetProducts = 'http://localhost:3000/api/products'
+const apiGetProducts = 'http://localhost:3000/api/products/perros'
 const getCourses = ({page=1,productType=0,price="false"}={})=>{
     return fetch(`${apiGetProducts}?page=${page}&productType=${productType}&price=${price}`).then(res => res.json())
 }
@@ -104,12 +105,12 @@ const paintItemsfilter =({filtro,precio,numberPages,itemActive} )=>{
         containerItemsPage.innerHTML += `<li class="page-item ${itemActive === i && 'active'}"><a class="page-link" href="#" onclick="getFilter(${filtro},'${precio}',${i})">${i}</a></li>`
     }
     productosTipo.innerHTML = ''
-   
+    todoProducto.innerHTML = ''
     
     productosTipo.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(1,'${precio}',1)">Alimento</a></li>`
     productosTipo.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(2,'${precio}',1)">juguetes</a></li>`
     productosTipo.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(3,'${precio}',1)">Salud</a></li>`
-    /* filtroChef.innerHTML += `<a class="page-link" href="#" onclick="getFilter(0,'${precio}',1)">todos los productos</a>` */
+     todoProducto.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(0,'${precio}',1)">Todos los productos</a></li>`
     productosOrden.innerHTML = ''
     productosOrden.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(${filtro},'asc',1)">asc</a></li>`
     productosOrden.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(${filtro},'desc',1)">desc</a></li>`
