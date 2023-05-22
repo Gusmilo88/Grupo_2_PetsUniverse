@@ -33,11 +33,13 @@
                         <i class="fa-solid fa-lock"></i><input type="password" class="register__main__div--info <%= (locals.errors && errors.password2) && 'errorInput'%>" placeholder="<%= locals.errors && errors.password2 ? errors.password2.msg : "Confirmar contraseña" %>" name="password2" id="password2">
                     </div>
                     <div>
-                        <span>Avatar</span>
+                        <span>Avatar:</span>
                         <input type="file" class="fancy-file" name="avatar" id="avatar">
                         <p class="text-danger small ms-2" id="avatarError"></p>
                         <label for="avatar" id="avatarPreview">
-                            <span class="fancy-file__fancy-file-name">Ningún archivo seleccionado</span>
+                            <span class="fancy-file__fancy-file-name">
+                                <span id="file-name">Ningún archivo seleccionado</span>
+                            </span>
                             <span class="fancy-file__fancy-file-button">Buscar archivo</span>
                         </label>
                         
@@ -68,5 +70,6 @@
 
     <script src="/javascripts/formRegister.js"></script>
     <script src="/javascripts/modoOscuro.js"></script>
+    <script src="/javascripts/fancy-file.js"></script>
 </body>
 </html>

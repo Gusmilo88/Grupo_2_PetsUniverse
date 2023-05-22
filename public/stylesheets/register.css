@@ -94,20 +94,26 @@
 }
 
 .fancy-file__fancy-file-name{
-      background: #eee;
-      border: 1px solid #CACACA
+      background: linear-gradient(90deg, rgba(47, 7, 67, 0.6) 0%, rgba(98, 2, 248, 0.6) 50%, rgba(0, 161, 255, 0.6) 100%);
+      border-radius: 7px;
 }
 
-
+.fancy-file__fancy-file-name span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 15px;
+}
 
 .fancy-file__fancy-file-button{
-      background: linear-gradient(90deg, rgba(47, 7, 67, 0.6) 0%, rgba(98, 2, 248, 0.6) 50%, rgba(0, 161, 255, 0.6) 100%);
+      background: url("../images/folder.png") 4px center/25px no-repeat;
       border-radius: 7px;
       margin: 10px;
       box-shadow: 0px 7.27273px 2.90909px rgba(0, 0, 0, 0.4);
       border: none;
-      padding: 5px;
+      padding-left: 33px;
       color: white;
+      cursor: pointer;
 }
 
 @-webkit-keyframes shake-bottom {
@@ -186,7 +192,8 @@
       }
 }
 
-@media (min-width:769px) {
+/* Comento esto sino la carpetita del input file no se ve bien en modo desktop */
+/* @media (min-width:769px) {
       .register__main__div--info input {
             width: 70%;
       }
@@ -198,5 +205,5 @@
       .register__main{
             margin: 20px;
       }
-}
+} */
 
