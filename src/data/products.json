@@ -1,7 +1,7 @@
 [
    {
       "id": 1,
-      "name": "Alimento Hop",
+      "name": "Alimento Hop!",
       "description": "Perro adulto mediano y grande, Sabor mix: Pulpa de remolacha, Extracto de yucca, Vitamina E, Cloruro de sodio, Sulfato de hierro, Carbonato de calcio, DL-metionina, Nicotinamida, Pantotenato de calcio, Vitamina B1, Vitamina B2, Vitamina K3, Biotina, Vitamina A, Vitamina D3, Ácido fólico, Vitamina B12, Vitamina B6, Iodato de calcio, Selenito de sodio",
       "price": 5190,
       "discount": 12,
@@ -13,7 +13,7 @@
    },
    {
       "id": 2,
-      "name": "Alimento Pacha",
+      "name": "Alimento Pachá",
       "description": "Perros adultos, coktail de sabores: Maiz, harina de carne y huesos bovina, arroz, germen de maiz, afechillo de trigo, expeller de soja, sal, hidrolizado de visceras frescas(pollo y cerdo), aceite de pollo. Colorantes: chocolate, amarillo - anaranjado. Antioxidantes: BHT, BHA, extracto de Romero. Núcleo Vitamínico - Mineral: vitamina A, vitamina D3, vitamina E, vitamina K, pantotenato de calcio, ácido fólico, niacina, vitamina B1, vitamina B2, vitamina B6, vitamina B12, biotina, óxido de manganeso, óxido de zinc, iodato de calcio, sulfato ferroso, sulfato de cobre, cloruro de colina, sorbato de potasio, selenito de sodio.",
       "price": 4661,
       "discount": 5,
@@ -133,7 +133,7 @@
    },
    {
       "id": 12,
-      "name": "Alimento Hop",
+      "name": "Alimento Hop!",
       "description": "Gatos adultos, sabor: Mix, ingrediente pollo, con proteina bruta 29%",
       "price": 8000,
       "discount": 12,
@@ -709,7 +709,7 @@
    },
    {
       "id": 60,
-      "name": "Fawna Gato Adulto Esterilizado X 7,5+1 Kg",
+      "name": "Fawna Gato Adulto Esterilizado",
       "description": "Fawna Patagonic Taste gato adulto esterilizado por 7,5+1 kg es un alimento balanceado seco y completo para gatos adultos a partir de los 12 meses. Posee un 38% de proteínas provenientes del pollo con prebióticos y probióticos naturales los cuales fomentan una alimentación diaria más saludable para tu mascota. El nivel y la calidad del origen de los ingredientes y aminoácidos esenciales contribuyen al máximo desarrollo de su estructura corporal. ",
       "price": 13800,
       "discount": 0,
