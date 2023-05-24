@@ -9,6 +9,14 @@ const inputPrice = $('price');
 const inputDiscount = $('discount') ;
 const inputStock = $('stock');
 const inputImages = $('images');
+$('priceError').hidden = true
+$('nameError').hidden = true
+$('descriptionError').hidden = true
+$('categoryError').hidden = true
+$('productTypeError').hidden = true
+$('discountError').hidden = true
+$('stockError').hidden = true
+$('imagesError').hidden = true
 
 
 
@@ -18,6 +26,7 @@ inputName.addEventListener('blur', function(){
         case !this.value.trim():
             $('nameError').innerHTML = "El nombre del producto es obligatorio"
             this.classList.add('nameError')
+            $('nameError').hidden = false
             break;
             case this.value.trim().length < 5:
             $('nameError').innerHTML = "El nombre debe tener mínimo 5 carácteres"          
@@ -32,22 +41,26 @@ inputName.addEventListener('blur', function(){
 inputName.addEventListener('focus', function(){
     this.classList.remove('nameError')
     $('nameError').innerHTML = null
+    $('nameError').hidden = true
 })
 
 inputPrice.addEventListener('blur', function(){
     switch (true) {
         case !this.value.trim():
+            $('priceError').hidden = false
             $('priceError').innerHTML = "El precio del producto es obligatorio"
             this.classList.add('priceError')
             break;
     
         default:
+            $('priceError').hidden = true
             break;
     }
 })
 inputPrice.addEventListener('focus', function(){
     this.classList.remove('priceError')
     $('priceError').innerHTML = null
+    $('priceError').hidden = true
 })
 
 textAreaDescription.addEventListener('blur', function(){
@@ -55,6 +68,7 @@ textAreaDescription.addEventListener('blur', function(){
         case !this.value.trim():
             $('descriptionError').innerHTML = "La descripción del producto es obligatoria"
             this.classList.add('descriptionError')
+            $('descriptionError').hidden = false
             break;
             case this.value.trim().length < 20:
             $('descriptionError').innerHTML = "El nombre debe tener mínimo 20 carácteres"
@@ -66,13 +80,16 @@ textAreaDescription.addEventListener('blur', function(){
 textAreaDescription.addEventListener('focus', function(){
     this.classList.remove('descriptionError')
     $('descriptionError').innerHTML = null
+    $('descriptionError').hidden = true
 })
 
 selectCategory.addEventListener('blur', function(){
     switch (true) {
         case !this.value.trim():
+            
             $('categoryError').innerHTML = "La categoria del producto es obligatoria"
             this.classList.add('categoryError')
+            $('categoryError').hidden = false
             break;
     
         default:
@@ -82,6 +99,7 @@ selectCategory.addEventListener('blur', function(){
 selectCategory.addEventListener('focus', function(){
     this.classList.remove('categoryError')
     $('categoryError').innerHTML = null
+    $('categoryError').hidden = true
 })
 
 inputproductType.addEventListener('blur', function(){
@@ -89,6 +107,7 @@ inputproductType.addEventListener('blur', function(){
         case !this.value.trim():
             $('productTypeError').innerHTML = "el tipo del producto es obligatoria"
             this.classList.add('productTypeError')
+            $('productTypeError').hidden = false
             break;
     
         default:
@@ -98,6 +117,7 @@ inputproductType.addEventListener('blur', function(){
 inputproductType.addEventListener('focus', function(){
     this.classList.remove('productTypeError')
     $('productTypeError').innerHTML = null
+    $('productTypeError').hidden = true
 })
 
 
@@ -106,6 +126,7 @@ inputDiscount.addEventListener('blur', function(){
         case !this.value.trim():
             $('discountError').innerHTML = "El descuento del producto es obligatorio"
             this.classList.add('discountError')
+            $('discountError').hidden = false
             break;
     
         default:
@@ -115,6 +136,7 @@ inputDiscount.addEventListener('blur', function(){
 inputDiscount.addEventListener('focus', function(){
     this.classList.remove('discountError')
     $('discountError').innerHTML = null
+    $('discountError').hidden = true
 })
 
 
@@ -153,6 +175,7 @@ inputStock.addEventListener('blur', function(){
         case !this.value.trim():
             $('stockError').innerHTML = "El stock del producto es obligatorio"
             this.classList.add('stockError')
+            $('stockError').hidden = false
             break;
     
         default:
@@ -162,6 +185,7 @@ inputStock.addEventListener('blur', function(){
 inputStock.addEventListener('focus', function(){
     this.classList.remove('stockError')
     $('stockError').innerHTML = null
+    $('stockError').hidden = true
 })
 
 const regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
@@ -170,6 +194,7 @@ inputImages.addEventListener('blur', function(){
         case !this.value.trim():
             $('imagesError').innerHTML = "La imagen del producto es obligatoria"
             this.classList.add('imagesError')
+            $('imagesError').hidden = false
             break;
             case !regExExt.exec(this.value):
     $("imagesError").innerHTML = "Solo se admiten imágenes jpg, jpeg, png, gif, webp"
@@ -183,6 +208,7 @@ inputImages.addEventListener('blur', function(){
 inputImages.addEventListener('focus', function(){
     this.classList.remove('imagesError')
     $('imagesError').innerHTML = null
+    $('imagesError').hidden = true
 })
 
 

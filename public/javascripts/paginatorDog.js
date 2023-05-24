@@ -45,10 +45,10 @@ window.addEventListener('load',async()=>{
 const paintCourses = (products)=>{
     containerCard.innerHTML = ''
     products.forEach(({name,image,id,price}) => {
-    
-       console.log(image)
+      
+        console.log(window.localStorage.getItem('lpm')) 
         const template = `
-        <div class="header products_main_producto">
+        <div class="header products_main_producto" style="background:${window.localStorage.getItem('lpm') === "true" ? '#ffffff26':'linear-gradient(270deg, rgba(255, 255, 255, 0.07) 0%, rgba(2, 152, 227, 0.7) 33.33%, rgba(1, 58, 87, 0.7) 66.67%, rgba(0, 0, 0, 0.7) 100%);'}">
         <a href="/products/productDetail/${id}">  
       
         <div class="products_main_producto--img">
@@ -87,7 +87,7 @@ const paintCourses = (products)=>{
     containerItemsPage.innerHTML = ''
     for (let i = 1; i <= numberPages; i++) {
     
-        containerItemsPage.innerHTML += `<li class="page-item ${itemActive === i && 'active'}"><a class="page-link" href="#" onclick="getPage(${i})">${i}</a></li>`
+        containerItemsPage.innerHTML += `<li class="page-item ${itemActive === i && 'active'}"><a class="page-link" href="#" onclick="getPage(${i})" >${i}</a></li>`
     }
 } 
 
@@ -102,18 +102,21 @@ const paintItemsfilter =({filtro,precio,numberPages,itemActive} )=>{
     containerItemsPage.innerHTML = ''
     for (let i = 1; i <= numberPages; i++) {
     
-        containerItemsPage.innerHTML += `<li class="page-item ${itemActive === i && 'active'}"><a class="page-link" href="#" onclick="getFilter(${filtro},'${precio}',${i})">${i}</a></li>`
+        containerItemsPage.innerHTML += `<li class="page-item  ${itemActive === i && 'active'}"><a class="page-link" href="#" onclick="getFilter(${filtro},'${precio}',${i})" style="color:white;background: ${itemActive === i ? 'black' :'linear-gradient(90deg, rgba(47, 7, 67, 0.6) 0%, rgba(98, 2, 248, 0.6) 50%, rgba(0, 161, 255, 0.6) 100%)'}"      >${i}</a></li>`
+     
+
+      
     }
     productosTipo.innerHTML = ''
     todoProducto.innerHTML = ''
     
-    productosTipo.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(1,'${precio}',1)">Alimento</a></li>`
-    productosTipo.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(2,'${precio}',1)">juguetes</a></li>`
-    productosTipo.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(3,'${precio}',1)">Salud</a></li>`
+    productosTipo.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(1,'${precio}',1)" style="background:${filtro === 1 ? '#000000b5': ""}">Alimento</a></li>`
+    productosTipo.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(2,'${precio}',1)" style="background:${filtro === 2 ? '#000000b5': ""}">juguetes</a></li>`
+    productosTipo.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(3,'${precio}',1)" style="background:${filtro === 3 ? '#000000b5': ""}">Salud</a></li>`
      todoProducto.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(0,'${precio}',1)">Todos los productos</a></li>`
     productosOrden.innerHTML = ''
-    productosOrden.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(${filtro},'asc',1)">Menor Precio</a></li>`
-    productosOrden.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(${filtro},'desc',1)">Mayor Precio</a></li>`
+    productosOrden.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(${filtro},'asc',1)" style="background:${precio === 'asc' ? '#000000b5': ""}">Menor Precio</a></li>`
+    productosOrden.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(${filtro},'desc',1)" style="background:${precio === 'desc' ? '#000000b5': ""}">Mayor Precio</a></li>`
     
 }
 
