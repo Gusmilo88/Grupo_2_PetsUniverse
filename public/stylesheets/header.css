@@ -3,8 +3,7 @@
     /* display: flex; */
     padding: 18px;
     transition:  2s;
-    margin-bottom: 150px; 
-   
+    margin: 0px 0px 0px;
 }
 
 .negruuu{
@@ -131,24 +130,18 @@ h1 {
     margin-left: -190px;
     padding-top: 20px;
     padding-left: 190px;
-    width: 380px;
-    height: 250px; 
-
-  
+    /* width: 380px;
+    height: 250px; */
+    height: 20px;
+    width: 10px;
     box-sizing: border-box;
     font-size: 20px;
     text-align: left;
 }
 
-
-
-
-
-
-
-
-
-
+.menu svg {
+    display: none;
+}
 
 .menu-item, .menu-open-button {
     background: linear-gradient(90deg, rgba(47, 7, 67, 1) 0%, rgba(98, 2, 248, 1) 50%, rgba(0, 161, 255, 1) 100%);
