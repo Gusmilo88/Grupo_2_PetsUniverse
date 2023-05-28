@@ -10,7 +10,7 @@ const inputDiscount = $('discount') ;
 const inputStock = $('stock');
 const inputImages = $('images');
 $('priceError').hidden = true
-$('nameError').hidden = true
+$("nameError").hidden = true
 $('descriptionError').hidden = true
 $('categoryError').hidden = true
 $('productTypeError').hidden = true
@@ -24,12 +24,14 @@ $('imagesError').hidden = true
 inputName.addEventListener('blur', function(){
     switch (true) {
         case !this.value.trim():
-            $('nameError').innerHTML = "El nombre del producto es obligatorio"
+            $("nameError").innerHTML = "El nombre del producto es obligatorio"
             this.classList.add('nameError')
             $('nameError').hidden = false
             break;
             case this.value.trim().length < 5:
-            $('nameError').innerHTML = "El nombre debe tener mínimo 5 carácteres"          
+            $("nameError").innerHTML = "El nombre debe tener mínimo 5 carácteres"  
+            this.classList.add('nameError')  
+            $('nameError').hidden = false      
     break;
     
         default:
@@ -72,7 +74,7 @@ textAreaDescription.addEventListener('blur', function(){
             break;
             case this.value.trim().length < 20:
             $('descriptionError').innerHTML = "El nombre debe tener mínimo 20 carácteres"
-    
+            $('descriptionError').hidden = false
         default:
             break;
     }
