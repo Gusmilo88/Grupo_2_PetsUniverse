@@ -73,6 +73,16 @@
     color: white;
 }
 
+
+    .register__main__div--button img {
+      display: block;
+      width: 80px; /* Ajusta el tamaño de la imagen según tus necesidades */
+      height: 45px;
+      margin-right: 10px; /* Espacio entre la imagen y el texto del botón */
+      float: left;
+    }
+
+
 .register__main__div--button button:hover{
     -webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
     animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;

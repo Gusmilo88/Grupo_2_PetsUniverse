@@ -22,10 +22,15 @@
                             <label for="password" class="form-label"></label>
                             <i class="fa-solid fa-lock"></i><input type="password" class="register__main__div--info <%= (locals.errors && errors.password) && 'errorInput'%>" placeholder="<%= locals.errors && errors.password ? errors.password.msg : "Ingresá contraseña" %>" name="password" id="passwordLogin">
                         </div>
+                        <div class="register__main__div--button">
+                            <button type="submit">Ingresá</button>
+                            <button type="submit">
+                                <a href="/auth/login/google" >Registro con </a>
+                                <img src="/images/124235-la_bsqueda_de_google-logotipo_de_google-3840x2160.jpg">
+                            </button>
+                        </div>
                     </div>
-                    <div class="register__main__div--button">
-                        <button type="submit">Ingresá</button>
-                    </div>
+
 
             <div>
                 <input type="checkbox" name="recordarUsuario" id="recordarUsuario">

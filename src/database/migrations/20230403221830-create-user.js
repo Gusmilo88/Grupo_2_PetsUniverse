@@ -24,6 +24,12 @@ module.exports = {
       avatar: {
         type: Sequelize.STRING
       },
+      socialId:{
+        type: Sequelize.STRING
+      },
+      socialProvider:{
+        type: Sequelize.STRING
+      },
       roleId: {
         type: Sequelize.INTEGER,
         allowNull: false,
