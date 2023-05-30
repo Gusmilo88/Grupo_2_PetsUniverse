@@ -1,29 +1,115 @@
 const { name } = require('ejs')
 const db = require('../database/models')
 const {literalQueryUrl,literalQueryUrlImage} = require('../helpers')
-
+/* const fs = require('fs');
+const path = require('path'); */
 module.exports = {
 
 
-    productsAll: async(req)=>{
-
-try {
-
-    const {count,rows:products} =await db.Product.findAndCountAll({
-
+    productsAllDogs: async(req,{page=1,limit=6,productType=0,price="false"}={})=>{
         
+try {
+  
+   
+        if (productType === "0" && price === "false") {
+
+            const {docs,pages,total} =  await db.Product.paginate({
+                where:{
+                    categoryId:1,
+                      
+                      
+                      
+                  },
+
+       
+
+              
+                attributes:{include:[
+                    literalQueryUrl(req,'products','Product.id'),
+                    literalQueryUrlImage(req,'products','image','image')
+                ]}
+                ,
+                page,
+                paginate:limit
+                      
+                
+                
+                        
+                        
+                    })
+                    return {products:docs,pages,count:total}
+        }else{
+
+            let precio
+            let productsxd
+
+            if(price !== "false"){
+         precio = [['price',price ]]
+
+    }else{
+         precio = null
+    } 
+
+    if(productType !== "0"){
+        productsxd= {
+            categoryId:1,
+            productTypeId:productType
+              
+              
+          }
+
+   }else{
+        productsxd = {
+            categoryId:1,
+         
+              
+              
+          }
+   } 
+
+
+                     const {docs,pages,total} =  await db.Product.paginate({
+
+        where:productsxd,
+          order:precio,
+
+              
 attributes:{include:[
     literalQueryUrl(req,'products','Product.id'),
     literalQueryUrlImage(req,'products','image','image')
 ]}
 ,
+page,
+paginate:limit
       
 
 
         
         
     })
-return {count,products}
+
+    return {products:docs,pages,count:total}
+        }
+
+
+
+           
+
+    
+            
+
+
+
+
+
+   
+
+
+
+
+
+
+
 
 } catch (error) {
        console.log(error)
@@ -40,6 +126,132 @@ message: error.message
 
 
     },
+
+    productsAllCats: async(req,{page=1,limit=6,productType=0,price="false"}={})=>{
+        
+        try {
+          
+           
+                if (productType === "0" && price === "false") {
+        
+                    const {docs,pages,total} =  await db.Product.paginate({
+                        where:{
+                            categoryId:2,
+                              
+                              
+                              
+                          },
+        
+               
+        
+                      
+                        attributes:{include:[
+                            literalQueryUrl(req,'products','Product.id'),
+                            literalQueryUrlImage(req,'products','image','image')
+                        ]}
+                        ,
+                        page,
+                        paginate:limit
+                              
+                        
+                        
+                                
+                                
+                            })
+                            return {products:docs,pages,count:total}
+                }else{
+        
+                    let precio
+                    let productsxd
+        
+                    if(price !== "false"){
+                 precio = [['price',price ]]
+        
+            }else{
+                 precio = null
+            } 
+        
+            if(productType !== "0"){
+                productsxd= {
+                    categoryId:2,
+                    productTypeId:productType
+                      
+                      
+                  }
+        
+           }else{
+                productsxd = {
+                    categoryId:2,
+                 
+                      
+                      
+                  }
+           } 
+        
+        
+                             const {docs,pages,total} =  await db.Product.paginate({
+        
+                where:productsxd,
+                  order:precio,
+        
+                      
+        attributes:{include:[
+            literalQueryUrl(req,'products','Product.id'),
+            literalQueryUrlImage(req,'products','image','image')
+        ]}
+        ,
+        page,
+        paginate:limit
+              
+        
+        
+                
+                
+            })
+        
+            return {products:docs,pages,count:total}
+                }
+        
+        
+        
+                   
+        
+            
+                    
+        
+        
+        
+        
+        
+           
+        
+        
+        
+        
+        
+        
+        
+        
+        } catch (error) {
+               console.log(error)
+        throw{
+        status:500,
+        message: error.message
+        
+        }
+            
+        }
+        
+        
+        
+        
+        
+            },
+
+
+
+
+    
     getProductById : async (id,req) => {
 
         try {

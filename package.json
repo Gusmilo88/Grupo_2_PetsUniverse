@@ -25,6 +25,7 @@
     "passport": "^0.6.0",
     "passport-google-oauth": "^2.0.0",
     "sequelize": "^6.31.1",
+    "sequelize-paginate": "^1.1.6",
     "sweetalert2": "^11.7.3"
   }
 }

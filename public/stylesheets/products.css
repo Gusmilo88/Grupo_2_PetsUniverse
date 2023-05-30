@@ -8,6 +8,42 @@
    
 }
 
+.products_main_producto--oscuro{
+    background: #ffffff26;
+    margin: 9px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    width: 100%;
+    
+ }
+
+
+
+
+.products_li_paginator{
+     width: 35px;
+    height: 35px;
+    border: solid 3px #0efdff;
+    transition: transform .2s; 
+
+}
+
+.products_li_paginator:hover{
+    transform: scale(1.3)
+}
+
+
+.products_a_paginator{
+    margin-left :10px;
+    text-decoration :none
+
+
+    
+}
+
+
+
 .products_main_producto img{
     width: 220px;
     text-align: center;

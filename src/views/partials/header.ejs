@@ -35,7 +35,7 @@
                     <a href="/users/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
                 </div>
                 <div class="home__header__nav__div--admin">
-                    <a href="/users/profile"><img src="/images/sfdsf.png" alt="" class="header_marciano">
+                    <a href="/users/profile"><i class="fa-solid fa-user-astronaut" style="color: #ffffff;"></i>
 
                     </a>
                 </div>
@@ -50,9 +50,9 @@
                     <a href="/users/login"><i class="fa-solid fa-user"></i></a>
                 </div>
 
-                <div class="home__header__nav__div--carrito">
+                <!-- <div class="home__header__nav__div--carrito">
                     <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
+                </div> --> 
 
             <% } %>
             <!-- <div class="home__header__nav__div--burger">
@@ -73,61 +73,63 @@
             </div>
         </div>
 
-        <div class="menu" id="body-hamburgueja">
-            <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
-            <label class="menu-open-button" for="menu-open">
-                <span class="hamburger hamburger-1"></span>
-                <span class="hamburger hamburger-2"></span>
-                <span class="hamburger hamburger-3"></span>
-            </label>
-
-            <!--El role es 1, es admin-->
-            <% if (locals.userLogin && userLogin.role === 1) { %> 
-                <a href="/nosotros" class="menu-item"> <i class="fa-solid fa-people-group fa-beat" style="color: #ffffff;"></i></a>
-                <a href="/admin" class="menu-item"> <i class="fa-sharp fa-solid fa-wand-sparkles fa-beat" style="color: #ffffff;"></i></a>
-                <a href="/users/logout" class="menu-item"> <i class="fa-solid fa-right-from-bracket fa-beat" style="color: #f5f5f5;"></i></a>
-                <a href="/products/gatos" class="menu-item"> <i class="fa-solid fa-cat fa-beat" style="color: #ffffff;"></i> </a>
-                <a href="/products/perros" class="menu-item"> <i class="fa-solid fa-dog fa-beat" style="color: #ffffff;"></i> </a>
-            <% } %>
-
-            <!--El role 2 es usuario común-->
-            <% if (locals.userLogin && userLogin.role === 2) { %> 
-                <a href="/users/logout" class="menu-item"> <i class="fa-solid fa-right-from-bracket fa-beat" style="color: #f5f5f5;"></i></a>
-                <a href="/cart" class="menu-item"> <i class="fa-solid fa-cart-shopping fa-beat" style="color: #ffffff;"></i></a>
-                <a href="/users/profile" class="menu-item"> <img src="/images/sfdsf.png" alt="" class="header_marciano fa-beat"></a>
-                <a href="/products/gatos" class="menu-item"> <i class="fa-solid fa-cat fa-beat" style="color: #ffffff;"></i> </a>
-                <a href="/products/perros" class="menu-item"> <i class="fa-solid fa-dog fa-beat" style="color: #ffffff;"></i> </a>
-            <% } %>
-
-            <!--Sin loguear-->
-            <% if (!locals.userLogin) { %> 
-                <a href="/nosotros" class="menu-item"> <i class="fa-solid fa-people-group fa-beat" style="color: #ffffff;"></i></a>
-                <a href="/cart" class="menu-item"> <i class="fa-solid fa-cart-shopping fa-beat" style="color: #ffffff;"></i></a>
-                <a href="/users/login" class="menu-item"> <i class="fa-solid fa-user fa-beat" style="color: #ffffff;"></i></a>
-                <a href="/products/gatos" class="menu-item"> <i class="fa-solid fa-cat fa-beat" style="color: #ffffff;"></i> </a>
-                <a href="/products/perros" class="menu-item"> <i class="fa-solid fa-dog fa-beat" style="color: #ffffff;"></i> </a>
-            <% } %>
-
-            <!-- filters -->
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-        <defs>
-          <filter id="shadowed-goo">
-              <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
-              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-              <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
-              <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
-              <feOffset in="shadow" dx="1" dy="1" result="shadow" />
-              <feBlend in2="shadow" in="goo" result="goo" />
-              <feBlend in2="goo" in="SourceGraphic" result="mix" />
-          </filter>
-          <filter id="goo">
-              <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
-              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-              <feBlend in2="goo" in="SourceGraphic" result="mix" />
-          </filter>
-        </defs>
-    </svg>
-          </div>
+        <div class="hidden-hamburguer"> <!-- El div va a ser visible solamente en mobile -->
+            <div class="menu" id="body-hamburgueja">
+                <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+                <label class="menu-open-button" for="menu-open">
+                    <span class="hamburger hamburger-1"></span>
+                    <span class="hamburger hamburger-2"></span>
+                    <span class="hamburger hamburger-3"></span>
+                </label>
+    
+                <!--El role es 1, es admin-->
+                <% if (locals.userLogin && userLogin.role === 1) { %> 
+                    <a href="/nosotros" class="menu-item"> <i class="fa-solid fa-people-group fa-beat" style="color: #ffffff;"></i></a>
+                    <a href="/admin" class="menu-item"> <i class="fa-sharp fa-solid fa-wand-sparkles fa-beat" style="color: #ffffff;"></i></a>
+                    <a href="/users/logout" class="menu-item"> <i class="fa-solid fa-right-from-bracket fa-beat" style="color: #f5f5f5;"></i></a>
+                    <a href="/products/gatos" class="menu-item"> <i class="fa-solid fa-cat fa-beat" style="color: #ffffff;"></i> </a>
+                    <a href="/products/perros" class="menu-item"> <i class="fa-solid fa-dog fa-beat" style="color: #ffffff;"></i> </a>
+                <% } %>
+    
+                <!--El role 2 es usuario común-->
+                <% if (locals.userLogin && userLogin.role === 2) { %> 
+                    <a href="/users/logout" class="menu-item"> <i class="fa-solid fa-right-from-bracket fa-beat" style="color: #f5f5f5;"></i></a>
+                    <a href="/cart" class="menu-item"> <i class="fa-solid fa-cart-shopping fa-beat" style="color: #ffffff;"></i></a>
+                    <a href="/users/profile" class="menu-item"> <i class="fa-solid fa-user-astronaut fa-beat" style="color: #ffffff;"></i></a>
+                    <a href="/products/gatos" class="menu-item"> <i class="fa-solid fa-cat fa-beat" style="color: #ffffff;"></i> </a>
+                    <a href="/products/perros" class="menu-item"> <i class="fa-solid fa-dog fa-beat" style="color: #ffffff;"></i> </a>
+                <% } %>
+    
+                <!--Sin loguear-->
+                <% if (!locals.userLogin) { %> 
+                    <a href="/nosotros" class="menu-item"> <i class="fa-solid fa-people-group fa-beat" style="color: #ffffff;"></i></a>
+                    <a href="/" class="menu-item"> <i class="fa-solid fa-house fa-beat" style="color: #ffffff;"></i></a>
+                    <a href="/users/login" class="menu-item"> <i class="fa-solid fa-user fa-beat" style="color: #ffffff;"></i></a>
+                    <a href="/products/gatos" class="menu-item"> <i class="fa-solid fa-cat fa-beat" style="color: #ffffff;"></i> </a>
+                    <a href="/products/perros" class="menu-item"> <i class="fa-solid fa-dog fa-beat" style="color: #ffffff;"></i> </a>
+                <% } %>
+    
+                <!-- filters -->
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+              <filter id="shadowed-goo">
+                  <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                  <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+                  <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
+                  <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+                  <feBlend in2="shadow" in="goo" result="goo" />
+                  <feBlend in2="goo" in="SourceGraphic" result="mix" />
+              </filter>
+              <filter id="goo">
+                  <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                  <feBlend in2="goo" in="SourceGraphic" result="mix" />
+              </filter>
+            </defs>
+        </svg>
+              </div>
+        </div>
     </nav>
 
 </header>

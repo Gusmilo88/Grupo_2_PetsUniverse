@@ -13,15 +13,22 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
 
       Order.belongsTo(models.User, {
-        as: "users",
+        as: "user",
         foreignKey : "userId",
         onDelete : "cascade"
       });
 
-      Order.hasMany(models.Cart, {
-        as: "carts",
+      // Order.hasMany(models.Cart, {
+      //   as: "carts",
+      //   foreignKey: "orderId",
+      //   onDelete : "cascade"
+      // });
+
+      Order.belongsToMany(models.Product, {
+        as: "cart",
+        through: "Cart",
         foreignKey: "orderId",
-        onDelete : "cascade"
+        otherKey: "productId",
       });
 
     }
@@ -29,7 +36,17 @@ module.exports = (sequelize, DataTypes) => {
   Order.init({
     date: DataTypes.DATE,
     total: DataTypes.INTEGER,
-    userId: DataTypes.INTEGER
+    userId: DataTypes.INTEGER,
+    status: {
+      type: DataTypes.STRING,
+      defaultValue: "pending",
+      validate: {
+        isIn: {
+          args: ["pending", "completed", "canceled"],
+          msg: "Los valores válidos son: pending, completed, canceled"
+        },
+      },
+    },
   }, {
     sequelize,
     modelName: 'Order',

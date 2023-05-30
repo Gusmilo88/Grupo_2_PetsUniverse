@@ -3,7 +3,6 @@ const $ = (id) => document.getElementById(id); //El signo de pesos "$" se usa co
 const inputAvatar = $("avatar");
 const formAddRegister = $("formRegister")
 
-
 const cleanError = (element, { target }) => {
     target.classList.remove("errorInput");
     target.classList.remove("successInput");

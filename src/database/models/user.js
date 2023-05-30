@@ -24,14 +24,20 @@ module.exports = (sequelize, DataTypes) => {
         onDelete : "cascade"
       });
 
-      User.hasMany(models.Order, {
-        as: "orders",
+      // User.hasMany(models.Order, {
+      //   as: "orders",
+      //   foreignKey : "userId",
+      //   onDelete : "cascade"
+      // });
+
+      User.hasMany(models.UserProduct, {
+        as: "userProducts",
         foreignKey : "userId",
         onDelete : "cascade"
       });
 
-      User.hasMany(models.UserProduct, {
-        as: "userProducts",
+      User.hasMany(models.Order, {
+        as: "orders",
         foreignKey : "userId",
         onDelete : "cascade"
       });

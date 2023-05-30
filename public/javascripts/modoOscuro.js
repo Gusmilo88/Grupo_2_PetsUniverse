@@ -1,4 +1,4 @@
-const check = document.getElementById('flexSwitchCheckDefault')
+const check = document.getElementById ('flexSwitchCheckDefault')
 
 let footer
  check.addEventListener('click',function (){
@@ -12,6 +12,14 @@ let footer
             oscuro[i].style.background = "#ffffff26"
                 
                 }
+
+                /* const oscuroProductos = document.querySelectorAll('.products_main_producto')
+                for (let i = 0; i < oscuroProductos.length; i++) {
+                   
+                    oscuroProductos[i].classList.remove('products_main_producto')
+                    oscuroProductos[i].classList.add('products_main_producto--oscuro')
+                    
+                    } */
         document.getElementById('perros').src = '/images/perritoNegro.png',
         document.getElementById('gatos').src = '/images/gatitoNegro.png',
         document.getElementById('alienxd').src = '/images/marcianoNegro.png',
@@ -44,8 +52,9 @@ let footer
     document.getElementById('alienxd').src = '/images/et.png'
     document.body.classList.add('boee')
     document.body.classList.remove('body_oscuro')
-
-   
+    
+    footer.classList.remove('home__footer_black'),
+    footer.classList.add('home__footer')
 
 
 const oscuro = document.querySelectorAll('.header')
@@ -90,6 +99,15 @@ if (localxd) {
             oscuro[i].style.background = "#ffffff26"
                 
                 }
+
+
+               /*  const oscuroProductos = document.querySelectorAll('.products_main_producto')
+                for (let i = 0; i < oscuroProductos.length; i++) {
+                   
+                    oscuroProductos[i].classList.remove('products_main_producto')
+                    oscuroProductos[i].classList.add('products_main_producto--oscuro')
+                    
+                    } */
                 const iconElement = document.getElementById("icon");
         iconElement.className = "fa-regular fa-moon";
         iconElement.style.color = "#7300ff";

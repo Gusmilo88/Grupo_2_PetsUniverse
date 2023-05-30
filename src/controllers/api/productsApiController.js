@@ -1,18 +1,42 @@
-const {productsAll,createProducts,productsDelete,ProductsUpdate,getProductById} = require('../../services/productsServices')
+const {productsAllDogs,createProducts,productsDelete,ProductsUpdate,getProductById, productsAllCats} = require('../../services/productsServices')
 const createResponseError = require('../../helpers/createResponseError');
 const{validationResult} = require('express-validator')
 module.exports = {
 
-index:async(req,res)=>{
+indexDog:async(req,res)=>{
 
 try {
+const{page=1,limit=6,productType=0,price="false"}=req.query
+    const{products,count,pages}= await productsAllDogs(req,{page,limit,productType,price});
 
-    const{products,count}= await productsAll(req);
+let data 
+
+
+ if(productType === "0"  && price === "false"  ){
+        
+        data ={
+            count,
+            products,
+            pages,
+            currentPage: +page,
+            numero:+productType,
+            precios:price
+        }
+    }else{
+        data ={
+            count,
+            products,
+            pages,
+            currentPage: +page,
+            numero:+productType,
+            precios:price
+        }
+
+    }
 
     return res.status(200).json({
         ok:true,
-        count,
-       products
+        data
     })
     
 } catch (error) {
@@ -38,6 +62,65 @@ try {
 
 },
 
+
+indexCat:async(req,res)=>{
+
+    try {
+    const{page=1,limit=6,productType=0,price="false"}=req.query
+        const{products,count,pages}= await productsAllCats(req,{page,limit,productType,price});
+    
+    let data 
+    
+    
+     if(productType === "0"  && price === "false"  ){
+            
+            data ={
+                count,
+                products,
+                pages,
+                currentPage: +page,
+                numero:+productType,
+                precios:price
+            }
+        }else{
+            data ={
+                count,
+                products,
+                pages,
+                currentPage: +page,
+                numero:+productType,
+                precios:price
+            }
+    
+        }
+    
+        return res.status(200).json({
+            ok:true,
+            data
+        })
+        
+    } catch (error) {
+    
+        return res.status(error.status || 500).json({
+            ok:false,
+            error:{
+                status:error.status || 500,
+                message:error.message || 'Ups,hubo un error xd'
+            }
+        })
+    
+    
+    
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    },
 
 store:async(req,res)=>{
         
