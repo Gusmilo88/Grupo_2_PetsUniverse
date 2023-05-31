@@ -66,7 +66,7 @@ const paintCourses = (products)=>{
     <div class="card-body">
         <span class="price-products-dog-cat">$ ${priceFormatARG}</span>
         <h5 >${name}</h5>
-        <button class="btn btn-success d-flex justify-content-center" onclick="addProductToCart(${id}">Agregar a carrito</button>
+        <button class="btn btn-success d-flex justify-content-center" onclick="addProductToCart(${id})">Agregar a carrito</button>
     </div>
 
 
@@ -85,6 +85,36 @@ const paintCourses = (products)=>{
     containerCard.innerHTML += template
     });
 } 
+
+
+const addProductToCart = async (id) => {
+    try {
+        
+        const {ok} = await fetch(`${URL_API_SERVER}/cart/addProduct`,{ 
+            method:"POST",
+            body: JSON.stringify({
+                productId: id
+            }),
+            headers: {
+                'Content-Type':'application/json'
+            }
+        }).then((res) => res.json())
+        
+        await Swal.fire({
+            name: ok ? "Producto agregado al carrito" : "Debes iniciar sesión",
+            icon: ok ? 'success': 'warning',
+            showConfirmButton:false,
+            timer: 1200
+        })
+
+       /*  !ok && (location.href = "/users/login") */
+    } catch (error) {
+        console.log(error);
+        
+    }
+
+}
+ 
 
 
  const paintItemsPage =({numberPages,itemActive})=>{
@@ -158,32 +188,4 @@ const getPage = async (page)=>{
 } 
 
 
-
-const addProductToCart = async (id) => {
-    try {
-        const objProductId = {
-            courseId: id,
-        }
-        const {ok} = await fetch(`${URL_API_SERVER}/cart/addProduct`,{ 
-            method:'POST',
-            body: JSON.stringify(objProductId),
-            headers: {
-                'Content-type':'application/json'
-            }
-        }).then(res => res.json())
-        
-        await Swal.fire({
-            name: ok ? "Producto agregado al carrito" : "Debes iniciar sesión",
-            icon: ok ? 'success': 'warning',
-            showConfirmButton:false,
-            timer: 1200
-        })
-
-        !ok && (location.href = "/users/login")
-    } catch (error) {
-        console.log(error);
-        
-    }
-
-}
- 
+console.log(req.session.userLogin.id)

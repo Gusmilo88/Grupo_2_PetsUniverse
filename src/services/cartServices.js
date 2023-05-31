@@ -27,9 +27,7 @@ module.exports = mtd = {
       include: [
         {
           association: "cart",
-          through: {
-            attributes: ["quantity"],
-          },
+         
         },
       ],
     });
@@ -67,11 +65,7 @@ module.exports = mtd = {
     await order.save();
   },
 
-  moreOrLessQuantityFromProduct: async ({
-    userId,
-    productId,
-    action = "more",
-  }) => {
+  moreOrLessQuantityFromProduct: async ({ userId,productId,action = "more"}) => {
     if (!userId || !productId) {
       throw {
         ok: false,
