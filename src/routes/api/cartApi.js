@@ -8,7 +8,7 @@ router.delete('/removeProduct',removeProduct),
 router.put('/moreQuantity',moreQuantity),
 router.put('/lessQuantity',lessQuantity),
 router.delete('/clearCart',clearCart),
-router.put('/statusOrde',statusOrder)
+router.put('/statusOrder',statusOrder)
 
 
 

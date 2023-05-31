@@ -1,4 +1,4 @@
-const { getOrder, createProductInCart, clearAllProductFromCart } = require("../../services/cartServices")
+const { getOrder, createProductInCart, clearAllProductFromCart, removeProductFromCart, moreOrLessQuantityFromProduct, modifyStatusFromOrder } = require("../../services/cartServices")
 const db = require('../../database/models');
 const sendSuceessResponse = require("../../helpers/sendSuceessResponse");
 const sendErrorResponse = require("../../helpers/sendErrorResponse");
@@ -36,9 +36,9 @@ module.exports = {
     removeProduct: async(req,res) => {
         try {
             const { productId } = req.body  //const { productId, userId } = req.body
-            const {id} = req.session.userLogin //const {user} = req.session.userLogin
+            /* const {id} = req.session.userLogin  *///const {user} = req.session.userLogin
             
-            await removeProductFromCart({userId: id, productId}) //await removeProductFromCart({userId: user?.id || userId, productId})
+            await removeProductFromCart({userId: 1, productId}) //await removeProductFromCart({userId: user?.id || userId, productId})
             sendSuceessResponse(res)
             
         } catch (error) {
@@ -61,10 +61,10 @@ module.exports = {
     lessQuantity:async(req,res) => {
             try {
                 const { productId } = req.body  //const { productId, userId } = req.body
-                const {id} = req.session.userLogin //const {user} = req.session.userLogin
+                /* const {id} = req.session.userLogin */ //const {user} = req.session.userLogin
                 //const cart =//
                 await moreOrLessQuantityFromProduct({
-                    userId: 3, 
+                    userId: 1, 
                     productId,
                     action: "less",
                 }) //await removeProductFromCart({userId: user?.id || userId, productId})
@@ -77,8 +77,8 @@ module.exports = {
     },
     clearCart: async(req,res) => {
         try {
-            const {id} = req.session.userLogin
-            await clearAllProductFromCart({ userId: id})
+            // const {id} = req.session.userLogin
+            await clearAllProductFromCart({ userId: 1})
             sendSuceessResponse(res)
         } catch (error) {
             sendErrorResponse(res,error)
