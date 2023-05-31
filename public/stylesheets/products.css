@@ -8,6 +8,19 @@
    
 }
 
+.products_main_producto--oscuro{
+    background: #ffffff26;
+    margin: 9px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    width: 100%;
+    
+ }
+
+
+
+
 .products_li_paginator{
      width: 35px;
     height: 35px;

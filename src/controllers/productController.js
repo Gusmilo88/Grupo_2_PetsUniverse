@@ -96,8 +96,9 @@ productCreate: (req,res)=>{
 },
 
 productEdit: function(req,res) {
-
+ 
   const { id } = req.params;
+
   const producto = db.Product.findByPk(id,
 
     {
@@ -124,6 +125,8 @@ productEdit: function(req,res) {
    
     attributes: ["name", "id"],
   });
+
+  
   
   Promise.all(([ producto,categories, productoTypes]))
   
@@ -415,9 +418,9 @@ store: (req, res) => {
     });
   }
 
-
-  
  
+ 
+
   if (errors.isEmpty()) {
     const{
       name,
@@ -446,7 +449,7 @@ store: (req, res) => {
       .then(() => {
       
 
-        return res.redirect("/");
+        return res.redirect("/admin");
       })
       .catch((error) => console.log(error));
   } else {
@@ -486,6 +489,8 @@ store: (req, res) => {
 update: (req, res) => {
   const errors = validationResult(req);
 
+
+  
  
   
 
@@ -497,7 +502,7 @@ update: (req, res) => {
       location: "file",
     });
   }
-
+  
 
  
   if (errors.isEmpty()) {
@@ -536,7 +541,7 @@ update: (req, res) => {
       .then(() => {
       
 
-        return res.redirect("/");
+        return res.redirect("/admin");
       })
       .catch((error) => console.log(error));
   } else {
@@ -619,7 +624,7 @@ remove: async (req, res) => {
        
        
 
-        return res.redirect(`/`);
+        return res.redirect(`/admin`);
       })
   }).catch(error => console.log(error))
 

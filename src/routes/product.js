@@ -15,10 +15,10 @@ const editValidator = require('../validations/editValidator');
 router.get('/perros',productFilterDogs) 
  router.get('/productDetail/:id',productDetail)
 
-router.get('/productCreate/'/* ,checkUserAdmin */,productCreate)
+router.get('/productCreate/' ,checkUserAdmin ,productCreate)
  router.post('/productCreate',uploadCoursesImages,createValidator, store)   
 
-router.get('/productEdit/:id'/* ,checkUserAdmin */,productEdit) 
+router.get('/productEdit/:id' ,checkUserAdmin ,productEdit) 
  router.put('/productEdit/:id',uploadCoursesImages,editValidator, update) 
 
 router.delete('/productDelete/:id', remove), 

@@ -21,3 +21,8 @@ a {
   background-size: cover;
   background-attachment: fixed;
 }
+
+
+.active{
+  background-color: black;
+}
