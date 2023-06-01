@@ -66,7 +66,7 @@ const paintCourses = (products)=>{
     <div class="card-body">
         <span class="price-products-dog-cat">$ ${priceFormatARG}</span>
         <h5 >${name}</h5>
-        <button class="btn btn-success d-flex justify-content-center" onclick="addProductToCart(${id}">Agregar a carrito</button>
+        <button class="btn btn-success d-flex justify-content-center" onclick="addProductToCart(${id})">Agregar a carrito</button>
     </div>
 
 
@@ -162,7 +162,7 @@ const getPage = async (page)=>{
 const addProductToCart = async (id) => {
     try {
         const objProductId = {
-            courseId: id,
+            productId: id,
         }
         const {ok} = await fetch(`${URL_API_SERVER}/cart/addProduct`,{ 
             method:'POST',
@@ -171,6 +171,8 @@ const addProductToCart = async (id) => {
                 'Content-type':'application/json'
             }
         }).then(res => res.json())
+
+        console.log(ok);
         
         await Swal.fire({
             name: ok ? "Producto agregado al carrito" : "Debes iniciar sesión",
