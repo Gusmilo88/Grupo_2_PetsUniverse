@@ -7,12 +7,14 @@ const URL_API_SERVER = "http://localhost:3000/api"
 
 
 const getOrder = () => {
-    fetch(`${URL_API_SERVER}/cart/getOrderPending`,{
+   return fetch(`${URL_API_SERVER}/cart/getOrderPending`,{
         headers:{
             'Content-Type':'application/json'
         }
     }).then((res) => res.json())
 }
+
+console.log(getOrder())
 
 const convertFormatPeso = (n) =>
 n.toLocaleString("es-AR", {
@@ -23,44 +25,42 @@ n.toLocaleString("es-AR", {
 const paintProducts = ({products}) => {
     cardsContainer.innerHTML = "";
     if (products.length){
-    products.forEach(({name,description,image,Cart,id,price,discount}) => {
-        const priceWithDiscount = discount
-        ? price - (price * discount) / 100
-        : price;
-        const priceFormatARG = convertFormatPeso(priceWithDiscount)
-        const template = `
-        <div class="card col-12 col-lg-8 my-5">
-                <div class="card-body row">
-                  
-                  <img class="col-4" style="width:150px" style="object-fit: contain;" src="/images/courses/${
-                    image[0].name
-                  }" alt="">
-                  <div class="col-8 position-relative">
-                    <button onclick="removeProductToCart(${id})" class="fs-5 p-0 border-0 bg-transparent position-absolute text-danger " style="top:-3px;right:10px"><i style="padding:2px" class="rounded-circle btn-clear far fa-times-circle"></i></button>
+    products.forEach(({name,description,image,price,Cart,id,discount }) => {
+         const priceWithDiscount = discount? price - (price * discount) / 100: price;
+        const priceFormatARG = convertFormatPeso(priceWithDiscount) 
+        const template = 
+    `     <div class="card col-12 col-lg-8 my-5">
+    <div class="card-body row">
+      
+      <img class="col-4" style="width:150px" style="object-fit: contain;" src="/images/products/${
+        image
+      }" alt="">
+      <div class="col-8 position-relative">
+        <button onclick="removeProductToCart(${id})" class="fs-5 p-0 border-0 bg-transparent position-absolute text-danger " style="top:-3px;right:10px"><i style="padding:2px" class="rounded-circle btn-clear far fa-times-circle"></i></button>
+
+        <h5 class="card-title">${name}</h5>
+        <p class="card-text text-truncate">${description}</p>
+        <p class="card-text">${priceFormatARG}${
+discount
+? `<span class="text-danger mx-3">${discount}% OFF</span>`
+: ""
+}</p>
+        <p class="d-flex align-items-center gap-2">
+          <label for=""></label>
+          <button onclick="lessProduct(${id},${
+Cart.quantity
+})" class="btn btn-light">-</button>
+          <output style="width:50px"  class="form-control text-center">
+            ${Cart.quantity}
+          </output>
+          <button onclick="moreProduct(${id})" class="btn btn-light">+</button>
+          <a href="/products/productDetail/${id}" class="btn btn-outline-dark">Ver más</a>
+        </p>
+      </div>
+   
+    </div>
+  </div>`
     
-                    <h5 class="card-title">${name}</h5>
-                    <p class="card-text text-truncate">${description}</p>
-                    <p class="card-text">${priceFormatARG}${
-          discount
-            ? `<span class="text-danger mx-3">${discount}% OFF</span>`
-            : ""
-        }</p>
-                    <p class="d-flex align-items-center gap-2">
-                      <label for=""></label>
-                      <button onclick="lessProduct(${id},${
-          Cart.quantity
-        })" class="btn btn-light">-</button>
-                      <output style="width:50px"  class="form-control text-center">
-                        ${Cart.quantity}
-                      </output>
-                      <button onclick="moreProduct(${id})" class="btn btn-light">+</button>
-                      <a href="/products/productDetail/${id}" class="btn btn-outline-dark">Ver más</a>
-                    </p>
-                  </div>
-               
-                </div>
-              </div>
-      `
 
         cardsContainer.innerHTML += template
     })
@@ -94,7 +94,7 @@ const moreProduct = async (id) => {
     const objProductId = {
         productId: id,
     }
-    const {ok} = await fetch(`${URL_API_SERVER}/cart/moreQuantity`,{
+    const {ok} = await  fetch(`${URL_API_SERVER}/cart/moreQuantity`,{
         method:'PUT',
         body: JSON.stringify(objProductId),
         headers: {
@@ -105,11 +105,13 @@ const moreProduct = async (id) => {
     if(ok){
         const {ok,data} = await getOrder()
         if (ok) {
-        paintProducts({ products: data.cart})
+        paintProducts({products:data.cart})
         paintTotal(data.total)
         }
     }
 }
+
+console.log(moreProduct())
 
 const lessProduct = async (id,quantity) => {
     const objProductId = {
@@ -185,7 +187,7 @@ const removeProductToCart = async (id) => {
     
 }
 
-clearCart.addEventListener('click', async () => {
+/*  clearCart.addEventListener('click', async () => {
     try {
         const result = await Swal.fire({
             title: '¿Estás seguro de borrar todo el carrito?',
@@ -225,7 +227,7 @@ clearCart.addEventListener('click', async () => {
      catch (error) {
         
     }
-})
+}) */
 btnBuy.addEventListener("click", async () => {
     const result = await Swal.fire({
       title: "¿Estas seguro realizar la compra?",
@@ -276,5 +278,5 @@ btnBuy.addEventListener("click", async () => {
   
       }
     }
-  });
+  }); 
 
