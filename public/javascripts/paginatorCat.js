@@ -63,7 +63,7 @@ const paintCourses = (products)=>{
 </a>
 <div class="products_main_producto--description">
     <div class="card-body">
-        <span class="price-products-dog-cat">$ ${priceFormatARG}</span>
+        <span class="price-products-dog-cat"> ${priceFormatARG}</span>
         <h5 >${name}</h5>
         <button class="btn btn-success d-flex justify-content-center" onclick="addProductToCart(${id})">Agregar a carrito</button>
     </div>

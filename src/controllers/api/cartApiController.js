@@ -25,9 +25,9 @@ module.exports = {
     addProduct: async(req,res) => {
         try {
             const {productId} = req.body
-        const {id} = req.session.userLogin  
+        //const {id} = req.session.userLogin  
             
-            await createProductInCart({userId:id, productId})
+            await createProductInCart({userId:13, productId})
             sendSuceessResponse(res)
             
         } catch (error) {

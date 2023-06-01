@@ -1,7 +1,7 @@
 const $ =(el)=>document.querySelector(el)
 const btnPrev = $('#btn-prev')
 
-
+const URL_API_SERVER = "http://localhost:3000/api"
 
 const btnnext = $('#btn-next')
 const containerItemsPage = $('#container-items-page')
@@ -45,6 +45,7 @@ window.addEventListener('load',async()=>{
 const paintCourses = (products)=>{
     containerCard.innerHTML = ''
     products.forEach(({name,image,id,price}) => {
+        const priceFormatARG = price.toLocaleString("es-AR", { style: "currency", currency: "ARS"})
       
         console.log(window.localStorage.getItem('lpm')) 
         const template = `
@@ -61,8 +62,9 @@ const paintCourses = (products)=>{
 </a>
 <div class="products_main_producto--description">
     <div class="card-body">
-        <span class="price-products-dog-cat">$ ${price}</span>
+        <span class="price-products-dog-cat"> ${priceFormatARG}</span>
         <h5 >${name}</h5>
+        <button class="btn btn-success d-flex justify-content-center" onclick="addProductToCart(${id})">Agregar a carrito</button>
     </div>
 
 
@@ -82,6 +84,33 @@ const paintCourses = (products)=>{
     });
 } 
 
+const addProductToCart = async (id) => {
+    try {
+        
+        const {ok} = await fetch(`http://localhost:3000/api/cart/addProduct`,{ 
+            method:"POST",
+            body: JSON.stringify({
+                productId: id
+            }),
+            headers: {
+                'Content-Type':'application/json'
+            }
+        }).then((res) => res.json())
+        
+        await Swal.fire({
+            title: ok ? "Producto agregado al carrito" : "Debes iniciar sesión",
+            icon: ok ? 'success': 'warning',
+            showConfirmButton:false,
+            timer: 1200
+        })
+
+       /*  !ok && (location.href = "/users/login") */
+    } catch (error) {
+        console.log(error);
+        
+    }
+
+}
 
  const paintItemsPage =({numberPages,itemActive})=>{
     containerItemsPage.innerHTML = ''
