@@ -105,11 +105,13 @@ const moreProduct = async (id) => {
     if(ok){
         const {ok,data} = await getOrder()
         if (ok) {
-        paintProducts({ products: data.cart})
+        paintProducts({products:data.cart})
         paintTotal(data.total)
         }
     }
 }
+
+console.log(moreProduct())
 
 const lessProduct = async (id,quantity) => {
     const objProductId = {
@@ -185,7 +187,7 @@ const removeProductToCart = async (id) => {
     
 }
 
-/* clearCart.addEventListener('click', async () => {
+/*  clearCart.addEventListener('click', async () => {
     try {
         const result = await Swal.fire({
             title: '¿Estás seguro de borrar todo el carrito?',
@@ -225,7 +227,7 @@ const removeProductToCart = async (id) => {
      catch (error) {
         
     }
-})
+}) */
 btnBuy.addEventListener("click", async () => {
     const result = await Swal.fire({
       title: "¿Estas seguro realizar la compra?",
@@ -276,5 +278,5 @@ btnBuy.addEventListener("click", async () => {
   
       }
     }
-  }); */
+  }); 
 

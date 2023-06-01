@@ -90,7 +90,7 @@ const paintCourses = (products)=>{
 const addProductToCart = async (id) => {
     try {
         
-        const {ok} = await fetch(`${URL_API_SERVER}/cart/addProduct`,{ 
+        const {ok} = await fetch(`http://localhost:3000/api/cart/addProduct`,{ 
             method:"POST",
             body: JSON.stringify({
                 productId: id
@@ -101,7 +101,7 @@ const addProductToCart = async (id) => {
         }).then((res) => res.json())
         
         await Swal.fire({
-            name: ok ? "Producto agregado al carrito" : "Debes iniciar sesión",
+            title: ok ? "Producto agregado al carrito" : "Debes iniciar sesión",
             icon: ok ? 'success': 'warning',
             showConfirmButton:false,
             timer: 1200
