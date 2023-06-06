@@ -142,7 +142,7 @@ const paintItemsfilter =({filtro,precio,numberPages,itemActive} )=>{
     productosTipo.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(1,'${precio}',1)" style="background:${filtro === 1 ? '#000000b5': ""}">Alimento</a></li>`
     productosTipo.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(2,'${precio}',1)" style="background:${filtro === 2 ? '#000000b5': ""}">juguetes</a></li>`
     productosTipo.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(3,'${precio}',1)" style="background:${filtro === 3 ? '#000000b5': ""}">Salud</a></li>`
-     todoProducto.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(0,'${precio}',1)">Todos los productos</a></li>`
+     todoProducto.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(0,'false',1)">Todos los productos</a></li>`
     productosOrden.innerHTML = ''
     productosOrden.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(${filtro},'asc',1)" style="background:${precio === 'asc' ? '#000000b5': ""}">Menor Precio</a></li>`
     productosOrden.innerHTML += `<li class="product_main--li"><a class="product_main--a" href="#" onclick="getFilter(${filtro},'desc',1)" style="background:${precio === 'desc' ? '#000000b5': ""}">Mayor Precio</a></li>`
