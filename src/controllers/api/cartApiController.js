@@ -40,9 +40,9 @@ module.exports = {
     removeProduct: async(req,res) => {
         try {
             const { productId } = req.body  //const { productId, userId } = req.body
-            const {id} = req.session.userLogin 
+            //const {id} = req.session.userLogin 
             
-            await removeProductFromCart({userId: id, productId}) //await removeProductFromCart({userId: user?.id || userId, productId})
+            await removeProductFromCart({userId: 14, productId}) //await removeProductFromCart({userId: user?.id || userId, productId})
             sendSuceessResponse(res)
             
         } catch (error) {

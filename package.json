@@ -27,5 +27,10 @@
     "sequelize": "^6.31.1",
     "sequelize-paginate": "^1.1.6",
     "sweetalert2": "^11.7.3"
+    
+  },
+  "nodemonConfig": {
+    "ignore": ["src/data/*.json"]
   }
 }
+
