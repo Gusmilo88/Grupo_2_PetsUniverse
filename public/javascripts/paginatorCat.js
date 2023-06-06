@@ -106,7 +106,7 @@ const addProductToCart = async (id) => {
             timer: 1200
         })
 
-         !ok && (location.href = "/users/login") 
+         !ok && (location.href = "/users/login")
     } catch (error) {
         console.log(error);
         
