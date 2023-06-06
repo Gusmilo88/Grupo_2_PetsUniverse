@@ -27,7 +27,7 @@ module.exports = {
             const {productId} = req.body
         //const {id} = req.session.userLogin  
             
-            await createProductInCart({userId:13, productId})
+            await createProductInCart({userId:12, productId})
             sendSuceessResponse(res)
             
         } catch (error) {
