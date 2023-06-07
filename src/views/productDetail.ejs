@@ -31,15 +31,7 @@
                             </h1> -->
                         </div>     
                         <img class="imagen1" src="/images/products/<%= image ? image : "ufo.png" %> " alt="Foto de bolsón de alimento">
-                        <article id="otro">
 
-                            <%- include('./partials/section3DetailPartial', {
-                                price,
-                                mil
-                                
-                            }) %>
-                           
-                        </article>
                     </section>
                     <section class="header section2">                                      
                         <article class="section2__article">
@@ -67,7 +59,8 @@
 
                             <%- include('./partials/section3DetailPartial', {
                                 price,
-                                mil
+                                mil,
+                                id
                             }) %>
                             
                         </div>
@@ -120,6 +113,7 @@
     <!--bootstrap-->
     <%- include('./partials/scriptsDetail')%>
     <script src="/javascripts/modoOscuro.js"></script>
+    <script src="/javascripts/detail.js"></script>
 </body>
 
 </html>

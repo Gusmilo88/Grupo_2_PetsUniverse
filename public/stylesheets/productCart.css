@@ -446,3 +446,7 @@ display: none;
     }
 
 }
+
+.cards-cart{
+    flex-direction: column;
+}
