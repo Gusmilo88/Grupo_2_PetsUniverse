@@ -8,7 +8,7 @@ const {index,cart,nosotros,dashboard} = require('../controllers/indexController'
 const checkUserAdmin = require('../middlewares/checkUserAdmin');
 router.get('/',index) 
 router.get('/nosotros',nosotros)
-router.get('/cart', cart) 
+router.get('/cart', checkLogin,cart) 
 router.get('/search', indexController.search); 
 router.get('/admin', checkUserAdmin,dashboard)
 
