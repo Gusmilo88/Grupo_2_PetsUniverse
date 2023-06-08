@@ -12,7 +12,7 @@
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
     "debug": "~2.6.9",
-    "dotenv": "^16.0.3",
+    "dotenv": "^16.1.4",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "express-session": "^1.17.3",
@@ -27,10 +27,10 @@
     "sequelize": "^6.31.1",
     "sequelize-paginate": "^1.1.6",
     "sweetalert2": "^11.7.3"
-    
   },
   "nodemonConfig": {
-    "ignore": ["src/data/*.json"]
+    "ignore": [
+      "src/data/*.json"
+    ]
   }
 }
-
