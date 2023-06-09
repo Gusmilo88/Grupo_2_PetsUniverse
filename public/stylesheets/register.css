@@ -71,6 +71,41 @@
     color: white;
 }
 
+/* .register__main__div--button-google{
+      background: white;
+      border-radius: 7px;
+      margin: 10px;
+      border: none;
+      padding: 5px;
+      color: rgb(235, 13, 13);
+  } */
+  .register__main__div--button-google button{
+/*       border: aliceblue;
+      background-color: white; */
+      background: white;
+      border-radius: 7px;
+      margin: 10px;
+      box-shadow: white;
+      border: none;
+      padding: 5px;
+      color: white;
+  }
+
+  .register__main__div--button-google a{
+      background: white;
+      border-radius: white;
+      color:  rgba(98, 2, 248, 0.6) 50%,;
+      text-decoration: none;
+  }
+
+  .register__main__div--button-google img{
+      /* display: block; */
+      /* width: 80px; */ /* Ajusta el tamaño de la imagen según tus necesidades */
+      height: 27px;
+      /* margin-right: 10px; */ /* Espacio entre la imagen y el texto del botón */
+      /* float: left; */
+  }
+
 
     .register__main__div--button img {
       display: block;
