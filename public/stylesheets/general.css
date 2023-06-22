@@ -1,21 +1,62 @@
-*{
+* {
+
+
+
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-h1, h2, h3, h4, i, p{
+h1,
+h2,
+h3,
+h4,
+i,
+p {
     color: white;
 }
 
-.home__main__section--h2{
+.home__main__section--h2 {
     color: white;
 }
 
-.home__main__section__div--h4{
+.home__main__section__div--h4 {
     color: white;
 }
 
-a{
+a {
     text-decoration: none;
+}
+
+.boee {
+    background-image: url("../images/imagen-fondo.jpg");
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+
+.body_oscuro {
+    background-image: url("../images/Materia-oscura.jpg");
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+
+.negruuu {
+    background: #44444447;
+    transition: 2s;
+}
+
+.VIpgJd-ZVi9od-ORHb-OEVmcd {
+    top:-100px !important
 }

@@ -1,78 +1,176 @@
-<header class="home__header">
+<header class="header home__header">
+
+    <span id="google_translate_element" class="selectTranslate"></span>
+
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element')
+        }
+
+        document.body.style.top = '0px'
+    </script>
+
     <nav class="home__header__nav">
         <div class="home__header__nav__div">
             <div class="home__header__div--imagen">
                 <a href="/"><img src="/images/logo.png" alt="Logo de Pets Universe" width="20%"></a>
             </div>
             <div class="home__header__nav__div--lupa">
-            <form action="/search" method="GET" class="home__header__nav__div--lupa">
-              <input type="text" name="keywords" placeholder="Buscar productos, marcas">
-            <button type="submit">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-            </form>
+                <form action="/search" method="GET" class="home__header__nav__div--lupa">
+                    <input type="text" name="keywords" placeholder="Buscar productos, marcas">
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
             </div>
-            <% if (locals.userLogin && userLogin.rol === "admin") { %>
+            <div>
+                <i id="icon" class="fa-regular fa-sun" style="color: #ffe100;">Light mode</i>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+            </div>
+            <% if (locals.userLogin && userLogin.role===1) { %>
                 <div class="home__header__nav__div--admin">
                     <a href="/users/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
                 </div>
                 <div class="home__header__nav__div--admin">
-                    <a href="/admin"><i class="fa-solid fa-wand-magic-sparkles"></i></a>
+                    <a href="/admin"><i class="fa-sharp fa-solid fa-wand-sparkles"></i></a>
                 </div>
 
-                
-             
-            <% } %>
 
-            <% if (locals.userLogin && userLogin.rol === "customer") { %>
-                <div class="home__header__nav__div--admin">
-                    <a href="/users/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
-                </div>
-                <div class="home__header__nav__div--admin">
-                    <a href="/"><img src="/images/sfdsf.png" alt="" class="header_marciano">
+                <% } %>
 
-                    </a>
-                </div>
+                    <% if (locals.userLogin && userLogin.role===2) { %>
+                        <div class="home__header__nav__div--admin">
+                            <a href="/users/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+                        </div>
+                        <div class="home__header__nav__div--admin">
+                            <a href="/users/profile"><i class="fa-solid fa-user-astronaut" style="color: #ffffff;"></i>
 
-                <div class="home__header__nav__div--carrito">
+                            </a>
+                        </div>
+
+                        <div class="home__header__nav__div--carrito">
+                            <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                        </div>
+
+                        <% } %>
+                            <% if (!locals.userLogin) { %>
+                                <div class="home__header__nav__div--user">
+                                    <a href="/users/login"><i class="fa-solid fa-user"></i></a>
+                                </div>
+
+                                <!-- <div class="home__header__nav__div--carrito">
                     <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
+                </div> -->
 
-                
-             
-            <% } %>
-            <% if (!locals.userLogin) { %>
-                <div class="home__header__nav__div--user">
-                    <a href="/users/login"><i class="fa-solid fa-user"></i></a>
-                </div>
-
-                <div class="home__header__nav__div--carrito">
-                    <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-            <% } %>
-            
-            
-
-
-
-            
-            <div class="home__header__nav__div--burger">
+                                <% } %>
+                                    <!-- <div class="home__header__nav__div--burger">
                 <button>
                     <i class="fa-solid fa-bars"></i>
                 </button>
-            </div>
+            </div> -->
         </div>
         <div class="home__header__nav__div--categorias">
             <div class="home__header__nav__div--categorias--img">
-                <a href="/products/perros"><img src="/images/perrito.png" alt=""><p class="perro">Perros</p></a>
+                <a href="/products/perros"><img src="/images/perrito.png" id="perros" alt="">
+                    <p class="perro">Perros</p>
+                </a>
             </div>
             <div class="home__header__nav__div--categorias--img">
-                <a href="/products/gatos"><img src="/images/gatito.png" alt=""><p class="gato">Gatos</p></a>
+                <a href="/products/gatos"><img src="/images/gatito.png" alt="" id="gatos">
+                    <p class="gato">Gatos</p>
+                </a>
             </div>
             <div class="home__header__nav__div--categorias--img">
-                <a href="/nosotros"><img src="/images/et.png" alt=""><p class="nosotros">Nosotros</p></a>
+                <a href="/nosotros"><img src="/images/et.png" alt="" id="alienxd">
+                    <p class="nosotros">Nosotros</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="hidden-hamburguer"> <!-- El div va a ser visible solamente en mobile -->
+            <div class="menu" id="body-hamburgueja">
+                <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+                <label class="menu-open-button" for="menu-open">
+                    <span class="hamburger hamburger-1"></span>
+                    <span class="hamburger hamburger-2"></span>
+                    <span class="hamburger hamburger-3"></span>
+                </label>
+
+                <!--El role es 1, es admin-->
+                <% if (locals.userLogin && userLogin.role===1) { %>
+                    <a href="/nosotros" class="menu-item"> <i class="fa-solid fa-people-group fa-beat"
+                            style="color: #ffffff;"></i></a>
+                    <a href="/admin" class="menu-item"> <i class="fa-sharp fa-solid fa-wand-sparkles fa-beat"
+                            style="color: #ffffff;"></i></a>
+                    <a href="/users/logout" class="menu-item"> <i class="fa-solid fa-right-from-bracket fa-beat"
+                            style="color: #f5f5f5;"></i></a>
+                    <a href="/products/gatos" class="menu-item"> <i class="fa-solid fa-cat fa-beat"
+                            style="color: #ffffff;"></i> </a>
+                    <a href="/products/perros" class="menu-item"> <i class="fa-solid fa-dog fa-beat"
+                            style="color: #ffffff;"></i> </a>
+                    <% } %>
+
+                        <!--El role 2 es usuario común-->
+                        <% if (locals.userLogin && userLogin.role===2) { %>
+                            <a href="/users/logout" class="menu-item"> <i class="fa-solid fa-right-from-bracket fa-beat"
+                                    style="color: #f5f5f5;"></i></a>
+                            <a href="/cart" class="menu-item"> <i class="fa-solid fa-cart-shopping fa-beat"
+                                    style="color: #ffffff;"></i></a>
+                            <a href="/users/profile" class="menu-item"> <i class="fa-solid fa-user-astronaut fa-beat"
+                                    style="color: #ffffff;"></i></a>
+                            <a href="/products/gatos" class="menu-item"> <i class="fa-solid fa-cat fa-beat"
+                                    style="color: #ffffff;"></i> </a>
+                            <a href="/products/perros" class="menu-item"> <i class="fa-solid fa-dog fa-beat"
+                                    style="color: #ffffff;"></i> </a>
+                            <% } %>
+
+                                <!--Sin loguear-->
+                                <% if (!locals.userLogin) { %>
+                                    <a href="/nosotros" class="menu-item"> <i class="fa-solid fa-people-group fa-beat"
+                                            style="color: #ffffff;"></i></a>
+                                    <a href="/" class="menu-item"> <i class="fa-solid fa-house fa-beat"
+                                            style="color: #ffffff;"></i></a>
+                                    <a href="/users/login" class="menu-item"> <i class="fa-solid fa-user fa-beat"
+                                            style="color: #ffffff;"></i></a>
+                                    <a href="/products/gatos" class="menu-item"> <i class="fa-solid fa-cat fa-beat"
+                                            style="color: #ffffff;"></i> </a>
+                                    <a href="/products/perros" class="menu-item"> <i class="fa-solid fa-dog fa-beat"
+                                            style="color: #ffffff;"></i> </a>
+                                    <% } %>
+
+                                        <!-- filters -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                                            <defs>
+                                                <filter id="shadowed-goo">
+                                                    <feGaussianBlur in="SourceGraphic" result="blur"
+                                                        stdDeviation="10" />
+                                                    <feColorMatrix in="blur" mode="matrix"
+                                                        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                                                        result="goo" />
+                                                    <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+                                                    <feColorMatrix in="shadow" mode="matrix"
+                                                        values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2"
+                                                        result="shadow" />
+                                                    <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+                                                    <feBlend in2="shadow" in="goo" result="goo" />
+                                                    <feBlend in2="goo" in="SourceGraphic" result="mix" />
+                                                </filter>
+                                                <filter id="goo">
+                                                    <feGaussianBlur in="SourceGraphic" result="blur"
+                                                        stdDeviation="10" />
+                                                    <feColorMatrix in="blur" mode="matrix"
+                                                        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                                                        result="goo" />
+                                                    <feBlend in2="goo" in="SourceGraphic" result="mix" />
+                                                </filter>
+                                            </defs>
+                                        </svg>
             </div>
         </div>
     </nav>
+
 </header>

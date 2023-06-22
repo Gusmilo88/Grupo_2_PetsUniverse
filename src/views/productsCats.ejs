@@ -3,27 +3,28 @@
 
     <%- include('./partials/head')%>
 
-<body>
+<body class="boee">
     
     <%- include('./partials/header')%>
 
 <main class="product_main">
-    <li class="product_main--li"><a href="/products/gatos" class="product_main--a">Todos los productos para gatos</a></li>
+    <div id="todo-producto"></div>
+  <!--   <li class="product_main--li"><a href="/products/gatos" class="product_main--a">Todos los productos para gatos</a></li> -->
     <ul class="product_main--ul">
         <div class="product_main--filtro-flex">
       
-        <div class="product_main_filtros">
-        <h2>Precio</h2>
-        <li class="product_main--li"><a href="/products/gatos?price=max" class="product_main--a"  style="color:<%= queries.price === 'max' && " white" %>;background:<%= queries.price === 'max' && " #000000d4" %>;background:<%= queries.price === 'max' && " #000000d4" %>;padding:<%= queries.price === 'max' && " 9px" %>">Mayor precio</a></li>
-        <li class="product_main--li"><a href="/products/gatos?price=min" class="product_main--a" style="color:<%= queries.price === 'min' && " white" %>;background:<%= queries.price === 'min' && " #000000d4" %>;background-color:<%= queries.price === 'min' && " #000000d4" %>;padding:<%= queries.price === 'min' && " 9px" %>">menor precio</a></li>
+        <div class="product_main_filtros" id="producto_orden">
+        <!-- <h2>Precio</h2>
+        <li class="product_main--li"><a href="/products/gatos?price=max" class="product_main--a"  style="color:<#%= queries.price === 'max' && " white" %>;background:<#%= queries.price === 'max' && " #000000d4" %>;background:<#%= queries.price === 'max' && " #000000d4" %>;padding:<#%= queries.price === 'max' && " 9px" %>">Mayor precio</a></li>
+        <li class="product_main--li"><a href="/products/gatos?price=min" class="product_main--a" style="color:<#%= queries.price === 'min' && " white" %>;background:<#%= queries.price === 'min' && " #000000d4" %>;background-color:<#%= queries.price === 'min' && " #000000d4" %>;padding:<#%= queries.price === 'min' && " 9px" %>">menor precio</a></li> -->
         </div>
         
 
-    <div class="product_main_filtros">
-        <h2>Categoria</h2>
-        <li class="product_main--li"><a href="/products/gatos?productType=alimento" class="product_main--a" style="color:<%= queries.productType === 'alimento' && " white" %>;background:<%= queries.productType === 'alimento' && " black" %>;background-color:<%= queries.productType === 'alimento' && " #000000d4" %>;padding:<%= queries.productType === 'alimento' && " 9px" %>">Alimento</a></li>
-        <li class="product_main--li"><a href="/products/gatos?productType=juguetes" class="product_main--a" style="color:<%= queries.productType === 'juguetes' && " white" %>;background:<%= queries.productType === 'juguetes' && " black" %>;background-color:<%= queries.productType === 'juguetes' && " #000000d4" %>;padding:<%= queries.productType === 'juguetes' && " 9px" %>">Juguetes</a></li>
-        <li class="product_main--li"><a href="/products/gatos?productType=salud" class="product_main--a" style="color:<%= queries.productType === 'salud' && " white" %>;background:<%= queries.productType === 'salud' && " #000000d4" %>;background-color:<%= queries.productType === 'salud' && " #000000d4" %>;padding:<%= queries.productType === 'salud' && " 9px" %>">Salud</a></li>
+    <div class="product_main_filtros"  id="productos_tipo">
+      <!--   <h2>Categoria</h2>
+        <li class="product_main--li"><a href="/products/gatos?productType=1" class="product_main--a" style="color:<#%= queries.productType === '1' && " white" %>;background:<%= queries.productType === '1' && " black" %>;background-color:<#%= queries.productType === '1' && " #000000d4" %>;padding:<#%= queries.productType === '1' && " 9px" %>">Alimento</a></li>
+        <li class="product_main--li"><a href="/products/gatos?productType=2" class="product_main--a" style="color:<#%= queries.productType === '2' && " white" %>;background:<%= queries.productType === '2' && " black" %>;background-color:<#%= queries.productType === '2' && " #000000d4" %>;padding:<#%= queries.productType === '2' && " 9px" %>">Juguetes</a></li>
+        <li class="product_main--li"><a href="/products/gatos?productType=3" class="product_main--a" style="color:<#%= queries.productType === '3' && " white" %>;background:<%= queries.productType === '3' && " #000000d4" %>;background-color:<#%= queries.productType === '3' && " #000000d4" %>;padding:<#%= queries.productType === '3' && " 9px" %>">Salud</a></li> -->
     </div>
 </div>
 
@@ -31,24 +32,24 @@
 <div class="product_master1">
     <div class="product_master">
    
-    <div class="products_main_flexbox">
+    <div class="products_main_flexbox" id="container-products-card">
 
-    <% products.forEach(({name,image,id}) => { %>
+    <%# products.forEach(({name,image,id, price}) => { %>
 
        
-    <div class="products_main_producto">
-        <a href="/products/productDetail/<%= id %>">  
+   <!--  <div class="header products_main_producto">
+        <a href="/products/productDetail/<%#= id %>">  
       
         <div class="products_main_producto--img">
-        <img src="/images/products/<%= image %>" class="card-img-top" alt="...">
-
-
-
-
+        <img src="/images/products/<%#= image %>" class="card-img-top" alt="...">
     </div>
 </a>
         <div class="products_main_producto--description">
-            <h5 ><%= name %></h5>
+            <div class="card-body">
+                <span class="price-products-dog-cat">$ <%#= price %></span>
+                <h5 ><%#= name %></h5>
+            </div>
+            
 
 
 
@@ -57,10 +58,10 @@
 
         </div>
                                     
-    </div>
+    </div> -->
 
  
-<% }) %>
+<%# }) %>
     
 </div>
 
@@ -68,14 +69,15 @@
 
 </div>
 
-
+<%- include('./partials/paginator')%>
 
 </main>
 
 
 <%- include('./partials/footer')%>
 
-
-
+<%- include('./partials/scripts')%>
+<script src="/javascripts/paginatorCat.js"></script>
+<script src="/javascripts/modoOscuro.js"></script>
 </body>
 </html>

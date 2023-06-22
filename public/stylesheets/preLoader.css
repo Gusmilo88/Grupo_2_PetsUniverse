@@ -1,0 +1,44 @@
+.loader {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url("../images/fondo-preLoad.jpg"); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    z-index: 999999999;
+    background-color: white;
+}
+
+.loading-animation {
+    animation: moveUpDown 2s ease-in-out infinite;
+}
+
+.loader img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Animación  */
+@keyframes moveUpDown {
+    0% {
+    transform: translateY(0);
+    }
+    50% {
+    transform: translateY(-20px);
+    }
+    100% {
+    transform: translateY(0);
+    }
+}
+
+/* La clase que hace que desaparezca */
+.hidden {
+    display: none;
+}
+

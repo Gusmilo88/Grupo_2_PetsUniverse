@@ -8,6 +8,42 @@
    
 }
 
+.products_main_producto--oscuro{
+    background: #ffffff26;
+    margin: 9px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    width: 100%;
+    
+ }
+
+
+
+
+.products_li_paginator{
+     width: 35px;
+    height: 35px;
+    border: solid 3px #0efdff;
+    transition: transform .2s; 
+
+}
+
+.products_li_paginator:hover{
+    transform: scale(1.3)
+}
+
+
+.products_a_paginator{
+    margin-left :10px;
+    text-decoration :none
+
+
+    
+}
+
+
+
 .products_main_producto img{
     width: 220px;
     text-align: center;
@@ -23,6 +59,18 @@
 .products_main_producto--description{
     display: flex;
     justify-content: center;
+}
+
+.products_main_producto--description span{
+    text-align: center;
+    color: #03b103;
+    font-size: 4vh;
+}
+
+.price-products-dog-cat {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .products_main_producto--description h5{
@@ -66,7 +114,13 @@
     margin: 4px;
 }
 
-
+/* Animación en los productos */
+.products_main_producto:hover {
+    transform: scale(1.1);  /*Escala la imagen al pasar el cursor*/
+    transition: all 0.3s ease-in-out; /*El tiempo que tarda en hacer la animación*/
+    box-shadow: 30px rgba(186, 85, 211);
+    filter: drop-shadow(0 10px 10px rgba(186, 85, 211));
+}
 
 
 
@@ -75,18 +129,12 @@
 }
 
 
-
-
-
 .products_main_flexbox{
     display: flex;
     flex-wrap: wrap;
-   justify-content: center;
- 
+    justify-content: center;
     
 }
-
-
 
 .product_main_filtros h2{
 text-align: center;
@@ -245,3 +293,7 @@ text-decoration: none
     justify-content: center;
     color: white;
  }
+
+
+
+ 

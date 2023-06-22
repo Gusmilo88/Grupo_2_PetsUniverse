@@ -1,7 +1,20 @@
-body{
-         background-image: url(/images/imagen-fondo.jpg);
-         background-size: cover;
-}
+.home {
+        background-image: url("../images/imagen-fondo.jpg");
+        background-position-x:center;
+        background-position-y:center;
+        background-size: cover;
+        background-attachment: fixed;
+        
+      }
+      
+      
+.body_oscuro{
+        background-image: url("../images/Materia-oscura.jpg");
+        background-position-x:center;
+        background-position-y:center;
+        background-size: cover;
+        background-attachment: fixed;
+      }
 
 .main__login{
         display: flex;
@@ -62,7 +75,7 @@ body{
 
 .main__login__div--botonEnviar a:hover{
 	-webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-	        animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
 .main__login--olvidarContraseña {
@@ -81,6 +94,10 @@ body{
         color: gold;
 }
 
+
+.input-rojo{
+        background-color: red;
+}
 
  @-webkit-keyframes shake-bottom {
     0%,

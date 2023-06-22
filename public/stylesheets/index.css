@@ -1,10 +1,10 @@
-body{
-    background-image: url("../images/imagen-fondo.jpg");
-    background-position-x:center;
-    background-position-y:center;
-    background-size: cover;
-    background-attachment: fixed;
+
+.negruuu{
+    background: #44444447;
+    transition:  2s;
 }
+
+
 
 .home__main__section__div{
     display: flex;
@@ -54,12 +54,24 @@ body{
     text-align: center;
 }
 
+.card-title {
+    max-width: 500px; /* Ajusta el valor max */
+    white-space: nowrap;
+    overflow: hidden; /* Si el texto sobrepasa, desaparece el excedente */
+    text-overflow: ellipsis; /* y le pone puntos suspensivos... */
+}
+
+.price-home{
+    color: #03b103;
+    font-size: 4vh;
+}
+
 .home__main__section__div--ufo{
     display: flex;
     flex-wrap: nowrap;
     color: white;
     padding: 15px;
-    background: var(--gradientePrincipal);
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.07) 0%, rgba(2, 152, 227, 0.7) 33.33%, rgba(1, 58, 87, 0.7) 66.67%, rgba(0, 0, 0, 0.7) 100%);;
     border-radius: 20px;
     padding: 20px;
     margin: 15px;
@@ -86,14 +98,33 @@ body{
 .carousel-products-item{
     background: linear-gradient(270deg, rgba(255, 255, 255, 0.07) 0%, rgba(2, 152, 227, 0.7) 33.33%, rgba(1, 58, 87, 0.7) 66.67%, rgba(0, 0, 0, 0.7) 100%);
     border-radius: 20px;
+    padding: 20px;
+}
+
+
+.carousel-products-itemxd{
+    background: #ffffff26;
+    border-radius: 20px;
+    padding: 20px;
 }
 
 .carousel-products-item h5, p{
     color: white;
-    padding: 20px;
+}
+
+/* Animación carrusel del home */
+.carousel-products-item:hover {
+    transform: scale(1.05);  /*Escala la imagen al pasar el cursor*/
+    transition: all 0.3s ease-in-out; /*El tiempo que tarda en hacer la animación*/
+    box-shadow: 30px rgba(186, 85, 211);
+    filter: drop-shadow(0 10px 10px rgba(186, 85, 211));
 }
 
 .home__main__section__div--detalles{
+    display: none;
+}
+
+.testimonials {
     display: none;
 }
 
@@ -104,7 +135,7 @@ body{
         display: flex;
         padding: 15px;
         justify-content: center;
-        background: var(--gradientePrincipal);
+        background: linear-gradient(270deg, rgba(255, 255, 255, 0.07) 0%, rgba(2, 152, 227, 0.7) 33.33%, rgba(1, 58, 87, 0.7) 66.67%, rgba(0, 0, 0, 0.7) 100%);;
         margin: 33px 0px 33px 0px;
     }
 
@@ -145,6 +176,13 @@ body{
         display: flex;
         justify-content: center;
         font-size: 50px;
+    }
+
+    .testimonials {
+        display: block;
+        background: var(--gradientePrincipal);
+        margin: 20px;
+        padding: 10px;
     }
 }
 
@@ -159,7 +197,7 @@ body{
     }
 
     .home__main__section__div--ufo{
-        background: var(--gradientePrincipal);
+        background: linear-gradient(270deg, rgba(255, 255, 255, 0.07) 0%, rgba(2, 152, 227, 0.7) 33.33%, rgba(1, 58, 87, 0.7) 66.67%, rgba(0, 0, 0, 0.7) 100%);;
         border-radius: 20px;
         padding: 20px;
         margin: 15px;
@@ -195,5 +233,12 @@ body{
         display: flex;
         justify-content: center;
         font-size: 50px;
+    }
+
+    .testimonials {
+        display: block;
+        background: var(--gradientePrincipal);
+        margin: 20px;
+        padding: 10px;
     }
 }

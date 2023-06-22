@@ -3,24 +3,50 @@
 
     <%- include('./partials/head')%>
 
-<body>
+<body class="boee">
     
     <%- include('./partials/header')%>
+  <!--   <main class="container">
 
-<main class="product_Cart_main">
+        <div class="row position-relative">
+
+          <div id="cards-container" class="col-8">
+          </div>
+
+          
+          <div class="card col-4 my-5 position-sticky" style="height:fit-content;top:20px">
+            <div class="card-body my-2 d-flex flex-column gap-2">
+              <button class="btn w-100 " id="clear-cart">Vaciar Carrito</button>
+              <button class="btn w-100 " id="btn-buy">Comprar</button>
+              
+              <div class="text-end fs-3" >
+                <span >
+                  Total:
+                </span>
+                <output id="output-total">
+                  0
+                </output>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main> -->
+
+      <main class="product_Cart_main">
 
 
 <div class="product_Cart_contenedor">
 
 
 
-<section class="product_Cart_carrito">
+<section class="product_Cart_carrito col-8">
 
     <h1>Carrito</h1>
 
     <hr class="product_Cart_hr">
 
-    <article class="product_Cart_objeto_compra">
+    <!-- <article class="product_Cart_objeto_compra">
         
 
         <div class="product_Cart_fotoydescripcion">
@@ -60,134 +86,11 @@
           </div>
 
 
-    </article>
+    </article> -->
 
-    <article class="product_Cart_objeto_compra">
-        
-
-        <div class="product_Cart_fotoydescripcion">
-
-            <button class="product_Cart_button_x">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-          
-      <img src="/images/3.png" alt="" class="product_Cart_img">
+    <div id="cards-container" class="cards-cart">
       
-      <p class="product_Cart_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, atque.</p>
-          
-          </div>
-      
-      
-        
-      
-      
-      
-          <div class="product_Cart_precioyboton">
-      
-            <div class="product_Cart_numero_precio"><h3>1000$</h3></div>
-      <div class="product_Cart_botones_precio">
-            
-      <button class="product_Cart_button_Mas_Menos">
-          <i class="fa-solid fa-plus"></i>
-      </button>
-      
-      <div class="product_Cart_numero_producto">
-          <p>1</p>
-      </div>
-      
-      <button class="product_Cart_button_Mas_Menos">
-          <i class="fa-solid fa-minus"></i>
-      </button>
-      </div>
-          </div>
-
-
-    </article>
-
-
-    <article class="product_Cart_objeto_compra">
-        
-
-        <div class="product_Cart_fotoydescripcion">
-
-            <button class="product_Cart_button_x">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-          
-      <img src="/images/4.png" alt="" class="product_Cart_img">
-      
-      <p class="product_Cart_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, atque.</p>
-          
-          </div>
-      
-      
-        
-      
-      
-      
-          <div class="product_Cart_precioyboton">
-      
-            <div class="product_Cart_numero_precio"><h3>1000$</h3></div>
-      <div class="product_Cart_botones_precio">
-            
-      <button class="product_Cart_button_Mas_Menos">
-          <i class="fa-solid fa-plus"></i>
-      </button>
-      
-      <div class="product_Cart_numero_producto">
-          <p>1</p>
-      </div>
-      
-      <button class="product_Cart_button_Mas_Menos">
-          <i class="fa-solid fa-minus"></i>
-      </button>
-      </div>
-          </div>
-
-
-    </article>
-
-    <article class="product_Cart_objeto_compra">
-        
-
-        <div class="product_Cart_fotoydescripcion">
-
-            <button class="product_Cart_button_x">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-          
-      <img src="/images/5.png" alt="" class="product_Cart_img">
-      
-      <p class="product_Cart_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, atque.</p>
-          
-          </div>
-      
-      
-        
-      
-      
-      
-          <div class="product_Cart_precioyboton">
-      
-            <div class="product_Cart_numero_precio"><h3>1000$</h3></div>
-      <div class="product_Cart_botones_precio">
-            
-      <button class="product_Cart_button_Mas_Menos">
-          <i class="fa-solid fa-plus"></i>
-      </button>
-      
-      <div class="product_Cart_numero_producto">
-          <p>1</p>
-      </div>
-      
-      <button class="product_Cart_button_Mas_Menos">
-          <i class="fa-solid fa-minus"></i>
-      </button>
-      </div>
-          </div>
-
-
-    </article>
+    </div>
 
    
   
@@ -196,16 +99,20 @@
 
 </section>
 
-<hr class="product_Cart_hr">
+<hr class="product_Cart_hr col-4">
 
 <section class="product_Cart_precio">
     
     <h3>Carrito</h3>
 
-<h2>Total:2000$</h2>
+<h2 id="output-total"></h2>
+<div class="product-comprar-vaciar">
+<button class="product_Cart_button_comprar" id="btn-buy">Comprar</button>
 
-<button class="product_Cart_button_comprar">Comprar</button>
 
+
+<button class="product_Cart_button_comprar" id="clear-cart">Vaciar</button>
+</div>
 </section>
 
 
@@ -218,9 +125,12 @@
 </main>
 
 
+
+
 <%- include('./partials/footer')%>
 
-
-
+<%- include('./partials/scripts')%>
+<script src="/javascripts/modoOscuro.js"></script>
+<script src="/javascripts/cart.js"></script>
 </body>
 </html>

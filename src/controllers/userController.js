@@ -1,6 +1,6 @@
 const {validationResult} = require("express-validator");
-const {readJSON, writeJSON} = require("../data");
 const {hashSync} = require("bcryptjs");
+const db = require('../database/models')
 
 
 
@@ -12,18 +12,24 @@ module.exports = {
         const errors = validationResult(req);
 
         if(errors.isEmpty()){
+            db.User.findOne({
+                where : {
+                    email : req.body.email
+                }
 
-            const {id, name, rol} = readJSON('users.json').find(user => user.email === req.body.email)
-
-            req.session.userLogin = {
-                id,
-                name,
-                rol
-            }
+            }).then( ({id, firstName, roleId}) =>{  
+                req.session.userLogin = {
+                    id,
+                    firstName,
+                    role : roleId
+                }
             if(req.body.recordarUsuario){
                 res.cookie('userPetsUniverse', req.session.userLogin,{maxAge : 1000 * 30})
             }
-        return res.redirect('/')  
+        return res.redirect('/') 
+    })
+    .catch(error => console.log(error))
+    
     }else{
         return res.render('login', {
             title : "Iniciar sesión",
@@ -42,25 +48,36 @@ module.exports = {
     processRegister : (req, res) => {
         const errors = validationResult(req);
 
+        // return res.send(req.body)
         if(errors.isEmpty()){
-            const users = readJSON("users.json");
+            
 
-            const {firstName, lastName, email, password, rol, avatar} = req.body;
+            const {firstName, lastName, email, password} = req.body;
 
-            const newUser = {
-                id : users.length ? users[users.length - 1].id + 1 : 1,
-                firstName : firstName.trim(),
-                lastName : lastName.trim(),
-                email : email.trim(),
-                password : hashSync(password, 10),
-                rol : rol ? "admin" : "admin"  || rol ? "customer" : "customer",
-                avatar : "defaultAvatar.png",
-            }
+            db.Address.create()
+            .then( address =>{
+                db.User.create({
+                    firstName : firstName.trim(),
+                    lastName : lastName.trim(),
+                    email : email.trim(),
+                    password : hashSync(password, 10),
+                    roleId : 2,
+                    addressId : address.id
 
-            users.push(newUser)
+                }).then(({id, firstName, roleId}) => {
+                    req.session.userLogin = {
+                        id,
+                        firstName,
+                        role : roleId
+                    }
+                    return res.redirect('/')
+                })
 
-            writeJSON("users.json", users);
-            return res.redirect("/users/login");
+                })
+            
+            .catch(error => console.log(error))
+
+            
 
         }else{
             return res.render('register',{
@@ -81,8 +98,43 @@ module.exports = {
 
 logout:(req,res)=>{
 req.session.destroy()
+res.clearCookie("userPetsUniverse")
 res.redirect('/')
-}
+},
+
+profile : (req,res) => {
+    db.User.findByPk(req.session.userLogin.id,{
+        attributes : ['firstName','lastName','email','avatar'],
+        include : [
+            {
+                association : 'addresses',
+                attributes : ['address','city','province','zipCode']
+            }
+        ],
+
+    })
+        .then(user => {
+            return res.render('profile',{
+                title : "Perfil de usuario",
+                user
+            })
+        })
+        .catch(error => console.log(error))
+
+  
+},
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -90,3 +142,4 @@ res.redirect('/')
 
 } //
 
+//..//

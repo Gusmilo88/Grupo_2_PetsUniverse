@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head')%>
+
+<body class="boee">
+
+    <%- include('./partials/header')%>
+
+    <main class="register__main">
+        <div class="header register__main__div">
+            <h3 class="card-title">¡Hola <%= user.firstName %>!</h3>
+
+            <div class="avatar-profile">
+                <img src="/images/users/<%= user.avatar ? user.avatar : "defaultAvatar.png" %>" class="imgAvatar" alt="imagen de usuario">
+            </div>
+
+            <form action="/users/profile" method="POST" enctype="multipart/form-data"> <!--Fijarse el action, por si sale error, no estoy seguro de que esté bien-->
+                <div class="register__main__div--info">
+                    <div>
+                        <i class="fa-solid fa-user"></i> <label for="firstName"></label>
+                        <input type="text" class="register__main__div--info <%= (locals.errors && errors.firstName) && 'is-invalid'%>" id="firstName" placeholder="<%= locals.errors && errors.firstName ? errors.firstName.msg : "Ingresá tu nombre" %>" name="firstName" value="<%= user.firstName %>">
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-user"></i> <label for="lastName" class="form-label"></label>
+                        <input type="text" class="register__main__div--info <%= (locals.errors && errors.lastName) && 'is-invalid'%>" id="lastName" placeholder="<%= locals.errors && errors.lastName ? errors.lastName.msg : "Ingresá tu apellido" %>" name="lastName" value="<%= user.lastName %>">
+                    </div>
+                    <div>
+                        <i class="fa-regular fa-envelope"> </i><label for="email" class="form-label"></label>
+                        </i><input type="email" class="register__main__div--info <%= (locals.errors && errors.email) && 'is-invalid'%>" id="email" placeholder="<%= locals.errors && errors.email ? errors.email.msg : "Ingresá tu email" %>" name="email" value="<%= user.email %>" disabled>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-house"></i> <label for="address" class="form-label"></label>
+                        <input type="text" class="register__main__div--info <%= (locals.errors && errors.address) && 'is-invalid'%>" id="address" placeholder="<%= locals.errors && errors.address ? errors.address.msg : "Ingresá tu dirección" %>" name="address" value="<%= user.address %>">
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-tree-city"></i> <label for="city" class="form-label"></label>
+                        <input type="text" class="register__main__div--info <%= (locals.errors && errors.city) && 'is-invalid'%>" id="city" placeholder="<%= locals.errors && errors.city ? errors.city.msg : "Ingresá tu ciudad" %>" name="city" value="<%= user.city %>">
+                    </div>
+                    <div>
+                        <i class="fa-sharp fa-solid fa-location-dot"></i><label for="province" class="form-label"></label>
+                        </i><input type="text" class="register__main__div--info <%= (locals.errors && errors.province) && 'is-invalid'%>" id="province" placeholder="<%= locals.errors && errors.province ? errors.province.msg : "Ingresá tu provincia" %>" name="province" value="<%= user.province %>">
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-envelope"></i><label for="zipCode" class="form-label"></label>
+                        <input type="number" class="register__main__div--info <%= (locals.errors && errors.zipCode) && 'is-invalid'%>" id="zipCode" placeholder="<%= locals.errors && errors.zipCode ? errors.zipCode.msg : "Ingresá tu código postal" %>" name="zipCode" value="<%= user.zipCode %>">
+                    </div>
+                    <div>
+                    <div class="mt-3 text-center">
+                        <label for="formFile" class="boton-guardarCambios">Cambiar imagen</label>
+                        <input class="form-control" name="avatar" type="file" id="formFile" hidden>
+                    </div>
+                </div>
+                <div class="register__main__div--button">
+                    <button type="submit">Guardar cambios</button>
+                </div>
+
+            </form>
+        </div>
+
+    </main>
+    
+    <%- include('./partials/footer')%>
+    <%- include('./partials/scripts')%>
+    <script src="/javascripts/modoOscuro.js"></script>
+</body>
+</html>

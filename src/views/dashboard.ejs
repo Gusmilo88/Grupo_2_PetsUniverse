@@ -3,7 +3,7 @@
 
 <%- include('./partials/head')%>
 
-<body class="home">
+<body class="boee">
 
     <%- include('./partials/header')%>
     
@@ -11,10 +11,13 @@
       <div class="home_main--dashboard-buscador-plus">
         <% if (Buscar) { %>
           <div>
+            <% if (locals.userLogin) { %>
+              <% if (userLogin.rol === 1) { %>
             <a href="/admin" class="dashboard--Allproducts"> Volver a todos los productos</a>
           </div>
         <% } %>
-      
+        <% } %>
+      <% } %>
         <div class="home__header__nav__div--lupa--dashboard">
             <form action="/admin" method="GET" class="home__header__nav__div--lupa--dash">
               <input type="text" name="Buscar" placeholder="Buscar productos, marcas">
@@ -23,7 +26,7 @@
             </button>
             </form>
             </div>
-           
+          
             
             <div>
               <a class="btn btn-sm btn-primary" href="/products/productCreate/"><i class="fa-solid fa-plus"></i></a>
@@ -36,7 +39,7 @@
             <h1 class="dashboard--notFound">No se encuentra el Producto</h1>
           <% } %>
 
-        <div class="home_main--container-dashboard">
+        <div class="header home_main--container-dashboard">
          
       
 
@@ -66,8 +69,8 @@
                     <div class="d-flex gap--dashboard">
                       <a class="btn btn-sm btn-primary" href="/products/productDetail/<%= id %>"><i class="far fa-eye"></i></a>
                       <a class="btn btn-sm btn-success" href="/products/productEdit/<%= id %>"><i class="far fa-edit"></i></a>
-                      <form action="/products/productDelete/<%= id %>?_method=DELETE" method="POST" >
-                        <button type="submit" class="btn btn-danger" ><i class="fa-solid fa-trash"></i></button>
+                      <form action="/products/productDelete/<%= id %>?_method=DELETE" method="POST" id="deleteForm">
+                        <button type="submit" class="btn btn-danger" id="deleteButton"><i class="fa-solid fa-trash"></i></button>
                     </form> 
     
                     </div>
@@ -102,5 +105,9 @@
     
 
     <%- include('./partials/scripts')%>
+    <!-- SweetAlert2-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/javascripts/sweetAlert.js"></script>
+    <script src="/javascripts/modoOscuro.js"></script>
 </body>
 </html>

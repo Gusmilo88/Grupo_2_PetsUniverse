@@ -1,0 +1,418 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+
+body{
+    background: #56baed;
+}
+
+
+
+
+.select-box, .play-board, .result-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 0.3s ease;
+
+
+
+}
+
+
+.select-box{
+    margin-top: 50px;
+    background-image: url("/images/petsss.gif");
+    padding: 0px 25px 25px;
+    border-radius: 5px;
+    max-width: 330px;
+    width: 100%;
+    height: 405px;
+transition: all 0.3s ease;
+}
+
+
+.select-box.hide{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%) scale(0.9);
+}
+
+
+
+
+.select-box header{
+font-size: 23px;
+font-weight: 600;
+padding-bottom: 10px;
+border-bottom: 1px solid #ccc;
+
+}
+
+.select-box .title{
+    font-size: 18px;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+.select-box .options{
+    display: flex;
+    width: 100%;
+    margin-top: 250px;
+}
+
+.options button{
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0px 0;
+    border: solid #e5bb3e;
+    outline: none;
+    background: #020f3c;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+} 
+
+
+.options button img{
+    width: 50px;
+    height: 50px;
+    }
+
+/* .boton-gato img{
+    width: 50px;
+    height: 50px;
+    margin: 5px
+
+
+}
+
+.boton-gato {
+    background: #070b87;
+    display: flex;
+
+
+}
+
+
+
+    .boton-gato .playerX{
+        background: transparent;
+        border: none;
+        color: white;
+        margin: 10px;
+    
+    } */
+
+
+    .options {
+        display: flex;
+        flex-direction: column;
+        }
+
+        .botones-juego404 {
+            display: flex;
+        }
+
+        
+
+
+
+.options button:hover,
+.result-box .btn button:hover{
+transform: scale(0.96);
+
+
+
+
+}
+.options button.playerX{
+    margin-right: 13px;
+}
+
+.options button.playerY{
+    margin-left: 5px;
+}
+
+
+
+
+
+.play-board{
+    margin-top:50px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%) scale(0.9);
+
+
+}
+
+
+.play-board.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%,-50%) scale(1);
+    background-image: url("/images/galaxia.gif");
+    width: 330px;
+    height: 385px;
+
+
+}
+
+
+
+.play-board .details{
+    background: #fff0;
+    padding: 7px;
+    border-radius: 5p
+}
+
+.play-board .details .players{
+position: relative;
+display: flex;
+width: 100%;
+justify-content: space-between;    
+}
+.play-board .details span{
+
+width: 100%;
+border-radius:5px;
+padding: 7px 0;
+font-size: 19px;
+font-weight: 500;
+cursor:default;
+text-align: center;
+color: #56baed;
+position: relative;
+z-index: 5;
+transition: all 0.3s ease;
+}
+
+
+
+.details span:first-child{
+color: #fff;
+
+
+
+
+}
+
+
+.details .slider{
+
+
+position: absolute;
+background: #020f3c;
+top: 0;
+left: 0%;
+border: solid #e5bb3e;
+height: 100%;
+width: 50%;
+border-radius: 5px;
+z-index: 2;
+transition: all 0.3s ease;
+
+
+
+
+}
+
+
+.players.active span:first-child{
+color:#fff
+}
+
+
+.players.active span:nth-child(2){
+    color:#fff
+    }
+
+
+.players.active .slider{
+left:50%;
+ }
+        
+
+ 
+.details span.active{
+    color: #fff;
+    
+} 
+
+.noFound {
+    text-align: center;
+    color: white;
+    font-size: 60px;
+    margin-top:50px
+}
+
+.noFound2{
+    text-align: center;
+    color:#e5bb3e
+}
+
+
+.play-board .play-area{
+
+margin-top: 20px;
+
+}
+
+.play-board section{
+
+display: flex;
+
+}
+.play-board section span{
+display: block;
+height: 80px;
+width: 80px;
+background: #cc00ff40;
+margin: 3px;
+font-size:40px;
+text-align: center;
+border-radius: 5px;
+line-height: 80px;
+color:#56baed
+}
+
+
+.result-box{
+    margin-top: 50px;
+   background: #020f3c;
+   padding: 20px;
+   border-radius: 5px;
+   max-width: 350px;
+   width: 100%;
+   
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%) scale(0.9);
+
+}
+
+.result-box.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%,-50%) scale(1);
+
+
+}
+
+
+.result-box .won-text{
+    font-size: 25px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    color: #e5bb3e;
+    margin-bottom: 10px
+ }
+
+
+.result-box .won-text p{
+    font-weight: 600;
+    margin: 0 3px;
+}
+
+
+.result-box .btn{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+
+.result-box .btn button{
+    font-size: 18px;
+font-weight: 500;
+padding: 8px 20px;
+border: none;
+outline: none;
+background: #020f3c;
+border-radius: 5px;
+color: #fff;
+border: solid #e5bb3e ;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.imagen{
+    width: 60px;
+    height: 60px;
+    margin-top: 13px; 
+    animation: fade 0.5s ;
+   
+}
+
+
+
+@keyframes fade {
+    0% {
+       opacity:0;
+       width: 60px;
+    height: 60px;
+    }
+    50% {
+       opacity: 0.5;
+       width: 55px;
+    height: 55px;
+    }
+    100% {
+        opacity:1;
+        width: 60px;
+    height: 60px;
+    }
+  }
+
+
+.selecciona-mascota{
+    margin-bottom: 10px;
+    animation: fade2 4s infinite
+}
+
+
+@keyframes fade2 {
+    0% {
+       opacity:0;
+  
+    }
+    50% {
+       opacity: 1;
+    
+    }
+    100% {
+        opacity:0;
+    
+    }
+  }
+
+
+
+  .juegoxd{
+
+     width: 300px;
+    height: 300px;
+
+
+
+  }
+
+
+
+  .area-flex{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+

@@ -1,10 +1,5 @@
-
-/*productDetail-gi-ojeda*/
 /*body*/
-.bodyProductDetail{
-    background-image: url(/images/imagen-fondo.jpg);
-    background-size: cover;
-}
+
 
 /*mobile*/
 /*contenedor general*/
@@ -15,9 +10,15 @@
 
 /*section1: bloque de imagenes de bolsas de comida para perro*/
 .section1{
-    width: 100%;
-    padding: 1%; 
-    background-color: var(--gradientePrincipal);
+    width: 100%; 
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.07) 0%, rgba(2, 152, 227, 0.7) 33.33%, rgba(1, 58, 87, 0.7) 66.67%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.titulo {
+    margin-top: 56px;
+    color: white;
+    padding-top: 20px;
+    text-align: center;
 }
 
 /*imagen grande*/
@@ -30,12 +31,9 @@
    
 }
 
-/*section2: contenedor y formulario oculto hasta escritorio*/
+/*section2: contenedor y formulario oculto hasta tablet*/
 .section2{
-    width: 100%;
-    height: 30%;
-    padding: 10% 1% 0% 4%;
-    display: none;
+    
 }
 
 .section2__article{
@@ -46,12 +44,12 @@
 
 /*cotenedor violeta*/
 .section2__article__div{
-    background-color: var(--gradientePrincipal);
+    display: none;
 }
 
 .section2__article__div__p{
     font-family: var(--tipografiaTitulos);
-    font-size: 12px;
+    font-size: 2vh;
 }
 
 /*formulario*/
@@ -94,6 +92,8 @@
 
 .carrusel__section{
     width:100%;
+    margin-bottom: 25px;
+    margin-top: 25px;
 }
 
 .carrusel__section a{
@@ -102,6 +102,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.price-detail {
+    text-align: center;
 }
 
 .carrusel__section h5{
@@ -158,7 +162,7 @@
 
 /*esta sección no aparece en su lugar hasta el escritorio, pero se clonan sus elementos en mobile y tablet*/
 .section3__article__div--original2{
-    display: none;
+    
 }  
 
 /*estrellas debajo del header*/
@@ -177,7 +181,7 @@
 /*titulo del producto*/
 .titulos1{
     font-family: var(--tipografiaTitulos);
-    font-size: 18px;
+    font-size: 3vh;
 }
 
 
@@ -186,26 +190,21 @@
 .aLaPar{
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
 }
 
 /*descripción*/
-.par1{
-    width: 50%;
-    
+.botones {
+    display: flex;
 }
 
 /*botones*/
 .par2{
     width: 50%;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
 }
 
 .form__button{   
     width: 100%;  
-    display: flex;
-    justify-content: center;
     padding: 5%;
 }
 
@@ -226,53 +225,6 @@
     box-shadow: 0px 8px 7px  0px rgba(0, 0, 0, 0.6);
 }
 
-/* Boton edit */
-
-.form__button--edit{
-    width: 100%;  
-    display: flex;
-    justify-content: center;
-    padding: 5%;
-}
-
-.form__button--edit button{
-    width: 20vh;
-    height: 25px;
-    background: rgb(4, 150, 116);
-    font-family: var(--tipografiaTitulos);
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: initial;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0px 8px 7px  0px rgba(0, 0, 0, 0.6);
-}
-
-/* Boton delete */
-
-.form__button--delete{
-    width: 100%;  
-    display: flex;
-    justify-content: center;
-    padding: 5%;
-}
-
-.form__button--delete button{
-    width: 20vh;
-    height: 25px;
-    background: red;
-    font-family: var(--tipografiaTitulos);
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: initial;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0px 8px 7px  0px rgba(0, 0, 0, 0.6);
-}
-
-
 /*línea oculta hasta escritorio*/
 .oculto1{
     font-size: 11px;
@@ -288,7 +240,7 @@
 /*descripcion valor*/
 .visto1{
     margin-bottom: 0rem;
-    font-size: 28px;
+    font-size: 4vh;
 }
 
 .visto1:hover{
@@ -298,7 +250,7 @@
 
 /*descripcion cuotas*/
 .visto2{
-    font-size: 10px;
+    font-size: 2.5vh;
     color: var(--colorVerdeBrillante)
 }
 
@@ -309,26 +261,22 @@
 }
 
 /*envios*/
+.contenedor-ufo-envio h4{
+    font-size: 2vh;
+    text-align: center;
+    padding: 10%;
+}
+
 .ufo{
-    display: flex;
-    flex-wrap: wrap;
     position: relative;
-    padding-top: 10px;
+    animation-name: ufo;
+    animation-duration: 2.5s;  
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
 }
 
-/*ícono ovni*/
-.flyingSaucer{  
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-    position: absolute;
-    top: 25px;
-    left: 0px;
-}
-
-/*texto del ovni*/
-.ufo p{
-    padding-left: 20%;
+.ufo img {
+    width: 100%;
 }
 
 .visto3{
@@ -344,14 +292,12 @@
 /*caja de metodos de pago*/
 .metodo{
     width: 100%;
-    font-family: var(--tipografiaTitulos);
-    font-size: 12px;
-    color: #fff; 
+    padding: 20px;
 }
 
-.metodo__h1{
-    padding-left: 10%;
-    font-size: 18px;
+.metodo img{
+    width: 100%;
+    background-color: white;
 }
 
 .boxes{
@@ -391,6 +337,7 @@
         width:100%;
         display: flex;
         flex-wrap: wrap;
+        margin: 7px;
         }
 
 /*primera columna*/
@@ -412,7 +359,6 @@
 /*caja de imagenes de bolsas de alimento para perro*/
     .section1{
         width:100%;
-        padding: 0% 1%; 
         background-color: rgba(0, 0, 0, 0.0);
     }
 
@@ -426,24 +372,14 @@
         width: 80%;
     }
 
-/*carrusel*/
-.carrusel1{
-    width: 80%;
-    margin: 10%;
-}
+    .section2{
+        display: none;
+    } 
 
-.carroussel-food-item {
-    height: 100%;
-}
-.carroussel-food-item img{
-   width: 100%;
-}
- 
 /*section3 (segunda columna)*/
     .section3{
         width: 35%;
         height: 50%;
-        background-color: rgba(7, 165, 244, 0.2);
     }
 
 /*características del clon de estrellas y titulo*/
@@ -472,25 +408,31 @@
     }
 
 /* características del título del producto*/
-    .titulo{
-        padding: 10px;
+    .titulo {
+        margin-top: 10px;
+        color: white;
+        padding-top: 20px;
+        text-align: center;
     }
 
     .titulos1{
-        font-family: var(--tipografiaTitulos);
-        font-size:14px;
+        display: none;
+    }
+
+    .titulos2{
+        font-size: 4vh;
     }
     
 /*características de la segunda columna*/
     .section3__article--original1{
         width: 100%;
         display: block;
+        background: linear-gradient(270deg, rgba(255, 255, 255, 0.07) 0%, rgba(2, 152, 227, 0.7) 33.33%, rgba(1, 58, 87, 0.7) 66.67%, rgba(0, 0, 0, 0.7) 100%);
     }
 
     .section3__article__div { 
         width: 100%;
         position: relative;
-        padding: 4px;
     }
 
 /*las dos columnas de mobile cambian a una*/
@@ -517,25 +459,8 @@
 
 /*cuotas*/
     .visto2{
-        font-size: 8px;  
-        padding: 0px;
-    }
-
-/*caja ovni alejado de su ubicación original*/
-    .ufo{
-        position: absolute;
-        top: 40%;
-    }
-
-/*ícono ovni*/
-    .flyingSaucer{  
-        top: 5px;
-        left: -10px;
-    }
-
-/*descripción ovni*/
-    .ufo p{
-        padding-left: 12%;
+        font-size: 1.5vh;  
+        padding: 10px;
     }
 
 /*envíos*/
@@ -546,56 +471,35 @@
     }
    
 /*parte inferior botones*/
+
+    /*descripción*/
+    .botones {
+        display: block;
+        padding: 10px;
+    }
+
     .par2{
         width: 100%;
         height: 100%;   
     }
 
     .form__button{ 
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: left;
-        padding: 5px;
+        text-align: center;
     }
 
     .form__button button{
-        width: 100px;
-        height: 20px;
-        font-size: 40%;
+        width: 13vh;
+        font-size: 1.5vh;
     }
 
 /* caja de métodos de pago*/
     .metodo {
-        font-size: 12px;
-        margin-top: 40%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        position: relative;
+        display: none;
     }
 
-/*título*/
-    .metodo__h1{
-        padding-left: 0%;
-        font-size: 16px;
-    }
 
-/*formas de pago*/
-    .pay{
-        padding:0%;
-    }
-
-    .boxes p{
-        font-size: 7px;
-        padding-left: 20px;
-    }
-
-/*íconos de formas de pago*/
-    .boxes img{
-        top: -5px;
-        left: -10px;
+    .contenedor-ufo-envio {
+        display: block;
     }
 }
 
@@ -618,7 +522,6 @@
 
 /*contenedor blanco*/
     .white{
-        background: var(--gradientePrincipal);
         padding: 15px;
         }
 
@@ -627,8 +530,21 @@
     }
 /*caja con imagenes de bolsas de alimento para perro*/     
     .section1{
-        height: 70%;
+        display: flex;
+        justify-content: center;
     }
+
+    .section1 img{
+        width: 60%;
+    }
+
+    .titulo {
+        margin-top: 10px;
+        color: white;
+        padding-top: 20px;
+        text-align: center;
+    }
+
     .section1__article img{
         width: 60%;
         }
@@ -685,9 +601,7 @@
 
 
     .titulos1{
-        display: block;
-        font-family: var(--tipografiaTitulos);
-        font-size: 10px;
+        display: none;
     }
 
 /*se ocultan las estrellas*/
@@ -727,40 +641,26 @@
     }
 
     .form__button button{
-        width: 200px;
-        font-size: 12px;
+        width: 20vh;
+        font-size: 1.6vh;
     }
 
-/*caja ovni*/
-    .ufo{
-        top: 65%;
+    .section2__article__div{
+        display: block;
+        background: var(--gradientePrincipal);
+        padding: 10px;
+    }
+    
+    .section2__article__div__p{
+        font-family: var(--tipografiaTitulos);
+        font-size: 2.3vh;
     }
 
-    .flyingSaucer{
-        top:5px;
-    }
-/*envíos*/
-    .visto3{
-        font-size: 12px;
+    .contenedor-ufo-envio {
+        display: block;
     }
 
-/*compras*/
-    .compras{
-        font-size: 12px;
-    }
-   
-/*caja de métodos de pago*/    
     .metodo {
-        font-size: 14px;
+        display: block;
     }
-
-    .metodo__h1{
-        padding-left: 20px;
-    }
-/*formas de pago*/
-    .boxes p{
-        padding-left: 30px;
-        font-size: 12px;
-    }
-  
 }
